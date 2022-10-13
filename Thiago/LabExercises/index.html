@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-  </head>
-  <body>
-    <div>
-      <h1>Hello</h1>
-      <p>This is a paragraph</p>
-    </div>
-  </body>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>TTCRR</title>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+      <h1>
+      <header>
+        <h1>Header</h1>
+      </header>
+      <section>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+          </ul>
+        </nav>
+        <article>
+          <h2>Artical heading</h2>
+          <p>Prograph...</p>
+          <img
+            src="https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2019-tesla-model-3-sedan-white-press-image-1001x565%201.jpg"
+            width="30%"
+          />
+          <br />
+          <a href="https://www.google.com/">More information...</a>
+        </article>
+        <aside>
+          <h2>Related</h2>
+          <ul>
+            <li><a href="#">Article 1</a></li>
+            <li><a href="#">Article 2</a></li>
+          </ul>
+        </aside>
+      </section>
+      <h2>Forms</h2>
+      <!--
+If you click the "Submit" button, the formdata will be sent to a page called "/action_pag
+e". -->
+      <form action="/action_page">
+        <label for="firstName">First name:</label><br />
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          value="Thiago"
+        /><br />
+        <label for="lastName">Last name:</label><br />
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          value="Taujiro"
+        /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+      <br />
+      <table border="1">
+        <tr>
+          <th>Thiago</th>
+          <td>Taujiro</td>
+          <td>31</td>
+        </tr>
+      </table>
+      <button onclick="myFunction()">Click Here</button>
+      <footer>
+        <p>@copyright 2050 by nobody. all rights reversed</p>
+      </footer>
+      <script>
+        function myFunction() {
+          alert("Well done!");
+        }
+      </script>
+    </body>
+  </html>
 </html>

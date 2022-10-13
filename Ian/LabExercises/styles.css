@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    border: 0px
+}
+
+header {
+    background-color: dodgerblue;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+nav {
+    float: left;
+    width: 30%;
+    background: gold;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: whitesmoke;
+}
+
+aside {
+    clear: both;
+}
+
+body {
+    background: lightskyblue;
+    border: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+.form {
+    color: navy;
+    background-color: yellow;
+}
+
+.table {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px;
+    border-style: double;
+    text-align: left;
+}
+
+#dog-picture {
+    border: 5px;
+    border-color: black;
+    border-radius: 15px;
+}
