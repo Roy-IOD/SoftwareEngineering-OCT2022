@@ -1,6 +1,7 @@
 body{
     background-color: lightblue;
     font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 form{
     background-color: aliceblue;
@@ -12,8 +13,34 @@ form{
     background-color: lightblue;
 }
 a:link {
-  color: red;
+  color: blue;
 }
-#jokic:link {
-    color:blue;
+img{
+    max-width: 100px;
+}
+nav{
+    float: left;
+    width: 30%;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+article{
+    background-color: whitesmoke;
+    float: left;
+    padding: 20px;
+    width: 66%;
+}
+header{
+    text-align: center;
+    padding: 30px;
+
+}
+aside{
+    clear: both;
+    text-align: center;
+}
+form{
+    padding-left: 0;
 }

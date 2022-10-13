@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>NBA</title>
 </head>
+
 <body>
-    <header>
-        <h1>Header</h1>
-        </header>
-        <section>
-          <nav>
-             <ul>
-               <li><a href="#jokic">Home</a></li>
-               <li><a href="#">Articles</a></li>
-             </ul>
-          </nav>
-          <article>
-            <h2>National Basketball Association</h2>
-            <p>NBA</p>
-            <a href="https://www.google.com/">More information...</a>
-          </article>
-          <aside>
-          <h2>Related</h2>
-            <ul>
-               <li><a href="#" id="jokic">Nikola Jokic</a></li>
-               <li><a href="#">Statistics</a></li>
-            </ul>
-          <form action="/action_page">
-                <label for="nbaTeam"> Who is your favourite NBA Team? </label> <br>
-                <input type="text" id="nbaTeam" name="nbaTeam" value="Put your team here"> <br> <br>
-                <label for="nbaMVP"> Who will win MVP? </label> <br>
-                <input type="text" id="nbaMVP" name="nbaMVP" value="Put your player here"> <br>
-            </aside>
-        </section>
-        <footer>
-        <p>@copyright 2050 by nobody. all rights reversed</p>
-        </footer>   
+  <header>
+    <h1>Header</h1>
+  </header>
+  <section>
+    <nav>
+      <ul>
+        <li><a href="#jokic">Home</a></li>
+        <li><a href="#">Articles</a></li>
+      </ul>
+    </nav>
+    <article>
+      <h2>National Basketball Association</h2>
+      <p>NBA <br> <br>
+        <a href="https://www.nba.com/games" target="_blank"> <img
+            src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA.png" alt="NBA Logo"></a></p>
+    </article>
+    <aside id="aside">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="#" id="jokic">Nikola Jokic</a></li>
+        <li><a href="#">Statistics</a></li>
+      </ul>
+      <button onclick="helloJokic()"> Who was the MVP Last Year? </button> <br><br>
+
+      <form action="/action_page">
+        <label for="nbaTeam"> Who is your favourite NBA Team? </label> <br>
+        <input type="text" id="nbaTeam" name="nbaTeam" value="Put your team here"> <br> <br>
+        <label for="nbaMVP"> Who will win MVP? </label> <br>
+        <input type="text" id="nbaMVP" name="nbaMVP" value="Put your player here"> <br>
+    </aside>
+  </section>
+  <footer>
+    <p>@copyright 2050 by nobody. all rights reversed</p>
+  </footer>
+
+  <script>
+    function helloJokic() {
+      alert("Of course is was Jokic")
+    }
+  </script>
+
 </body>
+
 </html>
