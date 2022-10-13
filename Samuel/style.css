@@ -1,0 +1,19 @@
+body{
+    background-color: lightblue;
+    font-size: large;
+}
+form{
+    background-color: aliceblue;
+    max-width: fit-content;
+    border: solid black;
+    padding: 10px 20px;
+}
+#nbaTeam, #nbaMVP{
+    background-color: lightblue;
+}
+a:link {
+  color: red;
+}
+#jokic:link {
+    color:blue;
+}
