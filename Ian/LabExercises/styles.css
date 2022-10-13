@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: lightskyblue;
+    border: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: dodgerblue;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+.form {
+    color: navy;
+    background-color: yellow;
+}
+
+.table {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: 10px;
+    border-style: double;
+    text-align: left;
+}
+
+#dog-picture {
+    border: 5px;
+    border-color: black;
+    border-radius: 15px;
+}
