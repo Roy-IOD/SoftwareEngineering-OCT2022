@@ -1,14 +1,16 @@
 * {
     box-sizing: border-box;
-    padding: 0px;
-    border: 0px
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     background-color: dodgerblue;
     padding: 30px;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
     color: white;
 }
 
@@ -17,11 +19,12 @@ nav {
     width: 30%;
     background: gold;
     padding: 20px;
+    height: 300px;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0px;
+    padding: 0;
 }
 
 article {
@@ -29,16 +32,18 @@ article {
     padding: 20px;
     width: 70%;
     background-color: whitesmoke;
+    height: 300px;
 }
 
 aside {
     clear: both;
 }
 
-body {
-    background: lightskyblue;
-    border: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+footer {
+    background-color: blue;
+    padding: 10px;
+    text-align: center;
+    color: white;
 }
 
 h1 {
@@ -51,7 +56,17 @@ h2 {
 
 .form {
     color: navy;
-    background-color: yellow;
+    background-color: pink;
+}
+
+input[type=submit] {
+    padding: 5px 15px;
+    margin: 5px;
+    background: rgb(166, 165, 161);
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+
 }
 
 .table {
@@ -61,8 +76,11 @@ h2 {
     text-align: left;
 }
 
-#dog-picture {
-    border: 5px;
-    border-color: black;
-    border-radius: 15px;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 50px;
+    border-radius: 8px;
+    border-color: red; /* this is just so I can see if it works */
 }
