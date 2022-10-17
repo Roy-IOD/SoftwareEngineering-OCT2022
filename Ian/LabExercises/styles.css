@@ -1,14 +1,18 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    color: white;
 }
 
 header {
-    background-color: dodgerblue;
-    padding: 30px;
+    padding: 1px;
+    margin: 0px;
     text-align: center;
     font-size: 40px;
     color: white;
@@ -16,10 +20,9 @@ header {
 
 nav {
     float: left;
-    width: 30%;
-    background: gold;
+    width: 20%;
     padding: 20px;
-    height: 300px;
+    height: 350px;
 }
 
 nav ul {
@@ -30,9 +33,8 @@ nav ul {
 article {
     float: left;
     padding: 20px;
-    width: 70%;
-    background-color: whitesmoke;
-    height: 300px;
+    width: 80%;
+    height: 350px;
 }
 
 aside {
@@ -51,12 +53,11 @@ h1 {
 }
 
 h2 {
-    color: darkgreen;
+    color: white;
 }
 
 .form {
-    color: navy;
-    background-color: pink;
+    color: white;
 }
 
 input[type=submit] {
@@ -78,9 +79,19 @@ input[type=submit] {
 
 img {
     display: block;
-    max-width: 100%;
-    height: auto;
-    border: 50px;
-    border-radius: 8px;
-    border-color: red; /* this is just so I can see if it works */
+    max-height: 100%;
+
 }
+
+.bg {
+    /* The image used */
+    background-image: url("https://images.unsplash.com/photo-1530484567812-2d5a2d82268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80images.unsplash.com/photo-1611001871555-1a09975c1975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVmZW5kZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
