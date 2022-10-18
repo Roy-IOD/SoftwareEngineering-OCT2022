@@ -1,3 +1,5 @@
+/* This is a CSS comment */
+
 * { box-sizing: border-box; margin: 0; }
 body { font-family: sans-serif; background: lightblue; margin: 0; } 
 h2 { color: darkblue }
