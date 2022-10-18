@@ -57,5 +57,5 @@ var options = {
     }
   };
 var sentiment = new Sentiment();
-  var result = sentiment.analyze('Jokic is the GOAT', options);
+  var result = sentiment.analyze('Jokic is the GOAT stupid', options);
   console.dir(result);   
