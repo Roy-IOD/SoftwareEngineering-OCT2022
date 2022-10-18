@@ -59,3 +59,45 @@ var options = {
 var sentiment = new Sentiment();
   var result = sentiment.analyze('Jokic is the GOAT stupid', options);
   console.dir(result);   
+
+  let myArray = ["ford", "volvo", "honda"]
+
+  console.log(myArray[2])
+
+  let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+console.log(mountains[0]); // 'Everest'
+console.log(mountains[1]); // 'Fuji'
+console.log(mountains[2]); // 'Nanga Parbat'
+
+mountains[1] = 'Kilamanjaro'
+mountains.push('Kosciusko')
+
+console.log(mountains)
+
+mountains.unshift('Ben Nevis')
+console.log(mountains[0])
+
+let seas = ['Black Sea', 'Caribbean Sea', 'North Sea', 'Baltic Sea'];
+console.log(seas);
+
+const lastElement = seas.pop();
+console.log(lastElement);
+console.log(seas);
+
+const firstElement = seas.shift();
+console.log(firstElement);
+console.log(seas);
+
+let index = seas.indexOf('North Sea');
+console.log(index);
+
+console.log(Array.isArray(seas));
+
+let nbaArray = ["Bucks", "Nuggets", "76ers", "Heat", "Timberwolves"]
+
+console.log(nbaArray)
+
+nbaArray[0] = "Suns"
+nbaArray[3] = "Celtics"
+
+console.log(nbaArray)
