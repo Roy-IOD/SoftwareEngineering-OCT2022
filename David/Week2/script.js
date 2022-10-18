@@ -56,15 +56,15 @@ function printName2 (firstName,lastName){
 
 console.log ("----")
 
-// console.log (sum(5,1))
-// console.log (minus(10,5))
-// console.log (divide(10,5))
-// console.log (multiply(5,2))
+console.log (sum(5,1))
+console.log (minus(10,5))
+console.log (divide(10,5))
+console.log (multiply(5,2))
 
-// console.log ("----")
+console.log ("----")
 
-// console.log (printName("David"))
-// console.log (printName2("David","Cook"))
+console.log (printName("David"))
+console.log (printName2("David","Cook"))
 
 
 
