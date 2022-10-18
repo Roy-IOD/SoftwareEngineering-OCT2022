@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        </header>
+
+        <section>
+
+        <nav>
+        <ul>
+        <li class="menu-item"><a href="#">Home</a></li>
+        <li class="menu-item"><a href="#">Articles</a></li>
+        </ul>
+        </nav>
+
+        <article>
+        <h2>Article heading</h2>
+        <p>Paragraph...</p>
+        <a href="https://www.google.com/">More information...</a>
+        </article>
+
+        <aside>
+        <h2>Related</h2>
+        <ul>
+        <li><a href="#">Article 1</a></li>
+        <li><a href="#">Article 2</a></li>
+        </ul>
+        </aside>
+        </section>
+
+        <br>
+
+        <section>
+        <form id="test-form">
+            <h2>Form</h2>
+            <div>
+                <label for="text1">Text 1</label>
+                <input type="text" id="text1"/>
+            </div>
+            <button>Save Me</button>
+        </form>
+    </section>
+
+    <button onclick="helloWorld()">Say Hello</button>
+
+
+        <section>
+            <h2>Table</h2>
+            <img src="https://images.unsplash.com/photo-1665417004612-59a4399f6278?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80" width="500"/>
+            <table border="1" cellpadding="5" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th colspan="2">Column 3 & 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Value 1</td>
+                        <td>Value 2</td>
+                        <td>Value 3</td>
+                        <td>Value 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+        <p>@copyright 2050 by nobody. all rights reversed</p>
+        </footer>
+
+        <script>
+            document.getElementById("test-form").style.color = "red";
+
+            function helloWorld() {
+                alert('hello world')
+                let item1 = document.getElementsByClassName('menu-item')[0]
+                console.log(item1)
+                document.getElementsByClassName('menu-item')[0].style.background = 'white'
+            }
+        </script>
+</body>
+</html>

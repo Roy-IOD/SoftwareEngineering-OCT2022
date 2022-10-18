@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Page Title</title>
+<html lang="en">
+  <head>
+    <title>Joel Embiid</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css"/>
     </head>
-    <body>
-        <div>
-            <h1>Changes for GitHub Practice 2.0</h1>
-            <p>This is a paragraph</p>
-        </div>
-    </body>
+  <body>
+    <header>
+      <h1>PHILADELPHIA 76ERS</h1>
+    </header>
+    <section>
+      <article id="article">
+        <h2>Joel Embiid</h2>
+        <p id="sale">50% OFF</p>
+      </article>
+      <div>
+        <img id="image" src="https://feeds.frgimages.com/ss4/https://feeds.frgimages.com/ss4/p-11967324_u-hqx5a04kesrrl63s0wt1_v-d5c630a817eb41d9aa2af31985838d27.jpg?_hv=1&w=1200" width= "180"/>
+      </div>
+      <article id="article">
+        <h1>$90</h1>
+      </article>
+    <form id=form onsubmit="helloWorld()">
+    <label for="FirstName">First Name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+    <label for="LastName">Last Name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+    <label for="Shipping Address">Shipping Address:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+    <input type="submit" id="submit" value="Order Now">
+    </form> 
+      <aside>
+        <h2>Related</h2>
+        <ul>
+          <li><a href="#">James Harden</a></li>
+          <li><a href="#">Tyrese Maxey</a></li>
+        </ul>
+      </aside>
+    </section>
+    <footer>
+      <p>@copyright 2050 by the 76ers. all rights reversed</p>
+    </footer>
+    <form id="shopform" 
+  </body>
+  <script>
+    document.getElementById("demo").style.color = "red"; 
+
+    function helloWorld() {
+         alert("Order Shipped")
+         window.open("https://www.nba.com/sixers", "_blank" ) 
+    }
+ </script>
 </html>

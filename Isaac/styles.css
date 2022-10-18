@@ -1,0 +1,33 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(https://wallpaperaccess.com/full/441820.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+body {
+    background-size: cover;
+    padding: 10px 10px;
+    resize: both;
+    overflow: scroll;
+    max-width:fit-content;
+    height: fit-content;
+}
+footer, header, section, aside, #form {
+    position: center;
+    text-align: center;
+    background-color: white;
+    font-size: small;
+    padding: 8px;
+    opacity: 80%;
+    height: 100%;
+    max-width:cover;
+    max-height:cover;
+    border-radius: 20px;
+}
+
+#sale {
+    color:red
+}
+label, input {
+    text-align:left;
+    display: block;
+}

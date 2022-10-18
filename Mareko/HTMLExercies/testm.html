@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>page title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="header">Header</h1>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Articles</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2 id="clothing">Bahaman Straw Hat - Brown </h2>
+            <img src="https://media.cntraveler.com/photos/609561d89f8e45374515e1ea/5:4/w_3374,h_2699,c_limit/The%20Best%20Sun%20Hats%20for%20Hot%20Summer%20Days-2021_LOC_Fiji_14b.jpg" alt="BahamanStrawHatBrown" width="20%">
+            <form>
+                <h3>Customer Address</h3>
+                <label for="street"> Street Name</label><br>
+                <input type="text" id="street" name="street" value=""><br>
+    
+                <label for="p-code">Postcode</label><br>
+                <input type="text" id="p-code" name="p-code" value=""><br><br>            
+                <button onclick="order()">Order Now</button><br>
+            </form>
+            <p id="incentive">
+                <b>
+                   Price:
+                    <del>$69.99</del>
+                    $19.99
+                </b> 
+            </p>
+        </article>
+
+        <aside id="aside">
+            <h2>Related</h2>
+            <ul>
+                <li><a href="#">Article 1</a></li>
+                <li><a href="#">Article 2</a></li>
+            </ul>
+        </aside>
+
+    </section>
+
+    <footer id="footer">
+        <p id="footercopy">@copyright 2050 by nobody. all rights</p>
+    </footer>
+
+    <script>
+        document.getElementById('header').innerHTML = "OP Shop"
+
+        function order() {
+            alert('Your order will be shipped soon')
+        }
+
+    </script>
+
+</body>
+
+</html>
