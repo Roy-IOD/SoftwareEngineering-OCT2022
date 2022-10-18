@@ -49,7 +49,7 @@ var sentiment = new Sentiment();
   var result = sentiment.analyze('cats are stupid.', options);
   console.dir(result);   
 
-  var Sentiment = require('sentiment');
+var Sentiment = require('sentiment');
 var options = {
     extras: {
       'jokic': 5,
@@ -58,13 +58,13 @@ var options = {
   };
 var sentiment = new Sentiment();
   var result = sentiment.analyze('Jokic is the GOAT stupid', options);
-  console.dir(result);   
+  console.dir(result);  
+  
+let myArray = ["ford", "volvo", "honda"]
 
-  let myArray = ["ford", "volvo", "honda"]
+console.log(myArray[2])
 
-  console.log(myArray[2])
-
-  let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
 console.log(mountains[0]); // 'Everest'
 console.log(mountains[1]); // 'Fuji'
 console.log(mountains[2]); // 'Nanga Parbat'
