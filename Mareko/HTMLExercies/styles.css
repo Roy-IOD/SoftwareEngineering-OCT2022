@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    margin: 0;
+}
+
+#incentive {
+    color: red;
+    font-style: strong;
+}
+
+#clothing {
+    color: white;
+}
+
+header,
+footer {
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    float: left;
+    background-color: beige;
+    width: 20%;
+    height: 300px;
+    padding: 20px;
+}
+
+article {
+    float: left;
+    background-color: burlywood;
+    width: 74%;
+    height: 300px;
+    padding: 20px;
+}
+
+form {
+    float: right;
+    padding-right: 50%;
+}
+
+label {
+    width:200px;
+    display: inline-block;
+  }
+
+aside {
+    clear: both;
+}
