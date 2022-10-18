@@ -1,0 +1,30 @@
+/* This is a CSS comment */
+
+* { box-sizing: border-box; margin: 0; }
+body { font-family: sans-serif; background: lightblue; margin: 0; } 
+h2 { color: darkblue }
+
+header { background-color: blue; color: white; text-align: center; padding:20px; }
+nav { float: left; background-color: gold; width: 30%; height: 300px; padding: 20px; }
+article { background-color: whitesmoke; float: left; width: 70%; padding: 20px; }
+fieldset { border: 0 none; padding: 0; margin: 5px ; }
+aside { clear: both; }
+.price { color: green; font-size: 20px; }
+
+.menu-item { font-style: italic; } 
+#test-form { background: white; padding: 20px; }
+
+#shop-form { border: 1px solid #aaa; border-radius: 20px; padding: 20px; max-width: 600px; }
+.item-info { margin: 1em 0; }
+
+.form-row { margin: 0.5em 0; }
+.form-row fieldset label { min-width: 100px; display: inline-block; }
+.form-row fieldset input, .form-row fieldset select { padding: 5px; margin: 5px; }
+
+aside { background: navy; padding: 20px; clear: both; color: white; text-align: center; }
+aside h2 { color: lightcyan; }
+aside a { color: white; }
+aside ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; }
+aside ul li { padding: 1em; }
+
+footer { background: #222; color: #eee; text-align: center; padding: 0.5em; font-size: 0.9em; }
