@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Online Store</title>
+    <link rel="stylesheet" href="styles.css"/>
+
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <section>
+
+        <!-- This is a HTML comment, not displayed in the browser, just a way to save notes for yourself and other developers -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Articles</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h3>Green Dress</h3>
+            <div class="info"><strong class="price">$80.00</strong></div>
+
+            <img src="https://cdn.shopify.com/s/files/1/1422/4174/products/ReoMaxiDress-Green-5_c7568b86-e637-467f-86d2-781062819666_700x.jpg?v=1665357542" width="400"/>
+
+            <p class="item-info">This is a dress that is green. If you want to order one, fill out the form below.</p>
+
+            <form id="shop-form" onsubmit="orderNow(event)">
+                <div class="form-row">
+                    <fieldset><label>Name: </label><input type="text" name="customerName" id="customername"/></fieldset>
+                </div>
+                <div class="form-row">
+                    <fieldset>
+                        <strong>Address: <br></strong>
+                        <label for="streetAddress">Street: </label><input type="text" name="streetAddress" id="streetAddress"/><br>
+                        <label for="suburb">Suburb: </label><input type="text" name="suburb" id="suburb"/><br>
+                        <label for="state">State: </label><select id="state"><option>QLD</option><option>NSW</option><option>VIC</option></select><br>
+                        <label for="postcode">Postcode: </label><input type="text" maxlength="4" name="postcode" id="postcode"/>
+                    </fieldset>
+                </div>  
+                <button>Order Now</button>          
+            </form>
+        </article>
+
+        <aside>
+            <h2>Related</h2>
+            <ul>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Shipping & Delivery</a></li>
+                <li><a href="#">Refunds & Returns</a></li>
+            </ul>
+        </aside>
+
+    </section>
+
+    <footer>
+        <p>@copyright 2050 by nobody. all rights reversed</p>
+    </footer>
+
+    <script>
+        function orderNow(event) {
+            event.preventDefault();
+            const name = document.getElementById('customername').value;
+            const street = document.getElementById('streetAddress').value;
+            const suburb = document.getElementById('suburb').value;
+            const state = document.getElementById('state').value;
+            const postcode = document.getElementById('postcode').value;
+
+            const address = street + ' ' + suburb + ' ' + state + ' ' + postcode //this is a javascript comment
+
+            //if they filled out some form fields, confirm the order, otherwise prompt them to complete
+            if (name.trim().length > 0 && address.trim().length > 0 ) {
+
+                alert('Thanks for your order '+name+'! Your item will be shipped to '+address)
+            }
+            else {
+                alert('Please fill out the fields before placing your order')
+            }
+        }
+    </script>
+    </body>
+</html>
