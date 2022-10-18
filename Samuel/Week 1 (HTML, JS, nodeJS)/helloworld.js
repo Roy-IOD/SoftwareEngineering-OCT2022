@@ -34,3 +34,9 @@ function ThisIsTheName(Signature){
     console.log("Hello, " + name + ", I am node!");
 }
 helloName("Sam")
+
+
+var Sentiment = require('sentiment');
+var sentiment = new Sentiment();
+var result = sentiment.analyze('Cats are stupid.');
+console.dir(result);    // Score: -2, Comparative: -0.666
