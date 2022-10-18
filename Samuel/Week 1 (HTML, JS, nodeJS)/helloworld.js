@@ -1,11 +1,10 @@
 console.log('hello world')
 
-function ThisIsTheName(Signature){
-    Body
-    }
     function SayHello(){
     console.log('Hello')
     }
+
+    SayHello()
 
     function Sum(A,B){
         return A+B
@@ -31,12 +30,32 @@ function ThisIsTheName(Signature){
    console.log(Divide(20,10))
 
    function helloName(name) {
-    console.log("Hello, " + name + ", I am node!");
+    return('Hello, ' + name + ', I am node!');
 }
-helloName("Sam")
+console.log(helloName('Sam'))
 
+let addition = Sum(44,77)
+console.log(addition)
 
 var Sentiment = require('sentiment');
+var options = {
+    extras: {
+      'cats': 5,
+      'are': 2,
+      'amazing': 2
+    }
+  };
 var sentiment = new Sentiment();
-var result = sentiment.analyze('Cats are stupid.');
-console.dir(result);    // Score: -2, Comparative: -0.666
+  var result = sentiment.analyze('cats are stupid.', options);
+  console.dir(result);   
+
+  var Sentiment = require('sentiment');
+var options = {
+    extras: {
+      'jokic': 5,
+      'goat': 2,
+    }
+  };
+var sentiment = new Sentiment();
+  var result = sentiment.analyze('Jokic is the GOAT stupid', options);
+  console.dir(result);   
