@@ -67,6 +67,41 @@ console.log (printName("David"))
 console.log (printName2("David","Cook"))
 console.log ("----")
 
+// Slide 91
+console.log('\n\nExercises on slide 91:')
+console.log('--------------------------\n') 
+
+let Sentiment = require('sentiment'); 
+let sentiment = new Sentiment();
+let result1 = sentiment.analyze('Cats are stupid.');
+console.dir(result1);    // Score: -2, Comparative: -0.666
+
+let testSentence = 'Cats are amazing and I love them, but being allergic to cat hair is stupid and I hate it.'
+
+console.log('\nDefault analysis of test sentence:')
+console.log(sentiment.analyze(testSentence))
+
+//this function calls the sentiment analyzer internally and specifies certain custom weights for key words
+function weightedAnalyze(sentence)
+{
+    let options = {
+        extras: {
+          'cats': 5,
+          'amazing': 3,
+          'allergic': -4,
+          'hate': -5,
+          'stupid': -3,
+          'love': 5
+        }
+      };
+    let result = sentiment.analyze(sentence, options);
+
+    return result;
+}
+
+console.log('\nWeighted analysis of test sentence:')
+console.log(weightedAnalyze(testSentence))
+
 // let helloText = "say Hi";
 // let check = 4;
 // if (check > 3) {
