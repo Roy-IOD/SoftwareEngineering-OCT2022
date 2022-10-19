@@ -102,35 +102,21 @@ function weightedAnalyze(sentence)
 console.log('\nWeighted analysis of test sentence:')
 console.log(weightedAnalyze(testSentence))
 
-// let helloText = "say Hi";
-// let check = 4;
-// if (check > 3) {
-//      let hello = "say Hello instead";
-// console.log(hello);// "say Hello instead"
-// }
-// console.log(helloText) // hello is not defined
+let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+console.log(mountains);
+console.log(mountains[0]); // 'Everest'
+console.log(mountains[1]); // 'Fuji'
+console.log(mountains[2]); // 'Nanga Parbat'
 
-// let helloText = "say Hi";
-// let check = 4;
-// if (check > 3) {
-//      let hello = "say Hello instead";
-// console.log(hello);// "say Hello instead" }
-// console.log(hello) // hello is not defined
+mountains[1] = "Killamanjaro"
+mountains.push('Kosciosko')
 
-// let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
-// console.log(mountains[0]); // 'Everest'
-// console.log(mountains[1]); // 'Fuji'
-// console.log(mountains[2]); // 'Nanga Parbat'
+console.log(mountains)
 
-// mountains[1] = "Killamanjaro"
-// mountains.push('Kosciosko')
+let seas = ['Black Sea', 'Caribbean Sea', 'North Sea', 'Baltic Sea'];
+console.log(seas);
 
-// console.log(mountains)
+seas.unshift('Red Sea')
+console.log(seas)
 
-// let seas = ['Black Sea', 'Caribbean Sea', 'North Sea', 'Baltic Sea'];
-// console.log(seas);
-
-// seas.unshift('Red Sea')
-// console.log(seas)
-//
 
