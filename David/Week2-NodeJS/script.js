@@ -1,7 +1,7 @@
 console.log('Hello World')
 
 console.log ("----")
-
+console.log ("----")
 function sayHello(){
     console.log('Hello');
     console.log('Tuesday')
@@ -65,8 +65,7 @@ console.log ("----")
 
 console.log (printName("David"))
 console.log (printName2("David","Cook"))
-
-
+console.log ("----")
 
 // let helloText = "say Hi";
 // let check = 4;
