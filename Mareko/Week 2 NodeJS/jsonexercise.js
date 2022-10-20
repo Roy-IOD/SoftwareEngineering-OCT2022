@@ -1,8 +1,10 @@
-const user = {
-    "first_name" : "Sammy",
-    "last_name" : "Shark",
-    "age" : 25,
-    "followers" : 987
+const book = {
+    "bookTitle" : "The Book of Narnia",
+    "author" : "CS Lewis",
+    "genre" : "Horror",
+    "pages" : 987
     }
-    console.log(user.first_name);
-    console.log(user.age)
+    console.log(book.bookTitle);
+    console.log(book.author);
+    console.log(book.genre);
+    console.log(book.pages);
