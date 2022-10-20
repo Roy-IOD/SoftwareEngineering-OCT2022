@@ -68,10 +68,6 @@ function SentenceAnalyse(sentence){
 console.log(SentenceAnalyse("Isaac is stupid"))
   
 
-//changes
-
-
-
 
 
 
@@ -119,5 +115,7 @@ console.log(nbaArray)
 
 nbaArray[0] = "Suns"
 nbaArray[3] = "Celtics"
+
+console.log(nbaArray)
 
 console.log(nbaArray)
