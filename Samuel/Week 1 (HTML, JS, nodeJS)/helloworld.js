@@ -118,6 +118,4 @@ nbaArray[3] = "Celtics"
 
 console.log(nbaArray)
 
-
-
-   
+console.log(nbaArray)
