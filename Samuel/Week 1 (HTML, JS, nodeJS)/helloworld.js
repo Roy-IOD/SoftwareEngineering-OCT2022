@@ -68,10 +68,6 @@ function SentenceAnalyse(sentence){
 console.log(SentenceAnalyse("Isaac is stupid"))
   
 
-//changes
-
-
-
 
 
 
@@ -121,3 +117,22 @@ nbaArray[0] = "Suns"
 nbaArray[3] = "Celtics"
 
 console.log(nbaArray)
+
+
+
+const user {
+  "first_name" : "Sammy",
+  "last_name" : "Shark",
+  "age" : 25,
+  "followers" : 987
+  "address" : {
+      "street-name" : "17 Test Street"
+      "suburb" : "Code State"
+      ""
+  }
+  }
+  
+   console.log(user.first_name);
+   console.log(user.age)
+
+   
