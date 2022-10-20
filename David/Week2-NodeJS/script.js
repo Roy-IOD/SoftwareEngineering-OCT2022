@@ -83,6 +83,8 @@ console.log(sentiment.analyze(testSentence))
 
 //this function calls the sentiment analyzer internally and specifies certain custom weights for key words
 function weightedAnalyze(sentence)
+
+
 {
     let options = {
         extras: {
