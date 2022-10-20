@@ -6,3 +6,4 @@ const book = {
 }
 
 console.log(book.title)
+console.log(book.author)
