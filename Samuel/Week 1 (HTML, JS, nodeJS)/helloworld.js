@@ -70,7 +70,7 @@ console.log(SentenceAnalyse("Isaac is stupid"))
 
 //changes
 
-
+//making more changes
 
 
 
