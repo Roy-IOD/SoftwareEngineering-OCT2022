@@ -64,8 +64,14 @@
     </footer>
 
     <script>
+        console.log('this is a Message')
+        console.info('this is info')
+        console.warn('this is a warning')
+        console.error('this is an error');
+
         function orderNow(event) {
-            event.preventDefault();
+            event.preventDefault(); //prevent the form from submitting and refreshing the page
+
             const name = document.getElementById('customername').value;
             const street = document.getElementById('streetAddress').value;
             const suburb = document.getElementById('suburb').value;
