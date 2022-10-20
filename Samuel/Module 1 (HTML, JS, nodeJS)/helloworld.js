@@ -76,9 +76,6 @@ console.log(SentenceAnalyse("Isaac is stupid"))
 
 
 
-
-
-
 let myArray = ["ford", "volvo", "honda"]
 
 console.log(myArray[2])
@@ -118,5 +115,7 @@ console.log(nbaArray)
 
 nbaArray[0] = "Suns"
 nbaArray[3] = "Celtics"
+
+console.log(nbaArray)
 
 console.log(nbaArray)
