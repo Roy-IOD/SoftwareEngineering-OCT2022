@@ -80,7 +80,6 @@ console.log(SentenceAnalyse("Isaac is stupid"))
 
 
 
-
 let myArray = ["ford", "volvo", "honda"]
 
 console.log(myArray[2])
