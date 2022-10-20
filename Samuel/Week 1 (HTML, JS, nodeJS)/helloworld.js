@@ -37,6 +37,18 @@ console.log(helloName('Sam'))
 let addition = Sum(44,77)
 console.log(addition)
 
+
+
+
+
+
+
+
+
+
+
+
+
 var Sentiment = require('sentiment');
 var options = {
     extras: {
@@ -49,17 +61,24 @@ var sentiment = new Sentiment();
   var result = sentiment.analyze('cats are stupid.', options);
   console.dir(result);   
 
-var Sentiment = require('sentiment');
-var options = {
-    extras: {
-      'jokic': 5,
-      'goat': 2,
-    }
-  };
-var sentiment = new Sentiment();
-  var result = sentiment.analyze('Jokic is the GOAT stupid', options);
-  console.dir(result);  
+function SentenceAnalyse(sentence){
+    return sentiment.analyze(sentence)
+}
+
+console.log(SentenceAnalyse("Isaac is stupid"))
   
+
+
+
+
+
+
+
+
+
+
+
+
 let myArray = ["ford", "volvo", "honda"]
 
 console.log(myArray[2])
