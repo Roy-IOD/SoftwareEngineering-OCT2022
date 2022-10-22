@@ -7,7 +7,6 @@ let diceSides = form.dice.value
 //generate a random number limited by value of radio button
 let x = Math.floor(Math.random() * diceSides) +1
 
-//display that random number
-
+//display the random number
  document.getElementById("result").innerHTML="You have rolled " + x
 }
