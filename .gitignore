@@ -1,2 +1,5 @@
 node_modules
-Annabelle/index.html
+.vscode
+settings.json
+.hintrc
+.DS_Store
