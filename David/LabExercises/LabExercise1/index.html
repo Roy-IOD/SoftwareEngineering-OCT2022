@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Dice Generator</h1>
+<p>Select your Dice from the options below</p>
+
+<form onsubmit="selectDice(event,this)">
+    <input type="radio" id="d6" name="dice" value="6">
+    <label for="d6">Six Sided Dice</label><br>
+    <input type="radio" id="d8" name="dice" value="8">
+    <label for="d8">Eight Sided Dice</label><br>
+    <input type="radio" id="d10" name="dice" value="10">
+    <label for="10">Ten Sided Dice</label><br>
+    <button>Roll Dice</button>
+</form>
+
+<div id = "result"></div>
+
+</body>
+</html>
