@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(72, 110, 205);
+  }
+
+h1 {text-align: center;}
+
+h1 {
+    font-family: consolas;
+    border: 2px solid #ffffff;
+    border-radius: 45px;
+  }
+
+  h2 {text-align: center;}
+  h2 {
+    font-family: consolas;
+    font-size: x-large;
+    border: 7px solid #ffffff;
+    border-style: double;
+    box-sizing: border-box;
+    width: 300px;
+  }
