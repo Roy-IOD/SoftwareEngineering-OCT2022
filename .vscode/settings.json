@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
     "git.ignoreLegacyWarning": true,
     "liveServer.settings.port": 5501
 }
+=======
+  "git.ignoreLegacyWarning": true,
+  "liveServer.settings.port": 5501
+}
+>>>>>>> 0f3477999da43201defebb151ce31517805f800c

@@ -1,0 +1,36 @@
+body{
+    text-align: center;
+    height: 100vh;
+    display: block;
+    position: relative;
+    overflow: hidden 
+}
+.dice{
+    display: block;
+    position: relative;
+}
+.img-dice{
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+.row{
+    display: flex;
+}
+.col-6{
+    width: 50%;
+}
+button{ 
+    background: #180F4A;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    margin: 5%;
+    align-items: center;
+    text-align: center;
+}
+button:hover{
+    color: #f60000;
+}
