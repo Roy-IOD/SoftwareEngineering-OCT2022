@@ -1,0 +1,67 @@
+img.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    height: 10%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+h1, p, footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center; 
+}
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+  }
+
+  button {
+    background-color: #ff1e57;
+    border-radius: 6px;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-transform: uppercase;
+    width: 200px;
+    cursor: pointer;
+  }
+
+  .parent {
+    position: relative;
+  }
+
+ /* .consolelogHistory {
+    position: absolute;
+    color: white;
+    background-color: #17BDBB;
+    right: 100px;
+    top: 0px;
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    padding-right: 250px;
+    padding-left: 20px;
+    padding-bottom: 135px;
+    border-width: 3px;
+    border-color: #17BDBB;
+
+  } */
+
+  #placeholder {
+    height: 100px;
+    width: 100px;
+    padding: 50px;
+    margin: 50px auto;
+    border: 3px solid gray;
+    border-radius: 10px;  
+    font-size:80px;
+  }
+
+  footer {
+    background-color: #17BDBB;
+    padding: 25px;
+    color: white
+  }
