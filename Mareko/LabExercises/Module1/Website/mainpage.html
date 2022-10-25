@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div>
+        <img class="logo" src="devIncLogoFull.png" alt="devInc Logo">
+    </div>
+   
+    <h1>Dice Rolling Generator</h1>
+   
+    <p id="landingDescription">   devInc is proud to present our new Dice Rolling Generator! Say goodbye to your physical dice and hello to the future. 
+        <br>Pick between a 6, 10, and 12-faced die, based on the game you are playing, click the ‘Roll’ button and let the games begin!!
+    </p>
+    
+    <br>
+
+    <form action=>
+        <label for="dice"><b>Choose a dice: </b></label>
+        <select name="dice" id="dice" onchange="newRoll(this.value)">
+          <option value="6">6-sided</option>
+          <option value="10">10-sided</option>
+          <option value="12">12-sided</option>
+        </select>
+    </form>
+
+    <div class="parent">
+        <!-- <div class="consolelogHistory">
+            <p>Dice Roll History:</p>
+            <p id="dicerollHisory"></p>
+        </div>  -->
+
+        <p id="placeholder"></p>
+
+        <button id="button">Roll</button>
+    </div>  
+    
+    <br><br><br>
+
+    <footer id="footer">
+        <p id="footercopy">@copyright 2050 by nobody. all rights</p>
+    </footer>
+
+    <script src="diceRollTest.js"></script>
+</body>
+
+
+
+
+</html>
