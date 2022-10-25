@@ -12,25 +12,26 @@
     </header>
     <main>
 
-      <form method="POST" action="http://localhost:3000/profile">
+     <form method="POST" action="http://localhost:3000/profile">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname"> <br><br>
+
         <input type="radio" id="correct" name="correct" value="Are your details correct?">
-        <label for="favteam">Are your details correct?</label><br><br>
-  <input type="checkbox" id="sure" name="sure" value="Decision">
-  <label for="sure"> Are you sure?</label><br>
-  <br><br>
+        <label for="correct">Are your details correct?</label><br><br>
 
-  <label for="pet-select">Are your details correct?</label>
+         <input type="checkbox" id="sure" name="sure" value="Decision">
+         <label for="sure"> Are you sure?</label><br><br><br>
 
-<select name="yon" id="answer-select">
-    <option value="">Choose an option</option>
-    <option value="yes">YES</option>
-    <option value="no">NO</option>
-</select>
-      </form><br>
+         <label for="answer-select">Are your details correct?</label>
+          <select name="yon" id="answer-select">
+            <option value="">Choose an option</option>
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+         </select>
+         <button type="submit">Submit form</button>
+     </form><br>
 
     </main>
     <footer>Copyright 2021 &copy;</footer>
