@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Exercise</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="bg">
+    <header>
+    <h1 id="header">Used Car Warehouse</h1>
+    </header>
+    <section>
+    <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        </ul>
+    </nav>
+
+    <article>
+    <h2>2022 Land Rover Defender</h2>
+<img id="defender" src="https://images.unsplash.com/photo-1611001871555-1a09975c1975?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVmZW5kZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Picture of a 2022 Defender"
+<p>Defender's exterior is without match. Its distinctive silhouette instantly demonstrates the vehicle's character.</p>
+<a href="https://www.landrover.com.au/vehicles/defender/index.html" target="_blank">More information...</a>
+</article>
+<aside id="aside">
+<h2>Other Similar Cars</h2>
+<ul>
+<li><a href="#">Land Rover Discovery</a></li>
+<li><a href="#">Range Rover Evoque</a></li>
+</ul>
+</aside>
+</section>
+    <form class="form" action="/action_page">
+        <label for="firstName">First name:</label><br>
+        <input type="text" id="firstName" name="firstName" value="Mary"><br>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" id="lastName" name="lastName" value="Smith"><br>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id=""email" name="email" value="mary@a.com"><br>
+        <input onclick="orderSubmit()" type="submit" value="Submit">
+        </form>
+
+<footer>
+<p>@copyright 2050 by Ian Ormesher. All rights reserved</p>
+</footer>
+
+<script>
+    document.getElementById("ians-header").style.color = "red"
+
+    function orderSubmit() {
+        alert('Your order will be shipped soon.')
+    }
+
+    console.log("this is a Message")
+    console.info("this is an error")
+    console.warn("this is a warning")
+    console.error("this is an error")
+</script>
+</div>
+</body>
+</html>
