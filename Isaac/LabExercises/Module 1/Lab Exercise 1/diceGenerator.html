@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Generator</title>
+    <link rel="stylesheet" type="text/css" href="diceStylesheet.css" />
+    <script src = "diceScript.js"></script>
+</head>
+<body id = "body">
+    <div id = "dice">
+        <h2 id = "dicetitle">
+            Dice Generator
+        </h2>
+            <p id = "result">
+            </p>
+        <br>
+        <form id="form">
+            <label for="diceSelector">Number of Sides:</label>
+            <select id="diceSelector" name="dice">
+              <option value="4" selected>4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+              <option value="20">20</option>
+            </select>
+          </form>
+    </div>
+    <h1 id = "head"></h1>
+    <button id="button" onclick="diceRoll()">
+        Roll
+    </button>
+    
+</body>
+
+</html>
