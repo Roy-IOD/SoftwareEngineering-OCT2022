@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "lastName": [
+      "thi",
+      "tau"
+    ],
+    "favorite_language": "HTML",
+    "vehicle2": "Car",
+    "cars": "volvo"
+  }
+}
