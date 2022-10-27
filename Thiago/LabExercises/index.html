@@ -1,90 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Module 2</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="Exercises" />
-    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="description" content=" Module 2 Exercises" />
+    <meta name="keywords" content="HTML & CSS" />
     <meta name="author" content="Thiago Taujiro" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      table,
-      th,
-      td {
-        border: 1px solid black;
-      }
-    </style>
+    <title>M2 Exercises</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="form.html">Form</a>
-    </nav>
-    <h1>"My HTML learning journey"</h1>
-    <article>
-      <h2>"Learning elements - div, span, p, pre, ul, li, ol, article".</h2>
-    </article>
-    <div>One</div>
-    <div>two</div>
-    <div>Three</div>
-    <p>
-      The Sky is <span style="color: blue; font-weight: bold">blue</span>.<br />
-      The grass is
-      <span style="color: green; font-weight: bold">green</span>.<br />
-      The sun is <span style="color: orange; font-weight: bold"> Orange</span>.
-    </p>
-    <p>p represents paragraph</p>
-    <pre>
-        Text in         a pre element
-        is displayed in a fixed-width
-        font, and it preserves
-        both      spaces and
-        line breaks
-        </pre
-    >
-    <article>
-      <ul>
-        <li>Work</li>
-        <li>Study</li>
-        <li>Gym</li>
-        <li>Eat</li>
-        <li>Sleep</li>
-      </ul>
-      <ol>
-        <li>Sleep</li>
-        <li>Eat</li>
-        <li>Work</li>
-        <li>Study</li>
-        <li>Gym</li>
-      </ol>
-    </article>
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2">First header</th>
-          <th>Second header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>First cell - first row</td>
-          <td>Second cell - first row</td>
-          <td>Third cell - first row</td>
-        </tr>
-        <tr>
-          <td rowspan="2">First cell - third row</td>
-          <td>Second cell - third row</td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <img src="https://picsum.photos/200/300" alt="" />
-    <br />
-    <video autoplay width="250">
-      <source src="Module 2/misspolly.mp4" type="video/mp4" />
-    </video>
-    <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-      <code>audio</code> element.
-    </audio>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a target="_blank" href="form.html">Form</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Module 2 Lab 1</h1>
+
+      <article class="first">
+        <h2>HTML elements - div, span, pre, p, ul, li, ol</h2>
+        <div>HTML in a div</div>
+        <div>CSS in a div</div>
+        <div>JavaScript in a div</div>
+
+        <span>HTML in a span</span>
+        <span>CSS in a span</span>
+        <span>JavaScript in a span</span>
+
+        <pre>
+            Text in         a pre element
+                    is displayed in a fixed-width
+                    font, and it preserves
+                    both      spaces and
+                    line breaks</pre
+        >
+        <p>
+          Text in a p element is displayed in the standard page font, and it
+          doesn't preserve either spaces or line breaks
+        </p>
+
+        <p>
+          This text uses <em>emphasis</em> and <strong>strong</strong> elements
+          to change styles. <s>strikeout</s>.<br />
+          <i>italics</i>, <b>bold</b> and <u>underline</u> tags are discouraged
+          these days in favour of <code>&lt;em&gt;</code> and
+          <code>&lt;strong&gt;</code>, with extra CSS if needed
+        </p>
+
+        <h3>Unordered List - ul</h3>
+        <ul>
+          <li>avocado</li>
+          <li>kiwi</li>
+          <li>banana</li>
+        </ul>
+
+        <h3>Ordered List - ol</h3>
+        <ol>
+          <li>avocado</li>
+          <li>kiwi</li>
+          <li>banana</li>
+        </ol>
+      </article>
+
+      <article class="second">
+        <h2>HTML elements - table</h2>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">First/second header</th>
+              <th>Third header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First cell - first row</td>
+              <td>Second cell - first row</td>
+              <td>Third cell - first row</td>
+            </tr>
+            <tr>
+              <td rowspan="2">First cell - second &amp; third rows</td>
+              <td>Second cell - second row</td>
+              <td>Third cell - second row</td>
+            </tr>
+            <tr>
+              <td>First cell - third row</td>
+              <td>Second cell - third row</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <section class="third">
+        <h2>Images, Videos & Audio</h2>
+
+        <img src="https://picsum.photos/200/300" alt="" />
+
+        <video controls width="500">
+          <source src="Module 2/misspolly.mp4" type="video/mp4" />
+          Sorry, your browser doesn't support embedded videos.
+        </video>
+
+        <figure>
+          <figcaption>Listen to a song:</figcaption>
+          <audio
+            controls
+            src="Module 2/Jo_Module 2_lab-1-html_assets_dumbwaystodie.mp3"
+          >
+            Your browser does not support the <code>audio</code> element.
+          </audio>
+        </figure>
+        <br />
+        <iframe
+          width="900"
+          height="506"
+          src="https://www.youtube.com/embed/KlvrPTfDqZQ"
+          title="Welcome to the UTS campus in central Sydney"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>Copyright 2022</footer>
   </body>
 </html>
