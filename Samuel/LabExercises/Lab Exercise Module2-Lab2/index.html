@@ -25,7 +25,7 @@
         color: blue;
       }
 
-      p#style-me2.style-me1{
+      #style-me2.style-me1{
         color: purple
       }
 
@@ -58,15 +58,30 @@
       /* III. Position */
       .position-absolute {
         position: absolute;
-        left: 320px;
+        right: 100px;
+        z-index: 10;
       }
 
       .position-relative {
         position: relative;
       }
 
+      .position-sticky {
+        position: sticky;
+        top: 0;
+      }
 
       /* IV. Styling text */
+      .text-style{
+        color: rgb(79, 195, 170);
+        font-size:15px;
+        line-height: 25px;
+        font-weight: bold;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap')
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    }
 
 
       /* VI. calc() */
