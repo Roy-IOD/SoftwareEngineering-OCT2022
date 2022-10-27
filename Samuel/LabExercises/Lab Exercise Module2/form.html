@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+    <main>
+
+     <form method="POST" action="http://localhost:3000/profile">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"> <br><br>
+
+        <input type="radio" id="correct" name="correct" value="Are your details correct?">
+        <label for="correct">Are your details correct?</label><br><br>
+
+         <input type="checkbox" id="sure" name="sure" value="Decision">
+         <label for="sure"> Are you sure?</label><br><br><br>
+
+         <label for="answer-select">Are your details correct?</label>
+          <select name="yon" id="answer-select">
+            <option value="">Choose an option</option>
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+         </select>
+         <button type="submit">Submit form</button>
+     </form><br>
+
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>

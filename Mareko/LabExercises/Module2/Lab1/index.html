@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- "charset" specifies the character encoding for the HTML document -->
+    <meta charset="utf-8">
+    <!--"description" is a short relevant summary of the page-->
+    <meta name="description" content="Welcome to this automotive page!">
+    <!-- "keywords" help search engines gain more info about the page's content -->
+    <meta name="keywords" content="Cars, Wheels, Engine">
+    <!-- "author" gives credit to the person or company that made the website -->
+    <meta name="author" content="Mareko Petero">
+    <!-- "viewport" helps adjust webpage content to the screen the user is using-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    header {
+        margin: 20px;
+        color: blue;
+        font-size: 24px;
+
+    }
+    </style>
+
+</head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+
+    <h1>My HTML Learning Journey</h1>
+
+    <h2>Learning elements - div, span, p, pre, ul, li, ol, article etc.</h2>
+    
+    <h3>div &amp; span</h3>
+    <div>Car Doors</div><div>Car Horns</div><div>Car Wheels</div>
+    <br>
+    <span>Truck Doors </span><span>Truck Horns </span><span>Truck Wheels </span>
+
+    <h3>p &amp; pre</h3>
+    <p>
+    p represents paragraph
+    </p>
+    <pre>
+    Text in         a pre element
+    is displayed in a fixed-width
+    font, and it preserves
+    both      spaces and
+    line breaks
+    </pre>
+
+    <h3>article, ul, ol, &amp; li</h3>
+    <article>
+        <ul>
+            <li>Wheels</li>
+            <li>Horns</li>
+            <li>Wind Shields</li>
+        </ul>
+    
+        <ol>
+            <li>Knobs</li>
+            <li>Windows</li>
+            <li>Doors</li>
+        </ol>
+    </article>
+
+    <h3>table, thead, tr, th, td, &amp; tbody</h3>
+    <article>
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2">First header</th>
+                <th>Second header</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First cell - first row</td>
+                    <td>Second cell - first row</td>
+                    <td>Third cell - first row</td>
+                </tr>
+                <tr>
+                    <td>Practice cell 1</td>
+                    <td rowspan="2">Practice cell 2</td>
+                </tr>
+                <tr>
+                    <td>Practice cell 3</td>
+                    <td rowspan="2">Practice cell 4</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <h3>image</h3>
+
+    <img src="https://picsum.photos/200/300" alt="" />
+
+    <h3>video</h3>
+    <video controls width="250">
+        <source src="misspolly.mp4" type="video/mp4">
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+
+    <h3>audio</h3>
+    <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+    </audio>
+
+
+
+    <br>
+    <main>
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>
