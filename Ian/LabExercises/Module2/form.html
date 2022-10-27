@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+    <form method="POST" action="http://localhost:3000/profile">
+      <label for="fname">First name</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name</label><br>
+      <input type="text" id="lname" name="lname"><br>
+      <label for="radio">Choose this option</label><br>
+      <input type="radio" id="radio" name="radio"><br>
+      <label for="checkbox">Check this box</label><br>
+      <input type="checkbox" id="checkbox" name="checkbox"><br>
+      <label for="cars">Choose Your Car:</label>
+
+      <select id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="ford">Ford</option>
+        <option value="holden">Holden</option>
+        <option value="BMW">BMW</option>
+      </select>
+      <button type="submit">Submit Form</button>
+    </form>
+<!--This is just a comment that you can't see on the page-->
+    <main>
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>
