@@ -16,7 +16,7 @@
         <header>
             <nav>
                 <a href="index.html">Home</a>
-                <a target="_blank" href="form.html">Form</a>
+                <a href="form.html">Form</a>
             </nav>
         </header>
         <main>
@@ -66,9 +66,9 @@
             <article class="second">
                 <h2>HTML elements - table</h2>
                 <table>
-                    <thead>
+                    <thead> <!-- the thead section usually contains headings -->
                         <tr>
-                            <th colspan="2">First/second header</th>
+                            <th colspan="2">First/second header</th> <!-- th tags also contain headings -->
                             <th>Third header</th>
                         </tr>
                     </thead>
@@ -98,24 +98,25 @@
                     src="assets/jomo.jpg"
                     alt="Joy of Missing Out"
                 />            
-            <video controls width="500">
-                <source src="assets/misspolly.mp4" type="video/mp4" />
-                Sorry, your browser doesn't support embedded videos.
-            </video>  
+                <video controls width="500">
+                    <source src="assets/misspolly.mp4" type="video/mp4" />
+                    Sorry, your browser doesn't support embedded videos.
+                </video>  
 
-            <!-- comment that won't be displayed -->
-            <figure>
-                <figcaption>Listen to a cute song:</figcaption>
-                <audio controls src="assets/dumbwaystodie.mp3">
-                    Your browser does not support the <code>audio</code> element.
-                </audio>
-            </figure>   
-            
-            <!-- iframes are a way to embed content from other websites into your own, while still running from their server and not yours. -->
-            <!-- I copied this from YouTube by using the Share feature, then choosing Embed, and copying their code. -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/EOfy5LDpEHo" title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- comment that won't be displayed -->
+                <figure>
+                    <figcaption>Listen to a cute song:</figcaption>
+                    <audio controls src="assets/dumbwaystodie.mp3">
+                        Your browser does not support the <code>audio</code> element.
+                    </audio>
+                </figure>   
+                
+                <!-- iframes are a way to embed content from other websites into your own, while still running from their server and not yours. -->
+                <!-- I copied this from YouTube by using the Share feature, then choosing Embed, and copying their code. -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EOfy5LDpEHo" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>    
+            
         </main> 
 
         <footer>Copyright 2022</footer>
