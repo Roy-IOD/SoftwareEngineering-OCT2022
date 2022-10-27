@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+        <form method="POST" action="http://localhost:3000/profile">
+            <div>
+                <h3>What is your name?</h3>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" value="">
+            </div>
+            <br>
+            <div>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" value="">
+            </div>
+
+            <div>
+                <h3>What country are you from?</h3>
+                <input type="radio" id="australia" name="country-option1" value="Australia">
+                <label for="australia">Australia</label>
+                
+                <input type="radio" id="newzealand" name="country-option2" value="New Zealand">
+                <label for="newzealand">New Zealand</label>
+
+                <input type="radio" id="other" name="country-option3" value="Other">
+                <label for="other">Other</label>
+            </div>
+
+            <div>
+                <h3>How many cars do you wish to buy?</h3>
+                <input type="checkbox" id="one" name="one" value="One">
+                <label for="one">One</label>
+
+                <input type="checkbox" id="two" name="two"  value="Two">
+                <label for="two">Two</label>
+
+                <input type="checkbox" id="three" name="three" value="Three">
+                <label for="three">Three</label>
+            </div>
+            <br>
+            <div>
+                <label for="cars">Choose a car:</label>
+                <select name="cars" id="cars">
+                    <option value="ford">Ford</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="mazda">Mazda</option>
+                    <option value="toyota">Toyota</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit">Submit Form</button>
+        </form>
+        <br>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+    <main>
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>
