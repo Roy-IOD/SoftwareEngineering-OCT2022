@@ -1,0 +1,42 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 0px;
+}
+
+html { 
+    background: url(images/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+header {
+    background-color: dodgerblue;
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    background-color: dodgerblue;
+    border-radius: 5px;
+    border: 1px;
+    padding: 20px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    width: 300px;
+}
+
+#placeholder {
+    height: 175px;
+    width: 175px;
+    padding: 50px;
+    margin: 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 150px;
+    color: black;
+    background-color: white;
+    margin: auto;
+}
