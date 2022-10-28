@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "myname": "Cook",
+      "fruit2": "Orange",
+      "fruit3": "Banana",
+      "fruits": "pineapple",
+      "id": 1
+    },
+    {
+      "myname": "Cook",
+      "fruit2": "Orange",
+      "fruits": "pineapple",
+      "id": 2
+    },
+    {
+      "myname": "Cook",
+      "fruit2": "Orange",
+      "fruits": "pineapple",
+      "id": 3
+    }
+  ]
+}
