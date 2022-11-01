@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+:root{
+    --blue:#2980b9;
+    --black:#333;
+    --white:#fff;
+    --light-color:#777;
+    --light-bg:#eee;
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+  }
+
 * {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -17,6 +26,19 @@ body {
     background-position: center;
     height: 100vh;
 }
+
+html::-webkit-scrollbar{
+    width:10px;
+  }
+  
+  html::-webkit-scrollbar-track{
+    background: var(--blue);
+  }
+  
+  html::-webkit-scrollbar-thumb{
+    background: var(--white);
+    border-radius: 50px;
+  }
 
 .linkedin img{
     width: 25px;
