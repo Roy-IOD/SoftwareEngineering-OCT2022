@@ -2,112 +2,101 @@
 <html>
   <head>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
-.class {
-    margin: 20px;
-    margin: 10px;
-    margin: 30px;
-}
-
       /* I. Selectors */
       /* Put styles for sections 1.1, 1.2, 1.3 and 1.4 here */
-      article {
-        margin: 20px 0;
-        padding: 20px;
-        border: 1px solid black;
-      }
-
-      .style-me1 {
-        color:red;
-      }
-
-      #style-me2 {
-        color: blue;
-      }
-
-      #style-me2.style-me1{
-        color: purple
-      }
-
-
-      /* Put styles for sections 1.2, 1.3, 1.4 here */
+        article {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid black;
+        }        
+        .style-me1 {
+            color: red;
+        }
+        #style-me2 {
+            color: blue;
+        }
+        .style-me1#style-me2 {
+            color: purple;
+        }
+     
+      /* Put styles for sections 2.1, 2.2 here */
       .my-descendants-are-styled p {
-        background-color: red;
-      }
+            background-color: red;
+        }
+        .my-children-are-styled > p {
+            background-color: red;
+        }
 
-      .my-children-are-styled > p {
-        background-color: red;
-      }
 
       /* II. Box model and common properties */
-      .box {
-        border: 1px solid black;
-        margin: 10px 25px;
-        padding: 10px;
-        width: 750px;
-        height: 150px;
-        box-sizing: border-box;
-        outline: 10px;
-        background-image: url('https://codetheweb.blog/assets/img/posts/css-advanced-background-images/mountains.jpg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }     
-
+        .box {
+            margin: 25px 25px 25px 25px;
+            padding: 5px 5px 5px 5px;
+            height: 100px;
+            width: auto;
+            border-style: dashed;
+            border-color: red;
+            border-width: 10px;
+            box-sizing: initial;
+            overflow: scroll;
+            outline-width: 10px;
+            border-radius: 50%;
+            background-image: url(./assets/images/img1.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            }
 
       /* III. Position */
-      .position-absolute {
-        position: absolute;
-        right: 100px;
-        z-index: 10;
-      }
-
-      .position-relative {
-        position: relative;
-      }
-
-      .position-sticky {
-        position: sticky;
-        top: 0;
-      }
+        .position-absolute {
+            position: absolute;
+            top: 70px;
+            right: 15px;
+            }
+        .position-relative {
+            position: relative;
+            }
+        .position-sticky {
+            position: sticky;
+            top: 0;
+            }
 
       /* IV. Styling text */
-      .text-style{
-        color: rgb(79, 195, 170);
-        font-size:15px;
-        line-height: 25px;
-        font-weight: bold;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        letter-spacing:normal ;
-        word-spacing: normal;
-        text-transform: uppercase;
-        text-decoration: line-through;
-      }
 
-      a, a:link {
-        color: rgb(0, 187, 255);
-        text-decoration: none;
-      }
+      @import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+        .text-style {
+            color: purple;
+            font-size: medium;
+            line-height: 50px;
+            font-weight:bold;
+            font-family: 'Island Moments', cursive;
+            text-align: center;
+            letter-spacing: 5px;
+            word-spacing: 10px;
+            text-transform: uppercase;
+            text-decoration: dotted;
+        }
+      
 
-      a:hover {
-        color: red;
-        font-weight: bold;
-        text-decoration: underline;
-        border: 1px solid blue;
-      }
-
-      a:active {
-        color: green;
-      }
-
-      a:visited {
-        
-      }
+    /* V. Styling Links */
+        a, a:link, a:visited {
+            color: yellow;
+            font-weight:bold;
+            font-size: larger;
+        }
+        a:hover, :active, a:focus 
+        a:visited {
+            color: red;
+            font-weight:bold;
+            font-size: larger;
+        }
 
 
       /* VI. calc() */
+
+        .calc-style {
+            width: calc(100vw - 100px);
+        }
 
     </style>
   </head>
