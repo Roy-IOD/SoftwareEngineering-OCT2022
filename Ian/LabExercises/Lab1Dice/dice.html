@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="images/x-icon" href="/images/dice-favicon.png">
+    <title>Roll the Dice</title>
+</head>
+<body>
+    <header>
+        <h1>ROLL THE DICE</h1>
+    </header>
+    <form onsubmit="rollTheDice2(event,this)">
+    <h2>How Many Faces on the Dice?</h2>
+    <input type="radio" id="six" name="faceqty" value="6" checked>
+    <label for="six">Six</label><br>
+    <input type="radio" id="eight" name="faceqty" value="8">
+    <label for="eight">Eight</label><br>
+    <input type="radio" id="ten" name="faceqty" value="10">
+    <label for="ten">Ten</label><br>
+    <br>
+    <button id="button">Let's Roll!</button>
+    <script src="script.js"></script>
+    </form>
+    <br>
+        <p id="placeholder"></p>
+ </body>
+</html>

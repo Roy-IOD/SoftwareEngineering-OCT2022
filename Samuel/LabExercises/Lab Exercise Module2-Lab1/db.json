@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "fname": "hello2",
+      "lname": "pleasework",
+      "correct": "Are your details correct?",
+      "sure": "Decision",
+      "yon": "no",
+      "id": 1
+    },
+    {
+      "fname": "yo",
+      "lname": "yoooo",
+      "correct": "Are your details correct?",
+      "sure": "Decision",
+      "yon": "yes",
+      "id": 2
+    }
+  ]
+}
