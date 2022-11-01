@@ -1,0 +1,21 @@
+body { font-family: serif; background: #ddd; }
+p, div, h1, h2, h3, h4, h5 { margin: 0 } /* resetting default browser margins back to zero */
+
+section { max-width: 1200px; margin: 0 auto; background: #fff; padding: 1em; }
+
+a { color: purple; } 
+a:hover { text-transform: uppercase; cursor: grabbing }
+
+#margin-example-1, #margin-example-2, #margin-example-3 { border: 1px solid #ddd; margin: 1em; padding: 1em; }
+
+#margin-example-1 div { margin: 2rem 0; background: lavender; }
+#margin-example-1 p { margin: 0.4rem 0 1.2rem 0; background: yellow; }
+
+#margin-example-2 p { margin: 10px 0 20px 0; background: lightgreen; }
+#margin-example-2 div { margin: 0; padding: 5px 0; background: lightblue}
+
+#margin-example-3 div { margin: 40px 0 80px 0; background: lightgoldenrodyellow; font-family: Comfortaa, sans-serif; }
+
+.banner { background: url(tent.jpg) no-repeat center center; height: 500px; position: relative; background-size: cover; }
+.banner h1 { position: absolute; top: calc(50% - 35px); width: 100%; text-align: center; font-family: Comfortaa, sans-serif; color: #fff; font-size: 70px; }
+.banner:before { content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.3) }
