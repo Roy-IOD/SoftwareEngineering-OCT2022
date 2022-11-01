@@ -1,7 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-image: url(https://github.com/Roy-IOD/SoftwareEngineering-OCT2022/blob/b80854a8b1065d304762bb3a0f7acd7bc2a889ed/Samuel/LabExercises/Lab%20Exercise%20Module2-Lab4/Images/background.jpg) ;
+    background-image: url(/Samuel/LabExercises/Lab\ Exercise\ Module2-Lab4/Images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.linkedin img{
+    width: 25px;
+    height:25px;
+}
+
+.facebook img{
+    width: 24px;
+    height:24px;
+}
+
+.instagram img{
+    width: 25px;
+    height: 25px;
+}
+
+.container .share {
+    align-items: baseline;
+    margin-top: 0;
 }
