@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "fname": "Donna ",
+      "lname": "Petero",
+      "country-option2": "New Zealand",
+      "one": "One",
+      "cars": "ford",
+      "id": 1
+    },
+    {
+      "fname": "Mareko",
+      "lname": "Pablo",
+      "country-option1": "Australia",
+      "one": "One",
+      "cars": "mazda",
+      "id": 2
+    },
+    {
+      "fname": "Coco",
+      "lname": "Paulson",
+      "country-option1": "Australia",
+      "three": "Three",
+      "cars": "nissan",
+      "id": 3
+    }
+  ]
+}
