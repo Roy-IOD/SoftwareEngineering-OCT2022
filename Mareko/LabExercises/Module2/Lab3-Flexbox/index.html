@@ -44,8 +44,7 @@
 
       .flex-container {
         display: flex;
-        flex-wrap: wrap;
-        flex-basis: 50%;
+        flex-direction: row;
       }
 
       .flex-item-1 {
@@ -73,6 +72,13 @@
         justify-content: space-between;
       }
 
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .flex-basis-item-50 {
+        flex-basis: 50%;
+      }
 
     </style>
   </head>
@@ -106,10 +112,10 @@
     <section>
       <h3>Wrapping items</h3>
       <div class="flex-container flex-wrap">
-        <div class="flex-basis-item-50 h-80 background-1">This is a test.</div>
-        <div class="flex-basis-item-50 h-80 background-2">Did you pass?</div>
-        <div class="flex-basis-item-50 h-80 background-3">You didn't?</div>
-        <div class="flex-basis-item-50 h-80 background-4">That's okay try again!</div>
+        <div class="flex-basis-item-50 h-80 background-1">1</div>
+        <div class="flex-basis-item-50 h-80 background-2">2</div>
+        <div class="flex-basis-item-50 h-80 background-3">3</div>
+        <div class="flex-basis-item-50 h-80 background-4">4</div>
       </div>
     </section>
   </body>
