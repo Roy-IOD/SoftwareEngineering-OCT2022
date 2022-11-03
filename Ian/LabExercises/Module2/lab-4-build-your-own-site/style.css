@@ -1,3 +1,5 @@
+/* Add in CSS reset, try from meyerweb.com/eric/tools/css/reset */
+
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -6,3 +8,24 @@
   'GRAD' 0,
   'opsz' 48
 }
+
+/* This is a CSS variable example, see page 72 */
+:root {
+  --primary-color: dodgerblue;
+  --secondary-color: navy;
+  --border-1: solid 5px var(--secondary-color);
+  --spacing: 5px;
+}
+
+/* This is to make the screen width smaller on mobile */
+@media screen and (min-width: 800px [and max-width: 1200px]) {
+  body (
+    font-size: 15px;
+  )
+}
+
+/* This makes images no wider than the width of the page */
+img { 
+  max-width: 100%; 
+}
+
