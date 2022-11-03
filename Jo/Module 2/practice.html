@@ -12,13 +12,24 @@
 </head>
 <body>
 
-    <section>
+    <nav class="toggle-off">
+        <ul class="menu">
+            <li><a href="#html-entities">HTML Entities</a></li>
+            <li><a href="#collapsing-margins">Collapsing margins</a></li>
+            <li><a href="#links-icons">Links & Icons</a></li>
+            <li><a href="#colours-backgrounds">Colours & Backgrounds</a></li>
+        </ul>
+        <span class="material-symbols-rounded mobile-menu-toggle" onclick="toggleMobileMenu()">menu</span>
+    </nav>
+
+    <section id="html-entities">
         <h2>HTML Entities</h2>
         <p>5 + 5 &lt; 6 + 6</p>
         <p><code>&lt;strong&gt;</code> elements are bold by default</p>
+        <p>&copy; Copyright by me 2020 &rarr; 2022</p>
     </section>
 
-    <section>
+    <section id="collapsing-margins">
         <!-- taken from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing -->
         <h2>Collapsing margins</h2>
         <h3>Example #1</h3>
@@ -62,7 +73,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="links-icons">
         <h2>Links &amp; Icons</h2>
         
         <a href="#">Link Here</a>
@@ -81,12 +92,31 @@
         </div>
     </section>
 
-    <section>
+    <section id="colours-backgrounds">
         <h2>Colours and Backgrounds</h2>
 
         <div class="banner">
             <h1>Camping</h1>
         </div>
+
+        <!-- need to give this a max-width: 100% in CSS so that it doesn't push out the layout on small screens, but is contained within the max screen width -->
+        <img src="tent.jpg">
     </section>
+
+    <script>
+        //simple javascript function to change the class of the <nav> when the mobile toggle has been clicked 
+        function toggleMobileMenu()
+        {
+            let toggleState = document.querySelector('nav').className;
+            if (toggleState == 'toggle-off')
+            {
+                document.querySelector('nav').className = 'toggle-on'
+            }
+            else
+            {
+                document.querySelector('nav').className = 'toggle-off'
+            }
+        }
+    </script>
 </body>
 </html>
