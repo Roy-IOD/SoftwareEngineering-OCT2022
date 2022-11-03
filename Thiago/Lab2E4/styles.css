@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing:border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    background:#f27a30;
+    justify-content:center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+.logo{  
+    flex: 20%;
+    margin-left: 10%;
+    text-align:left;
+}
+
+.logo h1{
+    font-family: 'Lobster',cursive;
+    color: #180F4A;
+    font-size: 35px;
+    text-align: center;
+}
+
+.menu{
+    flex: 70%;
+    text-align: right;
+    padding: 20px;
+
+}
+
+.menu a{
+    color:#180F4A;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 16px;
+}
+
+.menu a:hover{
+    color:white;
+    border-top:4px solid #180F4A;
+}
+
+#buttom{
+    background: #180F4A;
+    padding: 10px 25px;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10%;
+    margin: 5%;
+}
+#botao:hover{
+    border: none;
+    color: #f27a30;
+}
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background:white;
+    padding: 100px;
+}
+.headline{
+    margin-left: 10%;
+    flex: 40%;
+}
+
+.headline h2{
+    font-weight: 900;
+    font-size: 20px;
+    color: #180F4A;
+    padding: 0;
+    margin: 0;
+}
+
+.headline p{
+    color: gray;
+    text-align: left;
+}
+
+.contact-btn{
+    display: inline-block;
+    background: #f27a30;
+    padding: 20px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+        text-decoration: none;}
+
+    .contact-btn:hover{
+        background: #180F4A;}
+
+.img-headline{
+    margin-right: 10%;
+    flex: 40%;
+    text-align: center;
+}
+section{
+display: inline-block;
+    margin-top: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5%;
+    text-align: center;
+    width:90%;
+}
+
+section h2{
+    width: 100%;
+    font-size: 50px;
+    margin: 0;
+    font-family:'Lobster',cursive;
+    font-weight: bold;
+    color: #180F4A;
+}
+.servicos{
+    display: inline-block;
+    margin: 5%;
+}
+.cards{
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    margin: 1%;
+    border: 1px solid #f27a30;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.texto-oculto{
+    display: none;
+}
+
+.cards:hover{
+    background: #f27a30;
+    color: white;
+    padding: 40px;
+}
+
+.cards:hover img{
+    display: none;
+}
+
+.cards:hover .card-text{
+    display: none;
+}
+
+.cards:hover .texto-oculto{
+    display: block;
+}
+footer{
+    margin-top: 100px;
+    height: 400px%;
+    background-image: linear-gradient(180deg,#180F4A,#090422,black );
+    text-align: center;
+    border-top: 5px solid #f27a30 ;
+}
+
+.logo-rodape{
+    padding: 50px;
+
+}
+.thiago{
+    font-family: 'Lobster',cursive;
+    color: white;
+    font-size: 34px;
+}
+.whats {
+position: fixed;
+bottom: 5px;
+right: 5px;
+}
+@media screen and (max-width:1000px){
+   .navbar{
+    position: relative;
+   }
+    .menu{
+        display: none;
+    }
+    .logo{
+        margin: 0;
+        text-align: center;
+    }
+    .header{
+        padding-top: 50px;
+    }
+    .headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
+    }
+
+    .headline p{
+
+        text-align: center;
+    }
+
+    .img-headline{
+        flex: 100%;
+        margin: 5%;
+        text-align: center;
+    }
+
+.whats{
+
+    display: none;
+}
+
+.cards{
+    width: 100%;
+
+}}

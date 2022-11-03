@@ -12,28 +12,15 @@
 </head>
 <body>
 
-    <nav class="toggle-off">
-        <ul class="menu">
-            <li><a href="#html-entities">HTML Entities</a></li>
-            <li><a href="#collapsing-margins">Collapsing margins</a></li>
-            <li><a href="#links-icons">Links & Icons</a></li>
-            <li><a href="#colours-backgrounds">Colours & Backgrounds</a></li>
-        </ul>
-        <span class="material-symbols-rounded mobile-menu-toggle" onclick="toggleMobileMenu()">menu</span>
-    </nav>
-
-    <section id="html-entities">
+    <section>
         <h2>HTML Entities</h2>
         <p>5 + 5 &lt; 6 + 6</p>
         <p><code>&lt;strong&gt;</code> elements are bold by default</p>
-        <p>&copy; Copyright by me 2020 &rarr; 2022</p>
     </section>
-
-    <section id="collapsing-margins">
+    <section>
         <!-- taken from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing -->
         <h2>Collapsing margins</h2>
         <h3>Example #1</h3>
-
         <div id="margin-example-1">
             <p>The bottom margin of this paragraph is collapsed …</p>
             <p>
@@ -53,29 +40,27 @@
                 </p>
             </div>
             <p>I am <code>2rem</code> below the element above.</p>        
-
         </div>
-
         <h3>Example #2</h3>
-
         <div id="margin-example-2">        
             <p>All <code>&lt;p&gt;</code> elements have top margin of 10px and bottom margin of 20px, and background light green</p>
             <p>When they are adjacent siblings (next to each other at the same level) this is collapsed so instead of 10+20 = 30px, it's 20px between each</p>
             <p>i am sibling number 3</p>
             <div>i am a blue <code>&lt;div&gt;</code> tag with padding and no margin</div>
         </div>
-
         <h3>Example #3</h3>
 
         <div id="margin-example-3">    
             <div></div>     
+            <p>The above div is empty</p>
             <p>The above div is empty, so its top and bottom margins collapse</p>
         </div>
     </section>
 
-    <section id="links-icons">
+    <section>
+        <h2>Links</h2>
         <h2>Links &amp; Icons</h2>
-        
+
         <a href="#">Link Here</a>
 
         <div class="sports-icons">
@@ -92,31 +77,11 @@
         </div>
     </section>
 
-    <section id="colours-backgrounds">
+    <section>
         <h2>Colours and Backgrounds</h2>
-
         <div class="banner">
             <h1>Camping</h1>
         </div>
-
-        <!-- need to give this a max-width: 100% in CSS so that it doesn't push out the layout on small screens, but is contained within the max screen width -->
-        <img src="tent.jpg">
     </section>
-
-    <script>
-        //simple javascript function to change the class of the <nav> when the mobile toggle has been clicked 
-        function toggleMobileMenu()
-        {
-            let toggleState = document.querySelector('nav').className;
-            if (toggleState == 'toggle-off')
-            {
-                document.querySelector('nav').className = 'toggle-on'
-            }
-            else
-            {
-                document.querySelector('nav').className = 'toggle-off'
-            }
-        }
-    </script>
 </body>
 </html>
