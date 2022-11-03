@@ -1,0 +1,54 @@
+html {
+    background-image: url(https://images5.alphacoders.com/711/711093.jpg);
+    background-size: cover;
+}
+
+#body {
+    text-align: center;
+    padding-top: 100px;
+}
+
+#dicetitle {
+    letter-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+#result {
+    margin: auto;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+#form {
+    padding-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#diceSelector {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+#button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform:uppercase;
+    letter-spacing: 2px;
+
+}

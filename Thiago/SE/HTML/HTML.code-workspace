@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../js-basics"
+	}
+],
+  "settings": {
+	"liveServer.settings.multiRootWorkspaceName": "HTML",
+	"liveServer.settings.port": 5501
+  }
+}

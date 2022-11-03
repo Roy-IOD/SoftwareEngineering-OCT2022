@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+      </nav>
+    </header>
+    <main>
+        <form method="POST" action="http://localhost:3000/profile">
+           <div><label for="firstname">First name</label><input type="text" id="firstname"></div>
+           <div><label for="lastname">Second Name</label><input type="text" id="lastname"></div>
+           
+           <div>
+           <input type="radio" id="david" name="myname" value="David">
+           <label for ="david">David</label>
+           <input type="radio" id="cook" name="myname" value="Cook">
+           <label for="cook">Cook</label>
+           </div>
+
+           <div>
+           <input type="checkbox" id="fruit1" name="fruit1" value="Apple">
+           <label for="fruit1">I Like Apples</label>
+           <input type="checkbox" id="fruit2" name="fruit2" value="Orange">
+           <label for="fruit2">I Like Oranges</label>
+           <input type="checkbox" id="fruit3" name="fruit3" value="Banana">
+           <label for="fruit3">I Like Bananas</label>
+        </div>
+
+        <label for="fruits">Select a Fruit</label>
+        <select id="fruits" name="fruits" size="3">
+            <option value="kiwi">Kiwi</option>
+            <option value="pineapple">Pineapple</option>
+            <option value="manarin">Mandarin</option>
+        </select><br>
+        <button type="submit">Submit form</button>
+        </form>            
+  
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>

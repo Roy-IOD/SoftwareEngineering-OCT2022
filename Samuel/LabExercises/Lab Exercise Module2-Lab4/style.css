@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root{
+    --blue:#2980b9;
+    --black:#333;
+    --white:#fff;
+    --light-color:#777;
+    --light-bg:#eee;
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+  }
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+
+body {
+    background-image: url(/Samuel/LabExercises/Lab\ Exercise\ Module2-Lab4/Images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+html::-webkit-scrollbar{
+    width:10px;
+}
+  
+html::-webkit-scrollbar-track{
+    background: var(--blue);
+}
+  
+html::-webkit-scrollbar-thumb{
+    background: var(--white);
+    border-radius: 50px;
+}
+
+.container {
+  padding: 100px 9%;
+  display: flex;
+}
+
+.container .profile {
+  flex:1 1 400px;
+  background: blue;
+  padding: 30px 20ox;
+  text-align: center;
+  position: sticky;
+  top: 20px;
+  left:0;
+}
+
+.profilepic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+}
+
+
+.container .information {
+  flex:1 1 1000px;
+  background: white;
+}
