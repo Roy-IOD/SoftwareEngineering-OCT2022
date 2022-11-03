@@ -1,0 +1,64 @@
+.mainbody {
+margin-top: 10%;
+margin-left: 50%;
+}
+
+.nam{
+margin-left: 55%;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .greet {
+    position: absolute;
+    bottom: 300px;
+    left: 700px;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .nam {
+    position: absolute;
+    bottom: 250px;
+    right: 170px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #1976d2;
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  button.seework {
+    position: absolute;
+    right: 220px;
+    bottom: 160px;
+    padding:0.6em 2em;
+    border-radius: 8px;
+    color:#fff;
+    background-color:#1976d2;
+    font-size:1.1em;
+    border:0;
+    cursor:pointer;
+    margin:1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
