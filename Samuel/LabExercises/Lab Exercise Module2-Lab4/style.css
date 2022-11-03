@@ -26,7 +26,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     height: 100vh;
-}
+   }
 
 img {
   max-width: 100%;
@@ -59,14 +59,16 @@ img {
 }
 
 .container .profile h3{
-  color:var(--black);
+  color:var(--white);
   font-size: 20px;
+  font-weight: 700;
 }
 
 .container .profile p{
-  color:var(--black);
+  color:var(--white);
   padding: 5px 0;
   font-size: 15px;
+  font-weight: 700;
 }
 
 .container .profile .share a{
@@ -88,6 +90,7 @@ img {
 .container .information {
   flex:1 1 1000px;
   padding:20px 30px;
-  color: var(--light-black);
+  color: var(--white);
+  font-weight: 700;
   border-radius: 10px;
 }
