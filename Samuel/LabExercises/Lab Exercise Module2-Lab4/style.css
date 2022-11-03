@@ -27,37 +27,47 @@ body {
     height: 100vh;
 }
 
+img {
+  max-width: 100%;
+}
+
 html::-webkit-scrollbar{
     width:10px;
-  }
+}
   
-  html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track{
     background: var(--blue);
-  }
+}
   
-  html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb{
     background: var(--white);
     border-radius: 50px;
-  }
-
-  
-
-.linkedin img{
-    width: 25px;
-    height:25px;
 }
 
-.facebook img{
-    width: 24px;
-    height:24px;
+.container {
+  padding: 100px 9%;
+  display: flex;
 }
 
-.instagram img{
-    width: 25px;
-    height: 25px;
+.container .profile {
+  flex:1 1 400px;
+  background: blue;
+  padding: 30px 20ox;
+  text-align: center;
+  position: sticky;
+  top: 20px;
+  left:0;
 }
 
-.container .share {
-    align-items: baseline;
-    margin-top: 0;
+.profilepic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+}
+
+
+.container .information {
+  flex:1 1 1000px;
+  background: white;
 }
