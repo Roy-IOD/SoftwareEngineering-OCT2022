@@ -96,9 +96,19 @@ div {
   'opsz' 48
 }
 
+/* I started looking at https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535
+which explains how to make nav with flexbox */
 .topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: dodgerblue;
-  overflow: hidden;
+}
+
+.topnav li a {
+  display: block;
+  padding: 15px 5px;
 }
 
 .topnav a {
