@@ -8,6 +8,46 @@
     <meta name="author" content="[Your name]" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .flex-item-1 {
+        flex:1 80px;
+      }
+
+      .flex-item-2 {
+        flex:1 80px;
+      }
+
+      .flex-item-3 {
+        flex:1 80px;
+      }
+
+      .flex-item-4 {
+        flex:1 80px;
+      }
+
+      .flex-center {
+        justify-content:center;
+        align-items: center;
+      }
+
+      .flex-space-between {
+        justify-content: space-between;
+      }
+
+      .flex-basis-item-50 {
+        flex-basis: 50%;
+        order:5;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
       .background-1 {
         background: #68B0AB;
       }
@@ -42,43 +82,24 @@
         width: 80px;
       }
 
-      .flex-container {
-        display: flex;
-        flex-direction: row;
+      .flex-basis-item-50.h-80.background-1 {
+        order:4;
+        flex-basis: 25%;
+      }
+      
+      .flex-basis-item-50.h-80.background-2 {
+        order:3;
+      }
+      .flex-basis-item-50.h-80.background-3 {
+        order:2;
       }
 
-      .flex-item-1 {
-        flex: 10px;
+      .flex-basis-item-50.h-80.background-4 {
+        order:1;
       }
 
-      .flex-item-2 {
-        flex: 200px;
-      }
 
-      .flex-item-3 {
-        flex: 30px
-      }
 
-      .flex-item-4 {
-        flex: 40px
-      }
-
-      .flex-center {
-        justify-content: center;
-        align-items: center;
-      }
-
-      .flex-space-between {
-        justify-content: space-between;
-      }
-
-      .flex-wrap {
-        flex-wrap: wrap;
-      }
-
-      .flex-basis-item-50 {
-        flex-basis: 50%;
-      }
 
     </style>
   </head>
