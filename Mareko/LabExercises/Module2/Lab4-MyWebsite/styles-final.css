@@ -1,0 +1,30 @@
+* {margin: 0; font-size: 20px;}
+
+body {display: flex;}
+
+main {display: none;}
+
+aside {display:flex; flex-direction: column;}
+
+.heading {display: flex; flex-direction: column; align-items: center; background-color: #32cfd1; color: white; width: 100vw; max-height: 30%; }
+.fullname h1{font-family: 'Montserrat', sans-serif; font-size: 2.75rem; text-align: center; letter-spacing: 20px; text-transform: uppercase; margin-top: 46px}
+.job-title h3{font-family: 'Montserrat', sans-serif ; font-style: italic; text-align: center; margin-top: 18px; margin-bottom: 10px;}
+.heading > #social-icons {display: flex; justify-content: center; text-align: center;}
+.fa-brands {color: black; font-size: 40px; text-decoration: none;}
+.fa-brands:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+.m {margin: 1rem;}
+
+#profile-image {height: 250px; border-radius: 50%; border: #fff 10px solid;}
+
+.phone-email-div > .phone-number {display: flex; flex-direction: row;}
+.phone-email-div > .email {display: flex; flex-direction: row;}
+
+.phone-number p {font-family: 'Montserrat', sans-serif;}
+.phone-number {padding: 1rem; font-size: 1.5rem; text-align: center;}
+.phone-icon {margin-right: 2rem; text-decoration: none; color: black;}
+.phone-icon:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+
+.email p {font-family: 'Montserrat', sans-serif;}
+.email {padding: 1rem; font-size: 1.5rem;}
+.email-icon {margin-right: 2rem; text-decoration: none; color: black;}
+.email-icon:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}

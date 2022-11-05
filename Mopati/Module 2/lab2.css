@@ -1,0 +1,24 @@
+
+article {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.style-me1 {
+  font: red;
+}
+#style-me2 {
+  font: blue;
+}
+
+/* insert 1.4 here */
+.style-me1#style-me2 {
+    font:purple;
+}
+
+.my-descendants-are-styled p {
+  background: red;
+}
+
+article > p

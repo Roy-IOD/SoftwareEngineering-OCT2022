@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "../.."
+    },
+    {
+      "name": "Practice",
+      "path": "../../../Practice"
+    },
+    {
+      "name": "Practice-1",
+      "path": "../../../Practice-1"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "SoftwareEngineering-OCT2022",
+    "liveServer.settings.port": 5501
+  }
+}

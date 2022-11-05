@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout #1</title>
+    <style>
+        body,p,h1,h2,h3,h4,ul,ol,li { margin: 0; padding: 0; }
+        body { font-size: 16px; }
+        main, aside { min-height: 100vh; }
+        main { background: lightcyan; }
+        aside { background: lightgray; }
+        section p { margin: 0.5em 0; }
+        footer { background: #333; text-align: center; color: #eee; font-size: 0.9em; }
+
+        nav { background: black; color: white; font-family: sans-serif; text-align: center; }
+        nav h1 { background: black; padding: 1em; letter-spacing: 2px; font-family: sans-serif; color: white; text-align: center; }
+        nav ul { display: flex; list-style: none; width: 100%; justify-content: space-evenly; background: #666; }
+        nav ul li a { padding: 1em; color: white; text-transform:uppercase; display:block;  }
+        /* common css end */
+
+        main { width: calc(100% - 300px); float: left; }
+
+        aside { background: lightgray; width: 300px; position: fixed; right: 0 }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <main>
+            <nav>
+                <h1>Layout #1 - Floats</h1>
+                <ul class="menu">
+                    <li><a href="#html-entities">HTML Entities</a></li>
+                    <li><a href="#collapsing-margins">Collapsing margins</a></li>
+                    <li><a href="#links-icons">Links &amp; Icons</a></li>
+                    <li><a href="#colours-backgrounds">Colours &amp; Backgrounds</a></li>
+                </ul>                
+            </nav>
+
+            <section>
+                <h3>Section 1</h3>
+            </section>
+
+            <section>
+                <h3>Section 2</h3>
+            </section>            
+        </main>
+
+        <aside>
+            <h2>Sidebar</h2>
+        </aside>
+
+    </div>
+
+    <footer>
+        Copyright &copy; 2022
+    </footer>    
+</body>
+</html>

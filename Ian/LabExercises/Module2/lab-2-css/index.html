@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <style>
       /* I. Selectors */
       /* Put styles for sections 1.1, 1.2, 1.3 and 1.4 here */
@@ -69,14 +72,53 @@
       /* IV. Styling text */
 
         .text-style {
-            color: green;
-            font-size: 75%;
+            color: dodgerblue;
+            font-family: 'Handlee', cursive;
+            font-size: 125%;
             line-height: 20px;
-            font-weight: bolder;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 0.5rem;
+            word-spacing: 1rem;
+            text-transform: capitalize;
+            text-decoration: green wavy underline;
+
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=UnifrakturMaguntia&display=swap');
+      /* V Styling Links */
+
+        a, a:link {
+          color: hotpink;
+        }
+
+        a:visited {
+          color: blue;
+          border: solid black;
+        }
+
+        a:hover {
+          color: red;
+          text-transform: uppercase;
+          cursor: progress;
+        }
+
+        a:active {
+          color: black;
+          text-decoration: blue wavy underline;
+        }
+
+        a:focus {
+          color: yellow;
+        }
+      
+    
+
+      
       /* VI. calc() */
+
+      .calc-style {
+        width: calc(100vw - 100px);
+      }
 
     </style>
   </head>

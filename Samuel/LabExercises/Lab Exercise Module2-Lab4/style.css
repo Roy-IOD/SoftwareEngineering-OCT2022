@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 :root{
-    --blue:#2980b9;
     --black:#333;
     --white:#fff;
     --light-color:#777;
     --light-bg:#eee;
+    --light-black: rgba(2,30,34,255);
     --box-shadow:0 5px 10px rgba(0,0,0,.1);
   }
 
@@ -24,26 +24,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
-}
+   }
 
 img {
   max-width: 100%;
 }
 
-html::-webkit-scrollbar{
-    width:10px;
+.social-media-icon img {
+  height: 25px;
+  width: 25px;
 }
-  
-html::-webkit-scrollbar-track{
-    background: var(--blue);
-}
-  
-html::-webkit-scrollbar-thumb{
-    background: var(--white);
-    border-radius: 50px;
-}
-
 .container {
   padding: 100px 9%;
   display: flex;
@@ -51,12 +43,10 @@ html::-webkit-scrollbar-thumb{
 
 .container .profile {
   flex:1 1 400px;
-  background: blue;
   padding: 30px 20ox;
   text-align: center;
-  position: sticky;
   top: 20px;
-  left:0;
+  position: sticky;
 }
 
 .profilepic {
@@ -64,10 +54,43 @@ html::-webkit-scrollbar-thumb{
   width: 150px;
   border-radius: 50%;
   border: 2px solid var(--black);
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.container .profile h3{
+  color:var(--white);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.container .profile p{
+  color:var(--white);
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.container .profile .share a{
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: rgba(10,0,0,0);
+  color:var(--white);
 }
 
 
+.container .profile .share a:hover{
+  color:var(--white);
+  background: var(--light-bg)
+}
+
 .container .information {
   flex:1 1 1000px;
-  background: white;
+  padding:20px 30px;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 10px;
 }
