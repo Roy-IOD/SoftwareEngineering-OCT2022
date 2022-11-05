@@ -5,10 +5,10 @@
   .portrait{
     box-sizing: border-box;
     float: right;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-right: 60px;
-    text-align: right;
-    width: 50%;
+    text-align: center;
+    width: 60%;
   }
  
   .main {
