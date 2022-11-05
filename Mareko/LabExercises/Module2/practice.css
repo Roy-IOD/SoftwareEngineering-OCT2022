@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    min-width: 300px;
+    background-color: rgb(165, 250, 252);
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+}

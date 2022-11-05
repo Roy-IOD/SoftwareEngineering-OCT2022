@@ -1,0 +1,174 @@
+body {display: flex;  overflow:scroll; height: 100vh; margin: 0;}
+
+.heading {position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.background-1 {
+    background-color: #32cfd1;
+}
+
+
+.heading {
+    display: flex;
+    min-width: 100vw;
+}
+
+.heading-1 {
+    color: white;
+    padding: 20px;
+    max-height: 15%;
+    width: 97vw;
+}
+
+.heading-1 h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0;
+    font-size: 3.438rem;
+    text-align: center;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+}
+
+.heading-1 h3 {
+    font-family: 'Montserrat', sans-serif ;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.heading-1 > .icons {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.fa-brands {
+    color: black;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.fa-brands:hover {
+    color: white;
+    -moz-transform:scale(1.4,1.4);
+    -webkit-transform:scale(1.4,1.4);
+    transform:scale(1.4,1.4);
+    transition: all 0.5s;
+}
+
+.m {
+    margin: 1rem;
+}
+
+.no-m {
+    margin: 0;
+}
+
+.infobar {
+    display: flex;
+    background-image: url(/Mareko/LabExercises/Module2/Lab4-MyWebsite/Media/sidebar-bgimage.jpg); /* https://unsplash.com/photos/-SFhuMwFClk */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 25%;
+    height: 100vh;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 25%;
+    height: 100vh;
+    background: rgba(165, 250, 252, 0.75);
+}
+
+.profile-image-parent{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 20px;
+}
+
+.profile-image-child{
+    position: inherit;
+
+}
+
+#profile-image {
+    height: 250px; 
+    border-radius: 50%; 
+    border: #fff 10px solid; 
+}
+
+.phone-email-div {
+    position: absolute;
+    top: 20rem;   
+}
+
+.phone-email-div > .email-address {
+    display: flex;
+    flex-direction: row;
+}
+
+.phone-email-div > .phone-number {
+    display: flex;
+    flex-direction: row;
+}
+
+.phone-number {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.phone-icon {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.phone-icon:hover {
+    color: white;
+    -moz-transform:scale(1.4,1.4);
+    -webkit-transform:scale(1.4,1.4);
+    transform:scale(1.4,1.4);
+    transition: all 0.5s;
+}
+
+.phone-number p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.email-address {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.email-icon {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.email-icon:hover {
+    color: white;
+    -moz-transform:scale(1.4,1.4);
+    -webkit-transform:scale(1.4,1.4);
+    transform:scale(1.4,1.4);
+    transition: all 0.5s;
+}
+
+.email-address p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
