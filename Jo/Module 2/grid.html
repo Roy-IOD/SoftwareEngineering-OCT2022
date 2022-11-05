@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Example</title>
+    <style>
+        body { background: black; margin: 0; font-family: sans-serif; }
+        form { margin: 2em; background: #ddd; padding: 1em; }
+        fieldset { margin: 1em 0; border: 0; padding: 0; }
+        form input, form select { margin: 2px; border-radius: 4px; }
+
+        .grid-container { 
+            display: grid; 
+            /* grid-template-columns: repeat(3, 100px [col-start]); sets 3 columns each 100px wide */
+            /* grid-template-columns: 100px [col-start] 100px [col-start] 100px [col-start]; above is equivalent to this */
+
+            grid-template-rows: 1fr 1fr 1fr; /* fr means fraction, and is like width percentages. the number of values is the number of rows */
+            grid-template-columns: 1fr 1fr 1fr 1fr; /* if the numbers are all the same there will be evenly divided rows/columns */
+
+            column-gap: 0; /* empty space between columns */
+            row-gap: 0; /* empty space between rows */
+
+            /* can also set both in one go - gap: 0 0 */
+        }
+        .grid-container .item { border: 1px solid #aaa; padding: 1em; text-align: center; background: #fff}
+        .grid-container .item:hover { background: lightblue }
+    </style>
+</head>
+<body>
+    <!-- for more info on grids, see https://www.codeinwp.com/blog/css-grid-tutorial-layout/ and https://css-tricks.com/snippets/css/complete-guide-grid/-->
+
+    <div class="grid-container" id="adjustable-grid">
+        <div class="item item-1"> item #1 </div>
+        <div class="item item-2"> item #2 </div>
+        <div class="item item-3"> item #3 </div>
+        <div class="item item-4"> item #4 </div>
+        <div class="item item-5"> item #5 </div>
+        <div class="item item-6"> item #6 </div>
+        <div class="item item-7"> item #7 </div>
+        <div class="item item-8"> item #8 </div>
+        <div class="item item-9"> item #9 </div>
+        <div class="item item-10"> item #10 </div>
+        <div class="item item-11"> item #11 </div>
+        <div class="item item-12"> item #12 </div>
+    </div>    
+
+    <form onsubmit="updateGrid(event)">
+        <p>Change the values to adjust the grid</p>
+        <fieldset>
+            <label>Number of rows: <select name="rows" id="gridRows" onchange="updateRowSizes()"><option>1</option><option>2</option><option selected>3</option><option>4</option></select></label>
+            <label>Number of columns: <select name="columns" id="gridColumns" onchange="updateColSizes()"><option>1</option><option>2</option><option>3</option><option selected>4</option><option>6</option></select></label>
+        </fieldset>
+        <fieldset>
+            Row Sizes:
+            <div id="rowSizes"><input name="row[]" value="1" type="text" size="2"/><input name="row[]" value="1" type="text" size="2"/><input name="row[]" value="1" type="text" size="2"/></div>
+        </fieldset>
+        <fieldset>
+            Column Sizes:
+            <div id="colSizes"><input name="col[]" value="1" type="text" size="2"/><input name="col[]" value="1" type="text" size="2"/><input name="col[]" value="1" type="text" size="2"/><input name="col[]" value="1" type="text" size="2"/></div>
+        </fieldset>        
+        <fieldset>
+            <label>Gap between rows: <input name="rowgap" id="rowgap" value="0" type="text" size="2"/>px</label>
+            <label>Gap between columns: <input name="colgap" id="colgap" value="0" type="text" size="2"/>px</label>
+        </fieldset>
+        <button type="submit">Change Layout</button>
+    </form>
+
+    <script>
+        //changes the number of row fields to match the dropdown
+        function updateRowSizes()
+        {
+            let numrows = document.getElementById('gridRows').value
+            document.getElementById('rowSizes').innerHTML = ''; //reset the div to empty
+            let rowField = '<input name="row[]" value="1" type="text" size="2"/>';
+
+            for (let i = 0; i < numrows; i++) {
+                document.getElementById('rowSizes').innerHTML += rowField //then fill it with the right number of text fields
+            }
+        }
+
+        //changes the number of column fields to match the dropdown
+        function updateColSizes()
+        {
+            let numcols = document.getElementById('gridColumns').value
+            document.getElementById('colSizes').innerHTML = ''; //reset the div to empty
+            let colField = '<input name="col[]" value="1" type="text" size="2"/>';
+
+            for (let i = 0; i < numcols; i++) {
+                document.getElementById('colSizes').innerHTML += colField //then fill it with the right number of text fields
+            }
+        }        
+
+        //updates the grid CSS with the chosen row/column values
+        function updateGrid(e)
+        {
+            e.preventDefault()
+            let numrows = document.getElementById('gridRows').value
+            let numcols = document.getElementById('gridColumns').value
+
+            let gridRows = ''
+            let gridCols = ''
+
+            for (let i = 0; i < numrows; i++) {
+                gridRows += document.getElementsByName('row[]')[i].value+'fr '
+            }
+            for (let i = 0; i < numcols; i++) {
+                gridCols += document.getElementsByName('col[]')[i].value+'fr '
+            }
+
+            console.log('rows value is '+gridRows)
+            console.log('cols value is '+gridCols)
+            document.getElementById('adjustable-grid').style.gridTemplateRows = gridRows
+            document.getElementById('adjustable-grid').style.gridTemplateColumns = gridCols
+
+            let rowgap = document.getElementById('rowgap').value
+            let colgap = document.getElementById('colgap').value     
+
+            console.log(rowgap+'px '+colgap+'px')
+            
+            document.getElementById('adjustable-grid').style.rowGap = rowgap+'px'
+            document.getElementById('adjustable-grid').style.columnGap = colgap+'px'
+
+            // document.getElementById('adjustable-grid').style.gap = rowgap+'px '+colgap+'px' //shorthand way of setting both gap values at once
+        }
+    </script>
+</body>
+</html>
