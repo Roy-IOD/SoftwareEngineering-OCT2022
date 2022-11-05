@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*
+
+body {
+    background-image: url("IMG/code.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 20px;
+    color: aliceblue;
+    
+    
+}
+
+p{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+.me{
+    color: aliceblue;
+    font-size: 20px;
+    text-align: right;
+
+}
+.flexbox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+    height: 50px;
+    justify-content:right;
+    align-items: right;
+    width: 100%;}
+    
+    .menu{
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 13px;
+        list-style: nome;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+    }
+.smallflexbox{
+    width: 70%;
+    height: 90%;  
+    padding: 50px;
+   
+}
+
+img {
+    border-radius: 30px;
+    filter: grayscale(50%);
+    float:right; width: 170px;px; height: 170px;
+    }
+
+    @media screen and (max-width:1000px){
+        .navbar{
+         position: relative;
+        }
+         .menu{
+             display: none;
+             
+         }
+         .logo{
+             margin: 0;
+             text-align: center;
+         }
+         .header{
+             padding-top: 50px;
+         }
+         .headline{
+             flex: 100%;
+             margin: 5%;
+             text-align: center;
+         }
+     
+         .headline p{
+     
+             text-align: center;
+         }
+     
+         .img-headline{
+             flex: 100%;
+             margin: 5%;
+             text-align: center;
+         }
+
+     
+     }
