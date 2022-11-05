@@ -1,21 +1,71 @@
-* {margin: 0; font-size: 20px;}
+* {margin: 0; font-size: 20px; font-family: 'Montserrat', sans-serif;}
+h4 {font-family: 'Montserrat', sans-serif; font-weight: 500;}
+
 
 body {display: flex;}
 
-main {display: none;}
+main {display: flex; flex-direction: column; width: 100vw;}
 
-aside {display:flex; flex-direction: column;}
-
-.heading {display: flex; flex-direction: column; align-items: center; background-color: #32cfd1; color: white; width: 100vw; max-height: 30%; }
+.heading {display: flex; flex-direction: column; align-items: center; background-color: #32cfd1; color: white; width: 100%; max-height: 100%;}
 .fullname h1{font-family: 'Montserrat', sans-serif; font-size: 2.75rem; text-align: center; letter-spacing: 20px; text-transform: uppercase; margin-top: 46px}
 .job-title h3{font-family: 'Montserrat', sans-serif ; font-style: italic; text-align: center; margin-top: 18px; margin-bottom: 10px;}
 .heading > #social-icons {display: flex; justify-content: center; text-align: center;}
 .fa-brands {color: black; font-size: 40px; text-decoration: none;}
-.fa-brands:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+.fa-brands:hover {color: white; transform:scale(1.4,1.4); transition: all 0.5s;}
 .m {margin: 1rem;}
 
-#profile-image {height: 250px; border-radius: 50%; border: #fff 10px solid;}
+.experience, .education, .interests, .references {padding: 20px; margin-left: 2rem; margin-right: 2rem;}
+.experience h2, .education h2, .interests h2, .references h2 {text-transform: uppercase; color:#32cfd1}
 
+.experience {margin-top: 1rem; padding-bottom: 10px;}
+
+.farmers-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.farmers-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.farmers-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.farmers-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0.5rem 0.75rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.showersolutions-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.showersolutions-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.showersolutions-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.showersolutions-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0.5rem 0.5rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.adidas-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.adidas-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.adidas-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.adidas-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0rem 0.75rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.edu-flex-container {display: flex; flex-direction: row; justify-content: space-evenly; padding-top: 0.5rem;}
+
+.alfriston {display: flex; flex-direction: row; padding: 0.5rem;}
+#ac-logo {max-width: 100px; max-height: 100px; padding: 20px;}
+.alfriston h4 {font-size: medium;}
+.alfriston ul {margin-left: 0; padding-left: 0;}
+
+.aut {display: flex; flex-direction: row; padding: 0.5rem;}
+#aut-logo {width: 100px; height: 75px; padding: 20px;}
+.aut h4 {font-size: medium;}
+.aut ul {margin-left: 0; padding-left: 0;}
+
+.iod {display: flex; flex-direction: row; padding: 0.5rem;}
+#iod-logo {width: 100px; height: 100px; padding: 20px;}
+.iod h4 {font-size: medium;}
+.iod ul {margin-left: 0; padding-left: 0;}
+
+.int-flex-container {display: flex; flex-direction: row; justify-content: space-evenly; padding-top: 1rem; margin-bottom: 20px;}
+.icon-int {text-decoration: none; font-size: 100px; color: #3c9ea0;}
+.icon-int:hover {color: purple; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+.football p, .movies p, .music p {text-align: center; padding-top: 1rem; margin-bottom: 20px;}
+
+
+aside {display:flex; flex-direction: column; min-height: 100vh; width: 25vw; background-image: url(/Mareko/LabExercises/Module2/Lab4-MyWebsite/Media/sidebar-bgimage.jpg); /* https://unsplash.com/photos/-SFhuMwFClk */ 
+background-size: cover; background-repeat: no-repeat; position: relative;}
+
+.color-overlay  {background: rgba(165, 250, 252, 0.75); width: 100%; height: 100%; position: absolute;}
+
+.profileimage-parent {display: flex; width: 100%; z-index: 1;}
+#profile-image {height: 250px; border-radius: 50%; border: #fff 10px solid; justify-content: center; margin: 25px auto;}
+
+.phone-email-div {z-index: 1; margin-left: 1rem;}
 .phone-email-div > .phone-number {display: flex; flex-direction: row;}
 .phone-email-div > .email {display: flex; flex-direction: row;}
 
@@ -28,3 +78,5 @@ aside {display:flex; flex-direction: column;}
 .email {padding: 1rem; font-size: 1.5rem;}
 .email-icon {margin-right: 2rem; text-decoration: none; color: black;}
 .email-icon:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+
+footer {background-color: #004647; color:white; font-size: small; text-align: center; padding: 20px;}
