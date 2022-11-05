@@ -1,24 +1,3 @@
-
-  .topnav {
-    overflow: hidden;
-    background-color: #1976d2;
-  }
-
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
   input[type=text], select, textarea {
     width: 100%; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
