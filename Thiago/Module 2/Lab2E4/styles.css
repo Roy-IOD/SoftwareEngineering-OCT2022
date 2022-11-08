@@ -26,7 +26,7 @@ body{
 .logo h1{
     font-family: 'Lobster',cursive;
     color: #180F4A;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -144,6 +144,7 @@ section h2{
     background: #f27a30;
     color: white;
     padding: 40px;
+    
 }
 
 .cards:hover img{
@@ -185,6 +186,7 @@ right: 5px;
    }
     .menu{
         display: none;
+        
     }
     .logo{
         margin: 0;
