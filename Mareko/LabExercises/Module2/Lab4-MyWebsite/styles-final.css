@@ -145,4 +145,18 @@ footer {background-color: #004647; color:white; font-size: small; text-align: ce
         align-items: center;
         margin-left: 0;
     }
+
+    .int-flex-container{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 1440px){
+    .phone-email-div {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+    }
+    
   }
