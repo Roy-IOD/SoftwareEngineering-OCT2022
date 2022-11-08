@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box; /* Means that it will include margin and padding in sizes*/
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: larger;
+  padding: 10px;
+  margin: 10px;
+}
+
+a {
+  color: #caf0f8;
+}
+
+.name {
+  margin: 0;
+  font-size: 1.5em;
+  margin-top: 0;
+  color: #caf0f8;
+}
+
+.topnav {
+  margin-top: 3px;
+}
+
+.name a,
+.topnav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+.topnav a {
+  color:#CAF0F8;
+}
+
+.topnav a:hover {
+  color: white;
+}
+
+.header {
+  padding-top: .25em;
+  padding-bottom: .25em;
+  background-color: #023E8A;
+  color: #CAF0F8;
+  text-align: center;
+}
+
+footer {
+  background-color: #023E8A;
+  color: #CAF0F8;
+  font-size: smaller;
+  text-align: center;
+  padding: 2em;
+}
+
+
+#about {
+  background-color: #0077B6;
+  padding: 2em;
+  color: #CAF0F8;
+}
+
+#portfolio {
+  background-color: #00B4D8;
+  color: #03045E;
+  padding: 2em;
+}
+
+#contact {
+  background-color: #ADE8F4;
+  color: #03045E;
+  padding: 2em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+
+.topnav a:hover {
+  background-color: whitesmoke;
+  color: black;
+  transform: scale(1.2);
+}
+
+.topnav a.active {
+  background-color: darkcyan;
+  color: white;
+}
+
+#profile-pic {
+  border: 1px solid 000F08;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 5px 5px 3px #03045E;
+}
+
+#socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 40px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  color: #03045E;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  transform: scale(1.6);
+}
+
+/* Media queries for displaying properly on different screen sizes*/
+
+/* This makes the menu topnav condense on a smaller screen*/
+@media (min-width: 769px) {
+  .header,
+  .topnav {
+    display: flex;
+  }
+  .header,
+  .topnav {
+    flex-direction: column;
+    align-items: center;
+        margin: 0 auto;
+      }
+}
+
+@media (min-width: 768px) {
+  .header,
+  .topnav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+}
+

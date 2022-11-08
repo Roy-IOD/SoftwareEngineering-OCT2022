@@ -1,0 +1,148 @@
+* {margin: 0; font-size: 20px; font-family: 'Montserrat', sans-serif;}
+h4 {font-family: 'Montserrat', sans-serif; font-weight: 500;}
+
+
+body {display: flex;}
+
+main {display: flex; flex-direction: column; width: 100vw;}
+
+.heading {display: flex; flex-direction: column; align-items: center; background-color: #32cfd1; color: white; width: 100%; max-height: 100%;}
+.fullname h1{font-family: 'Montserrat', sans-serif; font-size: 2.75rem; text-align: center; letter-spacing: 20px; text-transform: uppercase; margin-top: 46px}
+.job-title h3{font-family: 'Montserrat', sans-serif ; font-style: italic; text-align: center; margin-top: 18px; margin-bottom: 10px;}
+.heading > #social-icons {display: flex; justify-content: center; text-align: center;}
+.fa-brands {color: black; font-size: 40px; text-decoration: none;}
+.fa-brands:hover {color: white; transform:scale(1.4,1.4); transition: all 0.5s;}
+.m {margin: 1rem;}
+
+.experience, .education, .interests, .references {padding: 20px; margin-left: 2rem; margin-right: 2rem;}
+.experience h2, .education h2, .interests h2, .references h2 {text-transform: uppercase; color:#32cfd1}
+
+.experience {margin-top: 1rem; padding-bottom: 10px;}
+
+.farmers-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.farmers-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.farmers-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.farmers-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0.5rem 0.75rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.showersolutions-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.showersolutions-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.showersolutions-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.showersolutions-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0.5rem 0.5rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.adidas-jobex h3 {font-size: large; padding: 1rem 0.5rem 0.5rem 0.75rem;}
+.adidas-jobex h4 {font-size: large; padding: 0rem 0.5rem 0.5rem 0.75rem; color: #32cfd1;}
+.adidas-jobex p {font-size: medium; padding: 0rem 0.5rem 0.5rem 0.75rem;}
+.adidas-jobex ul, li {font-size: small; padding: 0rem 0.5rem 0rem 0.75rem; margin-left: 0.75rem; line-height: 1.25rem;}
+
+.edu-flex-container {display: flex; flex-direction: row; padding-top: 0.5rem; margin: 0, 2rem, 0, 2rem;}
+
+.alfriston {display: flex; flex-direction: row; padding: 0.5rem;}
+#ac-logo {max-width: 100px; max-height: 100px; padding: 20px;}
+.alfriston h4 {font-size: 1rem;}
+.alfriston ul {margin-left: 0; padding-left: 0;}
+.alfriston ul > li {font-size: 0.666rem;}
+
+.aut {display: flex; flex-direction: row; padding: 0.5rem;}
+#aut-logo {width: 100px; height: 75px; padding: 20px;}
+.aut h4 {font-size: 1rem;}
+.aut ul {margin-left: 0; padding-left: 0;}
+.aut ul > li {font-size: 0.666rem;}
+
+.iod {display: flex; flex-direction: row; padding: 0.5rem;}
+#iod-logo {width: 100px; height: 100px; padding: 20px;}
+.iod h4 {font-size: 1rem;}
+.iod ul {margin-left: 0; padding-left: 0;}
+.iod ul > li {font-size: 0.666;}
+
+.int-flex-container {display: flex; flex-direction: row; justify-content: space-evenly; padding-top: 1rem; margin-bottom: 20px;}
+.icon-int {text-decoration: none; font-size: 100px; color: #3c9ea0;}
+.icon-int:hover {color: purple; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+.football p, .movies p, .music p {text-align: center; padding-top: 1rem; margin-bottom: 20px;}
+
+
+aside.desktop {display:flex; flex-direction: column; width: 25vw; background-image: url(/Mareko/LabExercises/Module2/Lab4-MyWebsite/Media/sidebar-bgimage.jpg); /* https://unsplash.com/photos/-SFhuMwFClk */ 
+background-size: cover; background-repeat: no-repeat; position: relative;}
+
+aside.mobile {display:flex; flex-direction: column; width: 25vw; background-image: url(/Mareko/LabExercises/Module2/Lab4-MyWebsite/Media/sidebar-bgimage.jpg); /* https://unsplash.com/photos/-SFhuMwFClk */ 
+    background-size: cover; background-repeat: no-repeat; position: relative;}
+
+aside.mobile {display: none;}
+
+.color-overlay  {background: rgba(165, 250, 252, 0.75); width: 100%; height: 100%; position: absolute;}
+
+.profileimage-parent {display: flex; width: 100%; z-index: 1;}
+#profile-image {height: 250px; border-radius: 50%; border: #fff 10px solid; justify-content: center; margin: 25px auto;}
+
+.phone-email-div {z-index: 1; margin-left: 1rem;}
+.phone-email-div > .phone-number {display: flex; flex-direction: row;}
+.phone-email-div > .email {display: flex; flex-direction: row;}
+
+.phone-number p {font-family: 'Montserrat', sans-serif;}
+.phone-number {padding: 1rem; font-size: 1.5rem; text-align: center;}
+.phone-icon {margin-right: 2rem; text-decoration: none; color: black;}
+.phone-icon:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+
+.email p {font-family: 'Montserrat', sans-serif; font-size: 1rem;}
+.email {padding: 1rem; font-size: 1.5rem;}
+.email-icon {margin-right: 2rem; text-decoration: none; color: black;}
+.email-icon:hover {color: white; -moz-transform:scale(1.4,1.4); -webkit-transform:scale(1.4,1.4); transform:scale(1.4,1.4); transition: all 0.5s;}
+
+footer {background-color: #004647; color:white; font-size: small; text-align: center; padding: 20px;}
+
+@media screen and (max-width: 1024px) {
+    * {margin: 0;}
+    body {display:flex; flex-direction: column; height: 100vh; width: 100;}
+    .heading {display: none;}
+    aside.desktop {display: none}
+
+    .experience, .education, .interests, .footer {margin: 0; padding: 0;}
+
+    .experience {padding-top: 1rem; padding-left: 1rem;}
+    .education  {padding-top: 1rem; padding-left: 1rem;}
+    .interests {padding: 1rem; padding-right: 0;}
+    
+
+    .footer {width: 100%;}
+    
+    aside.mobile {display: flex; width: 100%; order: 1; padding-bottom: 1.5rem; min-width: 320px;}
+    .phone-number p {font-family: 'Montserrat', sans-serif; font-size: 1rem;}
+    .phone-number {padding: 1rem; font-size: 0.75rem; text-align: center;}
+    .phone-icon {margin-right: 1rem; text-decoration: none; color: black;}
+
+    .email p {font-family: 'Montserrat', sans-serif;}
+    .email {padding: 1rem; font-size: 0.75rem; display: flex; flex-wrap: wrap;}
+    .email-icon {margin-right: 1rem; text-decoration: none; color: black;}
+
+    .fullname-m {z-index: 1;}
+    .fullname-m h1 {font-size: 1rem; text-align: center; text-transform: uppercase; letter-spacing: 0.125rem;}
+
+    .job-title-m {z-index: 1;}
+    .job-title-m h3 {font-size: 0.75rem; text-align: center; font-style: italic; margin-top: 0.25rem; margin-bottom: 0.25rem;}
+
+    main {order: 2;}
+
+    .edu-flex-container {flex-direction: column; justify-content: space-between; width: 100%;}
+ 
+
+    .int-flex-container {flex-direction: column; width: 100%;}
+    .icon-int {font-size: 50px; padding: 20px;}
+
+    .football {display: flex; flex-direction: row; padding: 0.5rem, 0}
+    .football p {align-items: center;}
+
+    .movies{display: flex; flex-direction: row; text-align: center; padding: 0.5rem, 0;}
+    .movies > .icon-int {width: 50px;}
+    .movies p {align-items: center;}
+
+    .music {display: flex; flex-direction: row; padding:0.5rem, 0;}
+    .music p {align-items: center;}
+}
+
+  @media screen and (min-width: 768px) {
+    .phone-email-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+  }

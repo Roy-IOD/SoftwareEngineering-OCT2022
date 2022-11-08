@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html">Home</a>
+    </nav>
+    <form method="POST" action="http://localhost:3000/profile">
+      <div>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" />
+      </div>
+      <br /><br />
+      <div>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" />
+      </div>
+      <br /><br />
+      <div><input type="radio" name="noidea" id="trial" />Whats this1?</div>
+      <div><input type="checkbox" name="soft" id="eng" />whats this2?</div>
+      <label for="cars">Choose a car:</label>
+
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+      <button type="button">Submit Form!</button>
+    </form>
+  </body>
+</html>

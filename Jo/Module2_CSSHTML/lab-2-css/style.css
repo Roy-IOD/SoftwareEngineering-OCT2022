@@ -1,0 +1,37 @@
+body { font-family: sans-serif; background:#333; font-size: 16px; }
+section { padding: 2em; background: #fff; }
+
+nav > ul { list-style: none; margin: 0; padding: 0; }
+nav > ul > li { margin: 0; padding: 1em; background: purple; color: white; text-transform: uppercase; display: inline-block; }
+nav > ul > li > a { color: white; text-decoration: none; padding-left: 2em; position: relative; } /* only targets links directly inside li, directly inside ul, directly inside nav */
+nav > ul > li > a:before { content: '+'; position: absolute; left: 0; } 
+nav > ul > li > a:hover { color: lightblue }
+
+a.cart { position: relative; margin: 1em; padding-left: 1.5em; }
+
+/* by using the font awesome family i can use an icon in the before pseudo-element via its unicode value */
+a.cart:before { content: "\f07a"; position: absolute; left :0; margin-right: 5px; font-family: "Font Awesome 6 Free" } 
+
+.div-block-float { width: 50%; float: left; background-color: lightseagreen; height: 50vh; }
+.div-block-float.second { background-color: lightpink; height:20vh; } /* targets elements with both of these classes */
+.clear { clear: both; }
+
+#first { background: lightgoldenrodyellow; } /* even though this rule is first, it overrides because IDs beat classes */
+.parent { background: lightblue; } /* class selectors beat type selectors on line 2, so sections with class parent will be blue */
+
+h1, h2, h3, h4, h5 { font-weight: bold; font-family: Impact, sans-serif; margin: 0 0 0 1em; } /* targets all heading elements and gives them all the same style */
+h1 { font-size: 30px; } /* now sets the font size for each type of heading individually */
+h2 { font-size: 26px; }
+h3 { font-size: 22px; }
+p { margin: 0.5em 0; } /* adds a margin of half the standard font size to the top and bottom of all p elements to space them out, but doesn't add any left/right margin */
+
+.container { display: flex; flex-direction: row; background-color: lightgray; justify-content: space-between; padding: 3em; }
+.container .block { font-size: 20px; width: 33%; border: 1px solid black; padding: 1em; } /* targets all blocks inside a container */
+
+@media screen and (max-width: 768px)
+{
+    /* on smaller screens, reduce the font size and stack the columns */
+    /* only include the specific properties you want to override - the rest are defined above and will still apply here, but these are more specific and will override */
+    body { font-size: 14px; }
+    .container { flex-direction: column; }
+}
