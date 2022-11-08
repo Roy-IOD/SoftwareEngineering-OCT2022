@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*
-
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap');
 body {
     background-image: url("IMG/code.jpg");
     background-repeat: no-repeat;
@@ -12,19 +10,32 @@ body {
 h1{
     font-size: 20px;
     color: aliceblue;
-    
-    
+    background-color: rgba(0, 0, 0, 0.866);
+}
+
+h2{
+    background-color: rgba(0, 0, 0, 0.866);
+
 }
 
 p{
     font-size: 50px;
     color: aliceblue;
+    background-color: rgba(10, 0, 0, 0.866);
 }
 
 .me{
     color: aliceblue;
     font-size: 20px;
     text-align: right;
+    background-color: rgba(10, 0, 0, 0.866);
+
+}
+.ex{
+    color: aliceblue;
+    font-size: 20px;
+    text-align: left;
+    background-color: rgba(10, 0, 0, 0.866);
 
 }
 .flexbox{
@@ -41,7 +52,8 @@ p{
     height: 50px;
     justify-content:right;
     align-items: right;
-    width: 100%;}
+    width: 100%;
+    border-bottom: 2px solid #f27a30 ;}
     
     .menu{
         color: aliceblue;
@@ -55,43 +67,82 @@ p{
 .smallflexbox{
     width: 70%;
     height: 90%;  
-    padding: 50px;
-   
+    padding: 50px; 
 }
 
-img {
-    border-radius: 30px;
-    filter: grayscale(50%);
-    float:right; width: 170px;px; height: 170px;
+.navbar a:hover {
+    background-color: #f27a30 ;
+  }
+
+#thiago{
+    border-radius: 10px;
+    filter: grayscale(15%);
+    float:right; width: 200px; height: 200px;
     }
+
+    footer{
+        margin-top: 100px;
+        height: 200px;
+        text-align: center;
+        border-top: 2px solid #f27a30 ;
+    }
+
+#whats {
+    width: 50px ; 
+    height: 50px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    
+}
+
+.footer{
+    padding: 50px;
+
+}
+
+#email{
+    border-radius: 10px;
+    width: 50px ; 
+    height: 50px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    
+}
 
     @media screen and (max-width:1000px){
         .navbar{
-         position: relative;
+            flex: 100%;
+            margin: 5%;
+            text-align: center;
         }
-         .menu{
-             display: none;
-             
-         }
-         .logo{
-             margin: 0;
-             text-align: center;
-         }
-         .header{
-             padding-top: 50px;
-         }
-         .headline{
+           
+         h1{
              flex: 100%;
              margin: 5%;
              text-align: center;
          }
+         
+         h2{
+            flex: 100%;
+            margin: 5%;
+            text-align: center;
+        }
      
-         .headline p{
+        p{
      
              text-align: center;
          }
+
+        .footer {
+            flex: 100%;
+         margin: 5%;
+         text-align: center;
+        }
+
      
-         .img-headline{
+         #thiago{
              flex: 100%;
              margin: 5%;
              text-align: center;
