@@ -27,11 +27,9 @@
 //Question 4. What will be the result for these expressions?
 
 console.log(5 > 4) // true
-
-"apple" > "pineapple"
-"2" > "12"
-undefined == null
-undefined === null
-null == "\n0\n"
-
-null === +"\n0\n"
+console.log("apple" > "pineapple") // false
+console.log("2" > "12") // true because ?
+console.log(undefined == null) // true
+console.log(undefined === null) // false
+console.log(null == "\n0\n") // false
+console.log(null === +"\n0\n") // false
