@@ -19,8 +19,17 @@
 //     values).
 //     Why? Fix it. The result should be 3.
 
-    let a = prompt("First number?", 1);
-    let b = prompt("Second number?", 2);
-    console.log(a + b); // 12
+    // let a = prompt("First number?", 1);
+    // let b = prompt("Second number?", 2);
+    // console.log(a + b); // 12
+//the above doesn't work!
 
+//Question 4. What will be the result for these expressions?
 
+console.log(5 > 4) // true
+console.log("apple" > "pineapple") // false
+console.log("2" > "12") // true because ?
+console.log(undefined == null) // true
+console.log(undefined === null) // false
+console.log(null == "\n0\n") // false
+console.log(null === +"\n0\n") // false

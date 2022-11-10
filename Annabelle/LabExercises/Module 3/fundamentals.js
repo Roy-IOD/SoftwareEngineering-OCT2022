@@ -43,6 +43,17 @@ let d=10
 let result = (c + d < 4)?('Below'):('over')
 console.log(result)
 
+//question 1.7//
+const delay = (func, ms) => {
+  return function (string){
+    setTimeout(func,ms,string)
+  }
+}
+
+const hello = ( who )=> console.log('Hello' + who );
+const delayHello = delay(hello, 300);
+delayHello('world');
+
 //question 1.8//
 const obj = {};
 function isEmpty(object) {
