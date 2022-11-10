@@ -1,71 +1,21 @@
-/* Add in CSS reset, try from meyerweb.com/eric/tools/css/reset */
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+* {
+  box-sizing: border-box; /* Means that it will include margin and padding in sizes*/
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* End of CSS reset*/
 
 body {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
-}
-main {
-  overflow-y: auto;
-}
-aside {
-  flex: 1 0 10%;
-}
-.wrapper {
-  display: flex;
-  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vh;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 h1 {
   font-weight: 600;
@@ -74,56 +24,91 @@ h1 {
   margin: 10px;
 }
 
-p {
-  padding: 10px;
-  margin: 10px;
+a {
+  color: #caf0f8;
 }
 
-div {
-  padding: 10px;
-  margin: 10px;
-}
-.body {
-  display: flex;
-}
-
-/* This is from fonts.google.com/icons for the Menu icon*/ 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+.name {
+  margin: 0;
+  font-size: 1.5em;
+  margin-top: 0;
+  color: #caf0f8;
 }
 
-/* I started looking at https://webdesign.tutsplus.com/tutorials/how-to-build-a-responsive-navigation-bar-with-flexbox--cms-33535
-which explains how to make nav with flexbox */
 .topnav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: dodgerblue;
+  margin-top: 3px;
 }
 
-.topnav li a {
+.name a,
+.topnav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
   display: block;
-  padding: 15px 5px;
+  text-decoration: none;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: whitesmoke;
-  text-align: center;
-  padding: 20px 15px;
-  text-decoration: none;
-  font-size: 20px;
+  color:#CAF0F8;
 }
 
 .topnav a:hover {
+  color: white;
+}
+
+.header {
+  padding-top: .25em;
+  padding-bottom: .25em;
+  background-color: #023E8A;
+  color: #CAF0F8;
+  text-align: center;
+}
+
+footer {
+  background-color: #023E8A;
+  color: #CAF0F8;
+  font-size: smaller;
+  text-align: center;
+  padding: 2em;
+}
+
+
+#about {
+  background-color: #0077B6;
+  padding: 2em;
+  color: #CAF0F8;
+}
+
+#portfolio {
+  background-color: #00B4D8;
+  color: #03045E;
+  padding: 2em;
+}
+
+#contact {
+  background-color: #ADE8F4;
+  color: #03045E;
+  padding: 2em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+
+.topnav a:hover {
   background-color: whitesmoke;
-  color: dodgerblue;
+  color: black;
+  transform: scale(1.2);
 }
 
 .topnav a.active {
@@ -131,53 +116,62 @@ which explains how to make nav with flexbox */
   color: white;
 }
 
-/* This hides the link that should open and close the topnav on a small screen */
-.topnav .icon {
-  display: none;
+#profile-pic {
+  border: 1px solid 000F08;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 5px 5px 3px #03045E;
 }
 
-.sidenav {
+#socials {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
-/* This is a CSS variable example, see page 72 */
-:root {
-  --primary-color: dodgerblue;
-  --secondary-color: navy;
-  --border-1: solid 5px var(--secondary-color);
-  --spacing: 5px;
+.fa {
+  padding: 20px;
+  font-size: 40px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  color: #03045E;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
-Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
+.fa:hover {
+  opacity: 0.7;
+  transform: scale(1.6);
+}
+
+/* Media queries for displaying properly on different screen sizes*/
+
+/* This makes the menu topnav condense on a smaller screen*/
+@media (min-width: 769px) {
+  .header,
+  .topnav {
+    display: flex;
   }
+  .header,
+  .topnav {
+    flex-direction: column;
+    align-items: center;
+        margin: 0 auto;
+      }
 }
 
-/* Adding "responsive" class to the topnav with JS when the user clicks on the icon.
-Makes the topnav look good on small screens, as it links vertically instead of horizontally) */
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+@media (min-width: 768px) {
+  .header,
+  .topnav {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-/* This makes images no wider than the width of the page */
-img { 
-  max-width: 100%; 
+  
 }
 
