@@ -69,3 +69,23 @@ function isEmpty(obj) {
   }
 
   console.log(isEmpty(schedule))
+
+  //9.
+
+const ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep(){
+    console.log(`current number of steps is ${this.step} steps`);
+    return this;
+  }
+}
+
+ladder.up().down().up().up().showStep();
