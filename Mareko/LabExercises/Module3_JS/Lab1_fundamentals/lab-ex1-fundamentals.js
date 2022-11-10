@@ -12,7 +12,7 @@
     console.log(" -9 " - 5) // this will = -14
     console.log(null + 1) // this will = 1
     console.log(undefined + 1) //this will = NaN
-    console.log(" \t \n" - 2) //I did not not this --- -2* */
+    console.log(" \t \n" - 2) //I did not know this --- -2* */
 
     /* Look into questions I answered wrong and didn't know */
 
@@ -21,8 +21,8 @@
 
 //Q3
     console.log (5 > 4) // true (boolean)
-    console.log ("pineapples" > "pineapple") //undefined
-    "2" > "12"
-    undefined == null
-    undefined === null
-    null == "\n0\n"
+    console.log ("apples" > "pineapple") //I 
+    console.log ("2" > "12")
+    console.log(undefined == null) 
+    console.log(undefined === null)
+    console.log(null == "\n0\n")
