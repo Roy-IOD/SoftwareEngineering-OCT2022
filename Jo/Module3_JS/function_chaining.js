@@ -4,19 +4,24 @@
 const basketballGame = {
     score: 0,
     freeThrow() {
-        score++;
+        this.score++;
+        return this;
     },
     basket() {
-        score += 2;
+        this.score += 2;
+        return this;
     },
     threePointer() {
-        score += 3;
+        this.score += 3;
+        return this;
     },
     halfTime() {
-        console.log('Halftime score is '+score);
+        console.log('Halftime score is '+this.score);
+        return this;
     },
     fullTime() {
-        console.log('Fulltime final score is '+score)
+        console.log('Fulltime final score is '+this.score)
+        return this;
     }
 }
 
@@ -27,3 +32,34 @@ basketballGame.basket().basket().freeThrow().freeThrow().basket().threePointer()
 //if we wanted to have one of these objects for each team what could we do?
 //copy-paste and rename object; make a shallow clone/copy of the original in a new variable; rewrite as a constructor or class
 
+function Team(name) {
+    this.score = 0;
+    this.name = name;
+
+    this.freeThrow = function() {
+        this.score++;
+        return this;
+    }
+    this.basket = function() {
+        this.score += 2;
+        return this;
+    }
+    this.threePointer = function() {
+        this.score += 3;
+        return this;
+    }
+    this.halfTime = function() {
+        console.log('Halftime score for '+this.name+' is '+this.score);
+        return this;
+    }
+    this.fullTime = function() {
+        console.log(`Fulltime final score for ${this.name} is ${this.score}`)
+        return this;
+    }    
+}
+
+const bullets = new Team('bullets')
+bullets.basket().threePointer().basket().freeThrow().basket().halfTime();
+
+const celtics = new Team('celtics')
+celtics.basket().freeThrow().threePointer().basket().basket().basket().halfTime()

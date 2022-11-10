@@ -11,14 +11,15 @@ function delayMsg(msg)
 
 //we could write this as an arrow function as well:
 
-
+const delayMsgArrow = (msg) => console.log(`This arrow message will be printed after a delay: ${msg}`)
 
 //then we use setTimeout to execute the function and specify the delay time in milliseconds
 
 //the first argument is the function reference - so just put the fuction name and NOT the brackets after it (which would execute it instead of pass a reference to it)
 //the second argument is the number of milliseconds to delay
 //the third argument (and subsequent) arguments are any parameters to pass to the function
-setTimeout(delayMsg, 1000, 'i am so delayed')
+setTimeout(delayMsg, 5000, 'i am so delayed')
+setTimeout(delayMsgArrow, 2000, 'i am so delayed too')
 
 //how does setTimeout get executed in compiled code?
 
@@ -31,6 +32,9 @@ setTimeout(delayMsg, 1000, 'i am so delayed')
 //setInterval will return a reference to the interval so that you can clear/cancel it later on
 
 //so we could set it to stop the interval after 10s like this:
+
+const interval = setInterval(delayMsg, 10*1000, 'interval function')
+setTimeout(() => clearInterval(interval), 10*1000)
 
 
 //we can also replicate a similar effect to setInterval by calling setTimeout recursively, ie. by making it call itself
@@ -47,4 +51,4 @@ function repeatTimeout(delay, limit)
     
 }
 
-//repeatTimeout(1000, 10)
+repeatTimeout(1000, 10)
