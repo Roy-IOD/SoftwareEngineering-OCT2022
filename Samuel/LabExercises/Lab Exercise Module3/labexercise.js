@@ -38,10 +38,17 @@ function sumA(a,b) {
 console.log(sumA(2,1))
 console.log(sumA(5,2))
 
-//7. TO LEAVE FOR NOW
-// const hello = ( who ) => console.log(‘Hello ’ + who ); 
-// const delalyHello = delay(hello, 300); 
-// delayHello(‘world’);
+// //7. 
+
+const delay = (func, ms) => {
+  return function(message) {
+    setTimeout(func, ms, message)
+  }
+}
+
+const hello = ( who ) => console.log('hello ' + who ); 
+const delayHello = delay(hello,1000);
+delayHello('world I am alive');
 
 
 //8.
