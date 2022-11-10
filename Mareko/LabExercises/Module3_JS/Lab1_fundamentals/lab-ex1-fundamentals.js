@@ -16,13 +16,31 @@
 
     /* Look into questions I answered wrong and didn't know */
 
-//Q2
-    debugger
+// //Q2
+//     debugger
 
-//Q3
-    console.log (5 > 4) // true (boolean)
-    console.log ("apples" > "pineapple") //I 
-    console.log ("2" > "12")
-    console.log(undefined == null) 
-    console.log(undefined === null)
-    console.log(null == "\n0\n")
+// //Q3
+//     console.log (5 > 4) // true (boolean)
+//     console.log ("apples" > "pineapple") //I 
+//     console.log ("2" > "12")
+//     console.log(undefined == null) 
+//     console.log(undefined === null)
+//     console.log(null == "\n0\n")
+
+
+const delay = (func, ms) => {
+    return function (string){
+        setTimeout(func, ms, string)
+    }
+}
+
+const hello = ( who )=> console.log('Hello ' + who );
+const delayHello = delay(hello, 3000);
+delayHello('Mareko');
+
+// function delayMsg(msg)
+// {
+//     console.log(`This message will be printed after a delay: ${msg}`)
+// }
+
+// setTimeout(delayMsg, 5000, 'i am so delayed')
