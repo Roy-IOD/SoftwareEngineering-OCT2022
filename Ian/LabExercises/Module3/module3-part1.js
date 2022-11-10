@@ -24,3 +24,8 @@
     console.log(a + b); // 12
 
 
+const dog = {
+
+}
+
+//write a constructor and a class version of the same thing. line 298, change bits and pieces
