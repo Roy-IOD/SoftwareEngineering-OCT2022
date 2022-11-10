@@ -1,3 +1,6 @@
+//const prompt = require("prompt-sync")();
+//copy the above line and run 'npm init' (accept all defaults) and then 'npm install prompt-sync' to get the prompt function working in node.js
+
 //different types of numbers
 console.log('\n1. Different type of numbers:')
 console.log('-----------------------------\n')
@@ -11,16 +14,16 @@ console.log( "not a number" / 2 ); //NaN, such division is erroneous
 console.log('\n2. Strings and quotes:')
 console.log('-----------------------------\n')
 
-const singleQuotes = 'jo is my name';
-const doubleQuotes = "jo's name is jo: ${singleQuotes}" //can contain apostrophes, but not other variables
-const backTicks = `this string contains an apostrophe ' and my other string: ${singleQuotes}`
+const singleQuotes = '"jo" is my name'; //can contain double quotes, but have to escape apostrophes with a backslash: \'
+const doubleQuotes = "jo's name is jo: ${singleQuotes}" //can contain apostrophes, but not other variables, and have to escape double quotes with \"
+const backTicks = `this string contains a double quote " and an apostrophe ' and my other string: ${singleQuotes}`
 
 console.log(singleQuotes)
 console.log(doubleQuotes)
 console.log(backTicks)
 
 
-//different types of strings and quotes
+//variable types
 console.log('\n3. Null, undefined and typeof:')
 console.log('-----------------------------\n')
 
@@ -35,7 +38,7 @@ console.log('is nullAge strictly equal to undefinedAge? ' + (nullAge === undefin
 
 console.log('typeof singleQuotes is ' + typeof singleQuotes)
 
-console.log('typeof nummAge is '+ typeof nullAge)
+console.log('typeof nullAge is '+ typeof nullAge)
 
 nullAge = 6
 
@@ -72,7 +75,7 @@ console.log(typeof div10)
 console.log('\n4. Different styles of IF statement:')
 console.log('-----------------------------\n')
 
-//full longhand way of writing an if - needed if the if and/or else block contains multiple statements
+//full longhand way of writing an if - useful if the if and/or else block contains multiple statements
 if (typeof onetwotwo == "string")
 {
     console.log(onetwotwo + ' is a string!')
