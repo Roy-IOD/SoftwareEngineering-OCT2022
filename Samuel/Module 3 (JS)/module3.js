@@ -33,3 +33,52 @@ class NbaClass
 
 const jokic = new NbaClass('Nuggets', 'Jokic', 'Denver')
 jokic.mvp();
+
+
+class NbaTeam
+{
+    constructor(newTeam)
+    {
+        this.team = newTeam;
+        this.score = 0;
+        this.fouls = 0;
+    }
+
+    basket() {
+        this.score++;
+        return this;
+     }
+
+     freethrow() {
+        this.score++;
+        return this;
+     }
+
+     threePointer(){
+        this.score += 3;
+        return this;
+     }
+
+     foul() {
+        this.fouls++;
+        return this;
+     }
+
+     halfTime() {
+        console.log('Halftime score for '+this.team+' is '+this.score + ' points and '+ this.fouls + ' fouls');
+        return this;
+     }
+
+     fullTime() {
+        console.log(`Fulltime final score for ${this.team} is ${this.score} points and ${this.fouls} fouls`)
+        return this;
+     }
+
+    
+}
+
+const nuggets = new NbaTeam ('Nuggets')
+const sixers = new NbaTeam ('76ers')
+nuggets.basket().threePointer().threePointer().threePointer().fullTime()
+sixers.foul().foul().foul().foul().foul().foul().foul().foul().fullTime()
+
