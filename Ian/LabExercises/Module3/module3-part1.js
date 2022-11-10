@@ -19,13 +19,19 @@
 //     values).
 //     Why? Fix it. The result should be 3.
 
-    let a = prompt("First number?", 1);
-    let b = prompt("Second number?", 2);
-    console.log(a + b); // 12
+    // let a = prompt("First number?", 1);
+    // let b = prompt("Second number?", 2);
+    // console.log(a + b); // 12
+//the above doesn't work!
 
+//Question 4. What will be the result for these expressions?
 
-const dog = {
+console.log(5 > 4) // true
 
-}
+"apple" > "pineapple"
+"2" > "12"
+undefined == null
+undefined === null
+null == "\n0\n"
 
-//write a constructor and a class version of the same thing. line 298, change bits and pieces
+null === +"\n0\n"

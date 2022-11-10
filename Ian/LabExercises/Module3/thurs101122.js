@@ -141,3 +141,35 @@ const basketballGame = {
 
 basketballGame.basket().basket().freeThrow().freeThrow().basket().threePointer().halfTime();
 
+
+function Team(name) {
+    this.score = 0;
+    this.name = name;
+
+    this.freeThrow = function() {
+        this.score++;
+        return this;
+    }
+    this.basket = function() {
+        this.score += 2;
+        return this;
+    }
+    this.threePointer = function() {
+        this.score += 3;
+        return this;
+    }
+    this.halfTime = function() {
+        console.log('Halftime score for '+this.name+' is '+this.score);
+        return this;
+    }
+    this.fullTime = function() {
+        console.log(`Fulltime final score for ${this.name} is ${this.score}`)
+        return this;
+    }    
+}
+
+const Redteam = new Team('Reds')
+Redteam.basket().threePointer().basket().freeThrow().basket().threePointer().halfTime();
+
+const Blueteam = new Team('Blues')
+Blueteam.basket().basket().basket().freeThrow().threePointer().basket().basket().basket().halfTime();
