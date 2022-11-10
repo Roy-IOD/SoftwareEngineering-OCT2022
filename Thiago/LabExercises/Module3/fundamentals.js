@@ -1,34 +1,28 @@
-const delay = (func, ms) => {
-    return function (message) {
-        setTimeout (func, ms, message)
-    }
-}
+//task 1
 
-const hello = ( who ) => console.log ('Hello ' + who );
-const delayHello = delay(hello, 5000);
-delayHello('world');
+//"" + 1 + 0
+//"" - 1 + 0
+//true + false
+//6 / "3"
+//"2" * "3"
+//4 + 5 + "px"
+//"$" + 4 + 5
+//"4" - 2
+//"4px" - 2
+//" -9 " + 5
+//" -9 " - 5
+//null + 1
+//undefined + 1
+//" \t \n" - 2
 
+//task 7
 
-const basketballGame = {
-    score: 0,
-    freeThrow() {
-        this.score++;
-        return this;
-    },
-    basket() {
-        this.score += 2;
-        return this;
-    },
-    threePointer() {
-        this.score += 3;
-        return this;
-    },
-    halfTime() {
-        console.log('Halftime score is '+this.score);
-        return this;
-    },
-    fullTime() {
-        console.log('Fulltime final score is '+this.score)
-        return this;
-    }
-}
+//const delay = (func, ms) => {
+//    return function (message) {
+//       setTimeout (func, ms, message)
+//    }
+//}
+
+//const hello = ( who ) => console.log ('Hello ' + who );
+//const delayHello = delay(hello, 5000);
+//delayHello('world2');
