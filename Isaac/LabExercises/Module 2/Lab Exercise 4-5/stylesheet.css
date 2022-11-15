@@ -1,0 +1,90 @@
+html {
+    font-family: 'Island Moments', cursive;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a { text-decoration: none; color: black;}
+a:hover, a:active { text-decoration: none; color:blue }
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    background-image: url(portfolio-images/bgimage.jpg);
+    background-size:cover;
+    position:relative;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction:column;
+    flex:100%;
+    padding-left: 20px;
+    height:100%;
+    text-align: right;
+    padding-top: 100px;
+    font-size: larger;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.main-image {
+    border-radius: 50%;
+    width: 500px;
+}
+.main-title {
+    font-size: 4.5rem;
+}
+.main-desc {
+    font-size: 1.5rem;
+}
+.main-text {
+    display:flex;
+    flex-basis: 100px;
+    flex-grow:0;
+    flex-shrink:0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.headings {
+    font-size: large;
+}
+
+.icons a + a {
+    padding-left: 2rem;
+}
+
+.icons {
+    align-items: center;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .main-container {flex-direction: column;}
+    .main-image {display: none;}
+    .main-title {font-size: 1.8rem; padding:10px 10px 0px 10px;}
+    .main-desc {font-size: 1rem; padding:10px 0px 0px 50px;}
+    .main-text {flex-direction: row; flex-wrap: wrap; padding-top: 0%;}
+    .icons {padding:0px 0px 0px 150px;; width: 100%; align-items: center;}
+    .icons a + a {padding-left: 2rem; width: 100%;}
+    .flex-container {padding-top: 0px; text-align: left; font-size: 1.1rem; padding-left: 0px; }
+}
+
+
+/*
+.flex-container {
+    display: flex;
+    flex-direction:column;
+    flex:100%;
+    padding-left: 20px;
+    height:100%;
+    text-align: right;
+    padding-top: 100px;
+}

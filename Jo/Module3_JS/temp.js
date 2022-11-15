@@ -1,7 +1,7 @@
-//const delay = (func, ms) => (msg) => setTimeout(func, ms, msg)
+//const delay = (func, ms) => (msg) => setTimeout(func, ms, msg) //a more condensed version of the below
 
 const delay = (func, ms) => {
-    return function(msg) { setTimeout(func, ms, msg); }
+    return function(msg) { setTimeout(func, ms, msg); }  //returns a function which calls setTimeout to delay the given function
 }
 
 
