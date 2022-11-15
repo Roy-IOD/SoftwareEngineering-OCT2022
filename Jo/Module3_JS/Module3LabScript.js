@@ -164,7 +164,7 @@ function generateCompanyTable()
 }
 
 
-//TODO: Create functions to remove a person; to remove a company
+//TODO: Create functions to remove a person; to remove a company; to filter and return all companies in a given category
 
 addPerson('Jo', '44 Forty St', 'Darwin', 'Company Nine');
 countPeople();
