@@ -57,7 +57,7 @@ if ("0") {
 //Fundamentals Exercise 1.6 //
 
 let result;
-if (a + b < 4) {
+if (e + f < 4) {
 result = 'Below';
 } else {
 result = 'Over';
