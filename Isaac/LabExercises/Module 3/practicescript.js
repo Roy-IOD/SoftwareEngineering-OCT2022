@@ -98,7 +98,7 @@ const names = ["John", "Jake", "Jack"];
 names.unshift("Jerry");
 console.log(names)
 
-
+*/
 
 const companies = [
     { name: "Company One", category: "Finance", start: 1981, end: 2004 },
@@ -112,7 +112,7 @@ const companies = [
     { name: "Company Nine", category: "Retail", start: 1981, end: 1989 }
   ];
 
-*/
+
   const people = [
     {
         name: "Jane",
@@ -210,7 +210,7 @@ function changeCompany(person_name, new_company)
         }
     })
 }
-*/
+
 
 //This function changes the address of the given person to the new value and prints a confirmation message
 function changeAddress(person_name, new_street, new_suburb)
@@ -229,7 +229,7 @@ function changeAddress(person_name, new_street, new_suburb)
 }
 console.log(people)
 
-/*
+
 //This function gets the company category for a given person and prints and returns the category value
 function getCompanyCategory(person_name)
 {
@@ -259,10 +259,29 @@ function getCompanyCategory(person_name)
 //This function gets the company starting year for a given person and prints and returns the value
 function getCompanyStartYear(person_name)
 {
+    let company;
+    let start;
+    for (let i = 0; i < people.length; i++)
+    {
+        if (people[i].name == person_name)
+        {
+            company = people[i].company;
+        }
+    }
+    console.log(person_name+' works at '+company);
 
+    for (let j = 0; j < companies.length; j++)
+    {
+        if (companies[j].name == company)
+        {
+            start = companies[j].start;
+        }
+    }
+    console.log(company+' started in '+start+'.');
 
-
+    return start;
 }
+getCompanyStartYear('Jill')
 
 
 //This function generates a HTML table to format all of the people
@@ -294,12 +313,6 @@ function generateCompanyTable()
 }
 
 
-
-
-
-
-
-
 addPerson('Jo', '44 Forty St', 'Darwin', 'Company Nine');
 countPeople();
 changeCompany('Jill', 'Company Five');
@@ -309,11 +322,8 @@ getCompanyCategory('John');
 //Company examples 
 addCompany ('76ers', 'Sport', 1876, 2001 );
 countCompanies();
-
-*/
 changeAddress('John', 'Waterview Drive', 'Lane Cove');
 
-/*
 
 //TODO: Create functions to remove a person; to remove a company; to filter and return all companies in a given category
 
@@ -331,7 +341,24 @@ function removeCompany(a) {
 }
 removeCompany(5);
 
-
-//This function filters and returns all companies in the Retail Category
-
 */
+
+//This function filters and returns all companies in a category
+
+
+
+//This works as expected
+let companyCategory = companies.filter((element) => {
+    if (element.category === 'Retail')
+    return companies;});
+
+console.log(companyCategory)
+
+//This returns undefined
+function getCompanyCategory(x) {
+    let companyCategory = companies.filter((element) => {
+    if (element.category === x)
+    return companies;})};
+
+console.log(getCompanyCategory('Retail'))
+
