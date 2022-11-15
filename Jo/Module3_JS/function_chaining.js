@@ -25,14 +25,14 @@ const basketballGame = {
     }
 }
 
-//this is what function chaining looks like, but it won't work yet ...
+//this is what function chaining looks like
 basketballGame.basket().basket().freeThrow().freeThrow().basket().threePointer().halfTime();
 
 
 //if we wanted to have one of these objects for each team what could we do?
 //copy-paste and rename object; make a shallow clone/copy of the original in a new variable; rewrite as a constructor or class
 
-function Team(name) {
+function Team(name) { //constructor function
     this.score = 0;
     this.name = name;
 
@@ -59,7 +59,41 @@ function Team(name) {
 }
 
 const bullets = new Team('bullets')
-bullets.basket().threePointer().basket().freeThrow().basket().halfTime();
+bullets.basket().threePointer().basket().freeThrow().basket().halfTime().basket().freeThrow().basket().threePointer().basket().basket().freeThrow().fullTime();
 
 const celtics = new Team('celtics')
 celtics.basket().freeThrow().threePointer().basket().basket().basket().halfTime()
+
+
+class BasketballTeam { //class version of the above
+
+    constructor(name)
+    {
+        this.score = 0;
+        this.name = name;
+    }
+
+    freeThrow() {
+        this.score++;
+        return this;
+    }
+    basket() {
+        this.score += 2;
+        return this;
+    }
+    threePointer() {
+        this.score += 3;
+        return this;
+    }
+    halfTime() {
+        console.log('Halftime score for '+this.name+' is '+this.score);
+        return this;
+    }
+    fullTime() {
+        console.log(`Fulltime final score for ${this.name} is ${this.score}`)
+        return this;
+    }    
+}
+
+const lakers = new BasketballTeam('LA Lakers')
+lakers.threePointer().basket().basket().freeThrow().basket().threePointer().halfTime().threePointer().threePointer().basket().basket().fullTime()
