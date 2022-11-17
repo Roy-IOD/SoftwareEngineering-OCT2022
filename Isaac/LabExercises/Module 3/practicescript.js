@@ -341,24 +341,40 @@ function removeCompany(a) {
 }
 removeCompany(5);
 
-*/
+
 
 //This function filters and returns all companies in a category
 
 
 
-//This works as expected
+//Variable Version
 let companyCategory = companies.filter((element) => {
     if (element.category === 'Retail')
     return companies;});
 
 console.log(companyCategory)
 
-//This returns undefined
+//Function Version
 function getCompanyCategory(x) {
-    let companyCategory = companies.filter((element) => {
-    if (element.category === x)
-    return companies;})};
+    let companyCategory = companies.filter((element) => {return (element.category === x)})
+    return companyCategory
+};
 
-console.log(getCompanyCategory('Retail'))
+console.log(getCompanyCategory('Auto'))
+*/
+// Code to get my Age
 
+function calculate_age(dateOfBirth) { 
+    let difference = Date.now() - dateOfBirth.getTime();
+    let ageDate = new Date(difference); 
+  
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+console.log(calculate_age(new Date(1998, 3, 13)));
+
+const today = new Date();
+console.log(today);
+const birthday = new Date(1998, 03, 13)
+console.log(birthday);
+
+console.log('I am '+ (today.getFullYear() - birthday.getFullYear()) +' years old')
