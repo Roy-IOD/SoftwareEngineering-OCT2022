@@ -22,13 +22,15 @@
         const insecureSources = sources.filter(link => link.startsWith('http://'));
 
         //how would you get an array of all the movie titles?
+        const titles = Array.from(images, image => image.alt);
         
         //how would you get an array of all the movie titles for Thor?
+        const thorTitles = titles.filter(title => title.startsWith('Thor'));
 
         console.log(sources)
         console.log(insecureSources)
-        //console.log(titles)
-        //console.log(thorTitles)
+        console.log(titles)
+        console.log(thorTitles)
     </script>
 
 </body>
