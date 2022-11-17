@@ -109,12 +109,13 @@ function createPeopleList()
     {
         html += '<li>' + people[i].name + '</li>';
     }
-    html += '</li>';
+    html += '</ul>';
 
-    for (let person of people)
-    {
-        html += '<li>' + person.name + '</li>';
-    }
+    //same thing, but using a for...of loop instead
+    //for (let person of people)
+    //{
+    //    html += '<li>' + person.name + '</li>';
+    //}
 
     return html;
 }
@@ -259,7 +260,7 @@ function generateCompanyTable()
 {
     let html = '<table>';
     html += '<thead><tr> <th>Name</th> <th>Category</th> <th>Start</th> <th>End</th> </tr></thead>';
-    for (let i = 0; i < people.length; i++)
+    for (let i = 0; i < companies.length; i++)
     {
 
     }
