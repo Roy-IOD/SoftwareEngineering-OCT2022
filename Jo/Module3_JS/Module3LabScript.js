@@ -162,6 +162,9 @@ function getLatestPeople(latest_number)
     //so if latest_number is 2, it will start at end-2 and return the last 2 people
     let startFrom = people.length - latest_number;
     return people.slice(startFrom, people.length)
+
+    //you could also do :
+    //return people.slice(latest_numer*-1) //since passing in a negative number will start from the end and work backwards
 }
 
 //This function returns the given most recent companies (at the end of the array)
