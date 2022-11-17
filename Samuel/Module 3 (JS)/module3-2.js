@@ -102,5 +102,29 @@ const sentence = ["I", "study", "JavaScript", "right", "now"];
 sentence.splice(0, 3, "let's", "dance");
 console.log(sentence)
 
+//sets
 
+const set = new Set (["oranges", "apples", "bananas"])
+for (let value of set) console.log(value);
 
+set.forEach((value, valueAgain, set) => {
+    console.log(value);
+});
+
+//destructuring
+
+const arr6 = ["john", "smith"]
+const [firstName, lastName] = arr6
+console.log(firstName)
+
+//date
+const birthday = new Date(1998,7,8)
+console.log(birthday)
+
+const today = new Date()
+console.log(today)
+
+console.log(`I am ${today.getFullYear() - birthday.getFullYear()} years old`)
+
+const exactTOB = new Date(1998,7,8,20,8)
+console.log(exactTOB)
