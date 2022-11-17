@@ -111,6 +111,11 @@ function createPeopleList()
     }
     html += '</li>';
 
+    for (let person of people)
+    {
+        html += '<li>' + person.name + '</li>';
+    }
+
     return html;
 }
 
