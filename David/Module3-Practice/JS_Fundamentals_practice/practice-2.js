@@ -270,12 +270,37 @@
 // royUser.changeAdminStatus()
 // console.log(royUser)
 
-class User {
-    isAdmin= true;
-   constructor(name) {
-   this.name = name;
+// class User {
+//     isAdmin= true;
+//    constructor(name) {
+//    this.name = name;
+//     }
+//    }
+//    const user = new User('Jack');
+//    console.log(user.isAdmin); //true
+//    console.log(user.name); //Jack
+
+const cat = {
+    name : 'Bertie',
+    breed : 'Cymric',
+    color : 'white',
+    greeting: function() {
+      console.log('Meow!');
     }
-   }
-   const user = new User('Jack');
-   console.log(user.isAdmin); //true
-   console.log(user.name); //Jack
+  }
+  
+  // Put your code here
+  let catName = (cat.name)
+  greeting(catName)
+
+  
+  // Don't edit the code below here
+  
+//   let para1 = document.createElement('p');
+//   let para2 = document.createElement('p');
+  
+//   para1.textContent = `The cat's name is ${ catName }.`;
+//   para2.textContent = `The cat's color is ${ cat.color }.`;
+  
+//   section.appendChild(para1);
+//   section.appendChild(para2);
