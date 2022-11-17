@@ -10,10 +10,11 @@ console.log ("4px" - 2)
 console.log (" -9 " + 5)
 
 //3.
-// let a = prompt("First Number?", 1);
-// let b = prompt("Second Number?", 2);
+const prompt = require("prompt-sync")();
+ let a = +prompt("First Number?", 1);
+ let b = +prompt("Second Number?", 2);
 
-// alert(a + b);
+ alert(a + b);
 
 //4.
 console.log(5 > 4) //T
@@ -89,3 +90,19 @@ const ladder = {
 }
 
 ladder.up().down().up().up().showStep();
+
+//10. 
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('How much to add?', 0);
+  };
+
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);
