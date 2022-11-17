@@ -38,13 +38,18 @@
 
 // console.log(returnUndefined())
 
-function checkAge(age){
-if( age >18) {
-return 'adult';
-}
-return 'non-adult';
-}
+// function checkAge(age){
+// if( age >18) {
+// return 'adult';
+// }
+// return 'non-adult';
+// }
 
-console.log(checkAge(19))
+// console.log(checkAge(19))
 
+const set = new Set (["oranges", "apples", "bananas"])
+for (let value of set) console.log(value);
 
+set.forEach((value, valueAgain, set) => {
+    console.log(value);
+});
