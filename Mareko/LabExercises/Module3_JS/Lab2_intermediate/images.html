@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lots of images (stolen from Amazon)</h2>
+
+    <img alt="Thor: Love and Thunder (4K Ultra HD/Blu-ray)" src="https://images-fe.ssl-images-amazon.com/images/I/916kHTD0XsL._AC_UL450_SR450,320_.jpg" height="160px" >
+    <img alt="TOP GUN MAVERICK - 2 DISC - UHD/BD" src="https://images-fe.ssl-images-amazon.com/images/I/51xE5cbMlvL._AC_UL450_SR450,320_.jpg" height="160px">
+    <img alt="Thor: Love and Thunder (Blu-Ray)" src="https://images-fe.ssl-images-amazon.com/images/I/91iHY6U2k4L._AC_UL450_SR450,320_.jpg" height="160px">
+    <img alt="1883: Season 1 - 4 Disc - (DVD)" src="https://images-fe.ssl-images-amazon.com/images/I/51lKPqvbqoL._AC_UL450_SR450,320_.jpg" height="160px">
+    <img alt="House Of The Dragon: Season 1 (DVD)" src="https://images-fe.ssl-images-amazon.com/images/I/718g-TI5tQL._AC_UL450_SR450,320_.jpg" height="160px">
+
+    <script>
+        // Create an array based on a property of DOM Elements
+        const images = document.getElementsByTagName('img');
+        const sources = Array.from(images, image => image.src);
+        const insecureSources = sources.filter(link => link.startsWith('http://'));
+
+        //how would you get an array of all the movie titles?
+        
+        //how would you get an array of all the movie titles for Thor?
+
+        console.log(sources)
+        console.log(insecureSources)
+        //console.log(titles)
+        //console.log(thorTitles)
+    </script>
+
+</body>
+</html>
