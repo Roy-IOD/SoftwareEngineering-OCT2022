@@ -60,4 +60,68 @@ function camelize(str) {
   }
 
   console.log(camelize("background-color"))
+  console.log(camelize("list-style-image"))
+  console.log(camelize("-webkit-transition"))
 
+//5.
+function Calculator() {
+  
+  this.methods = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b
+   };
+
+  this.calculate = function(equation) {
+
+    let parts = equation.split(' '),
+    a = +parts[0],
+    op = parts[1],
+    b = +parts[2];
+  
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+    return NaN;
+    }
+
+  return this.methods[op](a, b);
+  };
+
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  };
+}
+
+let calc = new Calculator;
+
+console.log(calc.calculate("3 + 7"))
+
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+console.log(powerCalc.calculate("2 * 3"))
+
+//6.
+
+function unique(arr){
+ return Array.from(new Set(arr));
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+"Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(values));
+
+//7.
+
+let map = new Map();
+map.set("name", "John");
+
+let keys = Array.from(map.keys());
+let values1 = Array.from(map.values());
+
+keys.push("more");
+values1.push("names");
+
+console.log([map])
