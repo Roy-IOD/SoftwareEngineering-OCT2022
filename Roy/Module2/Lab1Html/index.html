@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first page - [Your name]</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is my first website" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="[Your name]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- works like <a href="/index.html">Home</a> -->
+            <a href="/">Home</a>
+            <!-- works like <a href="/form.html">Home</a> -->
+            <a href="form.html">Form</a>
+        </nav>
+    </header>
+    <main>
+        <h1>My web development learning journey</h1>
+        <article>
+            <h2>HTML elements - div, span, pre, p, ul, li, ol</h2>
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+
+            <pre>
+    Text in         a pre element
+            is displayed in a fixed-width
+            font, and it preserves
+            both      spaces and
+            line breaks</pre>
+            <p>
+                Text in a a p element is displayed in a fixed-width font, and it
+                preserves both spaces and line breaks
+            </p>
+
+            <ul>
+                <li>avocado</li>
+                <li>kiwi</li>
+                <li>banana</li>
+            </ul>
+            <ol>
+                <li>avocado</li>
+                <li>kiwi</li>
+                <li>banana</li>
+            </ol>
+        </article>
+        <article>
+            <h2>HTML elements - table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">First header</th>
+                        <th>Second header</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First cell - first row</td>
+                        <td>Second cell - first row</td>
+                        <td>Third cell - first row</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">First cell - second row</td>
+                        <td>Second cell - second row</td>
+                        <td>Third cell - second row</td>
+                    </tr>
+                    <tr>
+                        <td>First cell - third row</td>
+                        <td>Second cell - third row</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <img class="fit-picture" src="/media/cc0-images/grapefruit-slice-332-332.jpg"
+                alt="Grapefruit slice atop a pile of other slices" />
+
+            <video controls width="250">
+                <source src="/media/cc0-videos/flower.webm" type="video/webm" />
+                <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+            <figure>
+                <figcaption>Listen to the T-Rex:</figcaption>
+                <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </figure>
+        </article>
+    </main>
+    <footer>Copyright 2021 &copy;</footer>
+</body>
+
+</html>
