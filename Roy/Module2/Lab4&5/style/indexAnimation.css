@@ -1,0 +1,65 @@
+#profile-photo {
+    transition: 3.00s;
+    -webkit-transition: 3.00s;
+    -moz-transition: 3.00s;
+    -ms-transition: 3.00s;
+    -o-transition: 3.00s;
+}
+
+#profile-photo:hover {
+    transition: 3.00s;
+    -webkit-transition: 3.00s;
+    -moz-transition: 3.00s;
+    -ms-transition: 3.00s;
+    -o-transition: 3.00s;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.personal-info h2,
+.skills h2 {
+    animation-name: changeH2background;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#profile-name {
+    animation-name: left_right;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes changeH2background {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+@keyframes left_right {
+    from {
+        margin-left: 0%;
+    }
+
+    50% {
+        margin-left: calc(100% - 145px);
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
