@@ -79,7 +79,7 @@ function addCompany(new_name, new_category, new_start, new_end)
     //console.log(new_name+' has been added to the directory')
 }
 
-addCompany('Company Ten', 'Healthcare', 2001, 2021)
+//addCompany('Company Ten', 'Healthcare', 2001, 2021)
 
 //This function prints and returns how many people exist
 function countPeople()
@@ -113,7 +113,7 @@ function changeCompany(person_name, new_company)
     })
 }
 
-changeCompany('Luka', 'Company Ten')
+//changeCompany('Luka', 'Company Ten')
 
 //This function changes the address of the given person to the new value and prints a confirmation message
 function changeAddress(person_name, new_street, new_suburb)
@@ -191,5 +191,18 @@ function getCompanyStartYear(person_name)
 
 }
 
-getCompanyStartYear('Luka')
+//getCompanyStartYear('Luka')
 
+const today = new Date()
+const birthday = new Date('December 17, 1995 03:24:00') // DISCOURAGED: may not work in all runtimes
+
+const birthday2 = new Date('2001-10-15')   // This is ISO8601-compliant and will work reliably
+const birthday3 = new Date(2001, 10, 15)            // the month is 0-indexed
+const birthday5 = new Date(628021800000)            // passing epoch timestamp
+
+console.log(today)
+console.log(birthday2)
+
+
+const ageTest = (today.getFullYear() - birthday2.getFullYear())
+console.log('Mareko is ' + ageTest +' years old')
