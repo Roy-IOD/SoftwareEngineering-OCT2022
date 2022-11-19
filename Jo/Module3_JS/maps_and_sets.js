@@ -59,7 +59,7 @@ const phoneBookObject2 = Object.fromEntries( [...phoneBookABC.entries()].concat(
 console.log(phoneBookObject2)
 
 
-//sets are a lot like maps with the main differences being: 1. they only store values, not kay/value pairs, and 2. they only store unique values
+//sets are a lot like maps with the main differences being: 1. they only store values, not key/value pairs, and 2. they only store unique values
 
 //so we can have multiple identical values in a map (eg. adding another person with the same phone number), but a Set will filter this out:
 phoneBookDEF.set('Frank', '04332277') //same as David

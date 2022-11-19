@@ -59,6 +59,32 @@ console.log(`${fixedpoint1} + ${fixedpoint2} = ${fixedpoint1 + fixedpoint2}`)
 //one way to get around this is to multiply all numbers by a common factor, eg. turn dollars into cents by multiplying by 100
 console.log(`${point1*100} + ${point2*100} == ${0.3*100}`)
 
+//takes two decimal (floating point) numbers, does the operation and keeps the required number of decimals
+function safeDecimalOperation(float1, float2, operation = '+', numDecimals = 2) //sets some default values for arguments
+{
+    console.log(`Doing safe decimal operation : ${float1} ${operation} ${float2} with ${numDecimals} decimal places`)
+
+    let factor = 10**numDecimals; //exponential, so for numDecimals=2, would be 10*10
+    let result = 0;
+
+    //use a switch when you want to check a variable for a number of different possible values
+    switch (operation) {
+        case '+': result = (float1*factor) + (float2*factor); break;
+        case '-': result = (float1*factor) - (float2*factor); break;
+        case '/': result = (float1*factor) / (float2*factor); break;
+        case '*': result = (float1*factor) * (float2*factor); break;
+    }
+
+    console.log(`Used a factor of ${factor} to get result of ${result}`)
+
+    //now round off any remaining decimals and divide by the same factor you multiplied by
+    return Math.round(result) / factor;
+}
+
+console.log(`${point1} + ${point2} = ${safeDecimalOperation(point1,point2)}`)
+console.log(`${1/3} + ${3.14159} = ${safeDecimalOperation(1/3,3.14159)}`)
+
+
 console.log('\nData Types & Conversions (NaN and parsing):')
 
 let notanumber = "not a number"

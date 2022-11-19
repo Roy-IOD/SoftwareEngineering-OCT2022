@@ -1,0 +1,119 @@
+html,
+body,
+.main {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contain {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* ROW */
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+}
+
+.col-4 {
+    width: 30%;
+    background-color: rgba(16, 14, 185, 0.753);
+}
+
+.col-8 {
+    width: 70%;
+}
+
+.row:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(16, 14, 185, 0.753);
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.col-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile-photo {
+    display: flex;
+    width: auto;
+    border-radius: 50%;
+    padding: 0 15px 0 15px;
+}
+
+section>* {
+    padding: 0 15px 0 15px;
+}
+
+.skills>h4:nth-child(2)::after {
+    content: "Intermediate";
+    font-weight: bold;
+    text-align: right;
+    float: right;
+}
+
+.skills>h4:nth-child(3)::after {
+    content: "Intermediate";
+    font-weight: bold;
+    text-align: right;
+    float: right;
+}
+
+.skills>h4:nth-child(4)::after {
+    content: "Still learning";
+    font-weight: bold;
+    text-align: right;
+    float: right;
+}
+
+ul {
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+.right-side>section {
+    margin: 0 15px 0 15px;
+    border-bottom: 5px solid black;
+}
+
+@media screen and (max-width: 615px) {
+
+    /* For tablets / Phone */
+
+    .contain {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .col-4 {
+        width: 33.33%;
+    }
+
+
+    .col-8 {
+        width: 66.66%;
+    }
+}

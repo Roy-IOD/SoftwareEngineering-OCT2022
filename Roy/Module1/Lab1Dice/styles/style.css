@@ -1,0 +1,25 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+button {
+    background-color: brown;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 200px;
+    cursor: pointer;
+}
+
+#dice {
+    height: 100px;
+    width: 100px;
+    padding: 50px;
+    margin: 50px auto;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 80px;
+}

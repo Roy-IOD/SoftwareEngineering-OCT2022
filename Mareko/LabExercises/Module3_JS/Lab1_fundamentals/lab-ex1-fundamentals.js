@@ -31,11 +31,12 @@
     console.log(null == "\n0\n") //false
     console.log(null === +"\n0\n") // false
 
-//1.5
-    // if ("0") {
-    // alert( 'Hello' );
-    // }
+1.5
+    if ("0") {
+    console.log( 'Hello' );
+    }
 
+    // this will print out 'Hello' as a string produces a truthful result. If there was nothing within the string quotation marks or the quotation marks around 0 were removed, then no alert or print-out would appear.
 
 //1.6
     const c = 2;
