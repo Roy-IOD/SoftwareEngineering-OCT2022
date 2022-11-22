@@ -3,20 +3,20 @@ const prompt = require("prompt-sync")();
 
 // 2
 
-console.log("" + 1 + 0)
-console.log("" - 1 + 0)
-console.log(true + false)
-console.log(6 / "3")
-console.log("2" * "3")
-console.log(4 + 5 + "px")
-console.log("$" + 4 + 5)
-console.log("4" - 2)
-console.log("4px" - 2)
-console.log(" -9 " + 5)
-console.log(" -9 " - 5)
-console.log(null + 1)
-console.log(undefined + 1)
-console.log(" \t \n" - 2)
+console.log("" + 1 + 0) //10
+console.log("" - 1 + 0) //-1
+console.log(true + false) //1
+console.log(6 / "3") //2
+console.log("2" * "3") //6
+console.log(4 + 5 + "px") //9px
+console.log("$" + 4 + 5) //$45
+console.log("4" - 2) // 2
+console.log("4px" - 2) //NaN
+console.log(" -9 " + 5) // -9 5
+console.log(" -9 " - 5) //-14
+console.log(null + 1) //1
+console.log(undefined + 1) //NaN
+console.log(" \t \n" - 2) //-2
 
 // 3
 
@@ -26,13 +26,13 @@ console.log (a + b); // 12
 
 // 4
 
-console.log(5 > 4)
-console.log("apple" > "pineapple")
-console.log("2" > "12")
-console.log(undefined == null)
-console.log(undefined === null)
-console.log(null == "\n0\n")
-console.log(null === +"\n0\n")
+console.log(5 > 4) //true
+console.log("apple" > "pineapple") //false
+console.log("2" > "12") //true
+console.log(undefined == null) //true
+console.log(undefined === null) //false
+console.log(null == "\n0\n") //false
+console.log(null === +"\n0\n") //false
 
 // 5
 
@@ -122,3 +122,5 @@ accumulator.read(); // adds the user-entered value
 accumulator.read(); // adds the user-entered value
 accumulator.read(); // adds the user-entered value
 console.log(accumulator.value); // shows the sum of these values
+
+console.log(5 > 4)

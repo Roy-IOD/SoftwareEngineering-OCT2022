@@ -124,4 +124,97 @@ let values1 = Array.from(map.values());
 keys.push("more");
 values1.push("names");
 
-console.log([map])
+console.log(keys)
+
+//8.
+let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+  ];
+
+let messageRead = new WeakSet(); 
+
+messageRead.add(messages[0])
+messageRead.add(messages[2])
+
+console.log("Read Message Number 2? " + messageRead.has(messages[1]))
+console.log("Read Message Number 1? " + messageRead.has(messages[0]))
+
+
+//9.
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+  };
+
+function sumSalaries(salaries){
+
+  let sum = 0
+  for (let salary of Object.values(salaries)){
+    sum += salary;
+  }
+  return sum;
+  }
+
+
+
+console.log(sumSalaries(salaries))
+
+//10.
+const wages = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+  };
+
+function topSalary(wages){
+
+  let maxWages = 0;
+  let maxName = null;
+
+  for(const [name, wage] of Object.entries(wages)){
+  if (maxWages < wage) {
+    maxWages = wage;
+    maxName = name;
+  } 
+ }
+
+ return maxName
+}
+
+  console.log(topSalary(wages))
+
+  //11.
+
+  function getSecondsToday(){
+    let now = new Date();
+
+    let startToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    let seconds = (now - startToday);
+    return Math.round(seconds/1000)
+  }
+
+console.log(getSecondsToday())
+
+//12.
+
+let room = {
+  number: 23
+  };
+
+let meetup = {
+  title: "Conference",
+  occupiedBy: [{name: "John"}, {name: "Alice"}],
+  place: room
+  };
+
+  // circular references
+  room.occupiedBy = meetup;
+  meetup.self = meetup;
+
+  console.log(JSON.stringify(meetup, function replacer(key, value){
+    if (key != "" && value == meetup) return undefined;
+    else return value;
+  }));

@@ -1,0 +1,29 @@
+/* Basic flexbox */
+.flex-container {
+  display: flex;
+}
+.flex-item-1,
+.flex-item-2,
+.flex-item-3,
+.flex-item-4 {
+  flex: 2 100px;
+}
+/* Flex center */
+.flex-item-1,
+.flex-item-2,
+.flex-item-3,
+.flex-item-4 {
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-space-between {
+  justify-content: space-between;
+}
+.flex-basis-item-50 {
+  flex-wrap: wrap;
+  flex-basis: 50%;
+}

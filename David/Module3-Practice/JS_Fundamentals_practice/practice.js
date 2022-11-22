@@ -113,3 +113,4 @@
 // const delayHello = delay(hello, 5000);
 // delayHello('world2');
 
+console.log(5 > 4)
