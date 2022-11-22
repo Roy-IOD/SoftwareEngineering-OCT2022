@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab3</title>
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      .background-1 {
+        background: #68b0ab;
+      }
+
+      .background-2 {
+        background: #8fc0a9;
+      }
+
+      .background-3 {
+        background: #c8d5b9;
+      }
+
+      .background-4 {
+        background: #faf3dd;
+      }
+
+      .m-20 {
+        margin: 20px;
+      }
+
+      .h-80 {
+        height: 80px;
+      }
+
+      .h-400 {
+        height: 400px;
+      }
+
+      .w-80 {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h3>Basic flexbox</h3>
+
+      <div class="flex-container">
+        <div class="flex-item-1 background-1 h-80"></div>
+        <div class="flex-item-2 background-2 h-80"></div>
+        <div class="flex-item-3 background-3 h-80"></div>
+        <div class="flex-item-4 background-4 h-80"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Centering elements</h3>
+      <div class="m-20 flex-container flex-center h-400 background-4">
+        <div class="background-1 h-80 w-80"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Spacing elements on the opposites sites</h3>
+      <div class="flex-container flex-space-between">
+        <div class="h-80 background-1">I'm on the left</div>
+        <div class="h-80 background-2">I'm on the right</div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Wrapping items</h3>
+      <div class="flex-container flex-wrap">
+        <div class="flex-basis-item-50 h-80 background-1"></div>
+        <div class="flex-basis-item-50 h-80 background-2"></div>
+        <div class="flex-basis-item-50 h-80 background-3"></div>
+        <div class="flex-basis-item-50 h-80 background-4"></div>
+      </div>
+    </section>
+  </body>
+</html>

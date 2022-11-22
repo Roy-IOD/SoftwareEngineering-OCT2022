@@ -46,9 +46,9 @@ function Calculator(){
 
     this.calculate=function(expression){
         const parts = expression.split (" ")
-        const firstNumber = parts [0]
-        const operator = parts [1]
-        const lastNumber = parts [2]
+        const firstNumber = parseInt(parts[0])
+        const operator = parts[1]
+        const lastNumber = parseInt(parts[2])
         const func=this.methods[operator]
         return func(firstNumber, lastNumber)
     }
@@ -80,5 +80,5 @@ function unique(arr) {
 //8
 //9
 //10
-/11
+//11
 //12
