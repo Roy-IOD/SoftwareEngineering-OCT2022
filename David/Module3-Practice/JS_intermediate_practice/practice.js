@@ -101,16 +101,50 @@
 
 // console.log(myAge)
 
+// const user = {
+//     sayHi() { // ignored
+//      alert("Hello");
+//      },
+//      [Symbol("id")]: 123, // ignored
+//     something: undefined // ignored
+//     };
+//     console.log( JSON.stringify(user) ); // {} (empty object)
+
+//     const room = {
+//         number: 23
+//         };
+//         const meetup = {
+//         title: "Conference",
+//         participants: ["john", "ann"]
+//         };
+//         meetup.place = room; // meetup references room
+//         room.occupiedBy = meetup; // room references meetup
+//         console.log(JSON.stringify(meetup)); // Error: Converting circular structure to JSON
+
+// const room = {
+//     number: 23
+//     };
+//     const meetup = {
+//     title: "Conference",
+//     participants: [{name: "John"}, {name: "Alice"}],
+//     place: room // meetup references room
+//     };
+//     room.occupiedBy = meetup; // room references meetup
+//     console.log( JSON.stringify(meetup, ['title', 'participants']) );// {"title":"Conference","participants":[{},{}]}        
+
+// const user = {
+//     sayHi() { console.log("Hello");},
+//      [Symbol("id")]: 123,
+//     something: undefined
+//     };
+    
+    
 const user = {
-    sayHi() { console.log("Hello");},
+    sayHi() { alert("Hello");},
      [Symbol("id")]: 123,
     something: undefined
     };
-    
-    
-    let jsonString = JSON.stringify(user, function(key, value) {
-        console.log(key)
-        console.log(value)
+    JSON.stringify(user, function(key, value) {
     if( typeof value === 'function') {
     return value.toString();
      }
