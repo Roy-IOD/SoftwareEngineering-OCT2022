@@ -1,0 +1,104 @@
+/*body {
+  background: red;
+}
+*/
+img {
+  width: 100%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap");
+
+/* Selectors */
+article {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid black;
+}
+.style-me1 {
+  color: red;
+}
+#style-me2 {
+  color: blue;
+}
+
+/* 1.4 to go here */
+.style-me1#style-me2 {
+  color: purple;
+}
+
+/* Combinators */
+.my-descendants-are-styled p {
+  background: red;
+}
+
+.my-children-are-styled > p {
+  background: red;
+}
+/* Box model and common properties */
+.box {
+  margin: 1.5rem;
+  padding: 5px 20px 40px 60px;
+  width: 100vw;
+  height: 100vh;
+  /* re-size the browser while the height depends on the vw & vh */
+  border-style: dashed;
+  border-color: chartreuse;
+  border-width: 10px;
+  box-sizing: border-box;
+  text-overflow: unset;
+  outline: 10px;
+  border-radius: 20px;
+  background-image: url(./safari.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Positioning  */
+.position-absolute {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+}
+.position-relative {
+  position: relative;
+}
+
+/* sticky */
+.position-sticky {
+  position: sticky;
+  /* top: 20px; */
+}
+/* styling text -Google Fonts(how to link them?) */
+.text-style {
+  color: brown;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: capitalize;
+  text-decoration: dashed;
+}
+
+/* Styling Links */
+a,
+a:link,
+a:visited {
+  color: rgb(255, 0, 8);
+  font-size: larger;
+  font-weight: 300;
+  /*font decoration and border*/
+}
+a:hover,
+a:active,
+a:focus {
+  color: rgb(208, 139, 208);
+}
+/* calc() */
+.calc-style {
+  /* width: 100vw; */
+  /* width: calc(100vw-100px); */
+  width: 100%;
+}
