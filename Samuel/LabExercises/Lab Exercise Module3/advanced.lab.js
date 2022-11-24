@@ -77,15 +77,75 @@
 
 //4. 
 
-let f = _.debounce(console.log, 1000);
-f("a");
-setTimeout( () => f("b"), 200);
-setTimeout( () => f("c"), 500);
+// let f = str => console.log(str)
+
+// f = debounce(f, 1000);
+// f("a");
+// setTimeout( () => f("b"), 200);
+// setTimeout( () => f("c"), 5000);
+// let intervalTimer = setInterval(() => f("e"), 50)
+// setTimeout(() => clearInterval(intervalTimer), 3 * 1000);
+
+// function debounce(func, ms) {
+//     let timeout;
+//     return function(msg) {
+//         clearTimeout(timeout);
+
+//         timeout = setTimeout(() => func(msg), ms);
+//     };
+// }
 
     
+// //5.
 
-    
-   
+// function askPassword(ok, fail) {
+//     let password = prompt("Password?", '');
+//     if (password == "rockstar") ok();
+//     else fail();
+//     }
+//     let user = {
+//     name: 'John',
+//     login(result) {
+//     alert( this.name + (result ? ' logged in' : ' failed to log in') );
+//     }
+//     };
+
+// askPassword(() => user.login(true), () => user.login(false));
+
+//6. 
+
+// let head = {
+//     glasses: 1
+//     };
+
+// let table = {
+//     pen: 3,
+//     __proto__: head
+//     };
+
+// let bed = {
+//     sheet: 1,
+//     pillow: 2,
+//     __proto__: head
+//     };
+
+// let pockets = {
+//     money: 2000,
+//     __proto__: head
+//     };
+
+// //test
+// console.time("pockets.glasses test")
+// console.log(pockets.glasses)
+// console.timeEnd("pockets.glasses test")
+
+// console.time("head.glasses test")
+// console.log(head.glasses)
+// console.timeEnd("head.glasses test")
+
+//7.
+
+
 
 
 
