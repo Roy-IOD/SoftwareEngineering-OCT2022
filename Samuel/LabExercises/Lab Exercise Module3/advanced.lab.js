@@ -114,25 +114,38 @@
 
 //6. 
 
-let head = {
-    glasses: 1
-    };
+// let head = {
+//     glasses: 1
+//     };
 
-let table = {
-    pen: 3,
-    __proto__: head
-    };
-    let bed = {
-    sheet: 1,
-    pillow: 2,
-    __proto__: head
-    };
-    let pockets = {
-    money: 2000,
-    __proto__: head
-    };
+// let table = {
+//     pen: 3,
+//     __proto__: head
+//     };
 
-console.log(bed.glasses)
+// let bed = {
+//     sheet: 1,
+//     pillow: 2,
+//     __proto__: head
+//     };
+
+// let pockets = {
+//     money: 2000,
+//     __proto__: head
+//     };
+
+// //test
+// console.time("pockets.glasses test")
+// console.log(pockets.glasses)
+// console.timeEnd("pockets.glasses test")
+
+// console.time("head.glasses test")
+// console.log(head.glasses)
+// console.timeEnd("head.glasses test")
+
+//7.
+
+
 
 
 
