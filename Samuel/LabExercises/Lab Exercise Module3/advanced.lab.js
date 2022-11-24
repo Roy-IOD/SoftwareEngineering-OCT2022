@@ -77,11 +77,23 @@
 
 //4. 
 
-let f = debounce(console.log, 1000);
+let f = str => console.log(str)
+
+f = debounce(f, 1000);
 f("a");
 setTimeout( () => f("b"), 200);
-setTimeout( () => f("c"), 500);
+setTimeout( () => f("c"), 5000);
+let intervalTimer = setInterval(() => f("e"), 50)
+setTimeout(() => clearInterval(intervalTimer), 3 * 1000);
 
+function debounce(func, ms) {
+    let timeout;
+    return function(msg) {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => func(msg), ms);
+    };
+}
 
     
    
