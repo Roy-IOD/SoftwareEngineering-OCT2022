@@ -89,16 +89,16 @@ function askPassword(ok, fail) {
     else fail();
 }
 let user = {
-    name: 'John',
+    name: 'Ian',
 
     login(result) {
         console.log( this.name + (result ? ' logged in' : ' failed to log in') );
     }
 };
 
-askPassword(() => user.login(true), () => user.login(false)); // ?
-//Your changes should only modify the highlighted fragment in the line above
-// Why does this not work? Says prompt is not defined but I'm only meant to modify line 99?
+// askPassword(() => user.login(true), () => user.login(false)); // commenting out for now
+//Above works, just commented out so that I can run other questions without password
+
 
 //6. Searching algorithm
 
@@ -107,14 +107,62 @@ let head = {
     };
 
 let table = {
-    pen: 3
+    pen: 3,
+    __proto__: head
     };
     
 let bed = {
     sheet: 1,
-    pillow: 2
+    pillow: 2,
+    __proto__: table
     };
-    let pockets = {
-    money: 2000
+    
+let pockets = {
+    money: 2000,
+    __proto__: bed
     };
+
+//Use __proto__ to assign prototypes in a way that any property lookup
+// will follow the path: pockets → bed → table → head. For instance,
+// pockets.pen should be 3 (found in table), and bed.glasses
+// should be 1 (found in head). 
+console.log('\nQuestion 6:\n----------')
+console.log(pockets.pen);
+console.log(bed.glasses);
+console.log(pockets.pillow);
+
+//Is it faster to get to glases as pockets.glasses or head.glasses?
                          
+//7. Create an object with the same constructor
+// Imagine, we have an arbitrary object obj, created by a constructor function –
+// we don’t know which one, but we’d like to create a new object using it.
+// Can we do it like that?
+
+// let obj2 = new obj.constructor();
+
+// Give an example of a constructor function for obj which lets such code work
+// right. And an example that makes it work wrong.
+
+function Obj(name) {
+    this.name = name;
+}
+
+let obj = new Obj("Table");
+let obj2 = new obj.constructor("Chair");
+
+console.log('\nQuestion 7:\n----------')
+console.log(obj2.name);
+console.log(obj.name);
+
+//8. Add the decorating "defer()" to functions
+//Add the prototype to all functions the method defer(ms), that returns a wrapper,
+//delaying the call by ms milliseconds
+
+// Here’s an example of how it should work:
+// function f(a, b) {
+// alert( a + b );
+
+// }
+// f.defer(1000)(1, 2); // shows 3 after 1 second
+// Please note that the arguments should be passed to the original function.
+
