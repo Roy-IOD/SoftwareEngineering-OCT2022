@@ -150,7 +150,7 @@ function Person(name) {
 let person = new Person("Isaac")
 let person2 = new person.constructor("Tyrese");
 
-//This constructor function doesn't work
+//This constructor function doesn't work i think??? Had to google this
 
 function Person(name) {
     this.name = name;
@@ -164,18 +164,84 @@ let person2 = new person.constructor("Tyrese");
 
 //Exercise 3.8
 
-Add the decorating "defer()" to functions
-Add to the prototype of all functions the method defer(ms), that returns a wrapper, delaying the call by ms milliseconds.
-Here’s an example of how it should work:
-function f(a, b) {
- alert( a + b );
-}
-f.defer(1000)(1, 2); // shows 3 after 1 second
-Please note that the arguments should be passed to the original function
-*/
+Function.prototype.defer = function(ms) {
+    let myVariable = this;
+    return function(...args) {
+      setTimeout(() => myVariable.apply(this, args), ms);
+    }
+  };
 
 function myFunction(a, b) {
     console.log( a + b );
 };
 
 myFunction.defer(1000)(1, 2);
+
+
+
+//Exercise 3.9
+
+let dictionary = Object.create(null, {
+    toString: {value(){
+        return Object.keys(this).join();
+    }
+}});
+
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; 
+
+for(let key in dictionary) {
+ console.log(key);
+}
+
+console.log(dictionary);
+
+
+
+
+//Exercise 3.10
+
+We’ve got a Clock class. As of now, it prints the time every second.
+Create a new class ExtendedClock that inherits from Clock and adds the
+parameter precision – the number of ms between “ticks”. Should be 1000
+(1 second) by default.
+● Your code should be in the file extended-clock.js
+● Don’t modify the original clock.js. Extend it.
+*/
+class Clock {
+    constructor({ template }) {
+    this.template = template;
+    }
+render() {
+    let date = new Date();
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
+    let mins = date.getMinutes();
+    if (mins < 10) mins = '0' + mins;
+    let secs = date.getSeconds();
+    if (secs < 10) secs = '0' + secs;
+    let output = this.template
+        .replace('h', hours)
+        .replace('m', mins)
+        .replace('s', secs);
+    console.log(output);
+}
+stop() {
+    clearInterval(this.timer);
+    }
+start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), 1000);
+    }
+};
+let myTimer = new Clock("New Template")
+myTimer.start()
+
+
+
+
+
+class ExtendedClock extends Clock {
+
+};
+
