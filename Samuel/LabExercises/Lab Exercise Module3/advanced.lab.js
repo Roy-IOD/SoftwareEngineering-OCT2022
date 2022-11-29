@@ -145,6 +145,35 @@
 
 //7.
 
+function Obj(func){
+    this.func = func;
+    console.log(func)
+}
+
+
+let obj = new Obj("func");
+
+let obj2 = new obj.constructor("func also")
+
+
+//8.
+
+Function.prototype.defer(ms){
+    let f = this;
+    setTimeout(() => f(a, b), ms)
+}
+
+
+
+function f(a, b){
+    console.log(a + b);
+    __proto__ = defer(ms);
+}
+
+f.defer(1000)(2,3);
+
+
+
 
 
 
