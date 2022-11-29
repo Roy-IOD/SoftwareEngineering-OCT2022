@@ -17,7 +17,7 @@ console.log('\nData Types & Conversions (objects):')
 
 const user = {
     name: 'John',
-    toString() {
+    toString() { //this built in function lets you customise how this object will look when printed as a string
         return this.name;
     }
 }
@@ -25,7 +25,7 @@ console.log( 'hello ' +user )
 
 const shoes = {
     price: 100,
-    valueOf() {
+    valueOf() { //this built in function lets you customise how this object will look when treated as a number
         return this.price;
     }
 };
@@ -59,7 +59,7 @@ console.log(`${fixedpoint1} + ${fixedpoint2} = ${fixedpoint1 + fixedpoint2}`)
 //one way to get around this is to multiply all numbers by a common factor, eg. turn dollars into cents by multiplying by 100
 console.log(`${point1*100} + ${point2*100} == ${0.3*100}`)
 
-//takes two decimal (floating point) numbers, does the operation and keeps the required number of decimals
+//takes two decimal (floating point) numbers, does the operation safely and keeps the required number of decimals
 function safeDecimalOperation(float1, float2, operation = '+', numDecimals = 2) //sets some default values for arguments
 {
     console.log(`Doing safe decimal operation : ${float1} ${operation} ${float2} with ${numDecimals} decimal places`)
@@ -69,7 +69,7 @@ function safeDecimalOperation(float1, float2, operation = '+', numDecimals = 2) 
 
     //use a switch when you want to check a variable for a number of different possible values
     switch (operation) {
-        case '+': result = (float1*factor) + (float2*factor); break;
+        case '+': result = (float1*factor) + (float2*factor); break; //still does the same operation, but first multiplies each value by our factor
         case '-': result = (float1*factor) - (float2*factor); break;
         case '/': result = (float1*factor) / (float2*factor); break;
         case '*': result = (float1*factor) * (float2*factor); break;
@@ -81,8 +81,8 @@ function safeDecimalOperation(float1, float2, operation = '+', numDecimals = 2) 
     return Math.round(result) / factor;
 }
 
-console.log(`${point1} + ${point2} = ${safeDecimalOperation(point1,point2)}`)
-console.log(`${1/3} + ${3.14159} = ${safeDecimalOperation(1/3,3.14159)}`)
+console.log(`${point1} + ${point2} = ${safeDecimalOperation(point1, point2)}`)
+console.log(`${1/3} + ${3.14159} = ${safeDecimalOperation(1/3, 3.14159)}`)
 
 
 console.log('\nData Types & Conversions (NaN and parsing):')
@@ -111,13 +111,13 @@ let lastFruit = fruits.pop(); // remove "Pear"
 console.log('last fruit is '+lastFruit)
 console.log( fruits ); // Apple, Orange
 fruits.push(lastFruit)
-console.log( fruits ); // Apple, Orange
+console.log( fruits ); // Apple, Orange, Pear
 
 let firstFruit = fruits.shift()
 console.log('first fruit is '+firstFruit)
-console.log(fruits)
+console.log(fruits) //Orange, Pear
 fruits.unshift(firstFruit)
-console.log(fruits)
+console.log(fruits) //Apple, Orange, Pear
 
 console.log('\nDeconstructing:')
 
@@ -173,10 +173,10 @@ let jsonString = JSON.stringify(userTest, function(key, value) {
     console.log(value)
 
     if( typeof value === 'function') {
-        return value.toString();
+        return value.toString(); //convert functions to strings of code
     }
     if( typeof value === 'undefined' ) {
-        return ''; // convert undefined value to empty string
+        return ''; // convert undefined values to empty string
     }
     return value;
 });
