@@ -141,25 +141,56 @@ seenMessages.set(messages[0], true)
 seenMessages.set(messages[1], true)
 seenMessages.set(messages[2], false)
 
-if (seenMessages.set == true) {
+if (seenMessages.set.messages == true) {
     console.log ('This message has been read')
 }
 else {
     console.log ('This message has been sent, but not read')
 }
 
-console.log(seenMessages.has(messages[1]))
+console.log(seenMessages.set)
 
 //2.9
+
+function sumSalaries(salaries){
+    let sum = 0;
+    for (let salary of Object.values(salaries)){
+        sum += salary;
+    }
+
+    return sum;
+}
 
 let salaries = {
     "John": 100,
     "Pete": 300,
-    "Mary": 250,
-}
+    "Mary": 250
+};
+
+console.log(sumSalaries(salaries))
 
 //2.10
 
+function topSalary(salariesTwo) {
+
+    let maxSalary = 0;
+    let maxName = null;
+  
+    for(const [name, salary] of Object.entries(salariesTwo)) {
+      if (maxSalary < salary) {
+        maxSalary = salary;
+        maxName = name;
+      }
+    }
+  
+    return maxName;
+  }
+
+const salariesTwo = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
 
 //2.11
 

@@ -30,9 +30,9 @@
 
 // let cachedSlow = cachingDecorator(slow); //this is where the decorating happens. we could use any function here instead of 'slow'
 
-// console.time('slow no caching')
-// console.log( cachedSlow(1) ); // slow(1) is run, cached and the result returned
-// console.timeEnd('slow no caching')
+console.time('slow no caching')
+console.log( cachedSlow(1) ); // slow(1) is run, cached and the result returned
+console.timeEnd('slow no caching')
 
 // console.time('slow with caching')
 // console.log( "Again: " + cachedSlow(1) ); // slow(1) result returned from cache
