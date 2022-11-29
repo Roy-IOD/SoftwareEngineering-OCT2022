@@ -8,8 +8,8 @@ function ucFirst(str) {
 
 }
 
-// console.log(ucFirst('david'))
-// console.log(ucFirst("david") == "David");
+console.log(ucFirst('david')) //David
+console.log(ucFirst("david") == "David"); //true
 
 // 2
 
