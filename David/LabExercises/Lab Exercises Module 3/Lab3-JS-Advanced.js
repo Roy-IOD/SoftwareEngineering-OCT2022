@@ -253,3 +253,4 @@ console.log(err instanceof SyntaxError); // true (because inherits from SyntaxEr
 
 //uses promises
 //async and await
+
