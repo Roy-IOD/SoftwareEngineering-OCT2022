@@ -82,21 +82,21 @@ function makeCounter() {
 
 // 5. What should we pass askPassword in the code below, so that it calls
 // user.login(true) as ok and user.login(false) as fail?
+const prompt = require("prompt-sync")();
+function askPassword(ok, fail) {
+    let password = prompt("Password?", '');
+    if (password == "rockstar") ok();
+    else fail();
+}
+let user = {
+    name: 'John',
 
-// function askPassword(ok, fail) {
-//     let password = prompt("Password?", '');
-//     if (password == "rockstar") ok();
-//     else fail();
-// }
-// let user = {
-//     name: 'John',
+    login(result) {
+        console.log( this.name + (result ? ' logged in' : ' failed to log in') );
+    }
+};
 
-//     login(result) {
-//         console.log( this.name + (result ? ' logged in' : ' failed to log in') );
-//     }
-// };
-
-// askPassword(() => user.login(true), () => user.login(false)); // ?
+askPassword(() => user.login(true), () => user.login(false)); // ?
 //Your changes should only modify the highlighted fragment in the line above
 // Why does this not work? Says prompt is not defined but I'm only meant to modify line 99?
 
