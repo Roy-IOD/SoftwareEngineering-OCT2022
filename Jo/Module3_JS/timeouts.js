@@ -74,7 +74,47 @@ function repeatTick(numTimes, delay)
     let counter = 1;
     setTimeout(function tick() {
         console.log('tick timer #' + counter++);
-        if (counter <= numTimes) { timerId = setTimeout(tick, delay); } // passes the tick function to setTimeout again, always with the same 2s delay
+        if (counter <= numTimes) { timerId = setTimeout(tick, delay); } // passes the tick function to setTimeout again, always with the same delay
     }, delay);
 }
-repeatTick(8, 1000)
+//repeatTick(8, 1000)
+
+//November 23 is Fibonacci Day (the 23rd of the 11th). The Fibonacci sequence is a repeating set of numbers where the next one is the sum of the previous two.
+//we could write a function in JS to print these fibonacci numbers, both using setInterval and nested setTimeouts:
+function countFibonacciInterval(limit = 10, delay = 1000) {
+    let first = 0;
+    let second = 1;
+    let counter = 0;
+    //let [first, second, counter] = [0, 1, 0] //shortcut
+    console.log(first)
+    console.log(second)
+
+    let timer = setInterval(function printNext() { 
+        let next = first+second; 
+        console.log(next)
+
+        first = second;
+        second = next;
+        counter++;
+
+        if (counter == limit) clearInterval(timer)
+    }, delay)
+}
+
+//countFibonacciInterval(20);
+
+function countFibonacciTimeouts(limit = 10, delay = 1000) {
+    let [first, second, counter] = [0, 1, 0]
+    console.log(first)
+    console.log(second)  
+    
+    setTimeout(function printNext(first, second, counter) { 
+        let next = first+second;
+        console.log(next)
+
+        if (counter < limit) setTimeout(printNext, delay, second, next, ++counter)
+    }, delay, first, second, counter);
+    
+}
+
+countFibonacciTimeouts()

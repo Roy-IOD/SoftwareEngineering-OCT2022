@@ -71,6 +71,8 @@ function nine(fn) {return fn ? fn(9) : 9}
 
 //how to write a shorthand arrow function for the above function definitions?
 
+const nine2 = fn => fn ? fn(9) : 0
+
 const plus = (x) => (num) => num + x
 const minus = (x) => (num) => num - x
 const times = (x) => (num) => num * x
