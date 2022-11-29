@@ -67,18 +67,111 @@ console.log(calculate("7 / 9"))
 console.log(calculate("7 * 9"))
 console.log(calculate("7 - 9"))
 
-//6
+// 6
 
 function unique(arr) {
-    const result = values.filter(values => values.length > 6);
-   }
-   let values = ["Hare", "Krishna", "Hare", "Krishna",
-    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+    return Array.from(new Set(arr))
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+ "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+console.log( unique(values) ); // Hare, Krishna, :-O
+
+//7 
+
+let map = new Map();
+map.set("name", "John");
+let keys = Array.from(map.keys()); //add Array.from
+keys.push("more");
+
+console.log(keys)
+
+//8
+
+let messages = [
+    {text: "Hello", from: "John"},
+    {text: "How goes?", from: "John"},
+    {text: "See you soon", from: "Alice"}
    ];
 
-//7
-//8
 //9
+
+function sumSalaries(salaries) {
+    let total = 0 //the starting value
+  for (let salary of Object.values(salaries)) { //Object.value returns an array of propert values
+    total += salary; // total = total + salary
+  }
+
+  return total; //return the value
+}
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+   };
+
+console.log( sumSalaries(salaries) ); // 650
+
 //10
+
+function topSalaries(salaries) {
+    let topSalary = 0
+    let topName = null
+    for (let [key, value] of Object.entries(salaries)) {
+        if (topSalary < value) {
+            topSalary = value
+            topName = key
+        }
+    }
+
+    return topName
+}
+
+const salaries2 = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+   };
+
+console.log(topSalaries(salaries2))
+
 //11
+
+function getSeondsToday() {
+    let d = new Date();
+    return d.getHours() *3600 + d.getMinutes() *60 + d.getSeconds();
+}
+
+console.log(getSeondsToday())
+
+
 //12
+
+let room = {
+    number: 23
+};
+   let meetup = {
+    title: "Conference",
+    occupiedBy: [{name: "John"}, {name: "Alice"}],
+    place: room
+   };
+   // circular references
+   room.occupiedBy = meetup;
+   meetup.self = meetup;
+
+   console.log( JSON.stringify(meetup, function replacer(key,value) {
+    if (key != "" && value == meetup) /* your code */
+    return undefined;
+    else {return value}
+   }));
+   
+   
+   /* result should be:
+   {
+    "title":"Conference",
+    "occupiedBy":[{"name":"John"},{"name":"Alice"}],
+    "place":{"number":23}
+   }
+   */
