@@ -143,38 +143,153 @@
 // console.log(head.glasses)
 // console.timeEnd("head.glasses test")
 
-//7.
+// //7.
 
-function Obj(func){
-    this.func = func;
-    console.log(func)
-}
-
-
-let obj = new Obj("func");
-
-let obj2 = new obj.constructor("func also")
+// function Obj(func){
+//     this.func = func;
+//     console.log(func)
+// }
 
 
-//8.
+// let obj = new Obj("func");
 
-Function.prototype.defer(ms){
-    let f = this;
-    setTimeout(() => f(a, b), ms)
-}
+// let obj2 = new obj.constructor("func also")
 
 
+// //8.
 
-function f(a, b){
-    console.log(a + b);
-    __proto__ = defer(ms);
-}
+// Function.prototype.defer = function(ms) {
+//     let f = this;
+//     return function(...funcarg) {
+//       setTimeout(() => f.apply(this, funcarg), ms);
+//     }
+//   };
 
-f.defer(1000)(2,3);
+//   function f(a, b) {
+//     console.log( a + b );
+//   }
+  
+//   f.defer(1000)(1, 2);
+//   f.defer(2000)(50, 60);
+
+
+// //9.
+
+// let dictionary = Object.create(null, {
+//     toString: {
+//         value(){
+//             return Object.keys(this).join();
+//         }
+//     }
+// });
 
 
 
+// // add some data
+// dictionary.apple = "Apple";
+// dictionary.__proto__ = "test"; // __proto__ is a regular property key here
+
+// // only apple and __proto__ are in the loop
+// for(let key in dictionary) {
+//   console.log(key); // "apple", then "__proto__"
+// }
+
+// // your toString in action
+// console.log(dictionary); // "apple,__proto__"
 
 
+// //10.
 
+// class Clock {
+// constructor({ template }) {
+//     this.template = template;
+//     }
+// render() {
+//     let date = new Date();
+    
+//     let hours = date.getHours();
+//     if (hours < 10) hours = '0' + hours;
 
+//     let mins = date.getMinutes();
+//     if (mins < 10) mins = '0' + mins;
+    
+//     let secs = date.getSeconds();
+//     if (secs < 10) secs = '0' + secs;
+    
+// let output = this.template
+//     .replace('h', hours)
+//     .replace('m', mins)
+//     .replace('s', secs);
+
+//     console.log(output);
+// }
+
+// stop() {
+//     clearInterval(this.timer);
+//     }
+
+// start() {
+//     this.render();
+//     this.timer = setInterval(() => this.render(), 1000);
+//     }
+// }
+
+// class ExtendedClock extends Clock {
+//     constructor(template){
+//         super(template);
+//         console.log(template)
+
+//         let precision = template.precision ? template.precision : 1000
+//         console.log(precision)
+//         }
+//         start() {
+//             this.render();
+//             this.timer = setInterval(() => this.render(), this.precision);
+//         }
+// };
+
+// let time = new ExtendedClock({template: 'h: m : s'});
+
+// time.start();
+
+// //11.
+
+// class FormatError extends SyntaxError {
+//     constructor(message) {
+//       super(message);
+//       this.name = this.constructor.name;
+//     }
+//   }
+  
+//   let err = new FormatError("formatting error");
+  
+//  console.log( err.message ); // formatting error
+//  console.log( err.name ); // FormatError
+//  console.log( err.stack ); // stack
+  
+//  console.log( err instanceof SyntaxError ); // true
+
+// //12.
+
+// function delay(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+  
+// }
+
+// delay(3000).then(() => console.log('runs after seconds'));
+
+//13.
+
+async function loadJson(url) { // (1)
+    let response = await fetch(url); // (2)
+  
+    if (response.status == 200) {
+      let json = await response.json(); // (3)
+      return json;
+    }
+  
+    throw new Error(response.status);
+  }
+  
+  loadJson('https://javascript.info/no-such-user.json')
+    .catch(console.log); // Error: 404 (4)
