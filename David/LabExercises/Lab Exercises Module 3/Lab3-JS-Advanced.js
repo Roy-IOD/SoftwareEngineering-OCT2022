@@ -1,4 +1,5 @@
-const prompt = require("prompt-sync")();
+//const prompt = require("prompt-sync")();
+import fetch from "node-fetch";
 
 //1
 
@@ -158,22 +159,37 @@ const prompt = require("prompt-sync")();
 
 //8
 
-Function.prototype.defer = function (ms) {
-  let functionContext = this;
-  return function (...args) {
-    setTimeout(() => functionContext.apply(this, args), ms);
-  };
-};
+// Function.prototype.defer = function (ms) {
+//   let functionContext = this;
+//   return function (...args) {
+//     setTimeout(() => functionContext.apply(this, args), ms);
+//   };
+// };
 
-function f(a, b) {
-  console.log(a + b);
-}
-f.defer(1000)(1, 2); // shows 3 after 1 second
+// Function.prototype.defer = function (ms) {
+//   let functionContext = this;
+//   console.log(this)
+//   return function () {
+//     setTimeout(() => functionContext.apply(this, arguments), ms);
+
+//   };
+// };
+
+// function f(a, b) {
+//   console.log(a + b);
+// }
+
+// f.defer(1000)(1, 2); // shows 3 after 1 second
 
 //9
 
-// let dictionary = Object.create(null, {   // your code to add dictionary.toString method
-
+// let dictionary = Object.create(null, {
+//   // your code to add dictionary.toString method
+//   toString: {
+//     value() {
+//       return Object.keys(this).join();
+//     },
+//   },
 // });
 
 // // add some data
@@ -186,11 +202,11 @@ f.defer(1000)(1, 2); // shows 3 after 1 second
 // }
 
 // // your toString in action
-// console.log(dictionary); // "apple,__proto__"
+// console.log(dictionary + ""); // "apple,__proto__"
 
-//10
+// //10
 
-//how to inherit from a class - extend keyword - / change how often the clock ticks
+// how to inherit from a class - extend keyword - / change how often the clock ticks
 
 // class Clock {
 //   constructor({ template }) {
@@ -226,31 +242,97 @@ f.defer(1000)(1, 2); // shows 3 after 1 second
 //     }
 // }
 
+// class ExtendedClock extends Clock {
+//     constructor (template) {
+//         super(template)
+
+//         let precision = template.precision ? template.precision : 1000
+//         //console.log(precision)
+//         this.precision = precision
+//         //console.log(this)
+//     }
+
+//     start() {
+//         this.render();
+//         this.timer = setInterval(() => this.render(), this.precision)
+//     }
+// }
+
+// let extClock = new ExtendedClock({template: 'h : m : s', precision: 5000})
+// extClock.start()
+
 //11
 
 //create new FormatError that inherits / class extends keywords / should be its own formatError
 
-class FormatError extends SyntaxError {
-  constructor(message) {
-    super(message);
-    this.name = 'FormatError';
-  }
-}
+// class FormatError extends SyntaxError {
+//   constructor(message) {
+//     super(message);
+//     this.name = 'FormatError';
+//   }
+// }
 
-let err = new FormatError("formatting error");
-console.log(err.message); // formatting error
-console.log(err.name); // FormatError
-console.log(err.stack); // stack
-console.log(err instanceof FormatError); // true
-console.log(err instanceof SyntaxError); // true (because inherits from SyntaxError)
+// let err = new FormatError("formatting error");
+// console.log(err.message); // formatting error
+// console.log(err.name); // FormatError
+// console.log(err.stack); // stack
+// console.log(err instanceof FormatError); // true
+// console.log(err instanceof SyntaxError); // true (because inherits from SyntaxError)
 
 //12
 
 //uses promises
 //return promise and then call it
 
+// function delay(ms) {
+//   return new Promise(function (resolve, reject) {
+//     if (ms > 0){
+//     setTimeout(resolve, ms);}
+//         else reject('ms must be > 0')
+//   });
+// }
+
+// delay(5000).then (() => console.log('runs after 5 seconds'))
+// delay(3000).then(() => console.log("runs after 3 seconds"));
+// delay(-1).catch(message => console.log('failed'))
+
 //13
 
-//uses promises
-//async and await
+// uses promises
+// async and await
+//https://jsonplaceholder.typicode.com/posts/1
+//json => console.log(json)
+//.then
+//.catch
 
+// function loadJson(url) {
+//  return fetch(url)
+//  .then(response => {
+//  if (response.status == 200) {
+//  return response.json();
+//  } else {
+//  throw new Error(response.status);
+//  }
+//  });
+// }
+// loadJson('https://jsonplaceholder.typicode.com/posts/1')
+//  .catch(console.log())// Error: 404
+//  .then(json => console.log(json)) 
+
+
+
+async function loadJson(url) { // (1)
+    let response = await fetch(url); // (2)
+  
+    if (response.status == 200) {
+      let json = await response.json(); // (3)
+      return json;
+    }
+    else
+    throw new Error(response.status);
+  }
+  
+  loadJson('https://jsonplaceholder.typicode.com/posts/1')
+    
+    .then(json => console.log(json))
+    .catch(console.log)
