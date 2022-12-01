@@ -1,18 +1,19 @@
-const prompt = require("prompt-sync")();
+
+// const prompt = require("prompt-sync")();
 
 // Exercise 3.1
-/*
+
 function makeCounter() {
     let count = 0;
     return function() {
     return count++;
     };
 }
-let counter = makeCounter();
+let counter1 = makeCounter();
 let counter2 = makeCounter();
 
-console.log(counter()); // 0
-console.log(counter()); // 1
+console.log(counter1()); // 0
+console.log(counter1()); // 1
 console.log(counter2()); // 0
 console.log(counter2()); //1
 
@@ -151,7 +152,7 @@ let person = new Person("Isaac")
 let person2 = new person.constructor("Tyrese");
 
 //This constructor function doesn't work i think??? Had to google this
-
+/*
 function Person(name) {
     this.name = name;
     console.log(name)
@@ -160,7 +161,7 @@ Person.prototype = {}
 
 let person = new Person("Isaac")
 let person2 = new person.constructor("Tyrese");
-
+*/
 
 //Exercise 3.8
 
@@ -201,13 +202,6 @@ console.log(dictionary);
 
 //Exercise 3.10
 
-We’ve got a Clock class. As of now, it prints the time every second.
-Create a new class ExtendedClock that inherits from Clock and adds the
-parameter precision – the number of ms between “ticks”. Should be 1000
-(1 second) by default.
-● Your code should be in the file extended-clock.js
-● Don’t modify the original clock.js. Extend it.
-*/
 class Clock {
     constructor({ template }) {
     this.template = template;
@@ -234,14 +228,86 @@ start() {
     this.timer = setInterval(() => this.render(), 1000);
     }
 };
-let myTimer = new Clock("New Template")
-myTimer.start()
-
-
-
-
 
 class ExtendedClock extends Clock {
-
+    constructor(template) {
+        super(template)
+        let precision = template.precision ? template.precision : 1000
+        console.log(precision) 
+        this.precision = precision
+    }
+    start() {
+        this.render();
+        this.timer = setInterval(() => this.render(), this.precision);
+        }
 };
+
+
+
+let newClock = new ExtendedClock({template: 'h:m:s', precision: 2000})
+newClock.start();
+newClock.stop();
+
+
+
+//Exercise 3.11
+
+class FormatError extends SyntaxError {
+    constructor(message) {
+      super(message);
+      this.name = "FormatError";
+    }
+  };
+
+let err = new FormatError("Formatting Error");
+console.log( err.message ); // formatting error
+console.log( err.name ); // FormatError
+console.log( err.stack ); // stack
+console.log( err instanceof FormatError ); // true
+console.log( err instanceof SyntaxError ); // true (because inherits from SyntaxError)
+
+
+  
+//Exercise 3.12
+
+function delay(ms) {
+    return new Promise(function(resolve){setTimeout(resolve, ms)} )
+};
+
+delay(3000).then(() => console.log('runs after 3 seconds'));
+
+
+
+
+//Exercise 3.13
+
+
+function loadJson(url) {
+    return fetch(url)
+    .then(response => {
+    if (response.status == 200) {
+    return response.json();
+    } else {
+    throw new Error(response.status);
+    }
+    });
+   }
+
+loadJson('no-such-user.json')
+    .catch(alert); // Error: 404
+ 
+
+import fetch from 'node-fetch'
+async function loadJson(url) {
+    let response = await fetch(url);
+    if (response.status == 200) {
+         return await response.json();
+    } 
+    else {
+        throw new Error(response.status);
+    } 
+};
+loadJson('https://jsonplaceholder.typicode.com/posts/1')
+    .then((message) => console.log(message))
+    .catch(console.log); // Error: 404
 
