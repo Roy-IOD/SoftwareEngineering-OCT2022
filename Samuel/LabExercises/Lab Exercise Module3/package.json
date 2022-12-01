@@ -1,7 +1,6 @@
 {
   "name": "lab-exercise-module3",
   "version": "1.0.0",
-  "description": "",
   "main": "labexercise.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-fetch": "^3.3.0",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "description": ""
 }

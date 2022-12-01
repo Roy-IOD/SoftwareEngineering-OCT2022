@@ -279,17 +279,18 @@
 // delay(3000).then(() => console.log('runs after seconds'));
 
 //13.
-
-async function loadJson(url) { // (1)
-    let response = await fetch(url); // (2)
+import fetch from 'node-fetch'
+async function loadJson(url) { 
+    let response = await fetch(url); 
   
     if (response.status == 200) {
-      let json = await response.json(); // (3)
+      let json = await response.json(); 
       return json;
     }
   
     throw new Error(response.status);
   }
   
-  loadJson('https://javascript.info/no-such-user.json')
-    .catch(console.log); // Error: 404 (4)
+  loadJson('https://jsonplaceholder.typicode.com/myposts')
+    .then((message) => console.log(message))
+    .catch(console.log); 
