@@ -311,3 +311,4 @@ loadJson('https://jsonplaceholder.typicode.com/posts/1')
     .then((message) => console.log(message))
     .catch(console.log); // Error: 404
 
+//Lab Completed
