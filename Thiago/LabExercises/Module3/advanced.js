@@ -130,17 +130,17 @@
 // Function.prototype.defer = function(ms) {
 //   let myFunction = this;
 //   return function(...args){
-// //     setTimeout(() => myFunction.apply(this, args), ms);
-// // }
-// // };
+//     setTimeout(() => myFunction.apply(this, args), ms);
+// }
+// };
 
-// // function myFunction (a, b) {
-// //   console.log( a + b );
-// // };
+ // function myFunction (a, b) {
+ //   console.log( a + b );
+ // };
 
-// // myFunction.defer(1000)(1, 2); // shows 3 after 1 second
+ // myFunction.defer(1000)(1, 2); // shows 3 after 1 second
 
-// // 9
+ // 9
 
 // let dictionary = Object.create(null, {
 //   toString: { // define toString property
@@ -153,65 +153,71 @@
 // dictionary.apple = "Apple";
 // dictionary.__proto__ = "test";
 
-// // apple and __proto__ is in the loop
+// apple and __proto__ is in the loop
 // for(let key in dictionary) {
 //   console.log(key); // "apple", then "__proto__"
 // }
 
-// // comma-separated list of properties by toString
+ // comma-separated list of properties by toString
 // console.log(dictionary); // "apple,__proto__
 
-// // 10
+ // 10
 
 // class Clock {
 //   constructor({ template }) {
 //     this.template = template;
-//   }
+//     }
 
-//   render() {
+//    render() {
 //     let date = new Date();
 
 //     let hours = date.getHours();
 //     if (hours < 10) hours = '0' + hours;
 
-//     let mins = date.getMinutes();
-//     if (mins < 10) mins = '0' + mins;
+//      let mins = date.getMinutes();
+//      if (mins < 10) mins = '0' + mins;
 
-//     let secs = date.getSeconds();
-//     if (secs < 10) secs = '0' + secs;
+//      let secs = date.getSeconds();
+//      if (secs < 10) secs = '0' + secs;
 
 //     let output = this.template
 //       .replace('h', hours)
-//       .replace('m', mins)
-//       .replace('s', secs);
+//      .replace('m', mins)
+//      .replace('s', secs);
 
 //     console.log(output);
 //   }
 
 //   stop() {
-//     clearInterval(this.timer);
-//   }
+//      clearInterval(this.timer);
+//    }
 
 //   start() {
 //     this.render();
 //     this.timer = setInterval(() => this.render(), 1000);
-//   }
+//    }
 // }
 
 // class ExtendedClock extends Clock {
-//   constructor(options) {
-//     super(options);
-//     let { precision = 1000 } = options;
-//     this.precision = precision;
-//   }
+//   constructor( template ) {
+//    super(template)
+//    //console.log(template)
+
+//    let precision  = template.precision ? template.precision : 1000
+//    console.log(precision)
+//     this.precision = precision
+    
+// }
 
 //   start() {
-//     this.render();
-//     this.timer = setInterval(() => this.render(), this.precision);
-//   }
-// };
+//    this.render();
+//    this.timer = setInterval(() => this.render(), this.precision);
+//    }
+//  }
 
-// // 11
+//  let extClock = new ExtendedClock({template: 'h : m : s', precision: 5000}) extClock.start()
+
+// 11
 
 // let err = new FormatError("formatting error");
 
@@ -237,26 +243,29 @@
 
 // console.log( err instanceof SyntaxError ); // true
 
-// // 12
+ // 12
 
-// function delay(ms) {
+//  function delay(ms) {
 //   return new Promise(resolve => setTimeout(resolve, ms));
 // }
 
-// delay(3000).then(() => console.log('runs after 3 seconds'));
+//  delay(3000).then(() => console.log('runs after 3 seconds'));
 
 // 13
 
-  async function loadJson(url) { 
-    let response = await fetch(url); 
+// import fetch from 'node-fetch'
+
+// async function loadJson(url) { 
+//    let response = await fetch(url); 
   
-    if (response.status == 200) {
-      let json = await response.json(); 
-      return json;
-    }
+//     if (response.status == 200) {
+//      let json = await response.json(); 
+//      return json;
+//      }
   
-    throw new Error(response.status);
-  }
+//      throw new Error(response.status);
+//    }
   
-  loadJson('no-such-user.json')
-    .catch(console.log); // Error: 404 (4)
+//   loadJson('https://jsonplaceholder.typicode.com/myposts/')
+//   .then(json => console.log(json))
+//   .catch(console.log); // Error: 404 (4)
