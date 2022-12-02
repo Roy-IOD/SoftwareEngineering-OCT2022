@@ -1,4 +1,5 @@
 //https://javascript.info/promise-basics
+
 //produces a random song after 1 second: if successful calls the resolve function, if unsuccessful calls the reject function
 //functions passed as params like this are called 'callbacks'
 function produceSong(resolve, reject) 
@@ -15,12 +16,18 @@ function produceSong(resolve, reject)
     let failResult = artists[randomArtist] + ' has no new songs'
 
     setTimeout(() => randomOutcome ? resolve(successResult) : reject(failResult), 1000)
+
+    //a longhand version of the above setTimeout, without arrow functions or conditional statements:
+    //setTimeout(function() {
+    //    if (randomOutcome == 1) resolve(successResult) //calls the resolve callback to indicate successful promise resolution, native to promise producer functions
+    //    else reject(failResult) //calls the reject callback to indicate failed promise resolution, native to promise producer functions
+    //}, 1000)
 }
 
 
 //using the above WITHOUT a Promise:
 produceSong(
-    (successMsg) => console.log(`Success #0: ${successMsg}`),
+    (successMsg) => console.log(`Success #0: ${successMsg}`), //brackets around successMsg are optional when only one function argument
     failMsg => console.error(`Failure #0: Sorry fans, ${failMsg}`)
 )
 
@@ -29,7 +36,8 @@ produceSong(
 
 let songPromise = new Promise(produceSong) //songPromise can be used to capture and act on the unknown result of produceSong
 
-//use .then to run when there is a result. takes two parameters: first a function for success, second a function for error (optional)
+//use .then to run when there is a result (either resolve or reject function is executed). 
+//takes two parameters: first a function for success, second a function for failure (optional)
 songPromise.then(
     successMsg => console.log(`Success #1: ${successMsg}`),
     failMsg => console.error(`Failure #1: Sorry fans, ${failMsg}`) //can leave this out to only handle success
@@ -45,6 +53,7 @@ songPromise.then(
 songPromise.then(successMsg => console.log(`Success #3: ${successMsg}`)).catch(failMsg => console.error(`Failure #3: Sorry fans, ${failMsg}`))
 
 // can also use finally (optional) if anything needs to happen at the end regardless of success/failure:
+//doesn't matter where you put the .finally, it will always run last after all promises have resolved
 songPromise
     .then(successMsg => console.log(`Success #4: ${successMsg}`))
     .finally(() => console.log('Song production now finalised.'))
@@ -54,7 +63,7 @@ songPromise
 
 // -----------------------
 
-// we can also handle promises using async and await keywords instead of .then (without flexibility of error handling)
+// we can also handle promises using async and await keywords instead of .then (without flexibility of inbuilt error handling)
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 
 
@@ -70,5 +79,5 @@ finally {
     console.log('Song production now finalised.')
 }
 
-// if using await inside a function, the function has to be declared as async like this: 
+// if using await inside a function, the function has to be declared as async like this (see fetch.js): 
 // async function myFunction() {...}
