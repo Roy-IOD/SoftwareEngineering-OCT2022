@@ -1,0 +1,4 @@
+Enter the value of two numbers
+Choose an operator (+, -, *, /)
+Display the result
+Reset the screen
