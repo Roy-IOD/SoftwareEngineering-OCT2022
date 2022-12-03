@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-body">
             <div class="name"></div>
-            <div class="birth-year"></div>
+            <div class="dates"></div>
             <div class="books"></div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                 font-family: Arial, Helvetica, sans-serif;
                 background-color: #e3f2fd;
             }
-            #card-list { display: flex; }
+            #card-list, #authors-list, .books { display: flex; }
             .card {
                 padding: 10px;
                 box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
@@ -49,6 +49,10 @@
                 font-weight: 400;
                 font-size: 2em
             }
+            #authors-list .card { border: 5px solid #3AA0FF; border-radius: 10px; }
+            #authors-list .card .name { font-weight: bold; font-size: 18px; }
+            #authors-list .books { flex-wrap: wrap; }
+            #authors-list .books .card { box-shadow: none; border: 0 none; background: #3AA0FF; color: white; margin: 0.5em; }
             </style>        
     </head>
 
@@ -71,15 +75,20 @@
         const authors = [
             {name: 'Roald Dahl',
             birth_year: 1916,
+            death_year: 1990,
             books: [
                 {title: 'Matilda'},
-                {title: 'The BFG'}
+                {title: 'The BFG'},
+                {title: 'The Witches'}
             ]},
             {name: 'Terry Pratchett',
-            birth_year: 1940,
+            birth_year: 1948,
+            death_year: 2015,
             books: [
                 {title: 'The Colour of Magic'},
-                {title: 'Discworld'}
+                {title: 'Jingo'},
+                {title: 'Good Omens'},
+                {title: 'Going Postal'}
             ]}
         ]
 
@@ -92,11 +101,11 @@
             document.querySelector('#card-list').appendChild(template);
         }
 
-        function addAuthorCard(name, birth_year, books) {
+        function addAuthorCard(name, birth_year, death_year, books) {
             const authorTemplate = document.getElementById("author-template").content.cloneNode(true);
             
             authorTemplate.querySelector('.name').innerText = name;
-            authorTemplate.querySelector('.birth-year').innerText = birth_year;
+            authorTemplate.querySelector('.dates').innerText = birth_year + ' - ' + death_year;
 
             books.forEach(book => {
                 const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
@@ -113,7 +122,7 @@
 
             for (let author of authors)
             {
-                addAuthorCard(author.name, author.birth_year, author.books)
+                addAuthorCard(author.name, author.birth_year, author.death_year, author.books)
             }
         }
     </script>  
