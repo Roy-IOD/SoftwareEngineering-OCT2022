@@ -175,7 +175,7 @@ class Clock {
       this.timer = setInterval(() => this.render(), this.precision);}
       
   }
-*/
+
   //3.11
 class FormatError extends SyntaxError{
 constructor(message){
@@ -192,3 +192,28 @@ console.log( err instanceof FormatError ); // true
 
 console.log( err instanceof SyntaxError ); // true (because
 
+//3.12
+
+function delay(ms) {
+  return new Promise (function(resolve){
+    setTimeout(resolve,ms)
+  }
+  )
+}
+delay(3000).then(() => alert('runs after 3 seconds'));
+
+*/
+//3.13
+async function loadJson(url) {
+  let response = await fetch(url); 
+
+  if (response.status == 200) {
+    let json = await response.json(); 
+    return json;
+  }
+
+  throw new Error(response.status);
+}
+
+loadJson('https://javascript.info/no-such-user.json')
+  .catch(alert);

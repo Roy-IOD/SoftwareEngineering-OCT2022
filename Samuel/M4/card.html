@@ -1,0 +1,125 @@
+<template id="card-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title"></div>
+            <div class="card-text"></div>
+        </div>
+    </div>
+</template>
+
+<template id="author-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="name"></div>
+            <div class="birth-year"></div>
+            <div class="books"></div>
+        </div>
+    </div>
+</template>
+
+<template id="book-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="book-title"></div>
+        </div>
+    </div>
+</template>
+
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e3f2fd;
+            }
+            #card-list { display: flex; }
+            .card {
+                padding: 10px;
+                box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+                background: white;
+                margin: 1em;
+            }
+            .card-title {
+                font-weight: 600;
+                font-size: 3em;
+                padding: 0 0 10px 0;
+            }
+            .card-description {
+                font-weight: 400;
+                font-size: 2em
+            }
+            </style>        
+    </head>
+
+    <body>
+        <div id="card-list"></div>
+        <div id="authors-list"></div>
+    </body>
+
+    <script>
+
+        const christmasMovies = [
+            {title: 'Santa Claus 1',
+            text: 'About a guy who becomes Santa after pushing him off the roof'},
+            {title: 'Die Hard',
+            text: 'Bruce Willis saves the world by killing everyone'},
+            {title: 'Elf',
+            text: 'Will Ferrel is a human elf who saves Christmas'}
+        ]
+
+        const authors = [
+            {name: 'Roald Dahl',
+            birth_year: 1916,
+            books: [
+                {title: 'Matilda'},
+                {title: 'The BFG'}
+            ]},
+            {name: 'Terry Pratchett',
+            birth_year: 1940,
+            books: [
+                {title: 'The Colour of Magic'},
+                {title: 'Discworld'}
+            ]}
+        ]
+
+        //uses the template with ID card-template to add a new card into the #card-list div
+        function addMovieCard(title, text) {
+            const template = document.getElementById("card-template").content.cloneNode(true);
+            
+            template.querySelector('.card-title').innerText = title;
+            template.querySelector('.card-text').innerText = text;
+            document.querySelector('#card-list').appendChild(template);
+        }
+
+        function addAuthorCard(name, birth_year, books) {
+            const authorTemplate = document.getElementById("author-template").content.cloneNode(true);
+            
+            authorTemplate.querySelector('.name').innerText = name;
+            authorTemplate.querySelector('.birth-year').innerText = birth_year;
+
+            books.forEach(book => {
+                const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
+                bookTemplate.querySelector('.book-title').innerText = book.title;
+                authorTemplate.querySelector('.books').appendChild(bookTemplate);
+            })
+            document.querySelector('#authors-list').appendChild(authorTemplate);
+        }        
+
+        //just makes sure the template content exists
+        if ('content' in document.createElement('template')) {
+            christmasMovies.forEach(movie => addMovieCard(movie.title, movie.text))
+            //addCard();
+
+            for (let author of authors)
+            {
+                addAuthorCard(author.name, author.birth_year, author.books)
+            }
+        }
+    </script>  
+
+</html>
+
+
+
+
+       

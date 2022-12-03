@@ -194,4 +194,9 @@ const salariesTwo = {
 
 //2.11
 
+function getSecondsToday(){
+    let 
+}
+
+
 //2.12 sildes 74, 75, 76
