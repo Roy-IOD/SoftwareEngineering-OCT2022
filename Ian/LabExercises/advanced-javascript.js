@@ -82,19 +82,19 @@ function makeCounter() {
 
 // 5. What should we pass askPassword in the code below, so that it calls
 // user.login(true) as ok and user.login(false) as fail?
-const prompt = require("prompt-sync")();
-function askPassword(ok, fail) {
-    let password = prompt("Password?", '');
-    if (password == "rockstar") ok();
-    else fail();
-}
-let user = {
-    name: 'Ian',
+// const prompt = require("prompt-sync")();
+// function askPassword(ok, fail) {
+//     let password = prompt("Password?", '');
+//     if (password == "rockstar") ok();
+//     else fail();
+// }
+// let user = {
+//     name: 'Ian',
 
-    login(result) {
-        console.log( this.name + (result ? ' logged in' : ' failed to log in') );
-    }
-};
+//     login(result) {
+//         console.log( this.name + (result ? ' logged in' : ' failed to log in') );
+//     }
+// };
 
 // askPassword(() => user.login(true), () => user.login(false)); // commenting out for now
 //Above works, just commented out so that I can run other questions without password
@@ -166,3 +166,160 @@ console.log(obj.name);
 // f.defer(1000)(1, 2); // shows 3 after 1 second
 // Please note that the arguments should be passed to the original function.
 
+Function.prototype.defer - function(ms) {
+    let functionContext = this;
+
+    return function(...args) {
+        console.log(arguments)
+        console.log(args)
+        console.log(this)
+        setTimeout(() => functionContext.apply(this, args), ms)
+    }
+}
+
+function sum(a, b) {
+    console.log(a+b);
+}
+
+const multiply = (a,b) => console.log(a*b)
+
+function sumAll(a,b,c,d,e,f) {
+    console.log(a+b+c+d+e+f)
+}
+
+// sum.defer(1000)(1, 2); //shows 3 after 1 second or does it? "sum.defer is not a function"
+
+
+//9. Add toString to the dictionary
+console.log('\nQuestion 9:\n----------')
+
+let dictionary = Object.create(null, {
+    toString: { // define toString property
+      value() { // the value is a function
+        return Object.keys(this).join();
+      }
+    }
+  });
+
+   // your code to add dictionary.toString method
+    // add some data
+dictionary.apple = "Apple";
+dictionary.orange = "Orange";
+
+// dictionary.__proto__ = "test"; 
+// __proto__ is a regular property key here
+
+// only apple and __proto__ are in the loop
+
+for(let key in dictionary) {
+    console.log(key); // "apple", then "__proto__"
+}
+// your toString in action
+
+console.log(dictionary+""); // "apple,__proto__"
+
+//q 10. Extended Clock
+// console.log('\nQuestion 10:\n----------')
+// class Clock {
+
+//     constructor({ template }) {
+//         this.template = template;
+//     }
+//     render() {
+//         let date = new Date();
+    
+//         let hours = date.getHours();
+//         if (hours < 10) hours = '0' + hours;
+    
+//         let mins = date.getMinutes();
+//         if (mins < 10) mins = '0' + mins;
+    
+//         let secs = date.getSeconds();
+//         if (secs < 10) secs = '0' + secs;
+    
+//         let output = this.template
+//             .replace('h', hours)
+//             .replace('m', mins)
+//             .replace('s', secs);
+        
+//         console.log(output);
+//     }
+//     stop() {
+//         clearInterval(this.timer);
+//     }
+//     start() {
+//         this.render();
+//         this.timer = setInterval(() => this.render(), 1000);
+//         }
+//     }
+// //
+// class ExtendedCLock extends Clock {
+//     constructor(template) {
+//         super(template)
+//         //console.log(template)
+
+//         let precision = template.precision ? template.precision : 1000
+//         console.log(precision)
+//         this.precision = precision
+//     }
+
+//     start() {
+//         this.render();
+//         this.timer = setInterval(() => this.render(), this.precision);
+//     }
+// }
+
+// let extClock = new ExtendedCLock({template: 'h : m : s', precision: 1000})
+// extClock.start()
+
+// 11. Inherit from SyntaxError
+console.log('\nQuestion 11:\n----------')
+class FormatError extends SyntaxError {
+    constructor(message) {
+        super(message);
+        this.name = this.constructor.name;
+    }
+}
+
+let err = new FormatError("formatting error")
+
+console.log(err.message);
+console.log(err.name);
+console.log(err.stack);
+
+console.log(err instanceof SyntaxError);
+
+//12. Delay with a promise
+console.log('\nQuestion 12:\n----------')
+function delay(ms) {
+
+    return new Promise((resolve,reject) => {
+        if (ms <0){
+            reject ("Less than zero")       
+        } else {
+            setTimeout(resolve, ms);
+        }
+    })
+}
+
+delay(4000).then(() => console.log('runs after 4 seconds'));
+delay(-4000).then(() => console.log('runs after 4 seconds')).catch((message) => console.log(message));
+
+// //13.Rewrite using async/await
+// //Rewrite this example code from the chapter Promises chaining using
+// //async/await instead of .then/catch:
+import fetch from 'node-fetch'
+async function loadJson(url) {
+    let response = await fetch(url)
+            if (response.status == 200) {
+
+            return await response.json();
+            } else {
+            throw new Error(response.status);
+        }
+
+}
+
+loadJson('https://jsonplaceholder.typicode.com/posts/1')
+    .then((message) => console.log(message))
+    .catch(console.log); // Error: 404

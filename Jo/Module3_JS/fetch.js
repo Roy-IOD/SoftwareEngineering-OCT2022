@@ -5,9 +5,9 @@
 import fetch from 'node-fetch'
 
 
-//fetch is a function built in to the browser which fetches from a remote URL and returns a Promise:
+//fetch is a function built in to the browser which fetches from a remote URL and returns a Promise (see promises.js):
 
-fetch('https://jsonplaceholder.typicode.com/posts/1')
+fetch('https://jsonplaceholder.typicode.com/posts/1') //sample public JSON API for use in testing
     .then(response => response.json()) //this gets the entire HTTP response, so we use the .json() function which also returns a promise
     .then(json => console.log(`Post #1: ${JSON.stringify(json)}`)) //this promise includes the json returned from the fetched URL if successful
     //.catch(error => console.error(`Caught error: ${error}`)) //can optionally include this to show any errors
@@ -32,6 +32,17 @@ async function fetchPostTitle(postId)
     return postJson.title
 }
 
-//and then to use it we also need to use await again:
+//to write this using a function expression / arrow syntax:
+//const fetchPostBody = async (postId) => {
+const fetchPostBody = async function(postId) {
+    let post = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    let postJson = await post.json()
+    return postJson.body    
+}
+
+//and then to use it we also need to use await again (because async functions return a promise):
 let post3Title = await fetchPostTitle(3)
-console.log(post3Title)
+console.log(`Post #3 Title: ${post3Title}`)
+
+//OR we could use our .then promise syntax:
+fetchPostBody(3).then(body => console.log(`Post #3 Body: ${body}`))
