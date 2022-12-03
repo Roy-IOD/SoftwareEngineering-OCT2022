@@ -25,6 +25,26 @@
     </div>
 </template>
 
+<template id="artist-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="name"></div>
+            <div class="portfolio"></div>
+        </div>
+    </div>
+
+</template>
+
+<template id="portfolio-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="title"></h2>
+            <img class="url" width="300">
+        </div>
+    </div>
+
+</template>
+
 <html>
     <head>
         <style>
@@ -54,6 +74,7 @@
     <body>
         <div id="card-list"></div>
         <div id="authors-list"></div>
+        <div id="artist-list"></div>
     </body>
 
     <script>
@@ -82,6 +103,16 @@
             ]}
         ]
 
+        const artists = [
+            {name:"Van Gogh",
+            portfolio:[
+                {title:"portrait",
+                    url:"https://i.guim.co.uk/img/media/108116e997c626e07dc0ecee59cf9a854ea21943/90_573_2514_1508/master/2514.jpg?width=700&quality=85&dpr=1&s=none"},
+                {title:"sky",
+                     url:"https://news.artnet.com/app/news-upload/2018/09/cri_000000133075-1024x822.jpg"},
+            ]
+        }]
+
         //uses the template with ID card-template to add a new card into the #card-list div
         function addMovieCard(title, text) {
             const template = document.getElementById("card-template").content.cloneNode(true);
@@ -103,7 +134,25 @@
                 authorTemplate.querySelector('.books').appendChild(bookTemplate);
             })
             document.querySelector('#authors-list').appendChild(authorTemplate);
-        }        
+        }
+        
+
+        function addArtistCard(name, portfolio) {
+            const artistTemplate = document.getElementById("artist-template").content.cloneNode(true);
+            
+            artistTemplate.querySelector('.name').innerText = name;
+
+           portfolio.forEach(artwork => {
+                const artworkTemplate = document.getElementById("portfolio-template").content.cloneNode(true);
+                artworkTemplate.querySelector('.title').innerText = artwork.title;
+                artworkTemplate.querySelector('.url').src = artwork.url;
+                artistTemplate.querySelector('.portfolio').appendChild(artworkTemplate);
+            })
+
+            document.querySelector('#artist-list').appendChild(artistTemplate)
+
+        }
+        
 
         //just makes sure the template content exists
         if ('content' in document.createElement('template')) {
@@ -113,6 +162,11 @@
             for (let author of authors)
             {
                 addAuthorCard(author.name, author.birth_year, author.books)
+            }
+
+            for (let artist of artists)
+            {
+                addArtistCard(artist.name, artist.portfolio, artist.title)
             }
         }
     </script>  
