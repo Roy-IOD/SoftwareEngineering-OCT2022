@@ -11,7 +11,7 @@
 <template id="author-template">
     <div class="card">
         <div class="card-body">
-            <div class="name"></div>
+            <h2 class="name"></h2>
             <div class="birth-year"></div>
             <div class="books"></div>
         </div>
@@ -21,7 +21,7 @@
 <template id="book-template">
     <div class="card">
         <div class="card-body">
-            <div class="book-title"></div>
+            <h2 class="book-title"></h2>
         </div>
     </div>
 </template>
@@ -29,7 +29,7 @@
 <template id="artist-template">
     <div class="card">
         <div class="card-body">
-            <div class="name"></div>
+            <h2 class="name"></h2>
             <div class="portfolio"></div>
         </div>
     </div>
@@ -38,8 +38,8 @@
 <template id="portfolio-template">
     <div class="card">
         <div class="card-body">
-            <div class="art-title"></div>
-            <div class="art-image"></div>
+            <h2 class="art-title"></h2>
+            <img class="url" width="400">
         </div>
     </div>
 </template>
@@ -47,7 +47,7 @@
 <template id="badger-template">
     <div class="card">
         <div class="card-body">
-            <div class="name"></div>
+            <h2 class="name"></h2>
             <div class="birth-year"></div>
             <div class="books"></div>
         </div>
@@ -65,7 +65,7 @@
             .card {
                 padding: 10px;
                 box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
-                background: white;
+                background: lightcyan;
                 margin: 1em;
             }
             .card-title {
@@ -89,7 +89,7 @@
 
     <script>
 
-        const data=[{name:'bob', age:23},{name:'alice',age:39}]
+        const data=[{name:'Bob', age:23},{name:'Alice',age:39}]
 
         const christmasMovies = [
             {title: 'Santa Claus 1',
@@ -97,7 +97,7 @@
             {title: 'Die Hard',
             text: 'Bruce Willis saves the world by killing everyone'},
             {title: 'Elf',
-            text: 'Will Ferrel is a human elf who saves Christmas'}
+            text: 'Will Ferrell is the elf who saves Christmas'}
         ]
 
         const authors = [
@@ -123,9 +123,17 @@
             {title:'sky',
             url:'https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg'},
             {title: 'test', 
-            image: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
-        ]
-            }
+            url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
+        ]},
+            {name: 'Monet',
+            portfolio: [
+                {title:'Monet and his new hat',
+            url:'https://images.unsplash.com/photo-1651909760542-c929a098d9f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hbiUyMHdpdGglMjBhJTIwaGF0JTIwb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'},
+            {title:'Monet goes to the shops',
+            url:'https://images.unsplash.com/photo-1466979444531-592e8003a994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFuJTIwZ29pbmclMjB0byUyMHRoZSUyMHNob3B8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'},
+            {title: 'Taking Fido to the Beach', 
+            url: "https://images.unsplash.com/photo-1621953571189-f24078315ddd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwYW5kJTIwaGlzJTIwZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"},
+        ]}
         ]
 
         const badgers = [
@@ -188,7 +196,7 @@
             portfolio.forEach(portfolio => {
                 const portfolioTemplate = document.getElementById("portfolio-template").content.cloneNode(true);
                 portfolioTemplate.querySelector('.art-title').innerText = portfolio.title;
-                portfolioTemplate.querySelector('.art-image').innerText = portfolio.url;
+                portfolioTemplate.querySelector('.url').src = portfolio.url;
                 artistTemplate.querySelector('.portfolio').appendChild(portfolioTemplate);
             })
             document.querySelector('#artists-list').appendChild(artistTemplate);
