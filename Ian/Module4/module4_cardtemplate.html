@@ -1,3 +1,4 @@
+
 <template id="card-template">
     <div class="card">
         <div class="card-body">
@@ -32,17 +33,25 @@
             <div class="portfolio"></div>
         </div>
     </div>
-
 </template>
 
 <template id="portfolio-template">
     <div class="card">
         <div class="card-body">
-            <h2 class="title"></h2>
-            <img class="url" width="300">
+            <div class="art-title"></div>
+            <div class="art-image"></div>
         </div>
     </div>
+</template>
 
+<template id="badger-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="name"></div>
+            <div class="birth-year"></div>
+            <div class="books"></div>
+        </div>
+    </div>
 </template>
 
 <html>
@@ -74,10 +83,13 @@
     <body>
         <div id="card-list"></div>
         <div id="authors-list"></div>
-        <div id="artist-list"></div>
+        <div id="artists-list"></div>
+        <div id="badgers-list"></div>
     </body>
 
     <script>
+
+        const data=[{name:'bob', age:23},{name:'alice',age:39}]
 
         const christmasMovies = [
             {title: 'Santa Claus 1',
@@ -104,14 +116,38 @@
         ]
 
         const artists = [
-            {name:"Van Gogh",
-            portfolio:[
-                {title:"portrait",
-                    url:"https://i.guim.co.uk/img/media/108116e997c626e07dc0ecee59cf9a854ea21943/90_573_2514_1508/master/2514.jpg?width=700&quality=85&dpr=1&s=none"},
-                {title:"sky",
-                     url:"https://news.artnet.com/app/news-upload/2018/09/cri_000000133075-1024x822.jpg"},
-            ]
-        }]
+            {name: 'Van Gogh',
+            portfolio: [
+                {title:'Portrait',
+            url:'https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image'},
+            {title:'sky',
+            url:'https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg'},
+        ]
+            }
+            {name: 'Monet',
+            portfolio: [
+                {title:'Monet self portrait',
+            url:'https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image'},
+            {title:'Pictures of a girl',
+            url:'https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg'},
+        ]
+            }
+        ]
+
+        const badgers = [
+            {name: 'Mr Badger',
+            birth_year: 1922,
+            books: [
+                {title: 'Badgerbiography'},
+                {title: 'Badger Baiting'}
+            ]},
+            {name: 'Mrs Badger',
+            birth_year: 1956,
+            books: [
+                {title: 'The Colour of Badger'},
+                {title: 'Badgerworld'}
+            ]}
+        ]
 
         //uses the template with ID card-template to add a new card into the #card-list div
         function addMovieCard(title, text) {
@@ -135,29 +171,41 @@
             })
             document.querySelector('#authors-list').appendChild(authorTemplate);
         }
-        
 
+        function addBadgerCard(name, birth_year, books) {
+            const badgerTemplate = document.getElementById("badger-template").content.cloneNode(true);
+            
+            badgerTemplate.querySelector('.name').innerText = name;
+            badgerTemplate.querySelector('.birth-year').innerText = birth_year;
+
+            books.forEach(book => {
+                const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
+                bookTemplate.querySelector('.book-title').innerText = book.title;
+                badgerTemplate.querySelector('.books').appendChild(bookTemplate);
+            })
+            document.querySelector('#badgers-list').appendChild(badgerTemplate);
+        }
+        
         function addArtistCard(name, portfolio) {
             const artistTemplate = document.getElementById("artist-template").content.cloneNode(true);
             
             artistTemplate.querySelector('.name').innerText = name;
 
-           portfolio.forEach(artwork => {
-                const artworkTemplate = document.getElementById("portfolio-template").content.cloneNode(true);
-                artworkTemplate.querySelector('.title').innerText = artwork.title;
-                artworkTemplate.querySelector('.url').src = artwork.url;
-                artistTemplate.querySelector('.portfolio').appendChild(artworkTemplate);
+            portfolio.forEach(portfolio => {
+                const portfolioTemplate = document.getElementById("portfolio-template").content.cloneNode(true);
+                portfolioTemplate.querySelector('.art-title').innerText = portfolio.title;
+                portfolioTemplate.querySelector('.art-image').innerText = portfolio.url;
+                artistTemplate.querySelector('.portfolio').appendChild(portfolioTemplate);
             })
-
-            document.querySelector('#artist-list').appendChild(artistTemplate)
-
-        }
-        
+            document.querySelector('#artists-list').appendChild(artistTemplate);
+        }        
 
         //just makes sure the template content exists
         if ('content' in document.createElement('template')) {
             christmasMovies.forEach(movie => addMovieCard(movie.title, movie.text))
             //addCard();
+
+            data.forEach(person => addMovieCard(person.name, person.age));
 
             for (let author of authors)
             {
@@ -166,14 +214,14 @@
 
             for (let artist of artists)
             {
-                addArtistCard(artist.name, artist.portfolio, artist.title)
+                addArtistCard(artist.name, artist.portfolio)
+            }
+
+            for (let badger of badgers)
+            {
+                addBadgerCard(badger.name, badger.birth_year, badger.books)
             }
         }
     </script>  
 
 </html>
-
-
-
-
-       
