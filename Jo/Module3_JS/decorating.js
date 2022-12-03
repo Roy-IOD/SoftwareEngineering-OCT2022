@@ -12,21 +12,21 @@
 //     return random;
 // }
 
-// function cachingDecorator(func) {
-//     const cache = new Map();
+function cachingDecorator(func) {
+    const cache = new Map();
 
-//     return function(x) {
-//         if (cache.has(x)) { // if there's such key in cache
-//             console.log('returned cached value for '+x)
-//             return cache.get(x); // read the result from it
-//         }
-//         //let result = func.call(this, x); //needed for object functions that reference 'this' for context
-//         let result = func(x) //works fine for standalone functions that don't rely on 'this' for context
-//         cache.set(x, result); // and cache (remember) the result
-//         console.log('generated new value '+result+' for '+x)
-//         return result;
-//     };
-// }
+    return function(x) {
+        if (cache.has(x)) { // if there's such key in cache
+            console.log('returned cached value for '+x)
+            return cache.get(x); // read the result from it
+        }
+        let result = func.call(this, x); //needed for object functions that reference 'this' for context
+        //let result = func(x) //works fine for standalone functions that don't rely on 'this' for context
+        cache.set(x, result); // and cache (remember) the result
+        console.log('generated new value '+result+' for '+x)
+        return result;
+    };
+}
 
 // let cachedSlow = cachingDecorator(slow); //this is where the decorating happens. we could use any function here instead of 'slow'
 
