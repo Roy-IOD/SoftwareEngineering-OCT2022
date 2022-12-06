@@ -194,30 +194,9 @@ const salariesTwo = {
 
 //2.11
 
-function getSecondsToday() {
-    let currentDate = new Date();
-    let today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-    let diff = currentDate - today; // ms difference
-    return Math.round(diff / 1000); // make seconds
-  }
-  
-console.log(getSecondsToday());
+function getSecondsToday(){
+    let 
+}
+
 
 //2.12 sildes 74, 75, 76
-
-let room = {
-    number: 23
-  };
-  
-  let meetup = {
-    title: "Conference",
-    occupiedBy: [{name: "John"}, {name: "Alice"}],
-    place: room
-  };
-  
-  room.occupiedBy = meetup;
-  meetup.self = meetup;
-  
-  console.log( JSON.stringify(meetup, function replacer(key, value) {
-    return (key != "" && value == meetup) ? undefined : value;
-  }));
