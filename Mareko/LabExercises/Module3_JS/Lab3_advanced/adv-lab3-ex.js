@@ -92,7 +92,7 @@ function debounce(func, ms){
 
 //3.5
 
-const prompt = require('prompt-sync')();
+//const prompt = require('prompt-sync')();
 
 function askPassword(ok, fail) {
     let password = prompt("Password? ", '');
@@ -157,10 +157,42 @@ let team2 = new team.constructor('Liverpool'); //let obj2 = new obj.constructor(
 
 //3.8
 
+Function.prototype.defer = function(ms) {
+    let functionContext = this;
+    console.log(functionContext)
+    
+    return function(){
+        setTimeout(() => functionContext.apply(this, arguments), ms)
+    }
+}
 
+function sum(a, b) {
+    console.log( a + b );
+    
+    }
+    sum.defer(1000)(1, 2); // shows 3 after 1 second
 
 //3.9
 
+let dictionary = Object.create(null, {
+    toString: {
+      value() {
+        return Object.keys(this).join();
+      }
+    }
+  });
+
+// your code to add dictionary.toString method
+// add some data
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; // __proto__ is a regular property key here
+
+// only apple and __proto__ are in the loop
+for(let key in dictionary) {
+    console.log(key); // "apple", then "__proto__"
+}
+// your toString in action
+console.log(dictionary); // "apple,__proto__"
 
 
 //3.10
@@ -235,34 +267,16 @@ function delay(ms) {
 //delay(1000).then(() => console.log('runs after 3 seconds'));
 
 //3.13
-
 // import fetch from 'node-fetch'
-
 // async function loadJson(url) {
-//     return fetch(url)
-//     .then(response => {
-    
-//         if (response.status == 200) {
-//     return response.json();
-//     } else {
-
-//     throw new Error(response.status);
-//     }
-//     });
+//     let response = await fetch(url)
+//         if (response.status == 200){
+//             return await response.json();
+//         } else {
+//             throw new Error(response.status);
+//         }
 // }
 
-//     loadJson('https://jsonplaceholder.typicode.com/posts/1')
-//     .catch(alert); // Error: 404
-
-
-async function loadJson(url) {
-    let response = await fetch(url)
-        if (response.status == 200){
-            return await response.json();
-        } else {
-            throw new Error(response.status);
-        }
-}
-
-loadJson()
-    .then
+// loadJson('https://jsonplaceholder.typicode.com/posts/1')
+//     .then((message) => console.log(message))
+//     .catch(console.log);
