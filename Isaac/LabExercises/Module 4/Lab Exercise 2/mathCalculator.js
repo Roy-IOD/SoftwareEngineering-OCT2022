@@ -1,31 +1,55 @@
+/* 
+// This version uses if else statements
+
 function mathCalculate() {
     let selectedOperator = document.getElementById("operatorSelector").value;
     let firstNumber = document.getElementById("fnumber").value;
     let lastNumber = document.getElementById("lnumber").value;
+    let result = null
 
-    if (selectedOperator = "addition") {
-        let result = Number(firstNumber) + Number(lastNumber)
-        return document.getElementById('result').innerHTML = result;
+    if (selectedOperator == "addition") {
+        result = Number(firstNumber) + Number(lastNumber)
     } 
-    else if (selectedOperator = "subtraction") {
-        let result = Number(firstNumber) - Number(lastNumber)
-        return document.getElementById('result').innerHTML = result;
+    else if (selectedOperator == "subtraction") {
+        result = Number(firstNumber) - Number(lastNumber)
     } 
     else if (selectedOperator = "divide") {
-        let result = Number(firstNumber) / Number(lastNumber)
-        return document.getElementById('result').innerHTML = result;
+        result = Number(firstNumber) / Number(lastNumber)
     } 
     else if (selectedOperator = "multiply") {
-        let result = Number(firstNumber) * Number(lastNumber)
-        return document.getElementById('result').innerHTML = result;
+        result = Number(firstNumber) * Number(lastNumber)
     } 
+    document.getElementById('result').innerHTML = result;
+};
+*/
+
+
+// This version uses switch/break statement
+
+function mathCalculate() {
+    let firstNumber = document.getElementById("fnumber").value;
+    let lastNumber = document.getElementById("lnumber").value;
+    let result = null
+
+    switch(document.getElementById("operatorSelector").value) {
+        case "addition":
+            result = Number(firstNumber) + Number(lastNumber);
+            break;
+        case "subtraction":
+            result = Number(firstNumber) - Number(lastNumber);
+            break;
+        case "multiply":
+            result = Number(firstNumber) / Number(lastNumber);
+            break;
+        case "divide":
+            result = Number(firstNumber) / Number(lastNumber);
+            break;
+    }
+    document.getElementById('result').innerHTML = result;
 };
 
+
 function mathReset() {
-    let firstNumber = document.getElementById("fnumber")
-    let lastNumber = document.getElementById("lnumber")
-    let resetNumber = document.getElementById('result')
-    .reset(firstNumber)
-    .reset(lastNumber)
-    .reset(resetNumber)
+    document.getElementById("form").reset();
+    document.getElementById("result").innerHTML = "";
 }
