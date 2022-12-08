@@ -77,9 +77,9 @@ function printNumbersCopy (from, to) {
 let f = str => console.log(str)
 f = debounce(f, 1000)
 
-f("a");
-setTimeout( () => f("b"), 200);
-setTimeout( () => f("c"), 500);
+//f("a");
+//setTimeout( () => f("b"), 200);
+//setTimeout( () => f("c"), 500);
 
 function debounce(func, ms){
     let timeout;
@@ -92,35 +92,191 @@ function debounce(func, ms){
 
 //3.5
 
+//const prompt = require('prompt-sync')();
+
 function askPassword(ok, fail) {
-    let password = prompt("Password?", '');
+    let password = prompt("Password? ", '');
     if (password == "rockstar") ok();
     else fail();
-    }
+}
     
-    let user = {
-        name: 'John',
-        login(result) {
-        console.log( this.name + (result ? ' logged in' : ' failed to log in') );
-        }
-    };
+let user = {
+    name: 'John',
+    login(result) {
+    console.log( this.name + (result ? ' logged in' : ' failed to log in') );
+    }   
+};
     
-    // askPassword(rockstar, fail); // ?
+//askPassword(() => user.login (true), () => user.login(false) );
 
 //3.6
+
+let head = {
+    glasses: 1
+};
+
+let table = {
+    pen: 3,
+    __proto__: head
+};
+
+let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__: table
+};
+
+let pockets = {
+    money: 2000,
+    __proto__: bed
+};
+
+// console.log(pockets.pen);
+// console.log(bed.glasses);
+
+    // 3.6B
+    // console.time(pockets.glasses)
+    // console.timeEnd(pockets.glasses)
+
+    // console.time(head.glasses)
+    // console.timeEnd(head.glasses)
+    
+    //head.glasses is faster than pockets.glasses
 
 
 //3.7
 
+function Team(name){
+    this.name = name;
+}
+
+let team = new Team('Manchester United');
+let team2 = new team.constructor('Liverpool'); //let obj2 = new obj.constructor();
+
+//console.log(team2.name)
 
 //3.8
 
+Function.prototype.defer = function(ms) {
+    let functionContext = this;
+    console.log(functionContext)
+    
+    return function(){
+        setTimeout(() => functionContext.apply(this, arguments), ms)
+    }
+}
+
+function sum(a, b) {
+    console.log( a + b );
+    
+    }
+    sum.defer(1000)(1, 2); // shows 3 after 1 second
+
 //3.9
 
+let dictionary = Object.create(null, {
+    toString: {
+      value() {
+        return Object.keys(this).join();
+      }
+    }
+  });
+
+// your code to add dictionary.toString method
+// add some data
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; // __proto__ is a regular property key here
+
+// only apple and __proto__ are in the loop
+for(let key in dictionary) {
+    console.log(key); // "apple", then "__proto__"
+}
+// your toString in action
+console.log(dictionary); // "apple,__proto__"
+
+
 //3.10
+class Clock {
+
+    constructor({ template }) {
+    this.template = template;
+    }
+   
+    render() {
+        let date = new Date();
+        let hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+        let mins = date.getMinutes();
+        if (mins < 10) mins = '0' + mins;
+        let secs = date.getSeconds();
+        if (secs < 10) secs = '0' + secs;
+
+        let output = this.template
+            .replace('h', hours)
+            .replace('m', mins)
+            .replace('s', secs);
+
+        console.log(output);
+    }
+
+    stop() {
+        clearInterval(this.timer);
+    }
+
+    start() {
+        this.render();
+        this.timer = setInterval(() => this.render(), 1000);
+    }
+}
+
+class ExtendedClock extends Clock {
+    constructor(template) {
+        super(template)
+    }
+}
+
+let extClock = new ExtendedClock({template: 'h:m:s', precision: 2000})
+//extClock.start()
+
 
 //3.11
+class FormatError extends SyntaxError {
+    constructor(message){
+        super(message);
+        this.name = this.constructor.name; 
+    }
+}
+
+let err = new FormatError("formatting error");
+// console.log( err.message ); // formatting error
+// console.log( err.name ); // FormatError
+// console.log( err.stack ); // stack
+// console.log( err instanceof FormatError ); // true
+
+// console.log( err instanceof SyntaxError ); // true (because inherits from SyntaxError)
 
 //3.12
 
+function delay(ms) { 
+    let promise = new Promise(function(resolve, reject) {
+        resolve = setTimeout(resolve, ms);
+        reject = null
+    });
+    return promise
+}
+//delay(1000).then(() => console.log('runs after 3 seconds'));
 
+//3.13
+// import fetch from 'node-fetch'
+// async function loadJson(url) {
+//     let response = await fetch(url)
+//         if (response.status == 200){
+//             return await response.json();
+//         } else {
+//             throw new Error(response.status);
+//         }
+// }
+
+// loadJson('https://jsonplaceholder.typicode.com/posts/1')
+//     .then((message) => console.log(message))
+//     .catch(console.log);
