@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <template id="news-template">
+        <div class="news-title"></div>
+        <div class="news-content"></div>
+    </template>
+    
+    <form onsubmit="addNewsItem()">
+        <input type="text" name="title" id="news-title" value=""/>
+        <input type="text" name="title" id="news-content" value=""/>
+        <button type="submit">Add News Item</button>
+    </form>
+    
+    <div id="news-list"></div>
+
+    <script>
+        let news=[
+            { id: 1, title: 'News1', content:"bla"},
+            { id: 2, title: 'News2', content:"ble"},
+            { id: 3, title: 'News3', content:"blu"}
+        ];
+
+        function addNewsItem() {
+            event.preventDefault();
+            let newsTitle = document.getElementById('news-title').value
+            let newsContent = document.getElementById('news-content').value
+            let newsItem = {id: news.length+1, title: newsTitle, content: newsContent}
+
+            news.push(newsItem)
+        }
+
+        function addNewsItems() {
+            console.log('Refreshing News Items')
+            document.getElementById('news-list').innerHTML = '';
+
+            news.forEach((newsItem) => {
+                const template = document.getElementById("news-template").content.cloneNode(true);
+                template.querySelector('.news-title').innerText = newsItem.title;
+                template.querySelector('.news-content').innerText = newsItem.content;
+                document.querySelector('#news-list').appendChild(template);
+            }
+        )};
+        
+        const intervalTimer = setInterval(addNewsItems, 5000)
+
+    </script>
+</body>
+
+</html>
