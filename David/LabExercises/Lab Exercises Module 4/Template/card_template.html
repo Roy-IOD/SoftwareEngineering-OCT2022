@@ -1,0 +1,142 @@
+<template id="card-template">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title"></div>
+      <div class="card-text"></div>
+    </div>
+  </div>
+</template>
+
+<template id="artist-template">
+  <div class="card">
+    <div class="card-body">
+      <div class="name"></div>
+      <div class="portfolio"></div>
+    </div>
+  </div>
+</template>
+
+<template id="artist-portfolio">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="title"></h2>
+      <img class="url" width="300" />
+    </div>
+  </div>
+</template>
+
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #a8d2f1;
+      }
+      #card-list {
+        display: flex;
+      }
+      .card {
+        padding: 10px;
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+        background: rgb(172, 170, 181);
+        margin: 1em;
+      }
+      .card-title {
+        font-weight: 600;
+        font-size: 3em;
+        padding: 0 0 10px 0;
+      }
+      .card-description {
+        font-weight: 400;
+        font-size: 2em;
+      }
+      .card-body{
+        background: rgb(197, 202, 200);
+      }
+      .url{
+        
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="card-list"></div>
+    <div id="artists-list"></div>
+  </body>
+
+  <script>
+    const data = [
+      { name: "bob", age: 23 },
+      { name: "alice", age: 39 },
+    ];
+
+    const artists = [
+      {
+        name: "Van Gogh",
+        portfolio: [
+          {
+            title: "portrait",
+            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Vincent_van_Gogh_-_Self-portrait_with_bandaged_ear_%281889%2C_Courtauld_Institute%29.jpg/270px-Vincent_van_Gogh_-_Self-portrait_with_bandaged_ear_%281889%2C_Courtauld_Institute%29.jpg",
+          },
+          {
+            title: "sky",
+            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/350px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+          },
+        ],
+      },
+      {
+        name: "Picaso",
+        portfolio: [
+          {
+            title: "portrait",
+            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Portrait_de_Picasso%2C_1908.jpg/220px-Portrait_de_Picasso%2C_1908.jpg",
+          },
+          {
+            title: "the old guitarist",
+            url: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Old_guitarist_chicago.jpg/270px-Old_guitarist_chicago.jpg",
+          },
+        ],
+      },
+    ];
+
+    function addCard(name, age) {
+      const template = document
+        .getElementById("card-template")
+        .content.cloneNode(true);
+
+      template.querySelector(".card-title").innerText = name;
+      template.querySelector(".card-text").innerText = age;
+      document.querySelector("#card-list").appendChild(template);
+    }
+
+    function addArtistCard(name, portfolio) {
+      const artistTemplate = document
+        .getElementById("artist-template")
+        .content.cloneNode(true);
+
+      artistTemplate.querySelector(".name").innerText = name;
+
+      for (let artwork of portfolio) {
+        const artworkTemplate = document
+          .getElementById("artist-portfolio")
+          .content.cloneNode(true);
+        artworkTemplate.querySelector(".title").innerText = artwork.title;
+        artworkTemplate.querySelector(".url").src = artwork.url;
+        artistTemplate.querySelector(".portfolio").appendChild(artworkTemplate);
+      }
+
+      document.querySelector("#artists-list").appendChild(artistTemplate);
+    }
+
+    if ("content" in document.createElement("template")) {
+      data.forEach((user) => addCard(user.name, user.age));
+
+      for (artist of artists) {
+        addArtistCard(artist.name, artist.portfolio);
+      }
+    }
+  </script>
+</html>
