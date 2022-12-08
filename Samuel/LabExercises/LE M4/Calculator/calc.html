@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"> </script>
+    <script src="calculate.js" ></script>
+  <style>
+    h1 {
+        text-align: center;
+        color: #ECE307;
+    }
+
+    #header {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color:#0E2240 ;
+    }
+    .calculate {
+        background-color: #0E2240;
+        border: none;
+        color: white;
+    }
+
+    #button {
+      text-align: center;
+    }
+  </style>
+
+  <body>
+
+    <div id="header">
+    <h1> CALCULATOR </h1>
+    </div>
+      <form id="form">
+        <div class="row mb-3">
+          <label for="inputNumber1" class="col-sm-2 col-form-label">Number 1</label>
+          <div class="col-sm-10">
+            <input type="number1" class="form-control" id="number1" placeholder="Put your number here...">
+          </div>
+        </div>
+        <select id="operator" class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">+</option>
+            <option value="2">-</option>
+            <option value="3">x</option>
+            <option value="4">÷</option>
+          </select>
+        <div class="row mb-3">
+          <label for="inputNumber2" class="col-sm-2 col-form-label">Number 2</label>
+          <div class="col-sm-10">
+            <input type="number2" class="form-control" id="number2" placeholder="Put your number here...">
+          </div>
+        </div>
+        </div>
+      </form>
+      
+      <div id = "button">
+        <button id = "button" onclick = "mathCalculate()" type="equals" class="btn btn-primary calculate">EQUALS</button>
+        <button id = "button" onclick = "mathReset()" type="reset" class="btn btn-primary calculate">RESET</button>
+        </div>
+      <div>
+       <p id="result">  </p>
+      </div>
+      </style>
+  </body>
+</html>
