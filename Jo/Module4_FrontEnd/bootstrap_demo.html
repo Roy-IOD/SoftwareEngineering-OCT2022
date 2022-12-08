@@ -33,7 +33,7 @@
         <title>Bootstrap Demo</title>
     </head>
     <body>
-
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <!-- navbar https://getbootstrap.com/docs/5.2/components/navbar/ -->
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="container-fluid">
@@ -234,7 +234,7 @@
                 return dateObj.toLocaleDateString(undefined, options);
             }
 
-            function loadNASANews()
+            function loadNASANewsFetch()
             {
                 fetch('https://api.spaceflightnewsapi.net/v3/reports')
                     .then(response => response.json())
@@ -255,7 +255,31 @@
                         });
                     })
             }
-            loadNASANews();
+
+            function loadNASANewsAxios()
+            {
+                axios.get('https://api.spaceflightnewsapi.net/v3/reports')
+                    //.then(response => response.json())
+                    .then(response => {
+                        console.log(response.data)
+                        let newsItems = response.data
+                        newsItems.forEach(newsItem => {
+                            const template = document.getElementById("newscard-template").content.cloneNode(true);
+                            const formattedDate = formatDate(newsItem.updatedAt)
+
+                            template.querySelector('.card-title').innerText = newsItem.title;
+                            template.querySelector('.card-img-top').src = newsItem.imageUrl;
+                            template.querySelector('.card-img-top').alt = newsItem.title;
+                            template.querySelector('.news-summary').innerText = newsItem.summary;
+                            template.querySelector('.last-updated-date').innerText = formattedDate;
+                            template.querySelector('.btn-primary').href = newsItem.url;
+
+                            document.querySelector('#news-cards').appendChild(template); //once we have cloned and filled our template, add it to the HTML
+                        });
+                    })
+            }
+
+            loadNASANewsAxios();
         </script>
     </body>
 </html>
