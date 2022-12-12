@@ -1,12 +1,13 @@
 <template id="json-data">
-  <div class = "col">
   <div class="card" style="width: 18rem">
     <div class="card-body">
-      <h5 class="card-title"></h5>
+      <h5 class="card-title">Card title</h5>
       <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
       </p>
     </div>
-  </div></div>
+  </div>
 </template>
 
 <!DOCTYPE html>
@@ -23,12 +24,8 @@
     />
   </head>
   <body>
-    <nav class="navbar bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Fetch Data Lab</span>
-      </div>
-    </nav>
-    <div id = "data-cards" class = "row row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-4">
+    <h1>Fetch Data Lab</h1>
+    <div id = 'data-cards'>
     </div>
 
     <script
@@ -44,15 +41,16 @@ function loadJsonFetch ()
     fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         data.forEach((post) => {
          const template = document.getElementById("json-data").content.cloneNode(true)
-         template.querySelector(".card-title").innerText = post.title;
-         template.querySelector(".card-text").innerText = post.body;
+         template.querySelector('.card-title').innerText = post.title;
+         template.querySelector('.card-text').innertext = post.body;
 
-         document.querySelector("#data-cards").appendChild(template)
+         document.querySelector('#data-cards').appendChild(template)
         });
       });
     }
-    loadJsonFetch()
+    loadJsonFetch ()
   </script>
 </html>
