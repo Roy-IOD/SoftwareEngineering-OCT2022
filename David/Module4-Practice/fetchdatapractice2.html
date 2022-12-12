@@ -1,14 +1,3 @@
-<template id="json-data">
-  <div class = "col">
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text">
-      </p>
-    </div>
-  </div></div>
-</template>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,12 +12,10 @@
     />
   </head>
   <body>
-    <nav class="navbar bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Fetch Data Lab</span>
-      </div>
-    </nav>
-    <div id = "data-cards" class = "row row-cols-sm-1 row-cols-md-3 row-cols-lg-5 g-4">
+    <h1>Fetch Data Lab</h1>
+    <div>
+      <p id="title"></p>
+      <p id="body"></p>
     </div>
 
     <script
@@ -38,21 +25,19 @@
     ></script>
   </body>
   <script>
+    const title = document.getElementById("title");
+    const body = document.getElementById("body");
 
-function loadJsonFetch ()
-{
     fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         data.forEach((post) => {
-         const template = document.getElementById("json-data").content.cloneNode(true)
-         template.querySelector(".card-title").innerText = post.title;
-         template.querySelector(".card-text").innerText = post.body;
-
-         document.querySelector("#data-cards").appendChild(template)
+          title.insertAdjacentHTML(
+            "beforeend",
+            `<p>${post.title}</p> <p>${post.body}</p>`
+          );
         });
       });
-    }
-    loadJsonFetch()
   </script>
 </html>
