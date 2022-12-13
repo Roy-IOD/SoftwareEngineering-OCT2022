@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Maths Calculator</title>
+    <link rel="stylesheet" type="text/css" href="calculatorStylesheet.css" />
+    <script src = mcalculator.js></script>
+</head>
+<body>
+    <body id = "body">
+        <div id = "calculator">
+            <h2 id = "calculatortitle">
+                Calculator
+            </h2>
+                <p id = "result"></p>
+            <br>
+            <form id="form">
+                <div>
+                    <input type="text" id="fnumber" name="fnumber" placeholder="1">
+                </div>
+                <select id="operatorSelector" name="selector">
+                  <option value="addition" selected>+</option>
+                  <option value="subtraction">-</option>
+                  <option value="divide">&#247;</option>
+                  <option value="multiply">x</option>
+                </select>
+                <div>
+                    <input type="text" id="lnumber" name="lnumber" placeholder="1"><br>
+                </div>
+            </form>
+        </div>
+        <h1 id = "head"></h1>
+        <button id="button" onclick="mathCalculate()">
+            Calculate
+        </button>
+        <button id="button" onclick="mathReset()">
+            Reset
+        </button>
+    
+</body>
+
+</html>
