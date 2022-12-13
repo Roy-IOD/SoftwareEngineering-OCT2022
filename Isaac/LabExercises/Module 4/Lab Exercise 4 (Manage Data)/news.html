@@ -8,17 +8,23 @@
     <title>News</title>
 </head>
 <body>
-        <template class="card-body" id="news-template">
-            <div class="news-title card-title"></div>
-            <div class="news-content card-text"></div>
-        </template>
-    
-    <form onsubmit="addNewsItem()">
-        <input type="text" name="title" id="news-title" value=""/>
-        <input type="text" name="title" id="news-content" value=""/>
-        <button type="submit">Add News Item</button>
-    </form>
-    
+    <template id="news-template">
+        <div class="card">
+            <div class="card-body">
+                <div class="news-title card-title"></div>
+                <div class="news-content card-text"></div>
+            </div>
+        </div>
+    </template>
+    <div>
+        <div>News</div>
+        <form onsubmit="addNewsItem()">
+            <input type="text" name="title" id="news-title" value=""/>
+            <input type="text" name="title" id="news-content" value=""/>
+            <button type="submit">Add News Item</button>
+        </form>
+    </div>
+
     <div class="card" id="news-list"></div>
 
 
@@ -27,9 +33,9 @@
 
     <script>
         let news=[
-            { id: 1, title: 'Joel Embiid', content:"Center"},
-            { id: 2, title: 'James Harden', content:"Point Guard"},
-            { id: 3, title: 'Tyrese Maxey', content:"Shooting Guard"}
+            { id: 1, title: 'Article 1', content:"Two police officers among six slain in Queensland siege"},
+            { id: 2, title: 'Article 2', content:"Sky News terminates Chris Smith’s contract effective immediately"},
+            { id: 3, title: 'Article 3', content:"Ukraine pushes West for Patriot missiles"}
         ];
 
         function addNewsItem() {
