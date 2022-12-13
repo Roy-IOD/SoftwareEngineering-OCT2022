@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <!-- create the contents of your news template here -->
+<template id="news-template">
+    <div class="news">
+        <div class="news-body">
+            <div class="news-title"></div>
+            <div class="news-text"></div>
+        </div>
+    </div>
+
+</template>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News_Example.html</title>
+</head>
+<body>
+    <!-- remember to include some form elements to allow people to submit a new news article -->
+    <!-- either use a form with an onsubmit action, or just a button with an onclick action, 
+        which calls the addNews() function -->
+
+    <input type="text" name="title" id="news-title" value=""/>
+    <input type="text" name="content" id="news-content" value=""/>
+    <button onclick="addNewsItem()">Add News Item</button>
+
+    <div id="news-list"></div>
+
+    <script>
+
+    let news = [
+        { id: 1, title: 'News1', content:"bla"},
+        { id: 2, title: 'News2', content:"ble"},
+        { id: 3, title: 'News3', content:"blu"}
+    ];        
+
+    function addNews() {
+        
+        //this function needs to create a new object for the news array, using the form input values
+        //and then push it onto the end of the array (remember to make a new ID)
+    }
+
+    function addNewsItems() {
+        //this function needs to clear out the previous contents of the news-list placeholder div
+        //and then re-fill it with a cloned, populated template for each of the current items in the news array
+    } 
+
+    //then we call the above function every 5 seconds
+    const intervalTimer = setInterval(addNewsItems, 5000)
+
+    
+    //optional: add another button/s which stops/restarts the 5 second interval from running
+
+    </script>
+</body>
+</html>
