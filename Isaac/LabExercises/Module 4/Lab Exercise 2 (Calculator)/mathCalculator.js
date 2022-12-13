@@ -39,7 +39,7 @@ function mathCalculate() {
             result = Number(firstNumber) - Number(lastNumber);
             break;
         case "multiply":
-            result = Number(firstNumber) / Number(lastNumber);
+            result = Number(firstNumber) * Number(lastNumber);
             break;
         case "divide":
             result = Number(firstNumber) / Number(lastNumber);

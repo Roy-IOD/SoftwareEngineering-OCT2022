@@ -4,41 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Maths Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="calculatorStylesheet.css" />
+    <title>Basic Maths Calculator</title>
     <script src = mathCalculator.js></script>
 </head>
-<body>
-    <body id = "body">
+<body id = "body">
         <div id = "calculator">
-            <h2 id = "calculatortitle">
-                Calculator
-            </h2>
-                <p id = "result"></p>
-            <br>
+            <div id = "calculatortitle">
+                 Calculator
+            </div>
+            <p id = "result"></p>
+                
             <form id="form">
                 <div>
-                    <input type="text" id="fnumber" name="fnumber" placeholder="1">
-                </div>
-                <select id="operatorSelector" name="selector">
-                  <option value="addition" selected>+</option>
-                  <option value="subtraction">-</option>
-                  <option value="divide">&#247;</option>
-                  <option value="multiply">x</option>
-                </select>
-                <div>
-                    <input type="text" id="lnumber" name="lnumber" placeholder="1"><br>
+                    <input type="text" id="fnumber" name="fnumber" placeholder="Number 1">
+                        <select id="operatorSelector" name="selector">
+                        <option value="addition" selected>+</option>
+                        <option value="subtraction">-</option>
+                        <option value="divide">&#247;</option>
+                        <option value="multiply">x</option>
+                        </select>
+                    <input type="text" id="lnumber" name="lnumber" placeholder="Number 2">
                 </div>
             </form>
-        </div>
-        <h1 id = "head"></h1>
-        <button id="button" onclick="mathCalculate()">
-            Calculate
-        </button>
-        <button id="button" onclick="mathReset()">
-            Reset
-        </button>
-    
+            <div id="buttons">    
+                <button class="btn btn-primary" id="button" onclick="mathCalculate()">
+                    Calculate
+                </button>   
+                <button class="btn btn-secondary" id="button" onclick="mathReset()">
+                    Reset
+                </button>
+            </div> 
+        </div>      
 </body>
-
 </html>
