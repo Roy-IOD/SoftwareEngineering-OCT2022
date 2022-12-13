@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+</head>
+<body>
+
+    <!-- placeholder divs for the generated charts -->
+    <div id="clothingChart" style="width: 600px;height:400px;"></div>
+    <div id="foodChart" style="width: 800px;height:400px;"></div>
+    <div id="productsChart" style="width:800px;height:600px;"></div>
+
+    <script type="text/javascript">
+        // Initialize the echarts instance based on the prepared dom
+        const clothingChart = echarts.init(document.getElementById('clothingChart'));
+
+        // Specify the configuration items and data for the chart
+        let clothingOptions = {
+            title: {
+                text: 'ECharts Clothing Sales Example'
+            },
+            tooltip: {},
+            legend: {
+                data: ['sales'], //matches to the series name
+                right: 0
+            },
+            xAxis: {
+                data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks'] //these strings correspond to matching numbers in the series data
+            },
+            yAxis: {}, //will be numeric depending on xaxis data
+            series: [
+                {
+                    name: 'sales',
+                    type: 'line', //try changing to 'line'
+                    data: [5, 20, 36, 10, 10, 20] //these match to the xaxis data strings
+                }
+            ]
+        };
+
+        // Display the chart using the configuration items and data just specified.
+        clothingChart.setOption(clothingOptions);
+
+
+        const foodChart = echarts.init(document.getElementById('foodChart'));
+
+        let foodOptions = {
+            title: {
+                text: 'ECharts Food Example'
+            },            
+            legend: {
+                // Try 'horizontal'
+                //try changing the position of the legend
+                orient: 'vertical',
+                right: 10,
+                top: 'center'
+            },
+            dataset: {
+                source: [
+                    //try to add in some data for 2018 and 2019
+                    //try to add in another product with made-up data
+                    ['product', '2015', '2016', '2017', '2018'],
+                    ['Matcha Latte', 43.3, 85.8, 93.7, 75.2],
+                    ['Milk Tea', 83.1, 73.4, 55.1, 84.2],
+                    ['Cheese Cocoa', 86.4, 65.2, 82.5, 12.4],
+                    ['Walnut Brownie', 72.4, 53.9, 39.1, 64.1]
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+        };      
+        // Display the chart using the configuration items and data just specified.
+        foodChart.setOption(foodOptions);    
+
+
+        const productsChart = echarts.init(document.getElementById('productsChart'));      
+
+        fetchProductsData().then(productsData => {
+
+            let productOptions = {
+                title: {
+                    text: 'ECharts Products Example'
+                }, 
+                series: [
+                    {
+                        type: 'pie',
+                        data: productsData
+                        //roseType: 'area' //change to a rose type pie chart where values use different areas 
+                        //radius: ['40%', '70%'] //provide an inner and outer radius for a doughnut chart
+                    }
+                ]
+            };              
+            productsChart.setOption(productOptions);        
+        })
+
+        //fetches chart data from external Fake Store API
+        async function fetchProductsData() {
+            let productCats = [];
+
+            try {
+                const response = await fetch('https://fakestoreapi.com/products');
+                products = await response.json();
+                console.log(products);
+
+                //go through the list of products returned and sort them into categories with a count of items in each
+                products.forEach(product => {
+                    
+                    let match = productCats.find(productCategory => productCategory.name == product.category)
+
+                    //if this cat has already been found, increment the count
+                    if (match) {
+                        match.value++
+                    }
+                    //otherwise this is the first product in that cat, so create and set count value to 1
+                    else {
+                        match = { value: 1, name: product.category }
+                    }
+
+                    //now put it back into our data array, overwriting the previous value if it existed
+                    let index = productCats.indexOf(match) >= 0 ? productCats.indexOf(match) : productCats.length;
+                    productCats[index] = match;
+                })
+            }
+            catch (e) {
+                console.log(e)
+
+                //return some default data
+                productCats = [
+                    {
+                        value: 335,
+                        name: 'Direct Visit'
+                    },
+                    {
+                        value: 234,
+                        name: 'Union Ad'
+                    },
+                    {
+                        value: 1548,
+                        name: 'Search Engine'
+                    }
+                ]
+            }
+            
+            console.log(productCats)
+            return productCats;
+        }
+    </script>    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somewhere Over The Rainbow</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Lemonada:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <style>
+        html { height: 100%; }
+        body { background: linear-gradient(to bottom, #02A8E6, #ADDEF7); margin: 0; height: 100%; }
+        h2, h3, .rainbow { text-align: center; font-family: Lemonada; }
+
+        .rainbow-container { height: 400px; overflow: hidden; }
+        .somewhere { animation: 3s slidein; }
+
+        .bluebirds { color: #000; transition: color 2s; } /* transitions look a little like animations but just draw out a change in property */
+        .bluebirds:hover { color: transparent; }
+
+        .rainbow { width: 75%; margin: 1em auto; height: 800px; border-radius: 50%; 
+            background: radial-gradient(#B200FF, #4800FF, #07A5EF, #00CC14, #FFD800, #FF6A00, #FF0000 70%)
+        }
+
+        .bird { position: absolute; animation: fly 5s infinite; /* this is shorthand for individual animation properties below */
+            animation-name: fly;
+            animation-duration: 10s;
+            animation-iteration-count: 10;
+            animation-direction: alternate-reverse;
+        }
+
+        #bird1 { top: 50%; left: 50%; }
+        #bird2 { top: 25%; left: 75%; }
+        #bird3 { top: 10%; left: 90%; }
+        #bird4 { top: 40%; left: 20%; font-size: 40px; }
+
+        /* try creating separate animations for each bird */
+        /* try changing the size of the bird and its direction in the animation */
+        @keyframes fly {
+            0% { margin-top: 0; }
+            33% { margin-top: -100px; left: 20%; width: 150px; }
+            66% { margin-top: -150px; left: 50%; width: 120px; }
+            100% { margin-top: -30px; left: 80%; }
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }        
+    </style>
+</head>
+<body>
+    
+    <h2 class="somewhere">Somewhere, over the rainbow</h2>
+    <div class="rainbow-container"><div class="rainbow"></div></div>
+    <h3 class="bluebirds">bluebirds fly...</h3>
+
+    <img src="bluebird.png" id="bird1" class="bird"/><img src="bluebird.png" id="bird2" class="bird"/><img src="bluebird.png" id="bird3" class="bird"/>
+
+    <iconify-icon icon="noto:bird" flip="horizontal" class="bird" id="bird4"></iconify-icon>
+</body>
+</html>
