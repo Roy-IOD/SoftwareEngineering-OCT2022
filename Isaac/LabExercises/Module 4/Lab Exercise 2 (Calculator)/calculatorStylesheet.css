@@ -1,0 +1,50 @@
+body {
+    background-image: url(https://i.pngimg.me/thumb/f/720/comrawpixel2769801.jpg);
+    background-size: cover;
+}
+
+#body {
+    text-align: center;
+    padding-top: 100px;
+}
+
+#calculatortitle {
+    letter-spacing: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
+#result {
+    margin: auto;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 5%;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    background-color: white;
+}
+
+#fnumber, #lnumber {
+    text-align: center;
+}
+
+#form {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2rem;
+    font-size: 20px;
+}
+
+#operatorSelector {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 50px;
+}
