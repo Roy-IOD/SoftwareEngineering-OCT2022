@@ -1,14 +1,16 @@
 {
   "name": "lab-exercises-module-3",
   "version": "1.0.0",
-  "description": "",
   "main": "JS-Fundamentals.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-fetch": "^3.3.0",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "description": ""
 }

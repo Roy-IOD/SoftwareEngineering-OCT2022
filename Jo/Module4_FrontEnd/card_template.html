@@ -1,0 +1,150 @@
+<!-- All of the templates go up the top (usually) - these won't display when rendering the page, 
+    they're just templates which we will duplicate and fill with content later on.
+    We can have as many as we need for the data being displayed. 
+    These are the 'view' part of the MVC model -->
+<template id="card-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title"></div>
+            <img width="250" class="card-img"/>            
+            <div class="card-text"></div>
+        </div>
+    </div>
+</template>
+
+<template id="author-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="name"></div>
+            <div class="dates"></div>
+            <div class="books"></div>
+        </div>
+    </div>
+</template>
+
+<template id="book-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="book-title"></div>
+        </div>
+    </div>
+</template>
+
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e3f2fd;
+            }
+            #card-list, #authors-list, .books { display: flex; }
+            .card {
+                padding: 10px;
+                box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+                background: white;
+                margin: 1em;
+            }
+            .card img { display: block; margin: 0 auto; }
+            .card-title {
+                font-weight: 600;
+                font-size: 3em;
+                padding: 0 0 10px 0;
+            }
+            .card-text { margin: 1em 0; }
+            .card-description {
+                font-weight: 400;
+                font-size: 2em
+            }
+            #authors-list .card { border: 5px solid #3AA0FF; border-radius: 10px; }
+            #authors-list .card .name { font-weight: bold; font-size: 18px; }
+            #authors-list .books { flex-wrap: wrap; }
+            #authors-list .books .card { box-shadow: none; border: 0 none; background: linear-gradient(#3AA0FF, #5468FF); color: white; margin: 0.5em; }
+            </style>        
+    </head>
+
+    <body>
+        <h2>Christmas Movies</h2>
+        <div id="card-list"></div> <!-- a placeholder div where all of the generated movie templates will be inserted -->
+
+        <h2>Authors</h2>
+        <div id="authors-list"></div> <!-- a placeholder div where all of the generated author templates will be inserted -->
+    </body>
+
+    <script>
+
+        //Our actual data. This may come from a database, an external URL, or be explicitly defined like below:
+        //this is the 'model' part of the MVC model
+        const christmasMovies = [
+            {title: 'The Santa Clause 1',
+            text: 'Tim Allen becomes Santa after pushing him off the roof',
+            img_url: 'https://m.media-amazon.com/images/M/MV5BYzI0ZGRiYTEtNGExYi00ZDI2LWExMjMtODMzNDZjMTVjOWMxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg'},
+            {title: 'Die Hard',
+            text: 'Bruce Willis saves the world by killing everyone',
+            img_url: 'https://lumiere-a.akamaihd.net/v1/images/diehard1_franchise_584x800_8f311ed5.jpeg'},
+            {title: 'Elf',
+            text: 'Will Ferrell is a human elf who saves Christmas',
+            img_url: 'https://upload.wikimedia.org/wikipedia/en/d/df/Elf_movie.jpg'},
+            {title: 'Love Actually',
+            text: 'Lots of loosely connected love stories about different forms of love at Christmas',
+            img_url: 'https://m.media-amazon.com/images/M/MV5BMTY4NjQ5NDc0Nl5BMl5BanBnXkFtZTYwNjk5NDM3._V1_FMjpg_UX1000_.jpg'}
+        ]
+
+        const authors = [
+            {name: 'Roald Dahl',
+            birth_year: 1916,
+            death_year: 1990,
+            books: [
+                {title: 'Matilda'},
+                {title: 'The BFG'},
+                {title: 'The Witches'}
+            ]},
+            {name: 'Terry Pratchett',
+            birth_year: 1948,
+            death_year: 2015,
+            books: [
+                {title: 'The Colour of Magic'},
+                {title: 'Jingo'},
+                {title: 'Good Omens'},
+                {title: 'Going Postal'}
+            ]}
+        ]
+
+        //Next comes the logic which actually populates the templates with the data and adds this to the HTML
+
+        //uses the template with ID card-template to add a new card into the #card-list div
+        function addMovieCard(title, text, img_url) {
+            const template = document.getElementById("card-template").content.cloneNode(true);
+            
+            template.querySelector('.card-title').innerText = title; //these classes here in the querySelector match to the classes in the template above
+            template.querySelector('.card-text').innerText = text;
+            template.querySelector('.card-img').src = img_url;
+            document.querySelector('#card-list').appendChild(template); //once we have cloned and filled our template, add it to the HTML
+        }
+
+        function addAuthorCard(name, birth_year, death_year, books) {
+            const authorTemplate = document.getElementById("author-template").content.cloneNode(true);
+            
+            authorTemplate.querySelector('.name').innerText = name;
+            authorTemplate.querySelector('.dates').innerText = birth_year + ' - ' + death_year;
+
+            books.forEach(book => { //since we have multiple books, we need to clone/populate the book template once for each
+                const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
+                bookTemplate.querySelector('.book-title').innerText = book.title;
+                authorTemplate.querySelector('.books').appendChild(bookTemplate); //add the populated book template to the parent author template
+            })
+            document.querySelector('#authors-list').appendChild(authorTemplate); //add the populated author template to the HTML
+        }        
+
+        //just makes sure the template content exists
+        if ('content' in document.createElement('template')) {
+            christmasMovies.forEach(movie => addMovieCard(movie.title, movie.text, movie.img_url))
+            //addCard();
+
+            for (let author of authors) //for each of our authors, add a new card with their details
+            {
+                addAuthorCard(author.name, author.birth_year, author.death_year, author.books)
+            }
+        }
+    </script>  
+
+</html>

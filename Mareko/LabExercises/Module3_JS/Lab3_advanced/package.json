@@ -1,0 +1,16 @@
+{
+  "name": "lab3_advanced",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "adv-lab3-ex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "description": ""
+}
