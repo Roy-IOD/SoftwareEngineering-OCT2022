@@ -3,6 +3,8 @@
 //2. npm install date-fns
 //3. node dates.js
 
+//https://www.sitepoint.com/date-fns-javascript-date-library/ has some more great examples and suggestions
+
 
 //to keep package size small, we only import the functions we need instead of the whole date-fns package
 const format = require('date-fns/format');
