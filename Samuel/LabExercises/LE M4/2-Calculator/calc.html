@@ -27,6 +27,45 @@
     #button {
       text-align: center;
     }
+
+    #form {
+      padding: 25px;
+      margin-left: 25%;
+      background-color:#9CCDF0 ;
+    }
+
+    #operator {
+      margin-left: 17.25%;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      width: 250px;
+      padding: 50px;
+    }
+
+    #number1, #number2 {
+      width: 250px;
+      padding: 50px;
+    }
+
+    .resultbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #0E2240;
+      color:#ECE307;
+      margin-top: 50px;
+      margin-left: 45%;
+    }
+
+    .main{
+      background-color: #9CCDF0;
+    }
+
+    .bottom{
+      padding-bottom: 100px;
+    }
   </style>
 
   <body>
@@ -34,6 +73,8 @@
     <div id="header">
     <h1> CALCULATOR </h1>
     </div>
+
+    <div class = main>
       <form id="form">
         <div class="row mb-3">
           <label for="inputNumber1" class="col-sm-2 col-form-label">Number 1</label>
@@ -57,13 +98,16 @@
         </div>
       </form>
       
-      <div id = "button">
+      <div class="main bottom" id = "button">
         <button id = "button" onclick = "mathCalculate()" type="equals" class="btn btn-primary calculate">EQUALS</button>
         <button id = "button" onclick = "mathReset()" type="reset" class="btn btn-primary calculate">RESET</button>
-        </div>
-      <div>
+        
+      <div class="resultbox">
        <p id="result">  </p>
       </div>
-      </style>
+      </div>
+    </div>
+  </body>
+  </body>
   </body>
 </html>

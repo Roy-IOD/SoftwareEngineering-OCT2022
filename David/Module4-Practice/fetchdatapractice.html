@@ -4,10 +4,10 @@
   </head>
     <body>
       <h1>Fetch Data Lab</h1>
-<ul>
+<p id = 'title'>
 
     
-</ul>
+</p>
 
    
     </body>
@@ -19,7 +19,7 @@ const list = document.querySelector('ul');
       .then(res => res.json())
       .then(data => {
         data.forEach(post => {
-          list.insertAdjacentHTML('beforeend', `<li>${post.body}</li>`)
+          title.insertAdjacentHTML('beforeend', `<p>${post.title}</p> <p>${post.body}</p>`)
         });
       })
 

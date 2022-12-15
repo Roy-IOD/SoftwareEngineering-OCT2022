@@ -6,17 +6,17 @@
     <h1>POSTing data to jsonplaceholder API (view the console)</h1>
 </body>
 <script>
-    //uses the POST HTTP method to send data to the jsonplaceholder API, instead of requesting to GET data from it
+   
     fetch('https://jsonplaceholder.typicode.com/posts', {
-        //since we aren't using the default GET method, we need to specify it
+        
         method: 'POST',
-        //we also need to specify the body of the data being sent to the server
+        
         body: JSON.stringify({
             title: 'The Studio',
             body: 'Something funny',
             userId: 1,
         }),
-        //and the headers tell the server what type of data is being sent
+        
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
