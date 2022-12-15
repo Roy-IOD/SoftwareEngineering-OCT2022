@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date-FNS Examples</title>
+    <style>
+        body, html { margin: 0; background: #002C4C; color: #fff; font-family: sans-serif; }
+        a { color: lightblue; }
+        #info { margin: 3em; }
+        #code { margin: 4em; padding: 1em; font-family: monospace; border: 1px solid #ccc; background: rgba(255,255,255,0.2); line-height: 1.4em; }
+        #code div { margin: 1em 0; }
+    </style>
+    <script src="http://cdn.date-fns.org/v2.0.0-alpha0/date_fns.js"></script>
+</head>
+<body>
+    <section id="info">
+        <h2>Date-FNS</h2>
+        <p>Modern JS Date library, which is definitely designed to be used mostly as a package from NPM rather than in the browser. 
+            But it can be done by including the library from a CDN (check the <code>&lt;head&gt;</code> section) and using the <code>dateFns.</code> prefix.</p>
+        <p>See <a href="https://codesandbox.io/s/date-fns-example-pvkpn?file=/src/index.js:1163-1185" target="_blank">this example</a> for more date-fns functions.</p>
+    </section>
+
+    <section id="code">
+
+    </section>
+
+    <script>
+        const codeElement = document.getElementById('code');
+        const today = new Date();
+        const thisYear = today.getFullYear();
+
+        //lots of different possible date format, check https://date-fns.org/docs/format for more options
+        const nydString = (thisYear+1) + '/01/01';
+        const mdy = 'MM/DD/YYYY';
+        const dmy = 'DD/MM/YYYY';
+        const mmdy = 'MMMM Do, YYYY';
+
+        const newYears = new Date(nydString); //new years day of next year
+        const christmas = new Date(thisYear + '-12-25') //christmas of this year
+        const boxingDay = new Date(thisYear + '-12-26') //boxing day of this year
+
+        codeElement.innerHTML += `<div>${nydString} formatted to ${mdy} is ${dateFns.format(newYears, mdy)}</div>`;
+        codeElement.innerHTML += `<div>${nydString} formatted to ${dmy} is ${dateFns.format(newYears, dmy)}</div>`;
+        codeElement.innerHTML += `<div>Last day of ${nydString} is ${dateFns.lastDayOfMonth(newYears)}</div>`;
+
+        const threeDaysTime = dateFns.addDays(today, 3); 
+        const sixDaysTime = dateFns.addDays(threeDaysTime, 3); 
+
+        codeElement.innerHTML += `<div>Today is ${today}</div>`;
+        codeElement.innerHTML += `<div>3 days time is ${dateFns.format(threeDaysTime, mmdy)}</div>`;
+        codeElement.innerHTML += `<div>6 days time is ${dateFns.format(sixDaysTime, mmdy)}</div>`;
+
+        codeElement.innerHTML += `<div>${dateFns.distanceInWords(today, christmas)} until Christmas</div>`;
+        codeElement.innerHTML += `<div>${dateFns.distanceInWordsToNow(newYears)} until New Years Day</div>`;
+        codeElement.innerHTML += `<div>Christmas and Boxing Day ${ dateFns.isSameMonth(christmas, boxingDay) ? 'are' : 'are not'} in the same month`;
+
+    </script>        
+</body>
+</html>

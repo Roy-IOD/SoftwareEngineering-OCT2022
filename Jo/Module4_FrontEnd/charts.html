@@ -14,6 +14,12 @@
     <div id="foodChart" style="width: 800px;height:400px;"></div>
     <div id="productsChart" style="width:800px;height:600px;"></div>
 
+    <!-- see the Getting Started section of the echarts site for templates and instructions:
+        https://echarts.apache.org/handbook/en/how-to/chart-types/bar/basic-bar
+        https://echarts.apache.org/handbook/en/how-to/chart-types/line/basic-line
+        https://echarts.apache.org/handbook/en/how-to/chart-types/pie/basic-pie
+    -->
+
     <script type="text/javascript">
         // Initialize the echarts instance based on the prepared dom
         const clothingChart = echarts.init(document.getElementById('clothingChart'));
@@ -71,16 +77,33 @@
             },
             xAxis: { type: 'category' },
             yAxis: {},
-            series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+            series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }, { type: 'bar' }],
+            //custom color palette https://echarts.apache.org/handbook/en/concepts/style#color-palette
+            color: [
+                '#dd6b66',
+                '#759aa0',
+                '#e69d87',
+                '#8dc1a9',
+                '#ea7e53',
+                '#eedd78',
+                '#73a373',
+                '#73b9bc',
+                '#7289ab',
+                '#91ca8c',
+                '#f49f42'
+            ]
         };      
         // Display the chart using the configuration items and data just specified.
         foodChart.setOption(foodOptions);    
 
 
+        //this chart loads in dynamic data from an API
+        //https://echarts.apache.org/handbook/en/how-to/data/dynamic-data more info here
         const productsChart = echarts.init(document.getElementById('productsChart'));      
-
+        productsChart.showLoading();
+        
         fetchProductsData().then(productsData => {
-
+            productsChart.hideLoading();
             let productOptions = {
                 title: {
                     text: 'ECharts Products Example'
@@ -89,7 +112,7 @@
                     {
                         type: 'pie',
                         data: productsData
-                        //roseType: 'area' //change to a rose type pie chart where values use different areas 
+                        //roseType: 'area' //change to a rose type pie chart where values use different size areas 
                         //radius: ['40%', '70%'] //provide an inner and outer radius for a doughnut chart
                     }
                 ]
