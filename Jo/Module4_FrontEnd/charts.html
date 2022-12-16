@@ -6,8 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts Examples</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
+    <!-- bootstrap navbar taken from https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LocalStorage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="login.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="charts.html">Charts</a>
+            <a class="nav-item nav-link" href="rainbow_animation.html">Rainbow</a>
+            <a class="nav-item nav-link" href="card_template.html">Card Templates</a>
+            <a class="nav-item nav-link" href="bootstrap_demo.html">Bootstrap Features</a>
+          </div>
+        </div>
+      </nav>
 
     <!-- placeholder divs for the generated charts -->
     <div id="clothingChart" style="width: 600px;height:400px;"></div>
