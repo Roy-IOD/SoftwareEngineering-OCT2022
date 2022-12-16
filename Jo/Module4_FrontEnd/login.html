@@ -48,26 +48,26 @@
 
             <h1 class="h2 mb-3 font-weight-normal">Local Storage Example</h3>
 
-        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h3 class="h3 mb-3 font-weight-normal signinMsg">Please sign in</h3>
+            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h3 class="h3 mb-3 font-weight-normal signinMsg">Please sign in</h3>
 
-        <label for="inputEmail" class="sr-only formElement">Email address</label>
-        <input type="email" id="inputEmail" class="form-control formElement" placeholder="Email address" required autofocus>
+            <label for="inputEmail" class="sr-only formElement">Email address</label>
+            <input type="email" id="inputEmail" class="form-control formElement" placeholder="Email address" required autofocus>
 
-        <label for="inputPassword" class="sr-only formElement">Password</label>
-        <input type="password" id="inputPassword" class="form-control formElement" placeholder="Password" required>
+            <label for="inputPassword" class="sr-only formElement">Password</label>
+            <input type="password" id="inputPassword" class="form-control formElement" placeholder="Password" required>
 
-        <div class="checkbox mb-3 formElement">
-            <label>
-            <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
+            <div class="checkbox mb-3 formElement">
+                <label>
+                <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
 
-        <button class="btn btn-lg btn-primary btn-block formElement" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+            <button class="btn btn-lg btn-primary btn-block formElement" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
         </form>
     </main> 
-    
+
     <script>
 
         function checkLoggedIn() {
@@ -90,6 +90,7 @@
                 document.querySelectorAll('.formElement').forEach(formElem => formElem.style.display = 'block');
                 document.querySelector('.signinMsg').innerText = 'Please sign in';
 
+                //remove the logout button
                 document.querySelector('.logout').remove();
             }
         }
@@ -102,6 +103,7 @@
             if (pw == '1234')
             {
                 console.log('logging in')
+                //https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
                 localStorage.setItem('user-email', email);
                 checkLoggedIn()
             }
