@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: CSS Animation Lab (Slide 74)</title>
+    <style type="text/css">
+        /* p {
+            animation-delay: 3s;
+            animation-duration: 5s;
+            animation-name: slide;
+            animation-iteration-count: 100;
+        } */
+
+        @keyframes sliding-vertically {
+            from {
+                top: 200px;
+                background-color: red;
+            }
+     
+            to {
+                top: 0px;
+                background-color: blue;
+            }
+        }
+
+        .square {
+            height: 70px;
+            width: 70px;
+            position: relative;
+            background-color: blue;
+            animation-delay: 3s;
+            animation-duration: 7s;
+            animation-name: sliding-vertically;
+            animation-iteration-count: 100;
+        }
+    </style>
+</head>
+<body>
+    <p>Behold: the sliding box that changes colour!!<p>
+        <div class="square">
+            
+        </div>
+    
+</body>
+</html>

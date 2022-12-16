@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <!-- create the contents of your news template here -->
+<template id="news-template">
+    <div class="news">
+        <div class="news-body">
+            <div class="news-title"></div>
+            <div class="news-content"></div>
+        </div>
+    </div>
+
+</template>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News_Example.html</title>
+    <style>
+        .news-title {
+            color: dodgerblue;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 2px;
+
+        }
+
+        .news-content {
+            color: navy;
+            font-size: smaller;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 2px;
+            border-bottom: solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- remember to include some form elements to allow people to submit a new news article -->
+    <!-- either use a form with an onsubmit action, or just a button with an onclick action, 
+        which calls the addNews() function -->
+
+    <input type="text" name="title" id="news-title" value=""/>
+    <input type="text" name="content" id="news-content" value=""/>
+    <button onclick="addNewsItem()">Add News Item</button>
+
+    <div id="news-list"></div>
+  
+    
+    <script>
+
+    let news = [
+        { id: 1, title: 'Dog Headline', content:"this is a news story about a dog"},
+        { id: 2, title: 'Cat Headline', content:"here's another story about a cat"},
+        { id: 3, title: 'Horse Headline', content:"and here's another story about a horse"}
+    ];        
+
+    function addNewsItem() {
+        let newsTitle = document.getElementById("news-title").value;
+        let newsContent = document.getElementById("news-content").value;
+        let newsItem = { id: news.length+1, title: newsTitle, content: newsContent};
+
+        //this function needs to create a new object for the news array, using the form input values
+        news.push(newsItem);
+        //and then push it onto the end of the array (remember to make a new ID)
+    }
+
+    function addNewsItems() {
+        //this function needs to clear out the previous contents of the news-list placeholder div
+        console.log("refreshing page...");
+        document.getElementById("news-list").innerHTML = " ";
+            //and then re-fill it with a cloned, populated template for each of the current items in the news array
+        news.forEach(newsItem => {
+            const template = document.getElementById("news-template").content.cloneNode(true);
+            template.querySelector(".news-title").innerText = newsItem.title;
+            template.querySelector(".news-content").innerText = newsItem.content;
+            document.querySelector("#news-list").appendChild(template);
+        })
+    
+    } 
+
+    //then we call the above function every 5 seconds
+    const intervalTimer = setInterval(addNewsItems, 5000)
+
+    
+    //optional: add another button/s which stops/restarts the 5 second interval from running
+
+    </script>
+
+</body>
+</html>

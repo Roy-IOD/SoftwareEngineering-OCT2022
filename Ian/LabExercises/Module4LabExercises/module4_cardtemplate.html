@@ -1,0 +1,229 @@
+
+<template id="card-template">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title"></div>
+            <div class="card-text"></div>
+        </div>
+    </div>
+</template>
+
+<template id="author-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="name"></h2>
+            <div class="birth-year"></div>
+            <div class="books"></div>
+        </div>
+    </div>
+</template>
+
+<template id="book-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="book-title"></h2>
+        </div>
+    </div>
+</template>
+
+<template id="artist-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="name"></h2>
+            <div class="portfolio"></div>
+        </div>
+    </div>
+</template>
+
+<template id="portfolio-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="art-title"></h2>
+            <img class="url" width="400">
+        </div>
+    </div>
+</template>
+
+<template id="badger-template">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="name"></h2>
+            <div class="birth-year"></div>
+            <div class="books"></div>
+        </div>
+    </div>
+</template>
+
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e3f2fd;
+            }
+            #card-list { display: flex; }
+            .card {
+                padding: 10px;
+                box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+                background: lightcyan;
+                margin: 1em;
+            }
+            .card-title {
+                font-weight: 600;
+                font-size: 3em;
+                padding: 0 0 10px 0;
+            }
+            .card-description {
+                font-weight: 400;
+                font-size: 2em
+            }
+            </style>        
+    </head>
+
+    <body>
+        <div id="card-list"></div>
+        <div id="authors-list"></div>
+        <div id="artists-list"></div>
+        <div id="badgers-list"></div>
+    </body>
+
+    <script>
+
+        const data=[{name:'Bob', age:23},{name:'Alice',age:39}]
+
+        const christmasMovies = [
+            {title: 'Santa Claus 1',
+            text: 'About a guy who becomes Santa after pushing him off the roof'},
+            {title: 'Die Hard',
+            text: 'Bruce Willis saves the world by killing everyone'},
+            {title: 'Elf',
+            text: 'Will Ferrell is the elf who saves Christmas'}
+        ]
+
+        const authors = [
+            {name: 'Roald Dahl',
+            birth_year: 1916,
+            books: [
+                {title: 'Matilda'},
+                {title: 'The BFG'}
+            ]},
+            {name: 'Terry Pratchett',
+            birth_year: 1940,
+            books: [
+                {title: 'The Colour of Magic'},
+                {title: 'Discworld'}
+            ]}
+        ]
+
+        const artists = [
+            {name: 'Van Gogh',
+            portfolio: [
+                {title:'Portrait',
+            url:'https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image'},
+            {title:'sky',
+            url:'https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg'},
+            {title: 'test', 
+            url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
+        ]},
+            {name: 'Monet',
+            portfolio: [
+                {title:'Monet and his new hat',
+            url:'https://images.unsplash.com/photo-1651909760542-c929a098d9f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hbiUyMHdpdGglMjBhJTIwaGF0JTIwb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'},
+            {title:'Monet goes to the shops',
+            url:'https://images.unsplash.com/photo-1466979444531-592e8003a994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFuJTIwZ29pbmclMjB0byUyMHRoZSUyMHNob3B8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60'},
+            {title: 'Taking Fido to the Beach', 
+            url: "https://images.unsplash.com/photo-1621953571189-f24078315ddd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuJTIwYW5kJTIwaGlzJTIwZG9nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"},
+        ]}
+        ]
+
+        const badgers = [
+            {name: 'Mr Badger',
+            birth_year: 1922,
+            books: [
+                {title: 'Badgerbiography'},
+                {title: 'Badger Baiting'}
+            ]},
+            {name: 'Mrs Badger',
+            birth_year: 1956,
+            books: [
+                {title: 'The Colour of Badger'},
+                {title: 'Badgerworld'}
+            ]}
+        ]
+
+        //uses the template with ID card-template to add a new card into the #card-list div
+        function addMovieCard(title, text) {
+            const template = document.getElementById("card-template").content.cloneNode(true);
+            
+            template.querySelector('.card-title').innerText = title;
+            template.querySelector('.card-text').innerText = text;
+            document.querySelector('#card-list').appendChild(template);
+        }
+
+        function addAuthorCard(name, birth_year, books) {
+            const authorTemplate = document.getElementById("author-template").content.cloneNode(true);
+            
+            authorTemplate.querySelector('.name').innerText = name;
+            authorTemplate.querySelector('.birth-year').innerText = birth_year;
+
+            books.forEach(book => {
+                const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
+                bookTemplate.querySelector('.book-title').innerText = book.title;
+                authorTemplate.querySelector('.books').appendChild(bookTemplate);
+            })
+            document.querySelector('#authors-list').appendChild(authorTemplate);
+        }
+
+        function addBadgerCard(name, birth_year, books) {
+            const badgerTemplate = document.getElementById("badger-template").content.cloneNode(true);
+            
+            badgerTemplate.querySelector('.name').innerText = name;
+            badgerTemplate.querySelector('.birth-year').innerText = birth_year;
+
+            books.forEach(book => {
+                const bookTemplate = document.getElementById("book-template").content.cloneNode(true);
+                bookTemplate.querySelector('.book-title').innerText = book.title;
+                badgerTemplate.querySelector('.books').appendChild(bookTemplate);
+            })
+            document.querySelector('#badgers-list').appendChild(badgerTemplate);
+        }
+        
+        function addArtistCard(name, portfolio) {
+            const artistTemplate = document.getElementById("artist-template").content.cloneNode(true);
+            
+            artistTemplate.querySelector('.name').innerText = name;
+
+            portfolio.forEach(portfolio => {
+                const portfolioTemplate = document.getElementById("portfolio-template").content.cloneNode(true);
+                portfolioTemplate.querySelector('.art-title').innerText = portfolio.title;
+                portfolioTemplate.querySelector('.url').src = portfolio.url;
+                artistTemplate.querySelector('.portfolio').appendChild(portfolioTemplate);
+            })
+            document.querySelector('#artists-list').appendChild(artistTemplate);
+        }        
+
+        //just makes sure the template content exists
+        if ('content' in document.createElement('template')) {
+            christmasMovies.forEach(movie => addMovieCard(movie.title, movie.text))
+            //addCard();
+
+            data.forEach(person => addMovieCard(person.name, person.age));
+
+            for (let author of authors)
+            {
+                addAuthorCard(author.name, author.birth_year, author.books)
+            }
+
+            for (let artist of artists)
+            {
+                addArtistCard(artist.name, artist.portfolio)
+            }
+
+            for (let badger of badgers)
+            {
+                addBadgerCard(badger.name, badger.birth_year, badger.books)
+            }
+        }
+    </script>  
+
+</html>
