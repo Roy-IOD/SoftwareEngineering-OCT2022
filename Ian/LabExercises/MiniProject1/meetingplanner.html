@@ -31,13 +31,19 @@
       <select class="form-select" id="form-select3" aria-label="Default select example">
         <option>Choose Location...</option>
       </select>
-
         </div>
+    <div class="card date-time-picker">
+      <label for="date">Select a Date:</label>
+    <input type="date" id="date" name="date">
+    <label for="appt">Select a Time:</label>
+    <input type="time" id="appt" name="appt">
+  </div>
+    
 
 
       <button onclick="showMeetingTimes()" type="button" class="btn btn-success">Check Times</button>
       
-      
+
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
