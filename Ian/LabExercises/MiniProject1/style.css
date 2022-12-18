@@ -1,13 +1,19 @@
 body {
-    background-color: dodgerblue;
+  background-image: url("img/clocks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .current-location-card {
     background-color: beige;
+    margin: 5px 2px;
+    padding: 5px 2px;
 }
 
 h2 {
     color: white;
+    font-size: large;
+    margin: 5px 2px;
 }
 
 a {
@@ -30,3 +36,11 @@ a:link {
     text-decoration: underline;
   }
 
+.date-time-picker {
+  max-width: 40%;
+  margin: 5px 2px;
+}
+
+.card {
+  margin 5px 2px;
+}
