@@ -12038,15 +12038,17 @@ figcaption {
   line-height: 400px;
   border-radius: 5%;
 }
-.flip-card-back p{
+.flip-card-back div{
   line-height: 1.5;
-  display: inline-block;
-  vertical-align: middle;
+  width:100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding-right: 5%;
   padding-left: 5%;
   font-size: 0.9rem;
   text-overflow: clip;
-  white-space: normal;
 }
 
 #about-page {
