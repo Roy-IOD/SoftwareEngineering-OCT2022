@@ -1,0 +1,27 @@
+NASA API:
+https://api.spaceflightnewsapi.net/v3/reports
+
+    NASA Social Media Page:
+    - Current/latest news from NASA.
+    - Comment option on posts
+    - Links to more info
+
+    Pages: 
+    - Home-Page (Latest News, links, etc. )
+    - About page
+    - Galleries (Pinterest image type page)
+    - Contact Page
+    - Sign up / log in page
+
+    Features:
+    - Navbar (Search bar? Social media links, other page links)
+    - Comment section under news articles
+    - Animations (on mouse hover)
+    - CSS using bootstrap (bootstrap template and then editing)
+    - External API for news
+    - Make it responsive design
+
+FIGMA Design Link:
+
+
+ background-color: rgba(255, 255, 255, 0.2);

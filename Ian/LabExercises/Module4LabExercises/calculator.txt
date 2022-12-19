@@ -1,0 +1,4 @@
+Calculator design: https://www.figma.com/file/fuhWyAH8x7tr127rMbcIaP/Calculator?node-id=1%3A7&t=1CR9jRFGKN8X6Nwm-3
+
+Calculator flow diagram: https://www.figma.com/file/kFypj6vxw2eVE1N7wgn1vc/Calculator?node-id=0%3A1&t=nugei2fOrW0s3lfe-3
+

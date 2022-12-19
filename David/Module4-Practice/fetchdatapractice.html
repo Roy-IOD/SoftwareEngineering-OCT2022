@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Fetch Data</title>  
+  </head>
+    <body>
+      <h1>Fetch Data Lab</h1>
+<p id = 'title'>
+
+    
+</p>
+
+   
+    </body>
+    <script>
+
+const list = document.querySelector('ul');
+
+      fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+      .then(res => res.json())
+      .then(data => {
+        data.forEach(post => {
+          title.insertAdjacentHTML('beforeend', `<p>${post.title}</p> <p>${post.body}</p>`)
+        });
+      })
+
+      </script>
+</html>
