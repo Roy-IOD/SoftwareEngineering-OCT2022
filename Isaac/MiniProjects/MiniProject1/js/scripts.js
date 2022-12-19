@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', event => {
 
 
-    var navbarShrink = function () {
+    const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -59,3 +59,14 @@ fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
 function sendMessage() {
     alert("Form Submitted");
 };
+
+
+fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
+    .then((response) => response.json())
+    .then(data => {
+    data.forEach(user => {
+        const imagetemplate = document.getElementById("image-template").content.cloneNode(true);
+        imagetemplate.querySelector('.image-content').src = user.imageUrl;
+        document.querySelector('#image-gallery').appendChild(imagetemplate);
+    });
+});    

@@ -11578,6 +11578,17 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.contact-heading {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+
+}
 .masthead h2, .masthead .h2 {
   max-width: 20rem;
   font-size: 1rem;
@@ -11699,6 +11710,16 @@ body {
   padding: 5rem 0;
 }
 
+#gallery-page {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  background: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
 
@@ -11707,10 +11728,10 @@ body {
 #contact-page {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   min-height: 35rem;
-  padding: 5rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/space-image.jpg");
+  padding: 10rem 0;
+  background: url("../assets/img/space-image2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11731,8 +11752,8 @@ body {
     text-align: center;
 }
 .contact-image img{
-    width: 30%;
-    margin-top: -5%;
+    width: 25%;
+    margin-top: -3%;
     background-color: transparent;
 }
 .contact-form form{
@@ -11752,7 +11773,7 @@ body {
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
-    background: #dc3545;
+    background: #64a19d;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
@@ -11763,11 +11784,301 @@ body {
     border-radius: 1rem;
     padding: 1.5%;
     color: #fff;
-    background-color: #0062cc;
+    background-color: #64a19d;
     border: none;
     cursor: pointer;
 }
 
 .form-group {
   padding:2%;
+}
+
+#rocket {
+  animation-duration: 4s;
+  animation-name: slidedown;
+  animation-iteration-count:infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes slidedown {
+  from {
+      margin-right: 80%;
+  }
+  to {
+      margin-left: 70%;
+  }
+}
+
+
+
+
+img {
+  max-width: 100%;
+  display: block;
+  opacity: 100%;
+  border-radius: 5%;
+}
+
+  
+
+figure {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  padding: 3%;
+}
+
+figure > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+figcaption {
+  grid-row: 2;
+  grid-column: 1;
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  color: #000;
+  padding: .2em .5em;
+  justify-self: start;
+}
+
+@media (max-width: 992px) {
+  figcaption {
+    font-size: 0.4rem;
+  }
+}
+
+.imagecontainer {
+  column-count: 4;
+  column-gap: 10px;
+  position: center;
+  width: 100%;
+  align-items: center;
+  height: auto;
+  min-height: 35rem;
+  padding: 5rem;
+}
+
+.hide {
+  display: none;
+}
+    
+.galleryimage:hover + .hide {
+  display: block;
+  color: black;
+}
+
+.gallerymasthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%), url("../assets/img/space-image3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.gallerymasthead h1, .gallerymasthead .h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.contact-heading {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+
+}
+.gallerymasthead h2, .gallerymasthead .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .gallerymasthead h1, .gallerymasthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .gallerymasthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .gallerymasthead h1, .gallerymasthead .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .gallerymasthead h2, .gallerymasthead .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
+#backtotop {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+}
+
+#backtotopcontainer {
+  text-align: center;
+}
+
+
+
+.aboutmasthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%), url("../assets/img/space-image4.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.aboutmasthead h1, .aboutmasthead .h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+.aboutmasthead h2, .aboutmasthead .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .aboutmasthead h1, .aboutmasthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .aboutmasthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .aboutmasthead h1, .aboutmasthead .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .aboutmasthead h2, .aboutmasthead .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 50vh;
+  height: 400px;
+  align-items: center;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: black;
+  color: black;
+}
+.flip-card-front img {
+  opacity:60%;
+}
+
+
+.flip-card-back {
+  background-color: rgba(100, 161, 157, 1);
+  color: white;
+  transform: rotateX(180deg);
+  line-height: 400px;
+  border-radius: 5%;
+}
+.flip-card-back p{
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 5%;
+  padding-left: 5%;
+  font-size: 0.9rem;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+#about-page {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  background: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aboutcontent {
+  align-items: center;
+}
+
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-container > div {
+  padding: 1%;
 }
