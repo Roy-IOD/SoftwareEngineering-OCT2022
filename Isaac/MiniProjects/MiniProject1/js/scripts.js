@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 
-fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
+fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=10')
     .then((response) => response.json())
     .then(json => {
     json.forEach(user => {
@@ -62,18 +62,6 @@ fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
 function sendMessage() {
     alert("Form Submitted");
 };
-
-
-fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
-    .then((response) => response.json())
-    .then(data => {
-    data.forEach(user => {
-        const imagetemplate = document.getElementById("image-template").content.cloneNode(true);
-        imagetemplate.querySelector('.image-content').src = user.imageUrl;
-        document.querySelector('#image-gallery').appendChild(imagetemplate);
-    });
-});    
-
 
 
 
