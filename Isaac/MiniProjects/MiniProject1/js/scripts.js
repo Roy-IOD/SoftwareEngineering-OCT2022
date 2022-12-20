@@ -44,6 +44,9 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
+
+
+
 fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
     .then((response) => response.json())
     .then(json => {
@@ -70,3 +73,27 @@ fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
         document.querySelector('#image-gallery').appendChild(imagetemplate);
     });
 });    
+
+
+
+
+const post= document.getElementById("post");
+post.addEventListener("click", function(){
+    let commentBoxValue= document.getElementById("comment-box").value;
+ 
+    let li = document.createElement("li");
+    let text = document.createTextNode(commentBoxValue);
+    li.appendChild(text);
+    document.getElementById("comment-content").appendChild(li);
+    document.getElementById("comment-box").value="";
+    });
+
+
+const input = document.getElementById("comment-box");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("post").click();
+  }
+});
+
