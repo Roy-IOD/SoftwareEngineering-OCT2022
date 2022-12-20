@@ -1,0 +1,21 @@
+* {
+    font-family: "Creepster", cursive;
+}
+
+body{
+    padding-top: 85px;
+    background-color: black;
+}
+
+#table-contents {
+    height: 100%
+} 
+
+.header {
+    font-size:6rem;
+}
+
+#menu {
+    width:221.43px
+}
+
