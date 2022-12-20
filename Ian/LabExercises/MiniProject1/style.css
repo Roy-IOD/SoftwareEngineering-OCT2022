@@ -2,6 +2,7 @@ body {
   background-image: url("img/clocks.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  min-width: 320px;
 }
 
 .current-location-card {
@@ -37,10 +38,26 @@ a:link {
   }
 
 .date-time-picker {
-  max-width: 40%;
-  margin: 5px 2px;
+  width: 75%;
+  max-width: 300px;
+  min-width: 150px;
+  background: beige;
+  margin: 5px auto;
+  padding: 3px;
 }
 
 .card {
   margin 5px 2px;
+}
+
+.choose-location {
+  width: 75%;
+  max-width: 500px;
+  min-width: 320px;
+  background: gray;
+  margin: 0 auto;
+}
+
+.btn-success {
+  margin: 10px;
 }
