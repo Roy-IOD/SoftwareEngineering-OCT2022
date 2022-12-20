@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
 
     </head>
-  <body  onload=display_ct();>
+  <body>
     <nav class="navbar bg-light">
         <div class="container-fluid">
           <span class="navbar-brand mb-0 h1">International Meeting Planner</span>
@@ -21,8 +21,10 @@
           Current time: <span id="current-time"></span><br>
         </div>
       </div>
-      <h2>Plan Your Meeting</h2>
-      <select class="form-select" id="form-select" aria-label="Default select example">
+
+      <div class="choose-location"> 
+        <h2>Plan Your Meeting</h2>
+        <select class="form-select" id="form-select" aria-label="Default select example" required />
         <option>Choose Location...</option>
       </select>
       <select class="form-select" id="form-select2" aria-label="Default select example">
@@ -31,17 +33,20 @@
       <select class="form-select" id="form-select3" aria-label="Default select example">
         <option>Choose Location...</option>
       </select>
-        </div>
+      </div>
+    <br>
     <div class="card date-time-picker">
       <label for="date">Select a Date:</label>
-    <input type="date" id="date" name="date">
+    <input type="date" id="date" name="date" required />
     <label for="appt">Select a Time:</label>
-    <input type="time" id="appt" name="appt">
+    <input type="time" id="appt" name="appt" required />
+
+    <button onclick="showFutureTimes()" type="button" class="btn btn-success">Check Times</button>
   </div>
     
+   
 
-
-      <button onclick="showMeetingTimes()" type="button" class="btn btn-success">Check Times</button>
+      <!-- <button onclick="showMeetingTimes()" type="button" class="btn btn-success">Check Current Time</button> -->
       
 
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
