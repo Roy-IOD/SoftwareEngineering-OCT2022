@@ -1,0 +1,16 @@
+Design a feature rich page to display information from the show 'Rick and Morty'
+
+Structure will include
+- main/landing page
+- list of characters page
+- list of episodes page
+- list of locations page
+
+Data will be imported from external API : 
+https://rickandmortyapi.com/api/character
+https://rickandmortyapi.com/api/episode
+https://rickandmortyapi.com/api/location
+
+Use Bootstrap, HTML templates and JS to display data from the external API
+Top navbar to switch between pages
+Page navigation links to switch between pages of the character/episode/location lists

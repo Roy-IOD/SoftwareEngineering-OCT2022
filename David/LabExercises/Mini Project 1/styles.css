@@ -1,0 +1,104 @@
+* {
+  font-family: "Creepster", cursive;
+}
+
+body {
+  margin-top: 85px;
+  background-color: black;
+}
+
+#table-contents {
+  height: 100vh -85px;
+}
+
+#menu {
+  width: 221.43px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  -webkit-animation: rotate-scale-up 0.65s linear both;
+  animation: rotate-scale-up 0.65s linear both;
+}
+
+  @-webkit-keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+@keyframes rotate-scale-up {
+  0% {
+    -webkit-transform: scale(1) rotateZ(0);
+            transform: scale(1) rotateZ(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateZ(180deg);
+            transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateZ(360deg);
+            transform: scale(1) rotateZ(360deg);
+  }
+}
+
+a.link:hover {
+  animation-name: link-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+
+}
+
+@keyframes link-animation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    color: white;
+  }
+}
+
+
+@media only screen and (max-width: 385px) {
+  body {margin-top: 200px;}
+  .link {font-size: 15vw;};
+}
+
+@media only screen and (min-width: 385px) {
+  body {margin-top: 150px;}
+  .link {font-size: 15vw;};
+}
+
+@media only screen and (min-width: 605px) {
+  body {margin-top: 85px;}
+  .link {font-size: 15vw};
+}
+
+@media only screen and (min-width: 768px) {
+  body {margin-top: 85px;}
+  .link {font-size: 6rem}; 
+} 
+
+@media only screen and (min-width: 992px) {
+  body {margin-top: 85px;}
+  .main {width: 75%; margin: auto;};
+  .link {font-size: 6rem};
+} 
+
+/* @media only screen and (min-width: 1200px) {
+  body {margin-top: 85px;}
+  .main {width: 75%; margin: auto };
+  .link {font-size: 6rem};
+} */
