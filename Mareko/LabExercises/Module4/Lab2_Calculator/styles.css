@@ -1,0 +1,8 @@
+.container {
+    max-width: 500px;
+}
+
+#mainTitle {
+    text-align: center;
+    margin-top: 100px;
+}

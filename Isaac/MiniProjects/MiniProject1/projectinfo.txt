@@ -1,0 +1,20 @@
+NASA API:
+https://api.spaceflightnewsapi.net/v3/reports
+
+    NASA Updates Page:
+    - Current/latest news from NASA.
+
+    Pages: 
+    - Home-Page (Latest News, links, etc. )
+    - About page
+    - Galleries (Pinterest image type page)
+    - Contact Page
+
+    Features:
+    - Navbar (Search bar? Social media links, other page links)
+    - Animations (on mouse hover)
+    - CSS using bootstrap (bootstrap template and then editing)
+    - External API for news
+    - Make it responsive design
+
+FIGMA Design Link:

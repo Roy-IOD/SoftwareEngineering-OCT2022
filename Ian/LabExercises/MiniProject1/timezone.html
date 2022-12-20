@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN example (jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/timezone.js"></script>
+</head>
+<body>
+    
+    <p>check the console</p>
+    <script>
+        //you could put some timezone options like this in a dropdown
+        const sdtz = "Australia/Sydney"
+        const nytz = "America/New_York"
+        const aktz = "Pacific/Auckland"
+        const sgtz = "Asia/Singapore"
+        const format = 'hh:mm:ss a DD MMMM'
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_timezone)
+        const dayjsLocal = dayjs().tz(sdtz); 
+        console.log('Sydney: '+dayjsLocal.format(format))
+        console.log('New_York: '+dayjsLocal.tz(nytz).format(format))
+        console.log('Auckland: '+dayjsLocal.tz(aktz).format(format))
+        console.log('Singapore: '+dayjsLocal.tz(sgtz).format(format))
+        console.log('My timezone: '+dayjs.tz.guess()) //guesses your current time zone. Store in a variable called local timezone
+    </script>    
+</body>
+</html>
