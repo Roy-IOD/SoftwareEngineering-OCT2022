@@ -1,7 +1,6 @@
+//Navbar code
 window.addEventListener('DOMContentLoaded', event => {
-
-
-    const navbarShrink = function () {
+     const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -13,13 +12,8 @@ window.addEventListener('DOMContentLoaded', event => {
         }
 
     };
-
-
     navbarShrink();
-
     document.addEventListener('scroll', navbarShrink);
-
-
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -27,8 +21,6 @@ window.addEventListener('DOMContentLoaded', event => {
             offset: 74,
         });
     };
-
- 
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
@@ -40,13 +32,12 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
 
 
 
 
-
+//API Fetch
 fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=10')
     .then((response) => response.json())
     .then(json => {
@@ -54,17 +45,19 @@ fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=10')
         const template = document.getElementById("news-template").content.cloneNode(true);
         template.querySelector('.news-title').innerText = user.title;
         template.querySelector('.news-content').innerText = user.summary;
+        template.querySelector('.news-url').innerHTML = user.url
+        template.querySelector('.news-url').href = user.url
         document.querySelector('#news-list').appendChild(template);
     });
 });    
 
-
+//Form Submit 
 function sendMessage() {
     alert("Form Submitted");
 };
 
 
-
+//Comment Section 
 const post= document.getElementById("post");
 post.addEventListener("click", function(){
     let commentBoxValue= document.getElementById("comment-box").value;
@@ -77,6 +70,7 @@ post.addEventListener("click", function(){
     });
 
 
+
 const input = document.getElementById("comment-box");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -84,4 +78,5 @@ input.addEventListener("keypress", function(event) {
     document.getElementById("post").click();
   }
 });
+
 

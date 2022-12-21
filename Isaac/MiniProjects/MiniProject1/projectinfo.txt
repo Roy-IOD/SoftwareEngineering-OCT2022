@@ -6,15 +6,19 @@ https://api.spaceflightnewsapi.net/v3/reports
 
     Pages: 
     - Home-Page (Latest News, links, etc. )
-    - About page
-    - Galleries (Pinterest image type page)
-    - Contact Page
+    - About page (Cards of each thingy, location, history, CEO etc.)
+    - Missions (Pinterest image type page, waterfall cascade photos? Link to more info on each)
+    - Contact Page (Message enter page)
+    - Login Page (login/signup)
 
     Features:
     - Navbar (Search bar? Social media links, other page links)
-    - Animations (on mouse hover)
+    - Animations (on mouse hover, flip cards, maybe something kinda lame like a rocket taking off?)
     - CSS using bootstrap (bootstrap template and then editing)
-    - External API for news
-    - Make it responsive design
+    - External API for news, images, etc
+    - Make it responsive design (as much as possible)
+    - Use of local storage for comments/signin info???
+    - Charts? Maybe check API or another if maybe there are space-flight paths etc?
 
 FIGMA Design Link:
+https://www.figma.com/file/J8imbCgS8oyfOKLXm7wuzd/NASA-Social-Media-Page?t=xq7DITg8Ofv2Hj0F-6

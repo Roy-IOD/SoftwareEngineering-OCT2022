@@ -11625,6 +11625,9 @@ body {
 .projects-section {
   padding: 10rem 0;
 }
+.project-info:hover  {
+  transform: scale(1.1);
+}
 .projects-section .featured-text {
   padding: 2rem;
 }
@@ -11848,6 +11851,7 @@ figcaption {
   figcaption {
     font-size: 0.4rem;
   }
+  
 }
 
 .imagecontainer {
