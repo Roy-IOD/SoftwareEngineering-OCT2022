@@ -70,7 +70,7 @@ post.addEventListener("click", function(){
     });
 
 
-
+//Enter button for comment submit
 const input = document.getElementById("comment-box");
 input.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
