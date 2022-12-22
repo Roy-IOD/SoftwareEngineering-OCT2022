@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+
+    <title>NED vs. ARG</title>
+</head>
+<body>      
+
+    <div id="topBar-scoreBox" class="round-edges">
+        <div class="round-edges"> <!--https://www.youtube.com/watch?v=a-YLTjHl8gI&ab_channel=DanielWood-->
+            <div id="content-holder" class="container">
+                <div id="wc22LogoDiv" class="d-flex justify-content-center"> <!--https://www.youtube.com/watch?v=nx8jyWLy0e0&ab_channel=ADesignerWhoCodes -->
+                    <img id="wcLogo" class="" src="assests/wcLogoQatar.png" alt="Fifa World Cup 2022 Logo">
+                </div>  
+                <section class="container">
+                    <div id="scoresDiv" class="container">
+                        <div class="row">
+                            <div id="dutchName" class="container col-lg-3 d-flex justify-content-end align-items-center"></div>
+                            <div id="argName" class="container col-lg-3 d-flex align-items-center"></div>
+                        </div>
+                        
+                        <div id="scoresOnly" class="row">
+                            <div id="dutchFlag" class="col-lg-6 d-flex justify-content-end align-items-center">
+                                <img id="nedFlagIcon" class="img-responsive" src="" alt="nedFlagIcon">
+                                <div id="dutchScore" class="col-lg-6 d-flex justify-content-center align-items-center"></div>
+                            </div>
+
+                            <!-- <div id="finalScore" class="col-lg-4 d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                    <div id="dutchScore" class="col-lg-6 d-flex justify-content-center"></div>
+                                    <div id="argScore" class="col-lg-6 d-flex justify-content-center"></div>
+                                </div>
+                            </div> -->
+
+                            <div id="argentinaFlag" class="col-lg-6 d-flex justify-content-start align-items-center">
+                                <div id="argScore" class="col-lg-6 d-flex justify-content-center align-items-center"></div>
+                                <img id="argFlagIcon" class="img-responsive" src="" alt="argFlagIcon">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-lg-3 container d-flex justify-content-end align-items-center">
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Weghorst</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(83')</div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Weghorst</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(90'+11)</div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 container d-flex justify-content-center align-items-center">
+                                <h2>FT</h2>
+                            </div>
+
+                            <div class="col-lg-3 container d-flex justify-content-start align-items-center">
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Molina</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(35')</div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Messi</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(73')</div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">Argentina won 4-3 on penalties.</div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container d-flex justify-content-center align-items-center">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-lineups-tab" data-bs-toggle="pill" data-bs-target="#pills-lineups" type="button" role="tab" aria-controls="pills-lineups" aria-selected="true">Line-Ups</button>
+            </li>
+           
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-matchstats-tab" data-bs-toggle="pill" data-bs-target="#pills-matchstats" type="button" role="tab" aria-controls="pills-matchstats" aria-selected="false">Match Stats</button>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <main>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active d-flex justify-content-center align-items-center" id="pills-lineups" role="tabpanel" aria-labelledby="pills-lineups-tab" tabindex="0">
+
+                <div id="lineups-wrapper" class="row container d-flex justify-content-center align-items-center">
+
+                    <!-- <section id="nedTeamSheet" class="oranje round-edge col-lg-6">
+                        <h3 class="nameTS">Test</h3>
+                        <div class="field row-cols-12 container round-edges">
+                            
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="gk-wrapper">
+                                    <div class="oranje-player-card"></div>
+                                    <p id="nedGK" class="player-name-text">Noppert</p>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="def-wrapper" class="row" style="--bs-gutter-x: 7.5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Timber</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Van Dijk</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Aké</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="mid-wrapper" class="row" style="--bs-gutter-x: 5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Dumfries</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">De Roon</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <div class="oranje-player-card"></div>
+                                                <p class="player-name-text">De Jong</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Blind</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="cam-wrapper">
+                                    <div class="oranje-player-card"></div>
+                                    <p class="player-name-text">Gakpo</p>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="def-wrapper" class="row" style="--bs-gutter-x: 7.5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Bergwijn</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="oranje-player-card"></div>
+                                            <p class="player-name-text">Depay</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> -->
+
+                    <!-- <section id="argTeamSheet" class="bluey round-edge col-lg-6">
+                        <h3 class="nameTS">Test</h3>
+                        <div class="field row-cols-12 container round-edges">
+                            <div class="col playerSection d-flex justify-content-center align-items-center">
+                                <div id="gk-wrapper">
+                                    <div class="arg-player-card"></div>
+                                    <p class="player-name-text">test</p>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                <div id="def-wrapper-2" class="row" style="--bs-gutter-x: 3.5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                <div id="mid-wrapper-2" class="row" style="--bs-gutter-x: 7.5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                <div id="fwd-wrapper-2" class="row" style="--bs-gutter-x: 7.5rem;">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="row-col">
+                                            <div class="arg-player-card"></div>
+                                            <p class="player-name-text">test</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> -->
+                </div>            
+            </div>
+            <div class="tab-pane fade container" id="pills-matchstats" role="tabpanel" aria-labelledby="pills-matchstats-tab" tabindex="0">
+                <div id="possesionChart"></div>
+                <div id="gsfChart" style="width: 600px;height: 400px;"></div>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <script>
+        fetch('https://soccer.sportmonks.com/api/v2.0/fixtures/18452330?api_token=FK8KqxYtbdvYSiCpnsHk0WpoHYMOWoj3Sp3Gedk0Rz4iNeYOD2K4a8JvpVcX&include=localTeam,visitorTeam,events,lineup,bench,localCoach,visitorCoach,stats')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.data);
+                let matchInfo = data.data;
+                let homeSide = matchInfo.localTeam;
+                let awaySide = matchInfo.visitorTeam;
+                let events = matchInfo.events;
+                let lineup = matchInfo.lineup;
+                let bench = matchInfo.bench;
+                let nedCoach = matchInfo.localCoach;
+                let argCoach = matchInfo.visitorCoach;
+                let matchStats = matchInfo.stats;
+
+                console.log(homeSide);
+                console.log(awaySide);
+                console.log(events);
+                console.log(lineup);
+                console.log(bench);
+                console.log(nedCoach);
+                console.log(argCoach);
+                console.log(matchStats);
+
+                let homeSideName = homeSide.data.name
+                let awaySideName = awaySide.data.name
+                document.getElementById('dutchName').innerText = homeSideName
+                document.getElementById('argName').innerText = awaySideName
+
+                document.getElementById('nedFlagIcon').src = homeSide.data.logo_path
+                document.getElementById('argFlagIcon').src = awaySide.data.logo_path
+
+                document.getElementById('dutchScore').innerText = matchInfo.scores.localteam_score
+                document.getElementById('argScore').innerText = matchInfo.scores.visitorteam_score
+
+            })
+
+        const chartDom = document.getElementById('gsfChart');
+        const myChart = echarts.init(chartDom);
+        let option;
+
+        option = {
+        title: {
+            text: 'Goal/Saves/Fouls Stats'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+            type: 'shadow'
+            }
+        },
+        legend: {},
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: [
+            'Red Cards',
+            'Yellow Cards',
+            'Saves',
+            'Shots on Target',
+            'Shots',
+            'Goals'
+            ]
+        },
+        series: [
+            {
+            name: 'Netherlands',
+            type: 'bar',
+            color: '#fc6500',
+            data: [1, 8, 3, 2, 5, 2]
+            },
+            {
+            name: 'Argentina',
+            type: 'bar',
+            color: '#4285F4',
+            data: [0, 8, 0, 4, 7, 2]
+            }
+        ]
+        };
+
+        option && myChart.setOption(option);
+
+    
+    
+    </script>
+
+</body>
+</html>

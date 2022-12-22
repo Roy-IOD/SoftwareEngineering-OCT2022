@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Beer Recipes</title>
+</head>
+<body>
+    <template id="beer-template">
+        <div class="container" style="width:50%">
+            <div class="row p-5 g-5">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="" class = "beer-img" style="width:10%">
+                        <h2 class="beer-title card-title"></h2>
+                        <h4 class="beer-tagline card-text"></h4>
+                        <div class="beer-info card-text"></div>
+                        <div class="beer-tips card-text"></div>
+                        <br>
+                        <strong class = "text-uppercase strong">Goes well with:</strong>
+                        <p class="beer-foodpairing card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </nav>
+    <div class="card" id="beer-list"></div>
+</body>
+
+<script>
+    fetch('https://api.punkapi.com/v2/beers')
+    .then((response) => response.json())
+    .then(json => {
+        json.forEach(user => {
+            const template = document.getElementById("beer-template").content.cloneNode(true);
+            template.querySelector('.beer-img').src = user.image_url;
+            template.querySelector('.beer-title').innerText = user.name;
+            template.querySelector('.beer-tagline').innerText = user.tagline;
+            template.querySelector('.beer-info').innerText = user.description;
+            template.querySelector('.beer-tips').innerText = user.brewers_tips;
+            template.querySelector('.beer-foodpairing').innerText = user.food_pairing;
+            document.querySelector('#beer-list').appendChild(template);
+        });
+    });    
+</script>
+</html>

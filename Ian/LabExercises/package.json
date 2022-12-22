@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "node-fetch": "^3.3.0",
+=======
+    "dayjs": "^1.11.7",
+>>>>>>> Ian
     "prompt-sync": "^4.2.0"
   }
 }
