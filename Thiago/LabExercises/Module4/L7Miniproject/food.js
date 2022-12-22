@@ -23,12 +23,4 @@ const foodChart = echarts.init(document.getElementById('foodChart'));
             series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]  
         };  
        foodChart.setOption(foodOptions); 
-     
-       option = {
-        backgroundColor: {
-          type: 'radial',
-          x: 0.3,
-          y: 0.3,
-          r: 0.8,
-        }};
        
