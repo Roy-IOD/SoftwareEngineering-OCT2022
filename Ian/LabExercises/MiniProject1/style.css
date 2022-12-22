@@ -1,0 +1,63 @@
+body {
+  background-image: url("img/clocks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 320px;
+}
+
+.current-location-card {
+    background-color: beige;
+    margin: 5px 2px;
+    padding: 5px 2px;
+}
+
+h2 {
+    color: white;
+    font-size: large;
+    margin: 5px 2px;
+}
+
+a {
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }
+
+.date-time-picker {
+  width: 75%;
+  max-width: 300px;
+  min-width: 150px;
+  background: beige;
+  margin: 5px auto;
+  padding: 3px;
+}
+
+.card {
+  margin 5px 2px;
+}
+
+.choose-location {
+  width: 75%;
+  max-width: 500px;
+  min-width: 320px;
+  background: gray;
+  margin: 0 auto;
+}
+
+.btn-success {
+  margin: 10px;
+}

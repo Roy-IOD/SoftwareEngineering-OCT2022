@@ -1,0 +1,125 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+
+    <style>
+        body { display: block; padding-top: 0; }
+        main { display: flex; align-items: center; justify-content: center; padding-top: 40px; }
+    </style>
+  </head>
+
+  <body class="text-center">
+
+    <!-- bootstrap navbar taken from https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">LocalStorage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="login.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="charts.html">Charts</a>
+            <a class="nav-item nav-link" href="rainbow_animation.html">Rainbow</a>
+            <a class="nav-item nav-link" href="card_template.html">Card Templates</a>
+            <a class="nav-item nav-link" href="bootstrap_demo.html">Bootstrap Features</a>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <!-- bootstrap login template taken from https://getbootstrap.com/docs/4.0/examples/sign-in/ -->
+        <form class="form-signin" onsubmit="login(event)">
+
+            <h1 class="h2 mb-3 font-weight-normal">Local Storage Example</h3>
+
+            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h3 class="h3 mb-3 font-weight-normal signinMsg">Please sign in</h3>
+
+            <label for="inputEmail" class="sr-only formElement">Email address</label>
+            <input type="email" id="inputEmail" class="form-control formElement" placeholder="Email address" required autofocus>
+
+            <label for="inputPassword" class="sr-only formElement">Password</label>
+            <input type="password" id="inputPassword" class="form-control formElement" placeholder="Password" required>
+
+            <div class="checkbox mb-3 formElement">
+                <label>
+                <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block formElement" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        </form>
+    </main> 
+
+    <script>
+
+        function checkLoggedIn() {
+            let loggedinUser = localStorage.getItem('user-email');
+
+            if (loggedinUser) {
+                //user is logged in already, hide the form elements
+                document.querySelectorAll('.formElement').forEach(formElem => formElem.style.display = 'none');
+                document.querySelector('.signinMsg').innerText = 'Welcome '+loggedinUser;
+
+                //add a logout button
+                let logoutButton = document.createElement('button')
+                logoutButton.innerText='Logout';
+                logoutButton.className = 'btn btn-lg btn-primary logout';
+                logoutButton.addEventListener('click', logout);
+                document.querySelector('.form-signin').appendChild(logoutButton);
+            }
+            else {
+                //user is not logged in, display the sign-in form
+                document.querySelectorAll('.formElement').forEach(formElem => formElem.style.display = 'block');
+                document.querySelector('.signinMsg').innerText = 'Please sign in';
+
+                //remove the logout button
+                document.querySelector('.logout').remove();
+            }
+        }
+
+        function login(event) {
+            event.preventDefault();
+            let email = document.getElementById('inputEmail').value;
+            let pw = document.getElementById('inputPassword').value;
+
+            if (pw == '1234')
+            {
+                console.log('logging in')
+                //https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+                localStorage.setItem('user-email', email);
+                checkLoggedIn()
+            }
+            else
+            {
+                document.querySelector('.signinMsg').innerText = 'Invalid password, please try again.';
+            }
+        }
+
+        function logout() {
+            console.log('logging out')
+            localStorage.clear();
+            checkLoggedIn()
+        }
+
+        checkLoggedIn()
+    </script>
+  </body>
+</html>
