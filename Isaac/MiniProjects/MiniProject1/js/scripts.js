@@ -1,7 +1,6 @@
+//Navbar code
 window.addEventListener('DOMContentLoaded', event => {
-
-
-    const navbarShrink = function () {
+     const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -13,13 +12,8 @@ window.addEventListener('DOMContentLoaded', event => {
         }
 
     };
-
-
     navbarShrink();
-
     document.addEventListener('scroll', navbarShrink);
-
-
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -27,8 +21,6 @@ window.addEventListener('DOMContentLoaded', event => {
             offset: 74,
         });
     };
-
- 
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
@@ -40,33 +32,51 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
 
 
-fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
+
+
+//API Fetch
+fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=10')
     .then((response) => response.json())
     .then(json => {
     json.forEach(user => {
         const template = document.getElementById("news-template").content.cloneNode(true);
         template.querySelector('.news-title').innerText = user.title;
         template.querySelector('.news-content').innerText = user.summary;
+        template.querySelector('.news-url').innerHTML = user.url
+        template.querySelector('.news-url').href = user.url
         document.querySelector('#news-list').appendChild(template);
     });
 });    
 
-
+//Form Submit 
 function sendMessage() {
     alert("Form Submitted");
 };
 
 
-fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=5')
-    .then((response) => response.json())
-    .then(data => {
-    data.forEach(user => {
-        const imagetemplate = document.getElementById("image-template").content.cloneNode(true);
-        imagetemplate.querySelector('.image-content').src = user.imageUrl;
-        document.querySelector('#image-gallery').appendChild(imagetemplate);
+//Comment Section 
+const post= document.getElementById("post");
+post.addEventListener("click", function(){
+    let commentBoxValue= document.getElementById("comment-box").value;
+ 
+    let li = document.createElement("li");
+    let text = document.createTextNode(commentBoxValue);
+    li.appendChild(text);
+    document.getElementById("comment-content").appendChild(li);
+    document.getElementById("comment-box").value="";
     });
-});    
+
+
+//Enter button for comment submit
+const input = document.getElementById("comment-box");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("post").click();
+  }
+});
+
+

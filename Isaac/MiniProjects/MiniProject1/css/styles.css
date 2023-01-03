@@ -11546,6 +11546,11 @@ body {
   }
 }
 
+
+
+
+/* My CSS */
+
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
@@ -11624,6 +11629,9 @@ body {
 
 .projects-section {
   padding: 10rem 0;
+}
+.project-info:hover  {
+  transform: scale(1.1);
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -11848,6 +11856,7 @@ figcaption {
   figcaption {
     font-size: 0.4rem;
   }
+  
 }
 
 .imagecontainer {
@@ -12083,4 +12092,35 @@ figcaption {
 
 .flex-container > div {
   padding: 1%;
+}
+
+
+#comment-content > li {
+  width:70%;
+  background-color: white;
+  box-shadow: 0 0 7px 1px rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+  list-style: none;
+  margin: 1%;
+  margin-bottom: 0%;
+}
+
+.comments-section {
+  background: black;
+  margin-bottom: 0%;
+  padding-left: 20%;
+}
+
+#comment-content {
+  margin-bottom: 0%;
+  background: black;
+}
+
+#post {
+    border-radius: 0.01rem;
+    padding: 0.2%;
+    color: #fff;
+    background-color: #64a19d;
+    border: none;
+    cursor: pointer;
 }

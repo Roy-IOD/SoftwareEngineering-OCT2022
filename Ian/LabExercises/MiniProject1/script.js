@@ -2,7 +2,7 @@ dayjs.extend(window.dayjs_plugin_utc)
 dayjs.extend(window.dayjs_plugin_timezone)
 
 let selects = document.querySelectorAll(".form-select");
-let options = ["Australia/Sydney", "America/Los_Angeles", "America/Toronto", "Europe/Berlin", "Asia/Singapore"];
+let options = ["Australia/Brisbane", "America/Los_Angeles", "America/Toronto", "Europe/Berlin", "Europe/London", "Europe/Prague", "Singapore"];
 
 selects.forEach(select => {
 for(let i = 0; i < options.length; i++) {
@@ -29,6 +29,7 @@ selectedTimezones += select.value+","
     window.location="meetingplannerresult.html?tzs="+selectedTimezones
 }
 
+
 function loadSelectedTimezones() {
     const query = window.location.search.substring(1);
     console.log(query)
@@ -43,9 +44,119 @@ function loadSelectedTimezones() {
         }) 
 }
 
-loadSelectedTimezones()
+// function showFutureTimes() {
+//     let selects = document.querySelectorAll(".form-select");
+//     let selectedTimezones="";
+//     selects.forEach(select => {
+// selectedTimezones += select.value+","
+//     })
+//     console.log(selectedTimezones)
+//     let selectedDate = document.getElementById('date').value;
+//     let selectedTime = document.getElementById('appt').value;
+//     window.location="meetingplannerresult.html?tzs="+selectedTimezones+"&d="+selectedDate+"&a="+selectedTime;
+
+// }
+
+//this is the function above that I'm trying to modify below so that form validation is included
+//ideally it will replace lines 47-58 if it works
+
+function showFutureTimes2() {
+    if (document.getElementById("form-select").value == "Choose Location...") {
+
+        alert("Please select at least one location");
+        document.getElementById("form-select").style.borderColor="red";
+        return false;
+    }
+
+    else if (document.getElementById("date").value == "2022-12-01") {
+
+        alert("Please choose the date of your meeting");
+        return false;
+    }
+    else {
+    let selects = document.querySelectorAll(".form-select");
+    let selectedTimezones="";
+    selects.forEach(select => {
+selectedTimezones += select.value+","
+    })
+    console.log(selectedTimezones)
+    let selectedDate = document.getElementById('date').value;
+    let selectedTime = document.getElementById('appt').value;
+    window.location="meetingplannerresult.html?tzs="+selectedTimezones+"&d="+selectedDate+"&a="+selectedTime;
+}
+}
 
 
+function loadFutureSelectedTimezones() {
+    const query = window.location.search.substring(1);
+    console.log(query)
+    const unorderedList = document.querySelector(".list-group")
+    const params = query.substring(1).split("&");
+    const timezones = params[0].substring(3).split(",");
+    const grabDate = params[1].substring(2);
+    const grabTime = params[2].substring(2);
+
+    console.log(timezones)
+    console.log(grabDate)
+    console.log(grabTime)
+    
+    
+        timezones.forEach(timezone => {
+            if (timezone) {
+            let listItem = document.createElement('li');
+            let convertedTime = dayjs(grabDate+" "+grabTime).tz(timezone).format(format);// do I amend this line after =?
+            listItem.className = "list-group-item flex-fill";
+            listItem.innerHTML = `${timezone}: ${convertedTime}`
+            unorderedList.appendChild(listItem)
+            }
+        }) 
+}
+
+function checkForBlank() {
+    if (document.getElementById("form-select").value == "Choose Location...") {
+        alert("Please select at least one location");
+        return false;
+    }
+}
+
+function checkForDate() {
+    if (document.getElementById("date").value == "dd/mm/yyyy") {
+        alert("Please select the date of your meeting");
+        return false;
+    }
+}
+
+$(function() {
+    $( "#button" ).click(function() {
+      $( "#button" ).addClass( "onclic", 250, validate);
+    });
+  
+    function validate() {
+      setTimeout(function() {
+        $( "#button" ).removeClass( "onclic" );
+        $( "#button" ).addClass( "validate", 450, callback );
+      }, 2250 );
+    }
+      function callback() {
+        setTimeout(function() {
+          $( "#button" ).removeClass( "validate" );
+        }, 1250 );
+      }
+    });
+
+//I was trying to create form validation with the below...
+// const locationError = document.getElementById("location-error");
+// const dateError = document.getElementById("date-error");
+// const timeError = document.getElementById("time-error");
+
+// function validateDate() {
+//     let date = document.getElementById("date").value;
+
+//     if(date.value == "dd/mm/yyyy"){
+//         dateError.innerHTML = "Date is required";
+//         return false;
+// }
+// dateError.innerHTML = "Valid";
 
 // The below 3 lines are from node.js install notes
 // const dayjs = require('dayjs')

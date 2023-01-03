@@ -2,12 +2,28 @@ body {
   background-image: url("img/clocks.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  min-width: 320px;
 }
 
+/* .bg-image {
+  background-image: url("img/clocks.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
 .current-location-card {
-    background-color: beige;
-    margin: 5px 2px;
-    padding: 5px 2px;
+    width: 100%;
+    max-width: 600px;
+    min-width: 200px;
+    background: beige;
+    margin: 5px auto;
+    padding: 3px;
+    text-align: center;
 }
 
 h2 {
@@ -29,18 +45,51 @@ a:link {
   }
   
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: white;
   }
   
   a:active {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
 .date-time-picker {
-  max-width: 40%;
-  margin: 5px 2px;
+  width: 75%;
+  max-width: 300px;
+  min-width: 150px;
+  background: beige;
+  margin: 5px auto;
+  padding: 3px;
 }
 
 .card {
   margin 5px 2px;
 }
+
+.choose-location {
+  width: 75%;
+  max-width: 500px;
+  min-width: 320px;
+  background: gray;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.btn-primary {
+  margin: 10px;
+}
+
+.date-time-picker .choose-location span {
+  position: below;
+  bottom: 12px;
+  right: 17px;
+  font-size: 14px;
+  color: red;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: beige;
+  }
+  }
+

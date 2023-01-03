@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<template id="dog-breed">
+    <div class="card" id="">
+        <img src="" class="dog-img" width="250"/>
+        <h3 class="breed-name"></h3>
+        <div class="dimensions">
+            <small class="weight"></small>
+            <small class="height"></small>
+        </div>
+        <div class="bred-for"></div>
+        <div class="temperament"></div>
+    </div>
+</template>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Templating Example (Dog Breeds)</title>
+
+    <style>
+        #dog-breeds { display: flex; flex-wrap: wrap; }
+        #dog-breeds .card { width: calc(25% - 98px); border: 1px solid #ccc; background: #eee; padding: 2em; margin: 1em; border-radius: 20px; text-align: center; }
+        #dog-breeds .card img { max-width: 100%; }
+        #dog-breeds .card .dimensions { display: flex; justify-content: space-between; max-width: 250px; margin: 5px auto; }
+
+        @media screen and (max-width: 900px) {
+            #dog-breeds .card { width: calc(50% - 98px); }
+        }
+
+        @media screen and (max-width: 450px) {
+            #dog-breeds .card { width: calc(100% - 98px); }
+        }        
+    </style>
+</head>
+<body>
+
+    <!-- use onsubmit action so we can capture the form event and prevent page reloads -->
+    <form onsubmit="filterBreeds(event)">
+        <input name="search_text" id="search_text" value="" type="text"/> <button>Search by Breed</button>
+    </form>
+
+    <h2>Dog Breeds</h2>
+    <div id="dog-breeds"></div>
+
+    <script>
+
+        let allBreeds = [];
+
+        function filterBreeds(event) {
+
+            //don't reload the page
+            event.preventDefault();
+
+            //get the search text
+            let searchText = document.getElementById('search_text').value;
+
+            //filter the array of all breeds (from line 79) to only those that match the search text
+            let matchingBreeds = allBreeds.filter(breed => {
+                //return breed.name.indexOf(searchText) >= 0; //this is case-sensitive
+
+                //instead change both the breed name and the search text to uppercase and then compare
+                //indexof will give you the index of the parameter string within the parent string, or -1 if it doesn't exist
+                return breed.name.toUpperCase().indexOf(searchText.toUpperCase()) >= 0
+            })
+
+            // clear out previous breeds and show only matching ones
+            document.getElementById('dog-breeds').innerHTML = ''; 
+            showBreeds(matchingBreeds);
+        }
+
+        fetch('https://api.thedogapi.com/v1/breeds')
+            .then(response => response.json())
+            .then(breeds => {
+
+                //save the full array of breeds in a variable for use in searching
+                allBreeds = breeds;
+
+                //use our function to display all the breeds
+                showBreeds(breeds);
+            })
+
+        //clones, populates and appends a new template for each breed in the given array
+        function showBreeds(breeds) {
+            console.log('displaying '+breeds.length+' breeds')
+            breeds.forEach(breed => {
+                const template = document.getElementById("dog-breed").content.cloneNode(true);
+
+                template.querySelector('.dog-img').src = breed.image.url;
+                template.querySelector('.breed-name').innerText = 'Name: ' + breed.name;
+                template.querySelector('.weight').innerText = `Weight: ${breed.weight.metric}kg`;
+                template.querySelector('.height').innerText = 'Height: ' + breed.height.metric + 'cm';
+
+                template.querySelector('.bred-for').innerText = breed.bred_for;
+                template.querySelector('.temperament').innerText = breed.temperament;
+
+                document.getElementById('dog-breeds').appendChild(template); 
+            })                
+        }
+    </script>
+</body>
+</html>
