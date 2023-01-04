@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <template id="dog-breed">
-    <div class="card" id="">
+    <div class="card">
         <img src="" class="dog-img" width="250"/>
         <h3 class="breed-name"></h3>
         <div class="dimensions">
@@ -47,6 +47,7 @@
 
     <script>
 
+        //global-scope variable, accessible by both the fetch and the filterBreeds function
         let allBreeds = [];
 
         function filterBreeds(event) {
