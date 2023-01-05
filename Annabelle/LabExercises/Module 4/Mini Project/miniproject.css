@@ -1,0 +1,276 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(213, 188, 206);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(160, 98, 145);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ba8ead;
+}
+
+.active {
+  background-color: #ba8ead;
+}
+.active {
+  background-color: #ba8ead;
+}
+.grass{
+  position: absolute;
+  padding-top:0px;
+  left: 0px;
+}
+.warning{
+  background-color: white;
+  width: 1000px;
+  left: -1000px;
+  bottom: 10cm;
+  font-size: 100px;
+  position:absolute;
+  text-align: center;
+  animation-name: warning-sign;
+  animation-timing-function: linear;
+  animation-delay: 15s;
+  animation-duration:10s;
+  animation-direction: alternate;
+}
+@keyframes warning-sign{
+0%{
+  left: -600px;
+}
+50%{
+  left: 700px;
+}
+100%{
+  left:1500px;
+}
+}
+
+.ball{
+  position: absolute;
+  left: -500px;
+  top: 500px;
+  animation-name: ball-roll;
+  animation-delay: 10s;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes ball-roll{
+0%{
+  transform: rotate(0deg);
+  left: -500px;
+}
+25%{
+  transform: rotate(360deg);
+  left: 0px;
+  }
+50%{
+    transform: rotate(720deg);
+    left: 500px;
+    }
+  75%{
+      transform: rotate(1080deg);
+      left: 1000px;
+      }
+      100%{
+        transform: rotate(1440deg);
+        left: 1500px;
+        }
+}
+
+
+.dogIcon{
+  left: -500px;
+  padding-top: 300px;
+  position: absolute;
+  animation-name: dog-chase;
+  animation-delay: 23s;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+}
+
+@keyframes dog-chase{
+  0% {
+    left: -200px;
+    bottom:0px
+  }
+  25%{
+    bottom: 100px
+  }
+  50% {
+    bottom: 50px;
+  }
+  
+  75%{
+    bottom:120px
+  }
+  
+  100% {
+    left: 1500px;
+    bottom: 0px;
+  }
+}
+
+.dogIcon2{
+  left: -500px;
+  padding-top: 300px;
+  position: absolute;
+  animation-name: dog-chase2;
+  animation-delay: 24.5s;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+}
+
+@keyframes dog-chase2{
+  0% {
+    left: -200px;
+    bottom:20px
+  }
+  25%{
+    bottom: 120px
+  }
+  50% {
+    bottom: 50px;
+  }
+  
+  75%{
+    bottom:100px
+  }
+  
+  100% {
+    left: 1500px;
+    bottom: 0px;
+  }
+}
+
+
+.dogIcon3{
+  left: -500px;
+  padding-top: 300px;
+  position: absolute;
+  animation-name: dog-chase3;
+  animation-delay: 26.5s;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+}
+
+@keyframes dog-chase3{
+  0% {
+    left: -200px;
+    bottom:-10px
+  }
+  25%{
+    bottom: 80px
+  }
+  50% {
+    bottom: 120px;
+  }
+  
+  75%{
+    bottom:60px
+  }
+  
+  100% {
+    left: 1500px;
+    bottom: 12px;
+  }
+}
+
+
+.dogIcon4{
+  left: -500px;
+  padding-top: 300px;
+  position: absolute;
+  animation-name: dog-chase4;
+  animation-delay: 28.5s;
+  animation-duration: 8s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+}
+
+@keyframes dog-chase4{
+  0% {
+    left: -200px;
+    bottom:5px
+  }
+  25%{
+    bottom: 190px
+  }
+  50% {
+    bottom: 10px;
+  }
+  
+  75%{
+    bottom:80px
+  }
+  
+  100% {
+    left: 1500px;
+    bottom: 50px;
+  }
+}
+
+.container {
+  background-color: rgb(189, 168, 186);
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  border-radius: 20px;
+  margin-top: 0.5cm;
+  margin-left: 10cm;
+  margin-right: 10cm;
+  
+}
+
+.btn {
+  background: #fff;
+  align-items: center;
+  font-size: 24px;
+  padding: 8px 24px;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin-top: 24px;
+  animation-name: shake-button;
+  animation-duration: 0.2s;
+  animation-delay: 20s;
+  animation-iteration-count: 50;
+}
+
+@keyframes shake-button {
+  0% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
