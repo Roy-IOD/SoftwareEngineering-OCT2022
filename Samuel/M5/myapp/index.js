@@ -20,3 +20,9 @@ app.listen(port, () => {
 app2.listen(port2, () => {
     console.log(`Example app listening at http://localhost:${port2}`)
 })
+
+
+let calculatorRoute = 
+require('./routes/calculatorroutes.js')
+
+app.use('/calculator', calculatorRoute)
