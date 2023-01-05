@@ -4,8 +4,8 @@
     </head>
 
     <body>
-
-        <form onsubmit="addNumbers(event)">
+<h1>Calculator via sending requests to the server (exercise 2 & 3, slide 37/38)</h1>
+        <!-- <form onsubmit="addNumbers(event)">
             Number 1: <input name="num1" id="num1" type="number"/>
             Number 2: <input name="num2" id="num2" type="number"/>
 
@@ -48,17 +48,20 @@
         <div>Division Result:
             <span id="division-result"></span>
         </div>
-        <br>
+        <br> -->
         
     <!-- //Can I make one form with 4 buttons/functions?  -->
         <form>
             Number 1: <input name="num9" id="num9" type="number"/>
             Number 2: <input name="num10" id="num10" type="number"/>
-
+            <br>
+        <div id="buttons"></div>
             <button onclick=addNumbers1(event)>Add</button>
-            <button onclick="subtractNumbers1">Subtract</button>
-            <button>Multiply</button>
-            <button>Divide</button>
+            <button onclick="subtractNumbers1(event)">Subtract</button>
+            <button onclick="multiplyNumbers1(event)">Multiply</button>
+            <button onclick="divideNumbers1(event)">Divide</button>
+        </div>
+
         </form>
 
         <div>Result:
@@ -111,7 +114,7 @@
 
             let num9 = document.getElementById('num9').value;
             let num10 = document.getElementById('num10').value;
-            fetch(`/calculator/subtract?num9=${num9}&num10=${num10}`)
+            fetch(`/calculator/subtract1?num9=${num9}&num10=${num10}`)
             .then(response => response.json())
             .then(data => {
                 document.getElementById("combo-result").innerHTML = data.result;
@@ -132,6 +135,19 @@
 
         }
 
+        function multiplyNumbers1(event) {
+            event.preventDefault();
+
+            let num9 = document.getElementById('num9').value;
+            let num10 = document.getElementById('num10').value;
+            fetch(`/calculator/multiply1?num9=${num9}&num10=${num10}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("combo-result").innerHTML = data.result;
+            })
+
+        }
+
         function divideNumbers(event) {
             event.preventDefault();
 
@@ -141,6 +157,19 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById("division-result").innerHTML = data.result;
+            })
+
+        }
+
+        function divideNumbers1(event) {
+            event.preventDefault();
+
+            let num9 = document.getElementById('num9').value;
+            let num10 = document.getElementById('num10').value;
+            fetch(`/calculator/divide1?num9=${num9}&num10=${num10}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("combo-result").innerHTML = data.result;
             })
 
         }
