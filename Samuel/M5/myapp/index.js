@@ -1,28 +1,15 @@
-const express = require('express')
+const express = require('express');
+const testRoute = require('./routes/myTestRoute');
+const calculatorRoute = require('.routes/calculatorRoute');
 const app = express()
-const app2 = express()
 const port = 3000
-const port2 = 3001
 
-app.get('/', (req, res) => {
-    console.log(req)
-    res.send('Hello World!')
-})
+app.use('/', express.static('public'))
 
-app2.get('/', (req, res) => {
-    res.send('This is a test')
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
-
-app2.listen(port2, () => {
-    console.log(`Example app listening at http://localhost:${port2}`)
-})
-
-
-let calculatorRoute = 
-require('./routes/calculatorroutes.js')
+app.use('/mytest', testRoute)
 
 app.use('/calculator', calculatorRoute)
+
+app.listen(port, ()=> {
+    console.log(`Example app listening at http://localhost:${port}`)
+})
