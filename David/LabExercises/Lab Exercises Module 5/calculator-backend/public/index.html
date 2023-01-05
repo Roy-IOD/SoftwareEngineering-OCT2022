@@ -1,34 +1,37 @@
 <html lang="en">
   <head>
     <title>Calculator Example</title>
+    <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
+    <h1>Calculator</h1>
     
-    <form id="form" onsubmit="calcuate(event)">
-      Number 1: <input name="num1" id="num1" type="number" /> Number 2:
-      <input name="num2" id="num2" type="number" />
-
-      <input type="radio" name="radiobutton" id="plus" value="+" checked />
-      <label class="form-check-label" for="plus"> Plus </label>
-
-      <input type="radio" name="radiobutton" id="subtract" value="-" />
-      <label class="form-check-label" for="subtract"> Subtract </label>
-
-      <input type="radio" name="radiobutton" id="multiply" value="*" />
-      <label class="form-check-label" for="multiply"> Multiply </label>
-
-      <input type="radio" name="radiobutton" id="divide" value="/" />
-      <label class="form-check-label" for="plus"> Divide </label>
-
-      <button>Calculate</button>
-    </form>
-
     <div>
-      Result:
+    <form id="form" onsubmit="calcuate(event)">
+      Number 1: <input name="num1" id="num1" type="number" /> 
+      Number 2: <input name="num2" id="num2" type="number" />
+    </div>
+      
+    <div>
+      <input type="radio" name="radiobutton" id="plus" value="+" checked />
+      <label> Plus </label>
+      <input type="radio" name="radiobutton" id="subtract" value="-" />
+      <label> Subtract </label>
+      <input type="radio" name="radiobutton" id="multiply" value="*" />
+      <label> Multiply </label>
+      <input type="radio" name="radiobutton" id="divide" value="/" />
+      <label> Divide </label>
+  
+        <button>Calculate</button>
+      </div>
+    </form>
+    
+    <div>
+    Result:
       <span id="result"></span>
     </div>
   </body>
-  
+
   <script>
     function calcuate(event) {
       event.preventDefault();
@@ -39,7 +42,8 @@
       let num2 = document.getElementById("num2").value;
 
       let routeName = "";
-
+      
+      //try switch option also
       if (operator == "+") {
         routeName = "add";
       }
@@ -52,18 +56,6 @@
       if (operator == "/") {
         routeName = "divide";
       }
-      //try switch also
-
-    //   switch (routeName) {
-    //     case "add": operator == "+"
-    //     break;
-    //     case 1: operator == "-"
-    //     break;
-    //     case 2: operator == "*"
-    //     break;
-    //     case 3: operator == "/"
-    //     break;
-    //   }
 
       fetch(`/calculator/${routeName}?num1=${num1}&num2=${num2}`)
         .then((response) => response.json())
