@@ -2,6 +2,7 @@
 const axios = require('axios');
 
 const express = require('express');
+const {CatFact, CatFactsCache} = require('../models/CatFact')
 const router = express.Router();
 
 router.get('/random', (req, res) => {
@@ -22,7 +23,7 @@ router.get('/random', (req, res) => {
         })
 })
 
-
+//get a list of cat facts based on the limit and paging query parameters
 router.get('/list', (req, res) => {
 
     //wrapping our own backend around someone else's lets us do things like caching 
@@ -30,17 +31,42 @@ router.get('/list', (req, res) => {
 
     let limit = req.query.limit ? req.query.limit : 10 //sets a default of 10 unless provided in the request
     let page = req.query.page ? req.query.page : 1 //sets a default of 1 unless provided in the request
+    let offset = (page - 1) * limit;
     
     axios.get('https://catfact.ninja/facts?limit='+limit+'&page='+page) //gets a list of random cat facts
         .then(response => {
-            console.log(response.data)
+            //console.log(response.data)
+            const facts = response.data.data;
+            
+            //add each new fact to the cache based on the id
+            facts.forEach((fact, index) => {
+                let id = index + 1 + offset;
+                CatFactsCache.set(id, new CatFact(id, fact.fact, fact.length))
+            })
+
             //send a successful response including the JSON data
-            res.status(200).json({success: true, facts: response.data.data, next_page: response.data.next_page_url})
+            res.status(200).json({success: true, facts: facts, next_page: response.data.next_page_url})
         })
         .catch(error => {
             //send an error response including error details as JSON data
+            console.log(error)
             res.status(500).json({success: false, message: error.message})
         })
+})
+
+//get a specific fact from the cache based on its ID
+router.get('/fact/:id', (req, res) => {
+    console.log(req.params.id) //anything after the /fact/ in the path will be stored in a param called id
+
+    //need to parse the param to an int, since our cache map uses integer keys
+    let catfact = CatFactsCache.get(parseInt(req.params.id))
+    console.log(catfact);
+
+    if (catfact) {
+        res.status(200).json({success: true, ...catfact})
+    } else {
+        res.status(404).json({success: false, message: 'Cat fact #'+req.params.id+' not found in cache'})
+    }
 })
 
 

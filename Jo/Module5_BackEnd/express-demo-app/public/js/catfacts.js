@@ -2,10 +2,14 @@
 let currentPage = 1;
 
 //calls our back end to load the required number of cat facts
-function loadCatFacts(event) {
+function loadCatFacts(event, refresh = true) {
     
     //don't reload the page
     if (event) event.preventDefault();
+    if (refresh) {
+        document.getElementById('facts').innerHTML = '';
+        currentPage = 1;
+    }
 
     //keep track of how many facts we should show in each batch
     let limit = document.getElementById('numCatFacts').value
@@ -47,5 +51,5 @@ function loadCatFacts(event) {
 function loadMoreFacts() {
     currentPage++;
 
-    loadCatFacts(null); //no default event to prevent this time
+    loadCatFacts(null, false); //no default event to prevent this time, and don't refresh the existing facts
 }

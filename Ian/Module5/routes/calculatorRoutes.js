@@ -42,17 +42,17 @@ router.get('/subtract', (req, res) => {
         res.json({result:sum})
         })
 
-router.get('/subtract', (req, res) => {
-        let number3=parseInt(req.query.num3);
-            let number4=parseInt(req.query.num4);
+router.get('/subtract1', (req, res) => {
+        let number9=parseInt(req.query.num9);
+        let number10=parseInt(req.query.num10);
         
-            let sum=number3-number4
+        let sum=number9-number10
             
-            console.log(sum)
+        console.log(sum)
             
-            res.status(200)
-            res.json({result:sum})
-            })
+        res.status(200)
+        res.json({result:sum})
+        })
 
 router.get('/multiply', (req, res) => {
             let number5=parseInt(req.query.num5);
@@ -66,11 +66,35 @@ router.get('/multiply', (req, res) => {
             res.json({result:sum})
             })
 
+router.get('/multiply1', (req, res) => {
+            let number9=parseInt(req.query.num9);
+            let number10=parseInt(req.query.num10);
+
+            let sum=number9*number10
+            
+            console.log(sum)
+            
+            res.status(200)
+            res.json({result:sum})
+            })
+
 router.get('/divide', (req, res) => {
                 let number7=parseInt(req.query.num7);
                 let number8=parseInt(req.query.num8);
             
                 let sum=number7/number8
+                
+                console.log(sum)
+                
+                res.status(200)
+                res.json({result:sum})
+                })
+
+router.get('/divide1', (req, res) => {
+                let number9=parseInt(req.query.num9);
+                let number10=parseInt(req.query.num10);
+            
+                let sum=number9/number10
                 
                 console.log(sum)
                 
