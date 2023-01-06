@@ -33,7 +33,7 @@
     let num2 = document.getElementById("num2").value;
     let operator = document.getElementById('operator').value;
 
-    fetch(`/calculator/${operator}?num1=${num1}&num2=${num2}`)
+    fetch(`/calculator/controllers/calculatorController/${operator}?num1=${num1}&num2=${num2}`)
         .then(response => response.json())
         .then(data => {document.getElementById("result").innerHTML = data.result;})
     }
