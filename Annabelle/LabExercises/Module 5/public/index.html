@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+<title>Calculator Example</title>
+</head>
+<body>
+<div>Result<span id="result"></span>
+</div>
+<form id="form" onsubmit="calculate(event)">
+    number 1: <input name="num1" id="num1" type="number"/>
+    number 2: <input name="num2" id="num2" type="number"/>
+
+</form>
+<button onclick="calculateAnswer('add')">Add</button>
+<button onclick="calculateAnswer('subtract')">Subtract</button>
+<button onclick="calculateAnswer('multiply')">Multiply</button>
+<button onclick="calculateAnswer('divide')">Divide</button>
+</body>
+<script>
+function calculateAnswer(calculations){
+    let num1=document.getElementById('num1').value;
+    let num2=document.getElementById('num2').value;
+    fetch(`/calculator/${calculations}?num1=${num1}&num2=${num2}`)
+    .then(response => response.json())
+    .then(data => {
+    document.getElementById("result").innerHTML =data.result;
+    console.log(data)
+    })  
+}
+</script>
+</html>
