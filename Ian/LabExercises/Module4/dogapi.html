@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<template id="dog-breed">
+<div class="card">
+    <img src="" class="dog-img" width="250"/>
+    <h3 class="breed-name"></h3>
+    <div class="dimensions">
+        <small class="width">
+        <small class="height"></div>
+        </div>
+        <div class="bred-for"></div>
+        <div class="temperament"></div>
+    </div>
+</div>
+</template>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Dog API</title>
+
+    <style>
+        #dog-breeds { display: flex; flex-wrap: wrap;}
+        #dog-breeds .card { width: calc(25% - 98px); border: 1px solid #ccc; background-color: #eee; padding: 2em; margin: 1em; border-radius: 20px; text-align: center;}
+        #dog-breeds .card img { max-width: 100%;}
+
+        @media screen and (max-width: 900px) {
+            #dog-breeds .card img { width: calc(50% - 98px)}
+
+        }
+
+        @media screen and (max-width: 450px) {
+            #dog-breeds .card img { width: calc(100% - 98px)}
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="dog-breeds"></div>
+
+    <script>
+        fetch("https://api.thedogapi.com/v1/breeds")
+        .then(response => response.json())
+        .then(breeds => (
+            breeds.forEach(breed => {
+                const template = document.getElementById("dog-breed").content.cloneNode(true);
+
+                template.querySelector(".dog-img").src = breed.image.url;
+                template.querySelector(".breed-name").innerText = `Name: ` + breed.name;
+                template.querySelector(".weight").innterText = `${breed.weight.metric}kg`; //same as below, diff way of doing it
+                template.querySelector(".height").innterText = breed.height.metric + "cm"; //same as above, diff format
+                
+                template.querySelector(".bred_for").innerText = breed.bred_for;
+                template.querySelector(".temperament").innerText = breed.temperament;
+
+                document.getElementById("dog-breeds").appendChild(template);
+            })
+        })
+    </script>
+    
+</body>
+</html>

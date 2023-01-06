@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<template id="cat-fact">
+    <div class="fact">
+        <div class="header"></div>
+        <p class="details"></p>
+    </div>
+</template>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Facts</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">  
+
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <section id="catfacts">
+        <h1>Cat Facts</h1>
+
+        <form onsubmit="loadCatFacts(event)">
+            <label for="numCatFacts">How many cat facts do you want to see at once?</label>
+            <input id="numCatFacts" name="numCatFacts" type="number"/>
+            <button>Show Cat Facts</button>
+        </form>
+
+        <div id="facts"></div>
+        <button onclick="loadMoreFacts()" class="hidden" id="load-more">Load More</button>
+    </section>
+
+    <script src="/js/catfacts.js"></script>
+</body>
+</html>
