@@ -1,11 +1,10 @@
 
 class Calculator {
     constructor() {
-    this.id=Date.now()
+    this.id= Math.round(Math.random()*1000000000000000)
     }
     #log=(value)=>{
-    console.log(`[Calculator
-    :${this.id}]:${value}`)
+    console.log(`[Calculator:${this.id}]:${value}`)
     }
     add(num1, num2) {
     const value=num1+num2
