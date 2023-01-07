@@ -1,4 +1,5 @@
-const Calculator = require('../libraries/Calculator')
+const Calculator = require('../public/libraries/Calculator');
+
 let myCalc = new Calculator()
 
 const addNumbers = (req, res) => {

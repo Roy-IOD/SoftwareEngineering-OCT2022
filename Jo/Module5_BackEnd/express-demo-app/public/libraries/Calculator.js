@@ -1,16 +1,15 @@
+const Logger = require('./Logger')
+
 class Calculator {
 
     constructor() {
         this.id = Date.now()
-    }
-
-    #log=(value)=>{
-        console.log(`[Calculator:${this.id}]:${value}`)
+        this.logger = new Logger('Calculator')
     }
 
     add(num1, num2) {
-        const value=num1+num2
-        this.#log(value)
+        const value = num1+num2
+        this.logger.log(value)
         return value;
     }
 }
