@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 //API Fetch
-fetch('https://api.spaceflightnewsapi.net/v3/reports?_limit=10')
+fetch(`/spacenews`)
     .then((response) => response.json())
     .then(json => {
     json.forEach(user => {
