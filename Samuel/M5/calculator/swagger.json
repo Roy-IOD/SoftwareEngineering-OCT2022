@@ -1,0 +1,50 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "version": "1.0.0",
+    "title": "Calculator",
+    "description": "My Calculator Project",
+    "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+    }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+    {
+    "name": "Calculator",
+    "description": "API for Calculus in the system"
+    }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/calculator/add": {
+             "get": {
+                 "tags": ["Addition Service"
+        ],
+        "summary": "Add 2 numbers",
+        "parameters": [
+            {
+            "name": "num1",
+            "in": "query",
+            "description": "the First Number"
+            },
+            {
+            "name": "num2",
+            "in": "query",
+            "description": "the Second number"
+            }
+        ],
+        "responses": {
+            "200": {
+            "description": "This service allows you to add two numbers together"
+    }
+}
+}
+}}
+}    
+
+
