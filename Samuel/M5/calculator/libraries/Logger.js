@@ -1,9 +1,12 @@
-const Calculator = require('../libraries/Calculator')
-calc = new Calculator()
-
+// const Calculator = require("../libraries/Calculator")
 class Logger {
-    constructor() {
-        logged = console.log(`Calculator:${calc.id}:${calc.value}`)
+    constructor(referer) {
+        this.id = Math.round(Math.random()*10000000000)
+        this.referer = referer
+    }
+
+    log = (message) => {
+        console.log(`[${this.referer}:${this.id}]:${message}`)
     }
 }
 
