@@ -1,4 +1,8 @@
 const imageElement = document.querySelector("#dog-pic");
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swaggermini.json');
+app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 const dogButton = document.querySelector("#randomDog");
 
