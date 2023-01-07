@@ -38,10 +38,10 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 //API Fetch
-fetch(`/spacenews`)
+fetch('/spacenews')
     .then((response) => response.json())
     .then(json => {
-    json.forEach(user => {
+    json.data.forEach(user => {
         const template = document.getElementById("news-template").content.cloneNode(true);
         template.querySelector('.news-title').innerText = user.title;
         template.querySelector('.news-content').innerText = user.summary;
