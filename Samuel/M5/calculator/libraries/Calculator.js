@@ -1,7 +1,7 @@
 
 class Calculator {
     constructor() {
-    this.id= Math.round(Math.random()*1000000000000000)
+    this.id= Math.round(Math.random()*10000000000)
     }
     #log=(value)=>{
     console.log(`[Calculator:${this.id}]:${value}`)
