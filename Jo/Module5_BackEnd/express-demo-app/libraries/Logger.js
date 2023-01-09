@@ -3,13 +3,14 @@
 
 class Logger {
 
+    //constructor function is called every time a new Logger is created
     constructor(referer) {
-        this.id = Date.now()
-        this.referer = referer
+        this.id = Date.now() //change to random number
+        this.referer = referer //stores the name of the referring code using this logger instance
     }
 
     log = (message) => {
-        console.log(`[${this.referer}:${this.id}]:${message}`)
+        console.log(`[${this.referer}:${this.id}]: ${message}`)
     }
 }
 
