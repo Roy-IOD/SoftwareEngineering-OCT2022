@@ -1,6 +1,5 @@
 //first run 'npm install axios'
 const axios = require('axios');
-
 const {CatFact, CatFactsCache} = require('../models/CatFact')
 
 const randomFact = (req, res) => {
@@ -16,7 +15,7 @@ const randomFact = (req, res) => {
         })
         .catch(error => {
             //send an error response including error details as JSON data
-            res.status(500).json({success: false, error: error.message})
+            res.status(500).json({success: false, message: error.message})
         })
 }
 
@@ -50,9 +49,9 @@ const listFacts = (req, res) => {
 }
 
 const getFact = (req, res) => {
-    console.log(req.params.id) //anything after the /fact/ in the path will be stored in a param called id
+    console.log(req.params) //anything after the /fact/ in the path will be stored in a param called id
 
-    //need to parse the param to an int, since our cache map uses integer keys
+    //need to parse the ID param to an int, since our cache map uses integer keys
     let catfact = CatFactsCache.get(parseInt(req.params.id))
     console.log(catfact);
 

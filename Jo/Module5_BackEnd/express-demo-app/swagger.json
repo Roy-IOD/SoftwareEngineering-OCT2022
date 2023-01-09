@@ -36,7 +36,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "This service allows you to add two numbers together"
+                        "description": "Sends a greeting message based on the name"
                     }
                 }
             }
@@ -120,7 +120,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "This service allows you to get a cached cat fact (first request it via Cat Facts List)"
+                        "description": "Successfully retrieved a cached cat fact (first request it via Cat Facts List)"
+                    },
+                    "404": {
+                        "description": "If the requested cat fact ID was not found in the cache"
                     }
                 }
             }
