@@ -25,7 +25,7 @@ const listFacts = (req, res) => {
 
     let limit = req.query.limit ? req.query.limit : 10 //sets a default of 10 unless provided in the request
     let page = req.query.page ? req.query.page : 1 //sets a default of 1 unless provided in the request
-    let offset = (page - 1) * limit;
+    let offset = (page - 1) * limit; //the offset takes into account which page we're on and how many items per page
     
     axios.get('https://catfact.ninja/facts?limit='+limit+'&page='+page) //gets a list of random cat facts
         .then(response => {
@@ -33,8 +33,9 @@ const listFacts = (req, res) => {
             const facts = response.data.data;
             
             //add each new fact to the cache based on the id
-            facts.forEach((fact, index) => {
-                let id = index + 1 + offset;
+            facts.forEach((fact, index) => { //index can be used in foreach to keep track of which array element we're iterating over
+                let id = index + 1 + offset; //calculate a unique ID based on which page and the index (which starts at zero)
+                fact.id = id //add the ID to the object so it's sent back in the JSON
                 CatFactsCache.set(id, new CatFact(id, fact.fact, fact.length))
             })
 
