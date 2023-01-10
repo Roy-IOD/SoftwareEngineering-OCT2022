@@ -20,16 +20,10 @@ function loadCatFacts(event, refresh = true) {
         .then(json => {
 
             //for each one, clone, populate and append the template
-            json.facts.forEach((fact, index) => { //index can be used in foreach to keep track of which array element we're iterating over
+            json.facts.forEach((fact) => { 
                 const template = document.getElementById("cat-fact").content.cloneNode(true);
-
-                //the offset takes into account which page we're on and how many items per page
-                let offset = (currentPage - 1) * limit;
-
-                //the id for each fact will be a unique counter based on the index and the offset
-                let id = index + 1 + offset;
                 
-                template.querySelector('.header').innerHTML = 'ID: #' + id;
+                template.querySelector('.header').innerHTML = 'ID: #' + fact.id;
                 template.querySelector('.details').innerHTML = fact.fact;
 
                 document.getElementById('facts').appendChild(template);
