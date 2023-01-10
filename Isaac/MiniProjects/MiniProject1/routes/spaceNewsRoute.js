@@ -1,5 +1,5 @@
 const express = require('express');
-let spaceNewsController = require('../controllers/spaceNewsController');
+const spaceNewsController = require('../controllers/spaceNewsController');
 const router = express.Router();
 
 
