@@ -1,6 +1,6 @@
 #topBar-scoreBox{
     margin: 10px;
-    background-image: url('assests/topBar-bckImage(1).png');
+    background-image: url('../images/topBar-bckImage(1).png');
     color: #fff;
 }
 
@@ -58,8 +58,35 @@
     --bs-nav-link-font-weight: ;
 }
 
+.logo-size {
+    width: 72px;
+    height: 72px;
+    margin: 10px;
+}
+
+h5 {
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.o-player-modal {
+    --bs-btn-border-color: white;
+    --bs-btn-hover-border-color: white ;
+    --bs-btn-hover-bg: rgb(245, 143, 60) ;
+    --bs-btn-border-width: 0.375rem;
+}
+
+.a-player-modal {
+    --bs-btn-border-color: white;
+    --bs-btn-hover-border-color: white ;
+    --bs-btn-hover-bg: rgb(50, 143, 172) ;
+    --bs-btn-border-width: 0.375rem;
+}
+
 .oranje {
     background-color: orange;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .oranje-player-card {
@@ -70,7 +97,7 @@
 }
 
 .arg-player-card {
-    background-color: #4285F4;
+    background-color: #1dc2f0;
     width: 72px;
     height: 72px;
     border-radius: 50%;
@@ -87,6 +114,8 @@
 
 .bluey {
     background-color: #70bcfa;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .nameTS {
@@ -97,12 +126,20 @@
     padding-bottom: 20px;
 }
 
+#nedTeamsheet {
+    margin-right: 10px;
+}
+
+#argTeamSheet {
+    margin-left: 10px;
+}
+
 .nedTSField {
     margin-bottom: 10px;
 }
 
 .field {
-    background: green;
+    background-image: url('../images/footballField (2).png');
     width: 100%;
     height: 880px;
 }
@@ -122,4 +159,21 @@
 .lineups-wrapper {
     margin: 0;
     padding: 0;
+}
+
+footer {
+    background-color: #56042C;
+    color: white;
+    margin-top: 20px;
+    height: 50px;
+}
+
+footer p {
+    text-align: right;
+    padding-top: 10px;
+}
+
+#charts-wrapper {
+    padding-top: 25px ;
+    padding-bottom: 50px ;
 }
