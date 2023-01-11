@@ -1,0 +1,142 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My Calculator",
+        "description": "API for my IOD Calculator",
+        "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Calculator",
+            "description": "API for Calculus in the system"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"], 
+    "paths": {
+        "/calculator/add": {
+            "get": {
+                "tags": ["Addition Service"],
+                
+                "summary": "Add 2 numbers",
+
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "the First Number"
+                    
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "the Second number"
+                    
+                    }
+                ],
+
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to add two numbers together"
+                    }
+                }
+            }
+        },
+
+        "/calculator/subtract": {
+            "get": {
+                "tags": ["Subtraction Service"],
+                
+                "summary": "Subtract 2 numbers",
+                
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "the First Number"
+                    
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "the Second number"
+                    
+                    }
+                ],
+
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to subtract two numbers together"
+                    }
+                }
+            }
+        },
+
+        "/calculator/multiply": {
+            "get": {
+                "tags": ["Multiplication Service"],
+                
+                "summary": "Multiply 2 numbers",
+                
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "the First Number"
+                    
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "the Second number"
+                    
+                    }
+                ],
+
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to multiply two numbers together"
+                    }
+                }
+            }
+        },
+
+        "/calculator/divide": {
+            "get": {
+                "tags": ["Division Service"],
+                
+                "summary": "Divide 2 numbers",
+                
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "the First Number"
+                    
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "the Second number"
+                    
+                    }
+                ],
+
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to divide two numbers together"
+                    }
+                }
+            }
+        }
+        
+
+    }
+}

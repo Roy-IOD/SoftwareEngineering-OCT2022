@@ -38,10 +38,11 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 //API Fetch
-fetch(`/spacenews`)
+fetch('/spacenews')
     .then((response) => response.json())
     .then(json => {
-    json.forEach(user => {
+        console.log(json)
+    json.news.forEach(user => {
         const template = document.getElementById("news-template").content.cloneNode(true);
         template.querySelector('.news-title').innerText = user.title;
         template.querySelector('.news-content').innerText = user.summary;
@@ -58,16 +59,26 @@ function sendMessage() {
 
 
 //Comment Section 
+const comment_arr = []
 const post= document.getElementById("post");
+
 post.addEventListener("click", function(){
     let commentBoxValue= document.getElementById("comment-box").value;
- 
     let li = document.createElement("li");
     let text = document.createTextNode(commentBoxValue);
     li.appendChild(text);
     document.getElementById("comment-content").appendChild(li);
     document.getElementById("comment-box").value="";
-    });
+    comment_arr.push(text.data)
+    localStorage.setItem("comments", JSON.stringify(comment_arr));
+});
+
+const storedComments = JSON.parse(localStorage.getItem("comments"));
+
+
+
+
+
 
 
 //Enter button for comment submit

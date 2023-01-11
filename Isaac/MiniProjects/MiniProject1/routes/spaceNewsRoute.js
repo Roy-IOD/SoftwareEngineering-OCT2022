@@ -1,9 +1,9 @@
 const express = require('express');
-let spaceNewsController = require('../controllers/spaceNewsController');
+const spaceNewsController = require('../controllers/spaceNewsController');
 const router = express.Router();
 
 
-router.get('/add', (req, res) => {
+router.get('/', (req, res) => {
       spaceNewsController.addSpaceNews(req,res)
 })
 

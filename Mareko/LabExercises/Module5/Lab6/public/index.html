@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="./css/styles.css" rel="stylesheet">
+
+    <title>Futbolr - NED vs. ARG </title>
+    <link rel="icon" type="image/x-icon" href="./images/futbolr-favicon.png">
+
+    <template id="goalkeeper-stats">
+        <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #FFF; font-weight: bold;">23</button>
+                                        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5 ned-gk-name" id="exampleModalLabel" style="color: #000;">Andries Noppert</h2>
+                    </div>
+                    <div class="modal-body" style="color: #000;">
+                        <div class="container text-center">
+                            <div class="row row-cols-2">
+                            <div class="col-8 player-saves d-flex align-items-start">Saves:</div>
+                            <div class="col-4 player-saves-number d-flex justify-content-end">3</div>
+                            <div class="col-8 player-goalsconceded d-flex align-items-start">Goals Conceded:</div>
+                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">2</div>
+                            <div class="col-8 player-goalsconceded d-flex align-items-start">Clean Sheets:</div>
+                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+</head>
+<body>      
+
+    <div id="topBar-scoreBox" class="round-edges">
+        <div class="round-edges"> <!--https://www.youtube.com/watch?v=a-YLTjHl8gI&ab_channel=DanielWood-->
+            <div id="content-holder" class="container">
+                <div id="wc22LogoDiv" class="d-flex justify-content-center"> <!--https://www.youtube.com/watch?v=nx8jyWLy0e0&ab_channel=ADesignerWhoCodes -->
+                    <img id="wcLogo" class="" src="./images/wcLogoQatar.png" alt="Fifa World Cup 2022 Logo">
+                </div>  
+                <section class="container">
+                    <div id="scoresDiv" class="container">
+                        <div class="row">
+                            <div id="dutchName" class="container col-lg-3 d-flex justify-content-end align-items-center"></div>
+                            <div id="argName" class="container col-lg-3 d-flex align-items-center"></div>
+                        </div>
+                        
+                        <div id="scoresOnly" class="row">
+                            <div id="dutchFlag" class="col-lg-6 d-flex justify-content-end align-items-center">
+                                <img id="nedFlagIcon" class="img-responsive" src="" alt="nedFlagIcon">
+                                <div id="dutchScore" class="col-lg-6 d-flex justify-content-center align-items-center"></div>
+                            </div>
+
+                            <!-- <div id="finalScore" class="col-lg-4 d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                    <div id="dutchScore" class="col-lg-6 d-flex justify-content-center"></div>
+                                    <div id="argScore" class="col-lg-6 d-flex justify-content-center"></div>
+                                </div>
+                            </div> -->
+
+                            <div id="argentinaFlag" class="col-lg-6 d-flex justify-content-start align-items-center">
+                                <div id="argScore" class="col-lg-6 d-flex justify-content-center align-items-center"></div>
+                                <img id="argFlagIcon" class="img-responsive" src="" alt="argFlagIcon">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-lg-3 container d-flex justify-content-end align-items-center">
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Weghorst</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(83')</div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Weghorst</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(90'+11)</div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-2 container d-flex justify-content-center align-items-center">
+                                <h2>FT</h2>
+                            </div>
+
+                            <div class="col-lg-3 container d-flex justify-content-start align-items-center">
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Molina</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(35')</div>
+                                </div>
+                                <div class="row d-flex">
+                                    <div class="goalIcon col-lg-2 d-flex justify-content-center align-items-center"><iconify-icon icon="emojione-monotone:soccer-ball" style="color: white;"></iconify-icon></div>
+                                    <div class="col-lg-4 d-flex justify-content-center align-items-center">Messi</div>
+                                    <div class="col-lg-6 d-flex align-items-center">(73')</div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">Argentina won 4-3 on penalties.</div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <nav class="container d-flex justify-content-center align-items-center">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-lineups-tab" data-bs-toggle="pill" data-bs-target="#pills-lineups" type="button" role="tab" aria-controls="pills-lineups" aria-selected="true">Line-Ups</button>
+            </li>
+           
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-matchstats-tab" data-bs-toggle="pill" data-bs-target="#pills-matchstats" type="button" role="tab" aria-controls="pills-matchstats" aria-selected="false">Match Stats</button>
+            </li>
+           
+        </ul>
+    </nav>
+
+    <main>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-lineups" role="tabpanel" aria-labelledby="pills-lineups-tab" tabindex="0">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div id="lineups-wrapper" class="row container d-flex justify-content-center align-items-center">
+
+                        <section id="nedTeamSheet" class="oranje round-edge col">
+                            <div class="logo-wrapper d-flex justify-content-center align-items-center">
+                                <div class="nameTS row-col">
+                                    <img id="nedLogo" src="./images/KNVB-Logo.png" alt="nedLogo" class="col logo-size">
+                                </div>
+                            </div>
+
+                            <div class="logotext-wrapper">
+                                <div class="row">
+                                    <h5 class="col-6 full">Formation: 3-4-1-2</h5>
+                                    <h5 class="col-6 d-flex justify-content-end">Manager: L.van Gaal</h5>
+                                </div>
+                            </div>
+
+                            <div class="field row-cols-12 container round-edges">
+                                
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="gk-wrapper">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #FFF; font-weight: bold;">23</button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title fs-5 ned-gk-name" id="exampleModalLabel" style="color: #000;">Andries Noppert</h2>
+                                                    </div>
+                                                    <div class="modal-body" style="color: #000;">
+                                                        <div class="container text-center">
+                                                            <div class="row row-cols-2">
+                                                            <div class="col-8 player-saves d-flex align-items-start">Saves:</div>
+                                                            <div class="col-4 player-saves-number d-flex justify-content-end">3</div>
+                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Goals Conceded:</div>
+                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">2</div>
+                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Clean Sheets:</div>
+                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p id="nedGK" class="player-name-text">Noppert</p>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="def-wrapper" class="row" style="--bs-gutter-x: 7.5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#timberModal" style="color: #FFF; font-weight: bold;">2</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="timberModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Jurrien Timber</h2>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000;">
+                                                            <div class="container text-center">
+                                                                <div class="row row-cols-2">
+                                                                <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">3</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">12</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">5</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <p class="player-name-text">Timber</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                 <!-- Button trigger modal -->
+                                                 <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#vvDModal" style="color: #FFF; font-weight: bold;">4</button>
+                                                                                        
+                                                 <!-- Modal -->
+                                                    <div class="modal fade" id="vvDModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Virgil van Dijk</h2>
+                                                                </div>
+                                                                <div class="modal-body" style="color: #000;">
+                                                                    <div class="container text-center">
+                                                                        <div class="row row-cols-2">
+                                                                        <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                        <div class="col-4 player-saves-number d-flex justify-content-end">0</div>
+                                                                        <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                        <div class="col-4 player-goalsconceded-number d-flex justify-content-end">5</div>
+                                                                        <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                        <div class="col-4 player-goalsconceded-number d-flex justify-content-end">2</div>
+                                                                        <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                        <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <p class="player-name-text">Van Dijk</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                 <!-- Button trigger modal -->
+                                                 <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#akeModal" style="color: #FFF; font-weight: bold;">5</button>
+                                                                                        
+                                                 <!-- Modal -->
+                                                 <div class="modal fade" id="akeModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                     <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                     <div class="modal-content">
+                                                         <div class="modal-header">
+                                                             <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Nathan Aké</h2>
+                                                         </div>
+                                                         <div class="modal-body" style="color: #000;">
+                                                             <div class="container text-center">
+                                                                 <div class="row row-cols-2">
+                                                                 <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                 <div class="col-4 player-saves-number d-flex justify-content-end">2</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">7</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">6</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                         <div class="modal-footer">
+                                                         <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                         </div>
+                                                     </div>
+                                                     </div>
+                                                 </div>
+                                                <p class="player-name-text">Aké</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="mid-wrapper" class="row" style="--bs-gutter-x: 5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                 <!-- Button trigger modal -->
+                                                 <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#dumfriesModal" style="color: #FFF; font-weight: bold;">22</button>
+                                                                                        
+                                                 <!-- Modal -->
+                                                    <div class="modal fade" id="dumfriesModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Denzel Dumfries</h2>
+                                                                </div>
+                                                                <div class="modal-body" style="color: #000;">
+                                                                    <div class="container text-center">
+                                                                        <div class="row row-cols-2">
+                                                                            <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                            <div class="col-4 player-saves-number d-flex justify-content-end">2</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">15</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">5</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Red Cards:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <p class="player-name-text">Dumfries</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#deRoonModal" style="color: #FFF; font-weight: bold;">15</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="deRoonModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Marten de Roon</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">27</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">22</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">81</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">De Roon</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="col d-flex justify-content-center align-items-center">
+                                                <div class="row-col">
+                                                    <!-- Button trigger modal -->
+                                                 <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#fdjModal" style="color: #FFF; font-weight: bold;">21</button>
+                                                                                        
+                                                 <!-- Modal -->
+                                                    <div class="modal fade" id="fdjModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Frenkie De Jong</h2>
+                                                                </div>
+                                                                <div class="modal-body" style="color: #000;">
+                                                                    <div class="container text-center">
+                                                                        <div class="row row-cols-2">
+                                                                            <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                            <div class="col-4 player-saves-number d-flex justify-content-end">92</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">83</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">90</div>
+                                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="player-name-text">De Jong</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#blindModal" style="color: #FFF; font-weight: bold;">17</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="blindModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Daley Blind</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">3</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">7</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">5</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">Blind</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="cam-wrapper">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#GakpoModal" style="color: #FFF; font-weight: bold;">8</button>
+                                                                                        
+                                        <!-- Modal -->
+                                           <div class="modal fade" id="GakpoModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                               <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                   <div class="modal-content">
+                                                       <div class="modal-header">
+                                                           <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Cody Gakpo</h2>
+                                                       </div>
+                                                       <div class="modal-body" style="color: #000;">
+                                                           <div class="container text-center">
+                                                               <div class="row row-cols-2">
+                                                                   <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                   <div class="col-4 player-saves-number d-flex justify-content-end">23</div>
+                                                                   <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                   <div class="col-4 player-goalsconceded-number d-flex justify-content-end">16</div>
+                                                                   <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                   <div class="col-4 player-goalsconceded-number d-flex justify-content-end">69</div>
+                                                                   <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                   <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                       <div class="modal-footer">
+                                                       <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                        <p class="player-name-text">Gakpo</p>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="fwd-wrapper" class="row" style="--bs-gutter-x: 7.5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#bergwijnModal" style="color: #FFF; font-weight: bold;">7</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="bergwijnModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Steven Bergwijn</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Goals:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">0</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Assists:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">Bergwijn</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <div class="row-col">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="o-player-modal btn oranje-player-card" data-bs-toggle="modal" data-bs-target="#depayModal" style="color: #FFF; font-weight: bold;">10</button>
+                                                                                            
+                                                    <!-- Modal -->
+                                                       <div class="modal fade" id="depayModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                           <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                               <div class="modal-content">
+                                                                   <div class="modal-header">
+                                                                       <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Memphis Depay</h2>
+                                                                   </div>
+                                                                   <div class="modal-body" style="color: #000;">
+                                                                       <div class="container text-center">
+                                                                           <div class="row row-cols-2">
+                                                                               <div class="col-8 player-saves d-flex align-items-start">Goals:</div>
+                                                                               <div class="col-4 player-saves-number d-flex justify-content-end">0</div>
+                                                                               <div class="col-8 player-goalsconceded d-flex align-items-start">Assists:</div>
+                                                                               <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                               <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                               <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                           </div>
+                                                                       </div>
+                                                                   </div>
+                                                                   <div class="modal-footer">
+                                                                   <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: orange;">Close</button>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                <p class="player-name-text">Depay</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="argTeamSheet" class="bluey round-edge col">
+                            <div class="logo-wrapper d-flex justify-content-center align-items-center">
+                                <div class="nameTS row-col">
+                                    <img src="./images/Argentina-Logo.png" alt="argLogo" class="col logo-size">
+                                </div>
+                            </div>
+
+                            <div class="logotext-wrapper">
+                                <div class="row">
+                                    <h5 class="col-6 full">Formation: 5-3-2</h5>
+                                    <h5 class="col-6 d-flex justify-content-end">Manager: L.Scaloni</h5>
+                                </div>
+                            </div>
+
+                            <div class="field row-cols container round-edges">
+                                <div class="col playerSection d-flex justify-content-center align-items-center">
+                                    <div id="arg-gk-wrapper">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#martinezModal" style="color: #FFF; font-weight: bold;">23</button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="martinezModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title fs-5 ned-gk-name" id="exampleModalLabel" style="color: #000;">Emiliano Martínez</h2>
+                                                    </div>
+                                                    <div class="modal-body" style="color: #000;">
+                                                        <div class="container text-center">
+                                                            <div class="row row-cols-2">
+                                                            <div class="col-8 player-saves d-flex align-items-start">Saves:</div>
+                                                            <div class="col-4 player-saves-number d-flex justify-content-end">0</div>
+                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Goals Conceded:</div>
+                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">2</div>
+                                                            <div class="col-8 player-goalsconceded d-flex align-items-start">Clean Sheets:</div>
+                                                            <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="player-name-text">Martínez</p>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                    <div id="def-wrapper-2" class="row" style="--bs-gutter-x: 3.5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#molinaModal" style="color: #FFF; font-weight: bold;">26</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="molinaModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Nahuel Molina</h2>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000;">
+                                                            <div class="container text-center">
+                                                                <div class="row row-cols-2">
+                                                                <div class="col-8 player-saves d-flex align-items-start">Goals:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">1</div>
+                                                                <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">1</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">6</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <p class="player-name-text">Molina</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#romeroModal" style="color: #FFF; font-weight: bold;">13</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="romeroModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Cristian Romero</h2>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000;">
+                                                            <div class="container text-center">
+                                                                <div class="row row-cols-2">
+                                                                <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">2</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">6</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">4</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <p class="player-name-text">Romero</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#otamendiModal" style="color: #FFF; font-weight: bold;">19</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="otamendiModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Nicolás Otamendi</h2>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000;">
+                                                            <div class="container text-center">
+                                                                <div class="row row-cols-2">
+                                                                <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">2</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">15</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">7</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <p class="player-name-text">Otamendi</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                 <!-- Button trigger modal -->
+                                                 <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#lisMartinezModal" style="color: #FFF; font-weight: bold;">25</button>
+                                                                                        
+                                                 <!-- Modal -->
+                                                 <div class="modal fade" id="lisMartinezModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                     <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                     <div class="modal-content">
+                                                         <div class="modal-header">
+                                                             <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Lisandro Martínez</h2>
+                                                         </div>
+                                                         <div class="modal-body" style="color: #000;">
+                                                             <div class="container text-center">
+                                                                 <div class="row row-cols-2">
+                                                                 <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                 <div class="col-4 player-saves-number d-flex justify-content-end">2</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">5</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">4</div>
+                                                                 <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                 <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                         <div class="modal-footer">
+                                                         <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                         </div>
+                                                     </div>
+                                                     </div>
+                                                 </div>
+                                                <p class="player-name-text">Martínez</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#acunaModal" style="color: #FFF; font-weight: bold;">8</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="acunaModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Marcos Acuña</h2>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000;">
+                                                            <div class="container text-center">
+                                                                <div class="row row-cols-2">
+                                                                <div class="col-8 player-saves d-flex align-items-start">Tackles:</div>
+                                                                <div class="col-4 player-saves-number d-flex justify-content-end">3</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Total:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">13</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Duels Won:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">9</div>
+                                                                <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <p class="player-name-text">Acuña</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                    <div id="mid-wrapper-2" class="row" style="--bs-gutter-x: 7.5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#dePaulModal" style="color: #FFF; font-weight: bold;">7</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="dePaulModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Rodrigo de Paul</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">53</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">41</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">77</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">De Paul</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#fernandesModal" style="color: #FFF; font-weight: bold;">24</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="fernandesModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Enzo Fernández</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">72</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">61</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">84</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">Fernández</p>
+                                            </div>
+                                        </div>
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#macAllisterModal" style="color: #FFF; font-weight: bold;">20</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="macAllisterModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Alexis Mac Allister</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Passes Total:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">43</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Accurate Passes:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">38</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Pass Accuracy %:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">88</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">MacAllister</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col playerSection-2 d-flex justify-content-center align-items-center">
+                                    <div id="fwd-wrapper-2" class="row" style="--bs-gutter-x: 7.5rem;">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#messiModal" style="color: #FFF; font-weight: bold;">10</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="messiModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Lionel Messi</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Goals:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">1</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Assists:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">1</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">Messi</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="row-col">
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="a-player-modal btn arg-player-card" data-bs-toggle="modal" data-bs-target="#alvarezModal" style="color: #FFF; font-weight: bold;">9</button>
+                                                                                        
+                                                <!-- Modal -->
+                                                   <div class="modal fade" id="alvarezModal" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                           <div class="modal-content">
+                                                               <div class="modal-header">
+                                                                   <h2 class="modal-title fs-5" id="exampleModalLabel2" style="color: #000;">Julián Álvarez</h2>
+                                                               </div>
+                                                               <div class="modal-body" style="color: #000;">
+                                                                   <div class="container text-center">
+                                                                       <div class="row row-cols-2">
+                                                                           <div class="col-8 player-saves d-flex align-items-start">Goals:</div>
+                                                                           <div class="col-4 player-saves-number d-flex justify-content-end">0</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Assists:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                           <div class="col-8 player-goalsconceded d-flex align-items-start">Yellow Cards:</div>
+                                                                           <div class="col-4 player-goalsconceded-number d-flex justify-content-end">0</div>
+                                                                       </div>
+                                                                   </div>
+                                                               </div>
+                                                               <div class="modal-footer">
+                                                               <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: #70bcfa;">Close</button>
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                <p class="player-name-text">Álvarez</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>           
+            </div>
+            <div class="tab-pane fade container" id="pills-matchstats" role="tabpanel" aria-labelledby="pills-matchstats-tab" tabindex="0">
+                <div id="charts-wrapper" class="row container d-flex justify-content-center align-items-center" style="margin-top: 20px;">
+                    <div id="possessionChart" class="col-lg-6" style="width: 600px;height: 400px;"></div>
+                    <div id="gsfChart" class="col-lg-6" style="width: 600px;height: 400px;"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <footer>
+        <p class="container">Futbolr ©</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <script>
+        fetch('https://soccer.sportmonks.com/api/v2.0/fixtures/18452330?api_token=KnQ8EEIu3VZBPfUklQEikmhkk5KKr1yqgv6q7RRrUZTaZpiLQ8C6wmT4TqP7&include=localTeam,visitorTeam,events,lineup,bench,localCoach,visitorCoach,stats')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.data);
+                let matchInfo = data.data;
+                let homeSide = matchInfo.localTeam;
+                let awaySide = matchInfo.visitorTeam;
+                let events = matchInfo.events;
+                let lineup = matchInfo.lineup;
+                let bench = matchInfo.bench;
+                let nedCoach = matchInfo.localCoach;
+                let argCoach = matchInfo.visitorCoach;
+                let matchStats = matchInfo.stats;
+
+                console.log(homeSide);
+                console.log(awaySide);
+                console.log(events);
+                console.log(lineup);
+                console.log(bench);
+                console.log(nedCoach);
+                console.log(argCoach);
+                console.log(matchStats);
+
+                let homeSideName = homeSide.data.name
+                let awaySideName = awaySide.data.name
+                document.getElementById('dutchName').innerText = homeSideName
+                document.getElementById('argName').innerText = awaySideName
+
+                document.getElementById('nedFlagIcon').src = homeSide.data.logo_path
+                document.getElementById('argFlagIcon').src = awaySide.data.logo_path
+
+                document.getElementById('dutchScore').innerText = matchInfo.scores.localteam_score
+                document.getElementById('argScore').innerText = matchInfo.scores.visitorteam_score
+
+            })
+
+        const possessionChart = echarts.init(document.getElementById('possessionChart'));
+
+            let possessionChartOptions = {
+                title: {
+                    text: 'Possession'
+                },
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    left: 'center'
+                },
+                series: [
+                    {
+                    name: 'Access From',
+                    type: 'pie',
+                    color: ['#fc6500', '#4285F4'],
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: 52, name: 'Netherlands' },
+                        { value: 48, name: 'Argentina' }
+                    ]
+                    }
+                ]
+            };
+
+        possessionChart.setOption(possessionChartOptions);
+
+
+        const gsfChart = echarts.init(document.getElementById('gsfChart'));
+
+        let gsfChartOptions = {
+            title: {
+                text: 'Goal/Saves/Fouls'
+                
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                type: 'shadow'
+                }
+            },
+            legend: {
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: [
+                'Red Cards',
+                'Yellow Cards',
+                'Saves',
+                'Shots on Target',
+                'Shots',
+                'Goals'
+                ]
+            },
+            series: [
+                {
+                name: 'Netherlands',
+                type: 'bar',
+                color: '#fc6500',
+                data: [1, 8, 3, 2, 5, 2]
+                },
+                {
+                name: 'Argentina',
+                type: 'bar',
+                color: '#4285F4',
+                data: [0, 8, 0, 4, 7, 2]
+                }
+            ]
+        };
+
+        gsfChart.setOption(gsfChartOptions);
+
+    
+    
+    </script>
+
+</body>
+</html>
