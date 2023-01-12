@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+    "version": "1.0.0",
+    "title": "My mini project swagger",
+    "description": "Mini Project api usage",
+    "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+    }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+    {
+    "name": "Mini Project exercise 6",
+    "description": "Module 5 exercise 5"
+    }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/dogs/": {
+        "get": {
+        "tags": [
+        "Dog summary"
+        ],
+        "summary": "API of dog breeds with the following features:",
+        "parameters": [
+        {
+        "name": "name",
+        "in": "query",
+        "description": "The dog breed"
+        
+        },
+        {
+        "name": "bred for",
+        "in": "query",
+        "description": "What is was bred for"
+        
+        },
+        {
+        "name": "life span",
+        "in": "query",
+        "description": "How long it lives for"
+            
+        },
+        {
+        "name": "temperament",
+        "in": "query",
+        "description": "The average behavior/temperament of the dog"
+        },
+        {
+        "name": "Image",
+        "in": "query",
+        "description": "An image of the dog"
+        }  
+        ],
+        "responses": {
+        "200": {
+        "description": "This is an API list of dog breeds"
+        }
+        }
+        }
+        }
+    }
+}
