@@ -1,0 +1,132 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Example Express API Project",
+        "description": "My User Project Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Calculator",
+            "description": "API for Calculus in the system"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/myhello/hello": {
+            "get": {
+                "tags": [
+                    "Hello World"
+                ],
+                "summary": "Print a hello message",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Name to be greeted"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sends a greeting message based on the name"
+                    }
+                }
+            }
+        },        
+        "/calculator/add": {
+            "get": {
+                "tags": [
+                    "Addition Service"
+                ],
+                "summary": "Add 2 numbers",
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "the First Number"
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "the Second number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to add two numbers together"
+                    }
+                }
+            }
+        },
+        "/catfacts/random": {
+            "get": {
+                "tags": [
+                    "Random Cat Fact"
+                ],
+                "summary": "Get a random cat fact",
+                "parameters": [ ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to get a random cat fact"
+                    }
+                }
+            }
+        },
+        "/catfacts/list": {
+            "get": {
+                "tags": [
+                    "Cat Facts List"
+                ],
+                "summary": "Get a list of cat facts",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "How many cat facts to retrieve"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Which page of facts to display"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to get a list of cat facts"
+                    }
+                }
+            }
+        },
+        "/catfacts/fact/{id}": {
+            "get": {
+                "tags": [
+                    "Cached Cat Fact"
+                ],
+                "summary": "Get a cached cat fact",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Which cat fact ID to retrieve"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved a cached cat fact (first request it via Cat Facts List)"
+                    },
+                    "404": {
+                        "description": "If the requested cat fact ID was not found in the cache"
+                    }
+                }
+            }
+        }           
+    }    
+}
