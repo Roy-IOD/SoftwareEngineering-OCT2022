@@ -48,8 +48,7 @@ function printNumbers(from, to){
 }
 printNumbers(5,10)
 
-/*set timeout
-
+//3.4
 function printNumbers(from, to){
   let thisValue=from;
 
@@ -77,6 +76,24 @@ function debounce(func, ms) {
   };
 }
 
+//3.5
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  login(result) {
+    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+  }
+};
+askPassword(() => user.login(true), () => user.login(false));
+
+
+
 //3.6
 let head = {
   glasses: 1
@@ -99,7 +116,7 @@ let pockets = {
 };
 
 console.log( pockets.pen, bed.glasses, table.money )
-*/
+
 //3.7
 function Cat(breed){
   this.breed = breed;
@@ -109,12 +126,16 @@ let cat2 = new cat.constructor('ragdoll')
 console.log(cat.breed)
 console.log(cat2.breed)
 
-/*3.8
-function.prototype.defer = function(ms){
+3.8
+Function.prototype.defer = function(ms) {
+let f = this;
+return function(...args) {
+setTimeout(() => f.apply(this, args), ms);
 }
-*/
+};
 
-/*3.9
+
+//3.9
 let dictionary = Object.create(null, {
   toString: {
     value(){
@@ -202,7 +223,6 @@ function delay(ms) {
 }
 delay(3000).then(() => alert('runs after 3 seconds'));
 
-*/
 //3.13
 async function loadJson(url) {
   let response = await fetch(url); 

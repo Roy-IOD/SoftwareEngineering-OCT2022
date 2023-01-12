@@ -66,4 +66,30 @@ console.log(isEmpty(obj));
 
 //^^this one really made me think XD //
 
+//question 1.9
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+};
+
 //question 1.10//
+function Accumulator(initialValue) {
+this.value = initialValue;
+this.read = function() {
+this.value += +prompt('How much to add?', 0);
+};
+}
+let accumulator = new Accumulator(1);
+accumulator.read();
+console.log(accumulator.value);
