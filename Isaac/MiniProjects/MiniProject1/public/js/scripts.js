@@ -59,23 +59,37 @@ function sendMessage() {
 
 
 //Comment Section 
-const comment_arr = []
 const post= document.getElementById("post");
 
 post.addEventListener("click", function(){
+    let comment_arr = []
+    if (localStorage.getItem("comments")){
+        comment_arr = JSON.parse(localStorage.getItem("comments"))
+    }
     let commentBoxValue= document.getElementById("comment-box").value;
     let li = document.createElement("li");
     let text = document.createTextNode(commentBoxValue);
     li.appendChild(text);
     document.getElementById("comment-content").appendChild(li);
     document.getElementById("comment-box").value="";
-    comment_arr.push(text.data)
+    comment_arr.unshift(text.data)
     localStorage.setItem("comments", JSON.stringify(comment_arr));
 });
 
+
 const storedComments = JSON.parse(localStorage.getItem("comments"));
 
+function getComments() {
+    storedComments.forEach(comment => {
+        let li = document.createElement("li");
+        let text = document.createTextNode(comment);
+        li.appendChild(text);
+        document.getElementById("comment-content").appendChild(li);
+    }) 
+    
+};
 
+window.onload(getComments())
 
 
 
