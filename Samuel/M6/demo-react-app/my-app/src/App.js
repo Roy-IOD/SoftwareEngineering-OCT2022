@@ -3,6 +3,7 @@ import './App.css';
 import MyComponent from './components/MyComponent'
 import PropsDisplayer from './components/PropsDisplayer';
 import Comment from './components/Comment';
+import Greeting from './components/Greeting';
 
 function App() {
   const myName = 'Sam';
@@ -14,6 +15,9 @@ function App() {
       avatarUrl: 'https://placekitten.com/g/64/64',
   },
 };
+const greeting = {
+  name: 'Sam',
+}
   return (
     <div className="App">
      
@@ -26,6 +30,9 @@ function App() {
         text={comment.text}
         author={comment.author}
       /> 
+      <Greeting 
+        name={greeting.name}
+      />
  
     </div>
   );
