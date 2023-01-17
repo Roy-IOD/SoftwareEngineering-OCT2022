@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+  <title>Calculator Example</title>
+</head>
+
+<body>
+  <h1>Basic Server Side Calculator Exercise 2</h1>
+  <div style="width: 100%;">Result Add
+    <span id="result-add"></span>
+  </div>
+  <div style="width: 100%;">Result Subtract
+    <span id="result-subtract"></span>
+  </div>
+  <div style="width: 100%;">Result Multiply
+    <span id="result-multiply"></span>
+  </div>
+  <div style="width: 100%;">Result Divide
+    <span id="result-divide"></span>
+  </div>
+</body>
+<script>
+  let num1 = 2;
+  let num2 = 4;
+  fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      document.getElementById("result-add").innerHTML = data.result;
+    })
+  fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      document.getElementById("result-subtract").innerHTML = data.result;
+    })
+  fetch(`/calculator/multiply?num1=${num1}&num2=${num2}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      document.getElementById("result-multiply").innerHTML = data.result;
+    })
+  fetch(`/calculator/divide?num1=${num1}&num2=${num2}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      document.getElementById("result-divide").innerHTML = data.result;
+    })
+</script>
+
+</html>
