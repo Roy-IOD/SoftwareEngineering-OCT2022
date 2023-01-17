@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+   }
+
+   .col{
+    flex-basis: 50%;
+   }
+
+p{
+    color: rgb(18, 18, 18);
+    font-size: 20px;
+    line-height: 2;
+    border-radius: 20px;
+    margin: 4em;
+    padding: 2em;
+}
+
+.pic{
+
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 55px 30px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 55px 15px;
+    background-image: url(IMGS/plate.jpeg);
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+    animation-name: slidein;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    margin: 1em;
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 300px;
+      
+    }
+    to {
+      margin-bottom: 0px;
+      
+    }
+  }
+
+.pic1{
+    background-image: url(IMGS/meat.png);
+    width: 500px;
+    height: 400px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 60px 15px;
+    background-position: right;
+    background-size: cover;
+    transition: 0.5s;
+    animation-name: slidein;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    margin: 1em;
+}
+
+.pic:hover{
+    transform: translate(-10px);
+}
+
+.pic1:hover{
+    transform: translate(-10px);
+}
+
+
+.logo-rodape{
+    padding: 5px;
+    background-color: #000;
+
+}
+
+footer{
+    margin-top: 1px;
+    height: 1px;
+    text-align: center;
+    background-color: rgba(223, 220, 220, 0.955);
+}
+
+p2{     filter: grayscale(15%);
+        float:center;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 247, 247, 0.255)
+        }
+        
+
+
+/* Media Queries */
+@media screen and (max-width:1000px){
+ 
+    p{
+ 
+         text-align: center;
+     }
+
+    .footer {
+        flex: 100%;
+     margin: 5%;
+     text-align: center;
+    }
+
+    .pic{
+      display:flow-root;
+    }
+
+    .pic1
+    {
+        display: flow-root;
+     }
+ 
+ 
+ }

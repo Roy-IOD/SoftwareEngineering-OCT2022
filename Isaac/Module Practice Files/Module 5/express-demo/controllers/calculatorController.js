@@ -1,0 +1,14 @@
+const Calculator = require('../libraries/Calculator');
+let myCalc=new Calculator()
+const addNumbers = (req, res) => {
+      let number1=parseInt(req.query.num1);
+      let number2=parseInt(req.query.num2);
+      let sum=myCalc.add(number1,number2)
+      res.status(200)
+      res.json({result:sum})
+}
+
+module.exports = {
+      addNumbers
+     }
+     

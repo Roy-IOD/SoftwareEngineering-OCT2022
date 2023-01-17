@@ -1,0 +1,24 @@
+{
+      "swagger": "2.0",
+      "info": {
+      "version": "1.0.0",
+      "title": "NASA Socials",
+      "description": "My NASA Social Media Page",
+      "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+      }
+      },
+      "host": "localhost:3000",
+      "basePath": "/",
+      "tags": [
+      {
+      "name": "NASA Socials",
+      "description": "API for NASA News and Updates"
+      }
+      ],
+      "schemes": ["http"],
+      "consumes": ["application/json"],
+      "produces": ["application/json"]
+      }
+     

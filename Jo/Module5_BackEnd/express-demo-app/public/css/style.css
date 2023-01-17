@@ -1,0 +1,11 @@
+body { margin: 0; padding: 0; font-family: Anybody, sans-serif; line-height: 1.3; text-align: center; background: url('/images/sleeping-cat.jpg') no-repeat top center; background-attachment: fixed;}
+
+input, button { font-family: Anybody, sans-serif; padding: 0.5em; }
+
+section { padding: 4em; background: rgba(133, 205, 250, 0.7); min-height: 100vh; }
+
+#facts { display: flex; flex-wrap: wrap; margin: 1em auto; justify-content: center; }
+#facts .fact { flex-grow: 1; background: darkslateblue; color: #fff; padding: 2em; margin: 2em; border-radius: 4px; max-width: 200px; transition: all 1s; }
+#facts .fact:hover { background: #333; margin-top: 0em; }
+
+.hidden { display: none; }
