@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
 //this is a FUNCTIONAL component. The JSX is returned directly and props are the argument to the function
@@ -11,7 +11,7 @@ function Hello(props) {
 
 //this is the same component written as a CLASS. HINT: use the shortcut code 'rcc'
 //it 'extends' the base React Component class, and then implements the render method which returns the JSX for this component.
-class HelloClass extends Component {
+class HelloClass extends React.Component {
     render() {
         return (
             <div>
