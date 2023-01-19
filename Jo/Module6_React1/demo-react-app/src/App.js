@@ -1,11 +1,13 @@
 //import logo from './logo.svg';
 import './App.css';
 
-//import { Hello, HelloClass } from './components/Hello'; //to import multiple components from one file, use curly brackets like this
+import { Hello, HelloClass } from './components/Hello'; //to import multiple components from one file, use curly brackets like this
 //import Weather from './components/Weather'
 import MyComponent from './components/MyComponent';
 import PropsDisplayer from './components/PropsDisplayer'
-import Comment from './components/Comment'
+import Comment from './components/Comment';
+import Weather from './components/Weather';
+import Bike from './components/Bike'
 
 function App() {
 
@@ -28,10 +30,13 @@ function App() {
 
       <Comment author={comment.author} date={comment.date} text={comment.text}/>
 
-      {/* <Hello />
-      <Hello name="React developer"/>
-      <HelloClass name={myName}/>
-      <Weather/> */}
+      <Weather />
+
+      <Bike />
+      <hr/>
+
+      <HelloClass />
+      <Weather/>
     </div>
   );
 }
