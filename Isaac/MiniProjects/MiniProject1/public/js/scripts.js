@@ -41,7 +41,8 @@ window.addEventListener('DOMContentLoaded', event => {
 fetch('/spacenews')
     .then((response) => response.json())
     .then(json => {
-    json.data.forEach(user => {
+        console.log(json)
+    json.news.forEach(user => {
         const template = document.getElementById("news-template").content.cloneNode(true);
         template.querySelector('.news-title').innerText = user.title;
         template.querySelector('.news-content').innerText = user.summary;
@@ -59,15 +60,39 @@ function sendMessage() {
 
 //Comment Section 
 const post= document.getElementById("post");
+
 post.addEventListener("click", function(){
+    let comment_arr = []
+    if (localStorage.getItem("comments")){
+        comment_arr = JSON.parse(localStorage.getItem("comments"))
+    }
     let commentBoxValue= document.getElementById("comment-box").value;
- 
     let li = document.createElement("li");
     let text = document.createTextNode(commentBoxValue);
     li.appendChild(text);
     document.getElementById("comment-content").appendChild(li);
     document.getElementById("comment-box").value="";
-    });
+    comment_arr.unshift(text.data)
+    localStorage.setItem("comments", JSON.stringify(comment_arr));
+});
+
+
+const storedComments = JSON.parse(localStorage.getItem("comments"));
+
+function getComments() {
+    storedComments.forEach(comment => {
+        let li = document.createElement("li");
+        let text = document.createTextNode(comment);
+        li.appendChild(text);
+        document.getElementById("comment-content").appendChild(li);
+    }) 
+    
+};
+
+window.onload(getComments())
+
+
+
 
 
 //Enter button for comment submit

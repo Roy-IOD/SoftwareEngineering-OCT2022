@@ -6,6 +6,11 @@ const port = 3000
 app.use('/mytest', testRoute);
 app.use('/', express.static('public'))
 
+
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
+app.use('/api-docs',swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use('/calculator', calculatorRoute);
 app.get('/', (req, res) => {
 res.send('Hello World!')
@@ -28,3 +33,4 @@ app2.listen(3001, () => {
 });
 
 app.use('/', express.static('public'))
+

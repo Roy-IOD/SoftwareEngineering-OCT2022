@@ -272,6 +272,10 @@ function generateCompanyTable()
 
 //TODO: Create functions to remove a person; to remove a company; to filter and return all companies that started after a certain year
 
+//TODO: Change some of the above functions into arrow functions
+
+//TODO: Create a HTML page that includes this script and then uses some of the 'generate' functions to build a layout
+
 //examples of how to call and test the above functions
 addPerson('Jo', '44 Forty St', 'Darwin', 'Company Nine');
 countPeople();
@@ -280,4 +284,3 @@ getCompanyCategory('John');
 
 replacePerson('John', 'Andrew', '55 Fifty St', 'Nowhere', 'Company Seven')
 setCountry('Australia')
-console.log(people)

@@ -1,0 +1,54 @@
+<html lang="en">
+    <head>
+        <title>Calculator Example</title>
+        <style>
+            body {
+                font-family:Verdana, Geneva, Tahoma, sans-serif; 
+                background-color: darkgrey; 
+                color: white;
+            }
+            button {
+                color: white; 
+                background-color: dodgerblue; 
+                margin: 2px; 
+                padding: 2px;
+            }
+        </style>
+    </head>
+
+    <body>
+<h1>Calculator via Server Requests</h1>
+        
+    <!-- //Can I make one form with 4 buttons/functions?  -->
+
+            Number 1: <input name="num9" id="num9" type="number"/>
+            Number 2: <input name="num10" id="num10" type="number"/>
+            <br>
+        <div id="buttons"></div>
+            <button onclick="calculateResult('add')">Add</button>
+            <button onclick="calculateResult('subtract')">Subtract</button>
+            <button onclick="calculateResult('multiply')">Multiply</button>
+            <button onclick="calculateResult('divide')">Divide</button>
+        </div>
+
+        <div>Result:
+            <span id="result"></span>
+        </div>
+    </body>
+    <script>
+
+        function calculateResult(routeName) {
+            event.preventDefault();
+
+            let num9 = document.getElementById('num9').value;
+            let num10 = document.getElementById('num10').value;
+            fetch(`/calculator/${routeName}?num9=${num9}&num10=${num10}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML = data.result;
+            })
+
+        }
+        
+    </script>
+</html>
