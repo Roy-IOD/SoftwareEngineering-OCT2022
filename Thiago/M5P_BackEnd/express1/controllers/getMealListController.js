@@ -1,8 +1,8 @@
 //first run 'npm install axios'
 const axios = require('axios');
 
- const listMeals = (req, res) => {
- const searchFilter = (req.query.i)   
+const listMeals = (req, res) => {
+    const searchFilter = (req.query.i)   
 
     axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?i='+ searchFilter)
         .then(response => {
@@ -14,8 +14,7 @@ const axios = require('axios');
             //send an error response including error details as JSON data
             res.status(500).json({success: false, error: error.message})
         })
-
-    }
+}
 
 module.exports = {
     listMeals
