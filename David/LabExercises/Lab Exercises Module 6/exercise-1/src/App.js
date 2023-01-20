@@ -2,13 +2,13 @@ import './App.css';
 import Greeting from './components/Greeting';
 
 function App() {
-  const myName = "David"
+  // const myName = "David"
   
   return (
     
     <div className="App">
-      <Greeting name = {myName}/>
-    
+      <Greeting />
+      {/* <Greeting name = {myName}/> */}
     </div>
   );
 }
