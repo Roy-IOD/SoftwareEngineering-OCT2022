@@ -41,6 +41,7 @@ class Weather extends React.Component {
         //this.state.weather = 'windy' //this would change the state value as well but is doing it WRONG - always use the setState method instead.
     }    
 
+    //lets us toggle the weather between the two different states
     changeWeather = () => {
         let newWeather = this.state.weather === 'sunny' ? 'windy' : 'sunny';
 
@@ -58,17 +59,16 @@ class Weather extends React.Component {
         this.setState({ weather: newWeather });
     }
 
-    //how could we change the weather back to sunny again?
+    //how could we switch between multiple possible weather states? HINT: see the Bike.js component
 
     render() {
         return (
-            <div className="Weather">
+            <div className="Weather componentBox">
                 <div>Weather Today: {this.state.weather}. Temp is {this.state.temperature}&deg;C</div>
                 {/* <div>Weather Tomorrow: {this.state.forecast}</div> */}
                 <Forecast weather={this.state.forecast} />
                 <button onClick={() => this.windBlows()}>Wind Blows</button> {/* we can use event listeners like onClick, onSubmit, onChange but they need to be camelcased */}
                 <button onClick={() => this.windStopsBlowing()}>Wind Stops Blowing</button>
-
                 <button onClick={this.changeWeather}>Change Weather</button>
             </div>
         )

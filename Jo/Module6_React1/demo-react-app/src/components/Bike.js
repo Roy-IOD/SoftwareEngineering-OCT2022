@@ -34,10 +34,10 @@ class Bike extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="Bike componentBox">
                 <h2>My {this.state.make}</h2>
 
-                <p>It is a {this.state.colour} {this.state.model}.</p>
+                <p>It is a <span style={{color:this.state.colour}}>{this.state.colour}</span> {this.state.model}.</p>
 
                 <button type="button" onClick={this.changeBikeColour}>Change colour</button>
             </div>

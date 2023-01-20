@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-//this is a FUNCTIONAL component. The JSX is returned directly and props are the argument to the function
+//this is a FUNCTIONAL component. The JSX is returned directly and the props object is the argument to the function
 function Hello(props) {
-    return <div>
+    return <div className="Hello componentBox">
         Hello {props.name ? props.name : 'World'}
     </div>
 }
@@ -14,7 +14,7 @@ function Hello(props) {
 class HelloClass extends React.Component {
     render() {
         return (
-            <div>
+            <div className="HelloClass componentBox">
                 {/* conditional statements like this are really useful in React.
                     this one checks the 'name' prop and if it exists it displays that value, otherwise it shows the generic 'World' */}
                 Hello {this.props.name ? this.props.name : 'World'}

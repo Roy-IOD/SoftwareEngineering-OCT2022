@@ -4,7 +4,7 @@
 function Comment(props) {
 
     return (
-        <div className="Comment"> {/* using class names that match the component name is a handy convention for tracking components in the front end */}
+        <div className="Comment componentBox"> {/* using class names that match the component name is a handy convention for tracking components in the front end */}
             <UserInfo user={props.author} /> {/* here we pass the author prop down to the UserInfo component and rename it to user */}
             <div className="Comment-text">
                 {props.text}
