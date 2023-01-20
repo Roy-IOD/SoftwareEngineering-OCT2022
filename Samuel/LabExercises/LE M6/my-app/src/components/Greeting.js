@@ -5,7 +5,7 @@ import React from 'react'
 //      
 //     return (
 //         <div className="Hello">
-//         Hello {props.name} world
+//         Hello {this.props.name ? this.props.name : 'World'}
 //     </div>)
 //     )
 // }
@@ -31,14 +31,24 @@ class Greeting extends React.Component{
         this.yourName = this.yourName.bind(this);
     }
 
-    yourName() {
+    yourName = () => {
+        // const currentName = this.state.name;
+        // const nextName = 'World'
+
+        // const nextName = this.props.name ? currentName : this.props.name;
         this.setState({name: this.props.name})
+        // this.props.name ? this.state.name : this.setState({name: nextName})
     }
+
     render(){
     return (
+    <div>
         <div className="Hello">
-        Hello {this.props.name ? this.props.name : 'World'}
-    </div>)
+        Hello {this.state.name}
+        </div>
+        <button onClick={this.yourName}>Your Name</button>
+    </div>
+    )
 }
 }
 

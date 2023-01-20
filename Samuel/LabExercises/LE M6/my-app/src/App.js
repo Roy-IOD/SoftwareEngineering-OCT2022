@@ -8,7 +8,7 @@ const greeting = {
   }
   return (
     <div className="App">
-      <Greeting name={greeting.name} />
+      <Greeting name='Sam' />
     </div>
   );
 }
