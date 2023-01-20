@@ -3,12 +3,14 @@ import './App.css';
 import Greeting from './components/Greeting';
 
 function App() {
-const greeting = {
-    name: '',
-  }
+  const greeting = {
+    name: 'Sam',
+  } 
+
   return (
     <div className="App">
-      <Greeting name='Sam' />
+      <Greeting 
+      name={greeting.name}/>
     </div>
   );
 }

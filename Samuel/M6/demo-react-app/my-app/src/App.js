@@ -5,6 +5,7 @@ import PropsDisplayer from './components/PropsDisplayer';
 import Comment from './components/Comment';
 import Greeting from './components/Greeting';
 import Weather from './components/Weather';
+import Clock from './components/Clock';
 
 function App() {
   const myName = 'Sam';
@@ -36,8 +37,14 @@ const greeting = {
       />
 
       <Weather />
+      <hr></hr>
+
+      <Clock />
+
+
  
     </div>
+    
   );
 }
 
