@@ -1,20 +1,34 @@
+@media screen and (max-width: 425px) {
+
+    #nedScorers, #argScorers {
+        display: none !important;
+    }
+
+    
+
+    
+}
+
 #topBar-scoreBox{
     margin: 10px;
-    background-image: url('../images/topBar-bckImage(1).png');
+    /* background-image: url('../images/topBar-bckImage(1).png'); */
+    background-color: #56042C;
     color: #fff;
-}
-
-.round-edges {
     border-radius: 30px;
-}
-
-#content-holder {
     padding-top: 48px;
     padding-bottom: 48px;
 }
 
-#wcLogo {
+#worldCupLogo, #nedFlagIcon, #argFlagIcon {
     max-width: 200px;
+}
+
+#scoreCards{
+    max-width:max-content;
+}
+
+#nedScorers, #argScorers {
+    width: 275px;
 }
 
 #dutchFlag {margin-top: -20px; margin-bottom: -10px;}
@@ -177,3 +191,5 @@ footer p {
     padding-top: 25px ;
     padding-bottom: 50px ;
 }
+
+
