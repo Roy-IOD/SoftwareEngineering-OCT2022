@@ -5,7 +5,7 @@ import React from 'react'
 //      
 //     return (
 //         <div className="Hello">
-//         Hello {props.name} world
+//         Hello {this.props.name ? this.props.name : 'World'}
 //     </div>)
 //     )
 // }
@@ -21,7 +21,42 @@ import React from 'react'
 //     )
 // }
 
+//WORKING NOT USING PROPS
+// class Greeting extends React.Component{
+//     constructor(props){
+//         super(props);
 
+//         this.state = {name: 'World'};
+
+//         this.yourName = this.yourName.bind(this);
+//     }
+
+//     yourName = () => {
+        
+//         this.setState({name: 'Sam'});
+        
+//     }
+
+//     changeName = () => {
+
+//         let newName = this.state.name === 'World' ? 'Sam' : 'World';
+
+//         this.setState({name: newName});
+//     }
+
+//     render(){
+//     return (
+//     <div>
+//         <div className="Hello">
+//         Hello {this.state.name}
+//         </div>
+//         <button onClick={this.changeName}> Your Name </button>
+//     </div>
+//     )
+// }
+// }
+
+//USING PROPS
 class Greeting extends React.Component{
     constructor(props){
         super(props);
@@ -31,14 +66,28 @@ class Greeting extends React.Component{
         this.yourName = this.yourName.bind(this);
     }
 
-    yourName() {
-        this.setState({name: this.props.name})
+    yourName = () => {
+        
+        this.setState({name: this.props.name});
+        
     }
+
+    changeName = () => {
+
+        let newName = this.state.name === 'World' ? this.props.name : 'World';
+
+        this.setState({name: newName});
+    }
+
     render(){
     return (
+    <div>
         <div className="Hello">
-        Hello {this.props.name ? this.props.name : 'World'}
-    </div>)
+        Hello {this.state.name}
+        </div>
+        <button onClick={this.changeName}> Your Name </button>
+    </div>
+    )
 }
 }
 

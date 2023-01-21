@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+
+.componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #c0e4e1; }
+.hideBullets { list-style: none; }
