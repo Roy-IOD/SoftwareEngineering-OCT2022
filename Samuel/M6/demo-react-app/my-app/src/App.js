@@ -8,6 +8,7 @@ import Weather from './components/Weather';
 import ClockDisplay from './components/Clock';
 import Login from './components/Login';
 import PlayerList from './components/PlayerList';
+import Reservation from './components/Reservation';
 
 function App() {
   const myName = 'Sam';
@@ -46,6 +47,8 @@ const greeting = {
       <Login />
       <hr></hr>
       <PlayerList />
+      <hr></hr>
+      <Reservation />
 
 
  
