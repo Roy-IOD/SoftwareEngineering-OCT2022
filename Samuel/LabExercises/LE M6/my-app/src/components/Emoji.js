@@ -4,17 +4,17 @@ class Emoji extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {emoji: '&#129409;'}
+        this.state = {emoji: '⚽'}
 
         this.currentEmoji = this.currentEmoji.bind(this)
     }
 
     currentEmoji = () => {
-        this.setState({emoji: '&#9917;'})
+        this.setState({emoji: '🏀'})
     }
 
     changeEmoji = () => {
-        let newEmoji = this.state.emoji === '&#129409;' ? '&#9917;' : '&#129409;';
+        let newEmoji = this.state.emoji === '⚽' ? '🏀' : '⚽';
 
         this.setState({emoji: newEmoji});
     }
@@ -22,13 +22,13 @@ class Emoji extends React.Component{
     render(){
         return (
             <div>
-                <div className="Emoji">
+                <div className="currentEmoji">
                     Your Emoji: <br></br>
-                    <p>
+                    <p class="Emoji">
                     {this.state.emoji}
                     </p>
                 </div>
-                <button onClick={this.changeEmoji}> Change </button>
+                <button onClick={this.changeEmoji}> Change Sport </button>
             </div>    
         )
     }
