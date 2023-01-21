@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Student from './Student';
 
 //an array of objects (could come from an API or DB). to render each one in turn, we need to iterate over them,
 //and apply the same transformation process to each one to turn the raw data into JSX.
@@ -62,8 +63,8 @@ class StudentList extends Component {
                 <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
                 <ul className="hideBullets">
                 {
-                    students.map((student, index) => 
-                        <Student key={student.id} student={student} roboset="set4" avatarSize="100"/>
+                    students.map(student => 
+                        <Student key={student.id} student={student}/> 
                     )
                 }
                 </ul>
@@ -74,19 +75,5 @@ class StudentList extends Component {
 
 //how could we make a separate Student component that will display and format student info more nicely?
 //have a look at https://reactjs.org/docs/lists-and-keys.html for tips
-function Student(props) {
-    const name = props.student.name;
-    const roboset = props.roboset ? props.roboset : "set1"
-    const avatarSize = props.avatarSize ? props.avatarSize + 'x' + props.avatarSize : "50x50"
-
-    return (
-        <li>
-            <div className="avatar"><img src={`https://robohash.org/${name}?size=${avatarSize}&set=${roboset}`} alt={name}/></div>
-            <div className="details"><strong>{name}</strong> <span className="location">based in {props.student.location}</span></div>
-        </li> 
-    )
-}
-
-
 
 export default StudentList;

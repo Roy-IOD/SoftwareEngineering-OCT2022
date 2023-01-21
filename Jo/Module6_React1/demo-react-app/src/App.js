@@ -10,6 +10,8 @@ import Bike from './components/Bike';
 import ClockDisplay from './components/Clock';
 import Login from './components/Login';
 import StudentList from './components/StudentList';
+import SignUpDialog from './components/SignupDialog';
+import Reservation from './components/Reservation';
 //import Breweries from './components/Breweries';
 // check https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/ and https://reactjs.org/docs/code-splitting.html for more info
 // const Breweries = React.lazy(() => { 
@@ -47,6 +49,10 @@ function App() {
       <Login />
 
       <StudentList />
+
+      <SignUpDialog />
+
+      <Reservation />
 
     </div>
   );

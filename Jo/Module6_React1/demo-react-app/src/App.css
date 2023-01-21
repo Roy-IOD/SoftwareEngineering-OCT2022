@@ -40,3 +40,9 @@
 
 .componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
 .hideBullets { list-style: none; }
+
+.StudentList ul { display: flex; flex-wrap: wrap; }
+.StudentList ul li { display: flex; justify-content: flex-start; align-items: center; width: 25%; }
+.StudentList ul li .details { text-align: left; }
+.StudentList ul li strong { display: block; }
+.StudentList ul li .location { font-style: italic; }

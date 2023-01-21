@@ -6,7 +6,6 @@ class Clock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {date: new Date(), tickCount: 0};
-        console.log('clock initialised')
     }
   
     //called when a component has mounted into the DOM - ie. rendered
@@ -41,7 +40,7 @@ class Clock extends React.Component {
     render() {
 
         //can return null from render to hide the component, but this is NOT the same as unmounting
-        //if (this.state.tickCount >= 20) return null;
+        //if (this.state.tickCount >= 60) return null;
 
         console.log('clock render')
         return (
@@ -57,24 +56,31 @@ class Clock extends React.Component {
 class ClockDisplay extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { showClock: true }
+        this.state = { showClock: true, visability: 'Hide' }
     }
 
     hideClock = () => {
         this.setState({showClock: false})
     }
 
-    //a generic toggleClock function that will hide or show based on the current state
+    //try making a generic toggleClock function that will hide or show based on the current state
+
     toggleClock = () => {
-        this.setState({showClock: !this.state.showClock})
+        let toggleClockDisplay = this.state.showClock === true ? false : true
+        this.setState({showClock: toggleClockDisplay})
+
+        let toggleVisability = this.state.visability === 'Hide' ? 'Show' : 'Hide'
+        this.setState({visability: toggleVisability})
     }
 
+
+
     render() {
-        let buttonText = this.state.showClock ? 'Hide' : 'Show'
         return (
             <div className="ClockDisplay componentBox">
                 {this.state.showClock ? <Clock /> : null}
-                <button onClick={this.toggleClock}>{buttonText} Clock</button>
+                <button onClick={this.toggleClock} >{this.state.visability} Clock (My Way)</button> {/*update this button to use the new toggleClock function and say 'Hide' or 'Show' depending*/}
+                <button onClick={this.toggleClock}>{ this.state.showClock ? 'Hide' : 'Show'} Clock (Jo's Way)</button>
             </div>
         )
     }

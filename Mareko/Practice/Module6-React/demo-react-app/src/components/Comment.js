@@ -3,7 +3,7 @@ import React from "react";
 function Comment(props){
 
     return (
-        <div className='Comment'>
+        <div className='Comment componentBox'>
             <UserInfo user={props.author} />
 
             <div className="Comment-text"> {props.text} </div>
@@ -18,7 +18,7 @@ function Comment(props){
 function UserInfo(props) {
     
     return (
-        <div className="UserInfo">
+        <div className="UserInfo componentBox">
             <Avatar user={props.user} />
             <div className="UserInfo-name">{props.user.name}</div>
         </div>
@@ -33,6 +33,5 @@ function Avatar(props) {
     )
 
 }
-
 
 export default Comment
