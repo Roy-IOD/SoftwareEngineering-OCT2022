@@ -58,12 +58,12 @@ class PlayerList extends Component {
         // )        
 
         return (
-            <div className="StudentList componentBox">
+            <div className="PLayersList componentBox">
                 <h2>IOD Software Engineering Students ({players.length} in cohort)</h2>
                 <ul className="hideBullets">
                 {
-                    players.map(players => 
-                        <Players key={players.id} value={players.name}/>
+                    players.map(player => 
+                        <Player key={player.id} name={player.name} location={player.location}/>
                     )
                 }
                 </ul>
@@ -75,10 +75,10 @@ class PlayerList extends Component {
 //how could we make a separate Student component that will display and format student info more nicely?
 //have a look at https://reactjs.org/docs/lists-and-keys.html for tips
 
-class Players extends Component {
-    render(){
-        return(<li><img src={`https://robohash.org/${players.name}?size=50x50`} alt={players.name}/> {players.name}, plays for {players.location}</li> )
-    }
+function Player(props) {
+   
+        return(<li><img src={`https://robohash.org/${props.name}?size=50x50`} alt={props.name}/> {props.name}, plays for {props.location}</li> )
+    
 }
 
 export default PlayerList;
