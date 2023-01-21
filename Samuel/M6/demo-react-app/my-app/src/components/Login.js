@@ -20,15 +20,6 @@ class Login extends Component {
         this.setState({loggedIn: isLoggedIn})
     }
 
-    handleInputChange = (event) => {
-        const target = event.target;
-        console.log(target)
-    
-        this.setState({
-            [target.name]: target.value
-        });
-    }    
-
     render() {
 
         //we can also save JSX into variables to simplify rendering
@@ -38,19 +29,19 @@ class Login extends Component {
             <div className="Login componentBox">
 
                 {/* if we're logged in, use the Hello component to say hello */}
-                <div>{this.state.loggedIn ? <Hello name={this.state.username}/> : 'Please log in'}</div>
+                <p>{this.state.loggedIn ? <Hello name={this.state.username}/> : 'Please log in'}</p>
 
                 <form onSubmit={this.handleLogin}>
                     <div className="formRow">
                         <label htmlFor="username">Username: </label>
                         {/* every time the input changes, store the latest value into state */}
-                        <input id="username" value={this.state.username} name="username" onChange={ this.handleInputChange }/>
+                        <input id="username" value={this.state.username} name="username" onChange={ (e) => this.setState({username: e.target.value}) }/>
                     </div>
 
                     <div className="formRow">
                         <label htmlFor="password">Password: </label>
                         {/* every time the input changes, store the latest value into state */}
-                        <input type="password" id="password" name="password" value={this.state.password} onChange={ this.handleInputChange } />
+                        <input type="password" id="password" name="password" value={this.state.password} onChange={ (e) => this.setState({password: e.target.value}) } />
                     </div>
 
                     <button>Login</button>

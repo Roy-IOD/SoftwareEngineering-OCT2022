@@ -5,50 +5,50 @@ import React, { Component } from 'react';
 //the Array.map function is OFTEN used in React for this, good idea to review it: 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
-const students = [
+const players = [
     {
         id: 1,
-        name: 'David Cook',
-        location: 'AU'
+        name: 'Nikola Jokic',
+        location: 'Denver'
     },
     {
         id: 2,
-        name: 'Isaac Heslop',
-        location: 'AU'
+        name: 'Joel Embiid',
+        location: 'Philadelphia'
     },
     {
         id: 3,
-        name: 'Annabelle Koinis',
-        location: 'AU'
+        name: 'Giannis Antentekounpo',
+        location: 'Milwaukee'
     },
     {
         id: 4,
-        name: 'Sam Moore',
-        location: 'AU'
+        name: 'Kyrie Irving',
+        location: 'Brooklyn'
     },
     {
         id: 5,
-        name: 'Ian Ormesher',
-        location: 'AU'
+        name: 'Devin Booker',
+        location: 'Phoenix'
     },
     {
         id: 6,
-        name: 'Mareko Petero',
-        location: 'NZ'
+        name: 'Jimmy Butler',
+        location: 'Miami'
     },
     {
         id: 7,
-        name: 'Thiago Taujiro',
-        location: 'AU'
+        name: 'Aaron Gordon',
+        location: 'Denver'
     },
     {
         id: 8,
-        name: 'Mopati Toteng',
-        location: 'AU'
+        name: 'Luka Doncic',
+        location: 'Dallas'
     }  
 ]
 
-class StudentList extends Component {
+class PlayerList extends Component {
     
     render() {
 
@@ -59,11 +59,11 @@ class StudentList extends Component {
 
         return (
             <div className="StudentList componentBox">
-                <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
+                <h2>IOD Software Engineering Students ({players.length} in cohort)</h2>
                 <ul className="hideBullets">
                 {
-                    students.map((student, index) => 
-                        <Student key={student.id} student={student} roboset="set4" avatarSize="100"/>
+                    players.map(players => 
+                        <Players key={players.id} value={players.name}/>
                     )
                 }
                 </ul>
@@ -74,19 +74,11 @@ class StudentList extends Component {
 
 //how could we make a separate Student component that will display and format student info more nicely?
 //have a look at https://reactjs.org/docs/lists-and-keys.html for tips
-function Student(props) {
-    const name = props.student.name;
-    const roboset = props.roboset ? props.roboset : "set1"
-    const avatarSize = props.avatarSize ? props.avatarSize + 'x' + props.avatarSize : "50x50"
 
-    return (
-        <li>
-            <div className="avatar"><img src={`https://robohash.org/${name}?size=${avatarSize}&set=${roboset}`} alt={name}/></div>
-            <div className="details"><strong>{name}</strong> <span className="location">based in {props.student.location}</span></div>
-        </li> 
-    )
+class Players extends Component {
+    render(){
+        return(<li><img src={`https://robohash.org/${players.name}?size=50x50`} alt={players.name}/> {players.name}, plays for {players.location}</li> )
+    }
 }
 
-
-
-export default StudentList;
+export default PlayerList;
