@@ -5,7 +5,7 @@ import React from "react";
 class MyComponent extends React.Component {
   render() {
     return (
-      <div>
+      <div className = "componentBox">
         <h1>Hello world!!</h1>
         <h2>This is a Test in MyComponent</h2>
       </div>
