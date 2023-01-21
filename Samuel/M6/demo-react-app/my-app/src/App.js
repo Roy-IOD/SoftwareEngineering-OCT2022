@@ -5,7 +5,9 @@ import PropsDisplayer from './components/PropsDisplayer';
 import Comment from './components/Comment';
 import Greeting from './components/Greeting';
 import Weather from './components/Weather';
-import Clock from './components/Clock';
+import ClockDisplay from './components/Clock';
+import Login from './components/Login';
+import PlayerList from './components/PlayerList';
 
 function App() {
   const myName = 'Sam';
@@ -39,7 +41,11 @@ const greeting = {
       <Weather />
       <hr></hr>
 
-      <Clock />
+      <ClockDisplay />
+      <hr></hr>
+      <Login />
+      <hr></hr>
+      <PlayerList />
 
 
  
