@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.componentBox {
+  background-color: beige;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.hideBullets { list-style: none;}
+
+.StudentList ul { display: flex; flex-wrap: wrap;}
+.StudentList ul li { display: flex; justify-content: flex-start; align-items: center; width: 25%;}
