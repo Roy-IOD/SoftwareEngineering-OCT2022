@@ -4,6 +4,11 @@ import './App.css';
 import MyComponent from './components/MyComponent';
 import PropsDisplayer from './components/PropsDisplayer';
 import Comment from './components/Comment';
+import ClockDisplay from './components/Clock';
+import StudentList from './components/StudentList';
+import Reservation from './components/Reservation';
+import Emoji from './components/Emoji';
+
 
 function App() {
 
@@ -22,9 +27,18 @@ function App() {
     <div className="App">
 
       <MyComponent />
+      
       <PropsDisplayer test="hello" name={myName} drinks={['water', 'juice', 'coke']} number1={4} number2={8}/>
       
       <Comment date = {comment.date} text = {comment.text} author={comment.author}/>
+
+      <ClockDisplay />
+
+      <StudentList />
+
+      <Reservation />
+
+      <Emoji />
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

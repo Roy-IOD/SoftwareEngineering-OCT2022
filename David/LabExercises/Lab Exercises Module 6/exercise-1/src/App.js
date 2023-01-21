@@ -1,14 +1,17 @@
 import './App.css';
 import Greeting from './components/Greeting';
+import Emoji from './components/Emoji';
 
 function App() {
-  // const myName = "David"
+  const myName = "David"
   
   return (
     
     <div className="App">
-      <Greeting />
-      {/* <Greeting name = {myName}/> */}
+      
+      <Greeting name = {myName}/>
+      <Emoji />
+      {/* <Greeting /> */}
     </div>
   );
 }
