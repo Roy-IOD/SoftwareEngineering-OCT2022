@@ -1,8 +1,8 @@
 function Comment(props) {
   return (
-    <div className="Comment">
+    <div className="componentBox">
       <UserInfo user={props.author} />
-      <div className="Comment-text">
+      <div className="componentBox">
         {props.text}
       </div>
       <div className="Comment-date">
@@ -14,7 +14,7 @@ function Comment(props) {
 
 function UserInfo(props) {
   return (
-  <div className="UserInfo">
+  <div className="componentBox">
     <Avatar user = {props.user} />
 <div className="UserInfo-name">{props.user.name} </div>
   </div>
