@@ -5,6 +5,7 @@ import Comment from './components/Comment';
 import ClockDisplay from './components/Clock';
 import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
+import Breweries from './components/Breweries';
 
 function App() {
   const myName = "Isaac Heslop"
@@ -31,6 +32,7 @@ function App() {
           <ClockDisplay />
           <StudentList />
           <Reservation />
+          <Breweries />
         
       </div>
     );
