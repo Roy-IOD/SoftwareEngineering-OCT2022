@@ -13,7 +13,7 @@ class Emoji extends React.Component {
 
   render(){
     return (
-      <div className='componentBox'>
+      <div className='Emoji componentBox'>
       <h1>{this.state.emoji}</h1>
       <button onClick={this.changeEmoji}>{this.state.emoji === "😀" ? "Laugh" : "Smile"}</button>
       {/* <button onClick={this.changeEmoji}>Change Emoji</button> */}
