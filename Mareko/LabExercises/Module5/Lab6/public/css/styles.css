@@ -83,19 +83,19 @@ h5 {
     margin-bottom: 25px;
 }
 
-.o-player-modal {
-    --bs-btn-border-color: white;
-    --bs-btn-hover-border-color: white ;
-    --bs-btn-hover-bg: rgb(245, 143, 60) ;
-    --bs-btn-border-width: 0.375rem;
-}
+.home-player-modal { --bs-btn-border-color: white; --bs-btn-hover-border-color: white ; --bs-btn-hover-bg: rgb(245, 143, 60) ; --bs-btn-border-width: 0.375rem; }
+.away-player-modal { --bs-btn-border-color: white; --bs-btn-hover-border-color: white ; --bs-btn-hover-bg: rgb(50, 143, 172) ; --bs-btn-border-width: 0.375rem; }
 
-.a-player-modal {
-    --bs-btn-border-color: white;
-    --bs-btn-hover-border-color: white ;
-    --bs-btn-hover-bg: rgb(50, 143, 172) ;
-    --bs-btn-border-width: 0.375rem;
-}
+.home-player-card { background-color: #fc6500; width: 72px; height: 72px; border-radius: 50%; }
+.away-player-card { background-color: #1dc2f0; width: 72px; height: 72px; border-radius: 50%; }
+
+.home-player-button-text, .away-player-button-text { color: #FFF; font-weight: bold; }
+
+.modal-text { color:#000 }
+
+.home-modal-close-btn { background-color: orange }
+.away-modal-close-btn { background-color: #1dc2f0; }
+
 
 .oranje {
     background-color: orange;
@@ -103,19 +103,9 @@ h5 {
     margin-top: 20px;
 }
 
-.oranje-player-card {
-    background-color: #fc6500;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-}
 
-.arg-player-card {
-    background-color: #1dc2f0;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-}
+
+
 
 .argDMFspacefiller {
     height: 58.6666666667px;
