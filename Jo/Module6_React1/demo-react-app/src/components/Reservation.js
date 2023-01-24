@@ -4,11 +4,13 @@ import React from 'react'
 class Reservation extends React.Component {
     constructor(props) {
         super(props);
+        let today = new Date()
         
         this.state = {
             name: '',
             isGoing: true,
-            numberOfGuests: 2
+            numberOfGuests: 2,
+            eventDate: today.getFullYear() + '-' + today.toLocaleString("default", { month: "2-digit" }) + '-' + today.getDate() //default to today
         };
     
         //this.handleInputChange = this.handleInputChange.bind(this);
@@ -19,7 +21,8 @@ class Reservation extends React.Component {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-    
+        console.log('setting input '+name+' value to '+value);
+
         this.setState({
             [name]: value
         });
@@ -28,7 +31,7 @@ class Reservation extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state)
-        alert(`${this.state.name} is ${this.state.isGoing ? '' : 'not '}attending with ${this.state.numberOfGuests} guests`)
+        alert(`${this.state.name} is ${this.state.isGoing ? '' : 'not '}attending with ${this.state.numberOfGuests} guests on ${this.state.eventDate}`)
     }
   
     render() {
@@ -48,6 +51,11 @@ class Reservation extends React.Component {
                     Number of guests:
                     <input name="numberOfGuests" type="number" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
                 </label>
+                <br/>
+                <label>
+                    Date:
+                    <input name="eventDate" type="date" value={this.state.eventDate} onChange={this.handleInputChange} />
+                </label>                
                 <div><button>Register</button></div>
             </form>
         );

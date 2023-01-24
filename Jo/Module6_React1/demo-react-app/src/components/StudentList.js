@@ -62,8 +62,8 @@ class StudentList extends Component {
                 <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
                 <ul className="hideBullets">
                 {
-                    students.map((student, index) => 
-                        <Student key={student.id} student={student} roboset="set4" avatarSize="100"/>
+                    students.map((student, index) => /* in a pinch you can use the array index as the key but it's not recommended */
+                        <Student key={student.id} student={student} roboset="set5" avatarSize="100"/> /* the key prop stays here, not in the child component */
                     )
                 }
                 </ul>
@@ -75,12 +75,12 @@ class StudentList extends Component {
 //how could we make a separate Student component that will display and format student info more nicely?
 //have a look at https://reactjs.org/docs/lists-and-keys.html for tips
 function Student(props) {
-    const name = props.student.name;
-    const roboset = props.roboset ? props.roboset : "set1"
-    const avatarSize = props.avatarSize ? props.avatarSize + 'x' + props.avatarSize : "50x50"
+    const name = props.student.name; //storing in a new variable to save re-typing
+    const roboset = props.roboset ? props.roboset : "set1"; //sets a default value for the prop in case it's not passed in
+    const avatarSize = props.avatarSize ? props.avatarSize + 'x' + props.avatarSize : "50x50"; //sets a default value for the prop in case it's not passed in
 
     return (
-        <li>
+        <li> {/* don't need a key here, since it's inside the map on line 66 */}
             <div className="avatar"><img src={`https://robohash.org/${name}?size=${avatarSize}&set=${roboset}`} alt={name}/></div>
             <div className="details"><strong>{name}</strong> <span className="location">based in {props.student.location}</span></div>
         </li> 

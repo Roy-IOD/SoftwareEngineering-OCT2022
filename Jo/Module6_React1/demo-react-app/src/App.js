@@ -12,7 +12,7 @@ import Login from './components/Login';
 import StudentList from './components/StudentList';
 import SignUpDialog from './components/SignupDialog';
 import Reservation from './components/Reservation';
-//import Breweries from './components/Breweries';
+import Breweries from './components/Breweries';
 // check https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/ and https://reactjs.org/docs/code-splitting.html for more info
 // const Breweries = React.lazy(() => { 
 //   return new Promise(resolve => setTimeout(resolve, 5 * 1000)).then(
@@ -35,6 +35,8 @@ function App() {
       {/* <Suspense fallback={<div className="Breweries componentBox">Loading breweries ...</div>}><Breweries /></Suspense> */}
 
       <MyComponent />
+
+      <Breweries />
 
       <PropsDisplayer test="hello" name={myName} drinks={['water', 'juice', 'coke', 'rum']} number1={4} number2={88}/>
 
