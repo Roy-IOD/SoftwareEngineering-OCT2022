@@ -14,7 +14,7 @@ class Greeting extends React.Component {
   };
   render() {
     return (
-      <div className="Greeting">
+      <div className="Greeting componentBox">
         <h1>Greeting with name prop:</h1> <h2>Hello {this.props.name ? this.props.name : "World"}</h2>
         <h1>Greeting change on button click:</h1> <h2>Hello {this.state.greeting}</h2>
         <button onClick={this.changeGreeting}>Change Greeting</button>
