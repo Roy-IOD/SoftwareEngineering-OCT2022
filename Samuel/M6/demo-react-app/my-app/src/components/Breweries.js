@@ -10,16 +10,19 @@ class Breweries extends Component {
         //by default the list of breweries is empty and we're showing page 1
         this.state = {
             breweries: [],
-            currentPage: 1
+            currentPage: 1,
+            filterType: '',
+
         }
     }
 
     //gets the list of breweries for the given page, then updates both the current list of breweries and the current page
-    getBreweries = (page) => {
-        fetch('https://api.openbrewerydb.org/breweries?per_page=50&page='+page)
+    getBreweries = (page, filterType) => {
+        const filterParam = filterType === '' ? '': '&by_type='+filterType;
+        fetch('https://api.openbrewerydb.org/breweries?per_page=50&page='+page+filterParam)
         .then(response => response.json())
         .then(jsonData => {
-            this.setState({breweries: jsonData, currentPage: page})
+            this.setState({breweries: jsonData, currentPage: page, filterType: filterType})
         })        
     }
 
@@ -30,7 +33,7 @@ class Breweries extends Component {
 
     handleChangePage = (newPage) => {
         console.log('getting breweries on page number '+newPage)
-        this.getBreweries(newPage)
+        this.getBreweries(newPage, this.state.filterType)
     }
 
     render() {
@@ -39,6 +42,7 @@ class Breweries extends Component {
                 <h2>Breweries</h2>
 
                 {/* how could we add a new component to filter the list by brewery type, or state? see https://www.openbrewerydb.org/documentation */}
+                <TypeFilter selectedFilter={this.state.filterType} currentPage={this.state.currentPage} filterBreweryHandler={this.getBreweries}/>
 
                 <ul className="hideBullets">
                     {this.state.breweries.map(brewery => //try also moving the below out into a separate Brewery component
@@ -67,5 +71,18 @@ function Pagination(props) {
         </div>
     )
 }
+
+function TypeFilter(props) {
+    return (
+        <div className="TypeFilter">
+            <select name="filterType" onChange={(e) => props.filterBreweryHandler(props.currentPage, e.target.value)}>
+                <option value="micro">Micro</option>
+                <option value="nano">nano</option>
+                <option value="regional">Regional</option>
+            </select>
+        </div>
+    )
+}
+
 
 export default Breweries;
