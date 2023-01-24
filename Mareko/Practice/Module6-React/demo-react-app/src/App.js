@@ -5,6 +5,7 @@ import PropsDisplayer from './components/PropsDisplayer';
 import Comment from './components/Comment';
 import ClockDisplay from './components/Clock';
 import StudentList from './components/StudentList';
+import Reservation from './components/Reservation';
 
 function App() {
 
@@ -25,11 +26,13 @@ function App() {
 
       <PropsDisplayer fullName={myName} footballTeams={['Manchester United', 'Liverpool', 'Manchester City']} num1={99} num2={27} string='This is me playing around'/>
 
-      <Comment className="componentBox" author={comment.author} date={comment.date} text={comment.text} />
+      <Comment author={comment.author} date={comment.date} text={comment.text} />
 
       <ClockDisplay />
 
       <StudentList />
+
+      <Reservation />
 
     </div>
   );
