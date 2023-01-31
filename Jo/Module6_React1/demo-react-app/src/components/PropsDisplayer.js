@@ -6,7 +6,7 @@ class PropsDisplayer extends React.Component {
         console.log(this.props)
         
         return (
-            <div>
+            <div className="componentBox">
                 <h1>CHECK OUT MY PROPS OBJECT {this.props.name}</h1>
                 <h2>{stringProps}</h2>
 

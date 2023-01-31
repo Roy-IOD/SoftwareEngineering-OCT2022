@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: center; max-width: 1200px; margin: 0 auto; 
 }
 
 .App-logo {
@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
+.hideBullets { list-style: none; }
+
+.StudentList ul { display: flex; flex-wrap: wrap; }
+.StudentList ul li { display: flex; justify-content: flex-start; align-items: center; width: 25%; }
+.StudentList ul li .details { text-align: left; }
+.StudentList ul li strong { display: block; }
+.StudentList ul li .location { font-style: italic; }
+
+.FancyBorder { --mask: linear-gradient(#000 0 0) 50%/calc(100% - 37.00px) calc(100% - 37.00px) no-repeat,
+  radial-gradient(farthest-side,#000 98%,#0000) 0 0/40px 40px round; mask: var(--mask); padding: 2em; 
+  background: linear-gradient(135deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #ffb56b) fixed; color: white; }
