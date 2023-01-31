@@ -1,0 +1,58 @@
+<template id="homeGK-modal-template">
+
+    <button type="button" class="btn home-player-modal home-player-card home-player-button-text" data-bs-toggle="modal" data-bs-target="#HomeGKModal">23</button>
+                                        
+    <div class="modal fade" id="HomeGKModal" tabindex="-1" aria-labelledby="HomeGKModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h2 class="modal-title fs-5 home-gk-name modal-text" id="HomeGKModalLabel"></h2>
+
+                </div>
+                <div class="modal-body modal-text">
+                    <div class="container text-center">
+
+                        <div id="homeGKStats" class="row row-cols-2">
+
+                            <div class="modal-stats-labels col-8">
+                                <div class="col-12 d-flex align-items-start">Saves:</div>
+                                <div class="col-12 d-flex align-items-start">Goals Conceded:</div>
+                                <div class="col-12 d-flex align-items-start">Clean Sheets:</div>
+                            </div>
+                            
+                            <div class="modal-stats col-4">
+                                <div class="col-12 player-saves d-flex justify-content-end"></div>
+                                <div class="col-12 player-goalsconceded d-flex justify-content-end"></div>
+                                <div class="col-12 player-cleansheets d-flex justify-content-end">0</div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn home-modal-close-btn" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script>
+
+    function addHomeGKModal () {
+        const template = document.getElementById("homeGK-modal-template").content.cloneNode(true);
+        
+        template.querySelector('.home-gk-name').innerText = lineups.data[1].player_name;
+
+        template.querySelector('.player-saves').innerText = lineups.data[1].stats.other.saves;
+        template.querySelector('.player-goalsconceded').innerText = lineups.data[1].stats.goals.team_conceded;
+
+        document.querySelector('#home-gk-contentholder').appendChild(template);
+    }
+
+</script>
