@@ -1,7 +1,7 @@
 import './App.css';
 import MyComponent from './components/helloComponent';
 import EmojiList from './components/emojiComponent';
-
+import Calculator from './components/Calculator';
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <MyComponent />
       <EmojiList />
-     
+      <Calculator/>
     </div>
   );
 }
