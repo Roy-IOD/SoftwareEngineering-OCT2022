@@ -35,7 +35,7 @@ function App() {
       
       <Comment date = {comment.date} text = {comment.text} author={comment.author}/>
 
-      <ClockDisplay />
+      {/* <ClockDisplay /> */}
 
       <StudentList />
 

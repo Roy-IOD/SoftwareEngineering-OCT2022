@@ -65,7 +65,7 @@ function TypeFilter(props) {
 
     //try adding the full list of brewery types from https://www.openbrewerydb.org/documentation here as an array and using .map() to fill the select options
 
-    let typeList = ["Micro", "nano", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor", "closed" ]
+    const typeList = [ "Micro", "nano", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor", "closed" ]
 
     return (
         <div className="TypeFilter">
