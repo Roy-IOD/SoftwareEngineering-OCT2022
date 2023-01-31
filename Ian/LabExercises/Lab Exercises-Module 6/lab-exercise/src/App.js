@@ -7,6 +7,7 @@ import Clock from './components/Clock';
 import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
 import Emojis from './components/Emojis';
+import Breweries from './components/Breweries';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <StudentList />
         <Reservation />
         <Emojis />
+        <Breweries />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

@@ -6,6 +6,11 @@ import './App.css';
 import MyComponent from './components/MyComponent';
 import PropsDisplayer from './components/PropsDisplayer'
 import Comment from './components/Comment'
+import ClockDisplay from './components/Clock';
+import Login from './components/Login';
+import StudentList from './components/StudentList';
+import Reservation from './components/Reservation';
+import Breweries from './components/Breweries';
 
 function App() {
 
@@ -24,9 +29,19 @@ function App() {
 
       <MyComponent />
 
+      <Breweries />
+
       <PropsDisplayer test="hello" name={myName} drinks={['water', 'juice','coke','rum']} number1={4} number2={88}/>
 
       <Comment author={comment.author} date={comment.date} text={comment.text}/>
+
+      <ClockDisplay />
+
+      <Login />
+
+      <StudentList />
+
+      <Reservation />
 
       {/* <Hello />
       <Hello name="React developer"/>

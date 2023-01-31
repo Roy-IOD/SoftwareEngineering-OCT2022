@@ -8,6 +8,7 @@ import ClockDisplay from './components/Clock';
 import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
 import Emoji from './components/Emoji';
+import Breweries from './components/Breweries';
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
 
   return (
     <div className="App">
+
+      <Breweries />
 
       <MyComponent />
       

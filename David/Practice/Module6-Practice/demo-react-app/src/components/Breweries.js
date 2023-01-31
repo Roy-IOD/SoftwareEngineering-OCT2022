@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Pagination from './Pagination';
 
+//lazy loaded component which reads data from an API and therefore may cause delay when rendering
 class Breweries extends Component {
 
     constructor(props) {
         super(props);
 
+        //by default the list of breweries is empty and we're showing page 1
         this.state = {
             breweries: [],
             currentPage: 1,
@@ -13,8 +15,9 @@ class Breweries extends Component {
         }
     }
 
+    //gets the list of breweries for the given page, then updates both the current list of breweries and the current page
     getBreweries = (page, filterType) => {
-        const filterParam = filterType === '' ? '' : '&by_state='+filterType;
+        const filterParam = filterType === '' ? '' : '&by_type='+filterType;
 
         console.log('getting '+filterType+' breweries on page number '+page)
 
@@ -25,6 +28,7 @@ class Breweries extends Component {
         })        
     }
 
+    //once the component is definitely being rendered on screen, load in the API data
     componentDidMount() {
         this.getBreweries(this.state.currentPage, this.state.filterType)
     }
@@ -61,16 +65,15 @@ function TypeFilter(props) {
 
     //try adding the full list of brewery types from https://www.openbrewerydb.org/documentation here as an array and using .map() to fill the select options
 
+    let typeList = ["Micro", "nano", "regional", "brewpub", "large", "planning", "bar", "contract", "proprietor", "closed" ]
+
     return (
         <div className="TypeFilter">
             <select name="filterType" value={props.selectedFilter} onChange={(e) => props.filterBreweryHandler(props.currentPage, e.target.value)}>
                 <option value="">Choose an option</option>
-                <option value="new york">New York</option>
-                <option value="cincinnati">California</option>
-                <option value="ohio">Ohio</option>
-                <option value="indiana">Indiana</option>
-                <option value="texas">Texas</option>
-                <option value="oklahoma">Oklahoma</option>
+                <option value="micro">Micro</option>
+                <option value="nano">Nano</option>
+                <option value="regional">Regional</option>
             </select>
         </div>
     )
