@@ -6,7 +6,7 @@ class Calculator extends React.Component {
     this.state = {
       num1: 0,
       num2: 0,
-      operator: "",
+      operator: "+",
       result: 0,
     };
   }
