@@ -9,6 +9,7 @@ import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
 import Emoji from './components/Emoji';
 import Breweries from './components/Breweries';
+import Calculator from './components/Calculator';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
   return (
     <div className="App">
 
-      <Breweries />
+      <Calculator />
+
+      {/* <Breweries /> */}
 
       <MyComponent />
       
