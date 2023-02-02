@@ -33,7 +33,7 @@ class Reservation extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state)
-        alert(`${this.state.name} is ${this.state.isGoing ? '' : 'not '}searching for ${this.state.nameOfTeam} tickets for ${this.state.numberOfGuests} people`)
+        alert(`${this.state.name} is${this.state.isGoing ? '' : 'not '}searching for ${this.state.nameOfTeam} tickets for ${this.state.numberOfGuests} people`)
     }
   
     render() {
