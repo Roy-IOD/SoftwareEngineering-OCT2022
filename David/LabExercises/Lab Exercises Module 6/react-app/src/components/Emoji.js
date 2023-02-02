@@ -15,7 +15,7 @@ class Emoji extends React.Component {
     return (
       <div className='Emoji componentBox'>
       <h1>{this.state.emoji}</h1>
-      <button onClick={this.changeEmoji}>{this.state.emoji === "😀" ? "Laugh" : "Smile"}</button>
+      <button onClick={this.changeEmoji}>{this.state.emoji === "😀" ? "Make it Laugh" : "Make it Smile"}</button>
       {/* <button onClick={this.changeEmoji}>Change Emoji</button> */}
       </div>
     )
