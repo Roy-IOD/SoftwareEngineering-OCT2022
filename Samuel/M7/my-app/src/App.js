@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Bike from './components/Bike';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
      
 
      <Bike />
+     <Login />
+
 
  
     </div>
