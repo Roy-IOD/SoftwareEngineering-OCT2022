@@ -11,7 +11,8 @@ class Breweries extends Component {
         this.state = {
             breweries: [],
             currentPage: 1,
-            filterType: ''
+            filterType: '',
+            isLoading: false
         }
     }
 
@@ -20,11 +21,12 @@ class Breweries extends Component {
         const filterParam = filterType === '' ? '' : '&by_type='+filterType;
 
         console.log('getting '+filterType+' breweries on page number '+page)
+        this.setState({isLoading: true})
 
         fetch('https://api.openbrewerydb.org/breweries?per_page=50&page='+page+filterParam)
         .then(response => response.json())
         .then(jsonData => {
-            this.setState({breweries: jsonData, currentPage: page, filterType: filterType})
+            this.setState({breweries: jsonData, currentPage: page, filterType: filterType, isLoading: false})
         })        
     }
 
@@ -45,12 +47,14 @@ class Breweries extends Component {
                 {/* how could we add a new component to filter the list by brewery type, or state? see https://www.openbrewerydb.org/documentation */}
                 <TypeFilter selectedFilter={this.state.filterType} currentPage={this.state.currentPage} filterBreweryHandler={this.getBreweries}/>
 
-                <ul className="hideBullets">
-                    {this.state.breweries.map(brewery => //try also moving the below out into a separate Brewery component
-                        <li key={brewery.id}><a target="_blank" href={`https://api.openbrewerydb.org/breweries/${brewery.id}`}>{brewery.name}</a> is 
-                         a {brewery.brewery_type} brewery in {brewery.state}, {brewery.country}</li>
-                    )}
-                </ul>
+                {this.state.isLoading ? <div>Loading breweries ...</div> : 
+                    <ul className="hideBullets">
+                        {this.state.breweries.map(brewery => //try also moving the below out into a separate Brewery component
+                            <li key={brewery.id}><a target="_blank" href={`https://api.openbrewerydb.org/breweries/${brewery.id}`}>{brewery.name}</a> is 
+                            a {brewery.brewery_type} brewery in {brewery.state}, {brewery.country}</li>
+                        )}
+                    </ul>
+                }
                 {/* just reloads the list of breweries with the next page number */}
                 {/* <button onClick={() => this.getBreweries(this.state.currentPage + 1)}>Next Page</button> */}
 
@@ -77,4 +81,7 @@ function TypeFilter(props) {
     )
 }
 
-export default Breweries;
+//to export both a default component and some extras
+//see https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
+
+export { Breweries as default, TypeFilter };

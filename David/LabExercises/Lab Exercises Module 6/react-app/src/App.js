@@ -1,6 +1,7 @@
 import './App.css';
 import Greeting from './components/Greeting';
 import Emoji from './components/Emoji';
+import Calculator from './components/Calculator';
 
 function App() {
   const myName = "David"
@@ -11,6 +12,7 @@ function App() {
       
       <Greeting name = {myName}/>
       <Emoji />
+      <Calculator />
       {/* <Greeting /> */}
     </div>
   );
