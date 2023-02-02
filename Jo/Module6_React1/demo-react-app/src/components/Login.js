@@ -52,7 +52,7 @@ class Login extends Component {
                         {/* every time the input changes, store the latest value into state */}
                         <input type="password" id="password" name="password" value={this.state.password} onChange={ this.handleInputChange } />
                     </div>
-
+                    
                     <button>Login</button>
                 </form>
                 

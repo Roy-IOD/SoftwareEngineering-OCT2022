@@ -25,4 +25,4 @@ class emojiComponent extends React.Component {
       )
 }};
 
-export default emojiComponent
+export { emojiComponent as default}

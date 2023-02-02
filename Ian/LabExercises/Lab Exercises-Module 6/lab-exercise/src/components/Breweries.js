@@ -21,7 +21,7 @@ class Breweries extends Component {
 
         console.log('getting '+filterType+' breweries on page number '+page)
 
-        fetch('https://api.openbrewerydb.org/breweries?per_page=50&page='+page+filterParam)
+        fetch('https://api.openbrewerydb.org/breweries?per_page=20&page='+page+filterParam)
         .then(response => response.json())
         .then(jsonData => {
             this.setState({breweries: jsonData, currentPage: page, filterType: filterType})
@@ -41,7 +41,7 @@ class Breweries extends Component {
         return (
             <div className="Breweries componentBox">
                 <h2>Breweries</h2>
-                <SearchBar selectedFilter={this.state.filterType} filterBreweryHandler={this.getBreweries} currentPage={this.state.currentPage} />
+                {/* <SearchBar selectedFilter={this.state.filterType} filterBreweryHandler={this.getBreweries} currentPage={this.state.currentPage} /> */}
 
                 {/* how could we add a new component to filter the list by brewery type, or state? see https://www.openbrewerydb.org/documentation */}
                 <TypeFilter selectedFilter={this.state.filterType} currentPage={this.state.currentPage} filterBreweryHandler={this.getBreweries}/>
@@ -78,15 +78,15 @@ function TypeFilter(props) {
     )
 }
 
-function CitySearch(props) {
+// function CitySearch(props) {
 
-     return (
-        <div className="CitySearch">
-            <input type="text" placeholder="Search Here" name="SearchType" value={SearchBar}>
+//      return (
+//         <div className="CitySearch">
+//             <input type="text" placeholder="Search Here" name="SearchType" value={SearchBar}>
                 
-            </input>
-        </div>
-    )
-}
+//             </input>
+//         </div>
+//     )
+// }
 
 export default Breweries;
