@@ -6,6 +6,7 @@ import Comment from './components/Comment';
 import ClockDisplay from './components/Clock';
 import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
+import Breweries from './components/Breweries';
 
 function App() {
 
@@ -28,11 +29,13 @@ function App() {
 
       <Comment author={comment.author} date={comment.date} text={comment.text} />
 
-      <ClockDisplay />
+      {/* <ClockDisplay /> */}
 
       <StudentList />
 
       <Reservation />
+
+      <Breweries />
 
     </div>
   );
