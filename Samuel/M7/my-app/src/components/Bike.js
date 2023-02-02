@@ -1,11 +1,12 @@
 import React from 'react'
+import { useEffect, useState } from "react";
 
 function Bike(props) {
     const colours = ['blue', 'black', 'red', 'yellow', 'silver']
 
     const [make, setMake] = useState(props.make ? props.make : 'Yamaha')
     const [model, setModel] = useState('R15')
-    const [colour, useColour] = useState('blue')
+    const [colour, setColour] = useState('blue')
 
     const changeBikeColour = () => {
 
@@ -22,7 +23,7 @@ function Bike(props) {
 
             <p> It is a <span style={{color: colour}}>{colour}</span> {model}</p>
 
-            <button type="button" onCLick={changeBikeColour}> Change colour </button>
+            <button type="button" onClick={changeBikeColour}> Change colour </button>
         </div>
     )
 }

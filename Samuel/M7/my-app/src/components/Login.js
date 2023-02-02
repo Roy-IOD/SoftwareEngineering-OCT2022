@@ -1,4 +1,6 @@
 import React from 'react'
+import {Hello} from '../components/Hello'
+import { useEffect, useState } from "react";
 
 function Login(props) {
 
@@ -9,7 +11,7 @@ function Login(props) {
 
 const handleLogin = (e) => {
     e.preventDefault();
-    console.log(Login)
+    console.log(username, password, loggedIn)
 
     let isLoggedIn = (username && password && username === password)
 

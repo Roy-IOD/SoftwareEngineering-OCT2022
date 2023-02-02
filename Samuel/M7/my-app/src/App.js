@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Bike from './components/Bike';
 import Login from './components/Login';
+import Reservation from './components/Reservation';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
      <Bike />
      <Login />
+     <Reservation />
 
 
  
