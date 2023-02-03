@@ -2,6 +2,7 @@ import './App.css';
 import logo from './logo.svg';
 import Greeting from './components/Greeting';
 import Emoji from './components/Emoji';
+import Calculator from './components/Calculator';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Greeting name = {myName}/>
       <Emoji/>
+      <Calculator/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

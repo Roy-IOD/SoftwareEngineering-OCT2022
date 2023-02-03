@@ -10,7 +10,6 @@ import ClockDisplay from './components/Clock';
 import Login from './components/Login';
 import StudentList from './components/StudentList';
 import Reservation from './components/Reservation';
-import Breweries from './components/Breweries';
 
 function App() {
 
@@ -28,8 +27,6 @@ function App() {
     <div className="App">
 
       <MyComponent />
-
-      <Breweries />
 
       <PropsDisplayer test="hello" name={myName} drinks={['water', 'juice','coke','rum']} number1={4} number2={88}/>
 

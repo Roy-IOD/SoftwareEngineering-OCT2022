@@ -3,6 +3,7 @@ import './App.css';
 import Greeting from './components/Greeting';
 import Emoji from './components/Emoji';
 import Emoji2 from './components/Emoji2';
+import Calculator from './components/Calculator';
 
 function App() {
   // const greeting = {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       {/* <Greeting 
       name={greeting.name}/> */}
+      <Calculator /> <br />
       <Emoji />
       <Emoji2 />
     </div>
