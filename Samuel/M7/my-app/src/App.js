@@ -3,6 +3,8 @@ import './App.css';
 import Bike from './components/Bike';
 import Login from './components/Login';
 import Reservation from './components/Reservation';
+import ChatRecipientPicker from './components/ChatRecipientPicker';
+import OnlineChat from './components/OnlineChat';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
      <Bike />
      <Login />
      <Reservation />
+     <ChatRecipientPicker />
+     <OnlineChat />
 
 
  
