@@ -3,6 +3,7 @@ import React, { useState } from "react";
 // Pseudo Code
 // Input two numbers(num1, num2)
 // User to choose the numbers' operator e.g division, multiplication etc
+// Calculate  num1, num2 based on the chosen op above
 // Print out the result
 
 const Calculator = () => {

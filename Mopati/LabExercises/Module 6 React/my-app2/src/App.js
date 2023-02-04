@@ -7,6 +7,7 @@ import StudentList from "./Components/StudentList";
 import Reservation from "./Components/Reservation";
 import Emoji from "./Components/Emoji";
 import Calculator from "./Components/Calculator";
+import Square from "./Components/Square";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Reservation />
       <Emoji />
       <Calculator />
+      <Square />
     </div>
   );
 }
