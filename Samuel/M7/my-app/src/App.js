@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Reservation from './components/Reservation';
 import ChatRecipientPicker from './components/ChatRecipientPicker';
 import OnlineChat from './components/OnlineChat';
+import RandomQuote from './components/RandomQuote';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
      <Reservation />
      <ChatRecipientPicker />
      <OnlineChat />
+     <RandomQuote />
 
 
  
