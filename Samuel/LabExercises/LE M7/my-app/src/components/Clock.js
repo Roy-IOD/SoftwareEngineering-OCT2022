@@ -16,7 +16,7 @@ function Clock(props) {
         let timerID = setInterval(tick, 1000)
 
         return () => {
-            clearInterval(timerID);
+            clearInterval(timerID, Clock);
         };
     },  )
 
