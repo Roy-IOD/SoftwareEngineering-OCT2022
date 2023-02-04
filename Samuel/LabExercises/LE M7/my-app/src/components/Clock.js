@@ -7,17 +7,18 @@ function Clock(props) {
     const [tickCount, setTickCount] = useState(0)
 
     useEffect(() => {
-        let tick = function() {
-            setDate(new Date());
+
+        const tick = function() {
+            setDate(new Date())
             setTickCount(tickCount + 1)
         }
 
-        let timerID = setInterval(tick, 1000);
+        let timerID = setInterval(tick, 1000)
 
         return () => {
             clearInterval(timerID);
         };
-    }, [])
+    },  )
 
     return (
         <div className = "Clock">
