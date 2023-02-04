@@ -9,6 +9,8 @@ function Login(props) {
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
+    //how could we use UserContext here to update a currently logged in user?
+
     const handleLogin = (e) => {
         e.preventDefault();
 
@@ -16,6 +18,8 @@ function Login(props) {
         let isLoggedIn = (username && password && username === password);
 
         setLoggedIn(isLoggedIn);
+        
+        //also store the user in our context
     }
 
     const handleInputChange = (event) => {

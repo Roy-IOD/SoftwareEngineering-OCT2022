@@ -16,7 +16,7 @@ function RandomQuote() {
             .catch(e => {
                 setQuote({text: e.message, author:'Server Request Failed'})
             })
-    },[updated]) //what happens if we change this?
+    }, [updated]) //what happens if we change this?
 
     return (
         <div className="RandomQuote componentBox">

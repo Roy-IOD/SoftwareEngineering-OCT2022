@@ -1,11 +1,15 @@
 import ChatAPI from "../apis/ChatAPI"
 import FriendListItem from "./FriendListItem"
 import ChatRecipientPicker from './ChatRecipientPicker';
+import { ThemeContext } from "../context/ThemeContext";
+import React from 'react'
 
 function OnlineChat() {
+    const { theme } = React.useContext(ThemeContext);
+    console.log(theme)
 
     return (
-        <div className="OnlineChat componentBox">
+        <div className="OnlineChat componentBox" style={{backgroundColor: theme.background, color: theme.foreground}}>
             <div className="row">
                 <div className="friends">
                     All Friends:

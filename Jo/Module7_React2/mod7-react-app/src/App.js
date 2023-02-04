@@ -7,25 +7,31 @@ import Counter from './components/Counter';
 import RandomQuote from './components/RandomQuote';
 import Bike from './components/Bike';
 import ClockDisplay from './components/Clock';
+import WindowResizer from './components/WindowResizer';
 import OnlineChat from './components/OnlineChat';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
     <div className="App">
 
-      <Article/>
+      <ThemeProvider>
+        <Article/>
 
-      <Counter/>
+        <Counter/>
 
-      <Login />
+        <Login />
 
-      <RandomQuote />
+        <RandomQuote />
 
-      <Bike />
+        <Bike />
 
-      <ClockDisplay />
+        <ClockDisplay />
 
-      <OnlineChat />
+        <WindowResizer />
+
+        <OnlineChat />
+      </ThemeProvider>
 
     </div>
   );
