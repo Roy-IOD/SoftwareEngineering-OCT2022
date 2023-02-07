@@ -37,6 +37,4 @@
   }
 }
 
-ul.hideBullets {
-  list-style: none;
-}
+.componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
