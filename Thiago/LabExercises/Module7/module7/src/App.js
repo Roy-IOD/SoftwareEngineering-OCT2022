@@ -1,18 +1,17 @@
-import './App.css';
 import logo from './logo.svg';
-import Greeting from './components/Greeting';
-import Emoji from './components/Emoji';
-import Calculator from './components/Calculator';
+import './App.css';
+import Hello from './components/Greeting';
+import Clock from './components/Clock';
+import Emoji  from './components/Emoji';
+import { EmojiProvider } from './context/EmojiContext';
 
 function App() {
-
-  const myName = "Thiago"
-
   return (
     <div className="App">
-      <Greeting />
-      <Emoji/>
-      <Calculator/>
+       <EmojiProvider>
+      <Hello />
+      <Clock />
+      <Emoji />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,6 +26,7 @@ function App() {
           Learn React
         </a>
       </header>
+      </EmojiProvider>
     </div>
   );
 }
