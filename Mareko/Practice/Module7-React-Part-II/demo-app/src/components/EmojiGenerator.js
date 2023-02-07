@@ -18,7 +18,7 @@ const EmojiGenerator = () => {
     };
 
     return(
-        <div className='componentBox'>
+        <div>
             <h2>Today's Weather: {weather} {weatherName}</h2>
             <button onClick={changeWeather}>Change</button>
         </div>
