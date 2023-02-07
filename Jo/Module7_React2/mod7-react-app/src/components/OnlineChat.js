@@ -1,11 +1,11 @@
 import ChatAPI from "../apis/ChatAPI"
 import FriendListItem from "./FriendListItem"
 import ChatRecipientPicker from './ChatRecipientPicker';
-import { ThemeContext } from "../context/ThemeContext";
+import { ThemeContext, themes } from "../context/ThemeContext";
 import React from 'react'
 
 function OnlineChat() {
-    const { theme } = React.useContext(ThemeContext);
+    const { theme, setTheme } = React.useContext(ThemeContext);
     console.log(theme)
 
     return (
@@ -25,6 +25,7 @@ function OnlineChat() {
                 <button onClick={() => ChatAPI.startAPI()}>Start Chat API</button>
                 <button onClick={() => ChatAPI.stopAPI()}>Stop Chat API</button>
             </div>
+            <input type="checkbox" value={theme.foreground === '#ffffff'} onChange = {() => setTheme(theme.foreground === '#ffffff' ? themes.light : themes.dark) } /> Dark Mode?
         </div>
     )
 }

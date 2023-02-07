@@ -9,5 +9,12 @@ export const UserContext = React.createContext();
 export const UserProvider = ({children}) => {
 
     //what should go here, in order to keep track of current user in state and pass it down to any child components?
+    const [username, setUsername] = React.useState('you');
+
+    return (
+        <UserContext.Provider value={{username, setUsername}}>
+            {children}
+        </UserContext.Provider>
+    );
 }
 
