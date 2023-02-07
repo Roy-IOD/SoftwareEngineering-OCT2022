@@ -1,20 +1,17 @@
 import './App.css';
-import ClockDisplay from './components/Clock';
-import EmojiGenerator from './components/EmojiGenerator';
-import GreetingsButton from './components/GreetingsButton';
-import { EmojiProvider } from './context/emojiContext';
+
+import NavBar from './components/NavBar';
+import { AppRoutes } from './routes/AppRoutes';
+import { UserProvider } from "./context/UserContext";
 
 function App() {
   return (
     <div className="App">
-      <GreetingsButton />
-
-      <EmojiProvider>
-
-        <ClockDisplay />
-        <EmojiGenerator />
-
-      </EmojiProvider>
+      <UserProvider>
+        <NavBar />
+        <AppRoutes />
+      </UserProvider>
+      
     </div>
   );
 }
