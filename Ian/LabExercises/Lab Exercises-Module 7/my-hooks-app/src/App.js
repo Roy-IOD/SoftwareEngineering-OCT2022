@@ -1,13 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import MyGreeting from './Components/MyGreeting';
-import Clock from './Components/Clock';
-import Emoji from './Components/Emoji';
+
+import logo from './logo.svg';
+import MyGreeting from './components/MyGreeting';
+import Clock from './components/Clock';
+import Emoji from './components/Emoji';
 import { EmojiProvider } from './context/EmojiContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { UserProvider } from './context/UserContext';
+import NavBar from './components/NavBar';
+import { AppRoutes } from './routes/AppRoutes';
 
 function App( {emoji } ) {
   return (
     <div className="App">
+
+      <ThemeProvider>
+        <UserProvider>
+
+          <NavBar />
+
+          <AppRoutes />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,6 +40,8 @@ function App( {emoji } ) {
           Learn React
         </a>
       </header>
+        </UserProvider>
+      </ThemeProvider>
     </div>
   );
 }
