@@ -9,10 +9,12 @@ function Dashboard() {
     return (
         <div className="Dashboard componentBox">
             <h1>Dashboard</h1>
+
+            <Outlet />            
             <button onClick={() => navigate('/tasks')}>Show Tasks</button>
             <button onClick={() => navigate('/messages')}>Show Messages</button>
 
-            <Outlet />
+
         </div>
     )
 }
