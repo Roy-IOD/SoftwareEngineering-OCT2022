@@ -1,9 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Greeting from './components/Greeting';
-import ClockDisplay from './components/Clock';
-import Emoji from './components/Emoji';
-import { EmojiProvider } from './context/EmojiContext';
+import NavBar from './components/NavBar';
+import { AppRoutes } from './routes/AppRoutes';
 // import Emoji2 from './components/Emoji2';
 // import Calculator from './components/Calculator';
 
@@ -14,12 +12,12 @@ function App() {
 
   return (
     <div className="App">
-      <EmojiProvider>
-        <Greeting />
-        <ClockDisplay />
-        <Emoji />
-        {/* <Emoji2 /> */}
-      </EmojiProvider>
+
+      <NavBar />
+
+      <AppRoutes />
+
+      
     </div>
   );
 }
