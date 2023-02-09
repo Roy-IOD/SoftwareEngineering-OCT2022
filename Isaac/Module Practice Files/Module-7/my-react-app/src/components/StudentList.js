@@ -1,6 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
+import StudentCard from './StudentCard';
+import Grid from '@mui/material/Grid';
+import { Box } from '@mui/system';
+
 //an array of objects (could come from an API or DB). to render each one in turn, we need to iterate over them,
 //and apply the same transformation process to each one to turn the raw data into JSX.
 //the Array.map function is OFTEN used in React for this, good idea to review it: 
@@ -10,57 +14,68 @@ export const students = [
     {
         id: 1,
         name: 'David Cook',
-        location: 'AU'
+        location: 'AU',
+        job: 'IT Support'
     },
     {
         id: 2,
         name: 'Isaac Heslop',
-        location: 'AU'
+        location: 'AU',
+        job: 'Architect'
     },
     {
         id: 3,
         name: 'Annabelle Koinis',
-        location: 'AU'
+        location: 'AU',
+        job: 'Midwife'
     },
     {
         id: 4,
         name: 'Sam Moore',
-        location: 'AU'
+        location: 'AU',
+        job: 'Auditor'
     },
     {
         id: 5,
         name: 'Ian Ormesher',
-        location: 'AU'
+        location: 'AU',
+        job: 'Recruiter'
     },
     {
         id: 6,
         name: 'Mareko Petero',
-        location: 'NZ'
+        location: 'NZ',
+        job: 'Customer Service'
     },
     {
         id: 7,
         name: 'Thiago Taujiro',
-        location: 'AU'
+        location: 'AU',
+        job: 'Uber Driver'
     },
     {
         id: 8,
         name: 'Mopati Toteng',
-        location: 'AU'
+        location: 'AU',
+        job: 'Construction'
     }  
 ]
-
 function StudentList() {      
 
     return (
         <div className="StudentList componentBox">
             <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
-            <ul className="hideBullets">
-            {
-                students.map((student) => 
-                    <StudentListItem key={student.id} student={student} roboset="set5" avatarSize="100"/> /* the key prop stays here, not in the child component */
-                )
-            }
-            </ul>
+            
+            <Grid container spacing={2} direction="row" alignItems="center" justifyContent="center" style={{ minHeight: '100vh' }}>
+                    {
+                        students.map((student) => 
+                            <Grid item xs={3}>
+                                <StudentCard key={student.id} id={student.id} name={student.name} job={student.job} location={student.location} image={`https://robohash.org/${student.name}?size=100x100&set=set2`} />
+                            </Grid>
+                        )
+                    }
+            </Grid>
+            
         </div>
     );
 }
