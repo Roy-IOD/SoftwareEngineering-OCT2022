@@ -39,7 +39,7 @@ function Testing() {
     return(
         <div class="componentBox">
             <h1>Testing MUI </h1>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} m="auto">
             <CardMedia
                 component="img"
                 alt="green iguana"
