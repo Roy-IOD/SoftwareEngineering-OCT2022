@@ -1,9 +1,10 @@
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import { students, StudentAvatar } from './StudentList';
 
 function StudentDetails() {
-    const {id} = useParams();
-    const student = students.find(stud => parseInt(id) === stud.id)
+    const {studentid} = useParams();
+    console.log(studentid)
+    const student = students.find(stud => parseInt(studentid) === stud.id)
 
     return (
         <div className="StudentDetails componentBox">
@@ -13,7 +14,9 @@ function StudentDetails() {
                     <StudentAvatar name={student.name} size="200"/>
                     <p>description about this student</p>
                 </div>
-            ) : <p>Student {id} not found</p>}
+            ) : <p>Student {studentid} not found</p>}
+            <br/>
+            <Link to="/students">View all students</Link>
         </div>
     )
 }

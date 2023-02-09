@@ -20,11 +20,14 @@ export const AppRoutes = (props) => {
                 <Route path="messages" element={<DashboardMessages />} />
                 <Route path="tasks" element={<DashboardTasks />} />
             </Route>
+
             <Route path='/about' element={<About {...props} />} />
+
             <Route path='/students' element={<Students {...props} />}>
                 <Route index element={<StudentList />} />
-                <Route path=":id" element={<StudentDetails />}/>
+                <Route path=":studentid" element={<StudentDetails />}/>
             </Route>
+
             <Route path='/login' element={<Login />} />
 
             {/* try adding another route to render one of your existing components on a new 'page', and add it to the NavBar */}

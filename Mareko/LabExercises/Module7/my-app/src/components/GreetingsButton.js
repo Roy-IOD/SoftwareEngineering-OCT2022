@@ -16,7 +16,7 @@ function GreetingsButton(props) {
     }
     
     return(
-        <div>
+        <div className='componentBox'>
             <h1>Hello {name}</h1>
             <button onClick={changeNameArray}>Change Name</button>    
         </div>

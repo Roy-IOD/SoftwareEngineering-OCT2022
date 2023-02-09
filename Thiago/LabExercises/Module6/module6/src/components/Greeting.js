@@ -14,29 +14,30 @@
 
 // export default Greeting;
 
-import React from 'react'
+import React from 'react';
 
-class Greeting extends React.Component{
-  constructor(props){
+class MyComponent extends React.Component {
+     constructor(props) {
       super(props);
       this.state = {name: 'World'};
-      this.yourName = this.yourName.bind(this);
-  }
+      this.myName = this.myName.bind(this);
+      }
+      myName = () => {
+            this.setState({name: 'Thiago'})
+      }
+      changeName = () => {
+            let newName = this.state.name === 'World' ? 'Thiago' : 'World';
+            this.setState({name: newName})
+      }
 
-  yourName = () => {
-      this.setState({name: this.props.name})
-  }
-  
-  render(){
-  return (
-  <div>
-      <div className="Hello">
-      Hello {this.state.name}
+      render() {
+
+      return (
+      <div>
+            <div className="HelloUser">Hello {this.state.name}</div>
+            <button onClick={this.changeName}>Change</button>
       </div>
-      <button onClick={this.yourName}>Change World</button>
-  </div>
-  )
-}
-}
+      )
+}};
 
-export default Greeting;
+export default MyComponent

@@ -1,13 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login';
-import Reservation from './components/Reservation';
+import NavBar from './components/NavBar';
+import { AppRoutes } from './routes/AppRoutes';
+import { EmojiProvider } from './context/emojiContext';
 
 function App() {
   return (
     <div className="App">
-      <Login />
-      <Reservation />
+
+      <EmojiProvider>
+
+        <NavBar />
+        <AppRoutes />
+
+      </EmojiProvider>
+      
+    
     </div>
   );
 }
