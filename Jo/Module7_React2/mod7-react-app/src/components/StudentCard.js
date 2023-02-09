@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Card, Button, CardActions } from '@mui/material';
@@ -10,8 +10,9 @@ function StudentCard(props) {
 
     const navigate = useNavigate();
 
+    //see https://mui.com/material-ui/react-card/#basic-card
     return (
-        <Card sx={{ maxWidth: 345, margin: 10 }} elevation={5}>
+        <Card sx={{ maxWidth: 345, margin: 2 }} elevation={5}> {/* try changing the sx values */}
             <CardMedia
                 component="img"
                 image={props.image}
@@ -26,9 +27,15 @@ function StudentCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" color="primary" onClick={() => navigate(props.id)}>
+                {/* <Button size="small" color="primary" onClick={() => navigate('/students/'+props.id)}>
                     Read More
-                </Button>
+                </Button> */}
+
+                {/* how could we change this button to open a modal dialog instead? */}
+             
+                <Button size="small" color="primary" onClick={props.buttonHandler}>
+                    Read More
+                </Button>             
             </CardActions>            
         </Card>
     )

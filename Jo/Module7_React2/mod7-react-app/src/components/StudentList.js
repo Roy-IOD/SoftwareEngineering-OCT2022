@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
+import { Grid } from '@mui/material';
 
 import StudentCard from './StudentCard';
+import { SimpleDialog } from './SimpleDialogDemo';
 
 //an array of objects (could come from an API or DB). to render each one in turn, we need to iterate over them,
 //and apply the same transformation process to each one to turn the raw data into JSX.
@@ -60,18 +62,43 @@ export const students = [
 ]
 
 function StudentList() {      
+    const [open, setOpen] = useState(false)
+    const [currentStudent, setCurrentStudent] = useState({})
+
+    const handleButton = (thisStudent) => {
+        setCurrentStudent(thisStudent)
+        setOpen(true)
+    }
 
     return (
         <div className="StudentList componentBox">
             <h2>IOD Software Engineering Students ({students.length} in cohort)</h2>
             {/* <ul className="hideBullets"> */}
+
+            {/* see https://mui.com/material-ui/react-grid/ */}
+            <Grid container spacing={2}>
             {
                 students.map((student) => 
                     // <StudentListItem key={student.id} student={student} roboset="set5" avatarSize="100"/>
-                    <StudentCard key={student.id} id={student.id} name={student.name} job={student.job} image={`https://robohash.org/${student.name}?size=100x100&set=set2`} />
+                    <Grid item xs={6} md={3} lg={2} key={student.id} >
+                        <StudentCard 
+                            id={student.id} 
+                            name={student.name} 
+                            job={student.job} 
+                            buttonHandler={() => handleButton(student)} 
+                            image={`https://robohash.org/${student.name}?size=100x100&set=set2`} />
+                    </Grid>
                 )
             }
             {/* </ul> */}
+            </Grid>
+
+            <SimpleDialog
+                open={open}
+                onClose={() => setOpen(false)}
+                title={currentStudent.name}
+                content={'Currently works as a '+currentStudent.job+' and lives in '+currentStudent.location}
+                />            
         </div>
     );
 }
