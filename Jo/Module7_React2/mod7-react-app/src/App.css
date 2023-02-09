@@ -46,7 +46,7 @@
 .Circle { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
 
 .StudentList ul { display: flex; flex-wrap: wrap; }
-.StudentList ul li { display: flex; justify-content: flex-start; align-items: center; width: 25%; }
+.StudentList ul li { display: flex; justify-content: flex-start; align-items: center; width: 21%; padding: 1%; margin: 1%; border-radius: 1em; background: rgba(100,100,200,0.2) }
 .StudentList ul li .details { text-align: left; }
 .StudentList ul li strong { display: block; }
 .StudentList ul li .location { font-style: italic; }
