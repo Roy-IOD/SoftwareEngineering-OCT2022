@@ -64,7 +64,7 @@ function Testing() {
                     aria-labelledby="scroll-dialog-title"
                     aria-describedby="scroll-dialog-description"
                 >
-                    <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+                    <DialogTitle id="scroll-dialog-title">Arsenal January Transfers</DialogTitle>
                     <DialogContent dividers={scroll === 'paper'}>
                     <DialogContentText
                         id="scroll-dialog-description"
