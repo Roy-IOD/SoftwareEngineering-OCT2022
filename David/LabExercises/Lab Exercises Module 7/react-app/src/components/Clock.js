@@ -22,9 +22,11 @@ function Clock() {
   });
 
   return (
-  <div className="componentBox">It is: {date.toLocaleTimeString()}
-  {emoji}
-  </div>);
+  <div className="componentBox">
+    <p>It is: {date.toLocaleTimeString()}</p>
+    <p>{emoji}</p>
+  </div>
+  );
 }
 
 export default Clock;

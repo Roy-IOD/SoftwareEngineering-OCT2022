@@ -1,5 +1,6 @@
 import useToggle from "../hooks/useToggle";
 import useWindowResize from "../hooks/useWindowResize";
+import Button from '@mui/material/Button';
 
 function WindowResizer() {
 
@@ -8,7 +9,7 @@ function WindowResizer() {
 
     return (
         <div className="WindowResizer componentBox">
-            <button onClick={setIsToggled}>{isToggled ? 'Toggled' : 'Click to Toggle'}</button>
+            <Button variant="outlined" onClick={setIsToggled}>{isToggled ? 'Toggled' : 'Click to Toggle'}</Button>
             <div>{windowSize.width <= 768 ? 'Small Screen Detected' : 'Large Screen Detected'}</div>
         </div>
     );
