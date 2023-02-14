@@ -10,27 +10,34 @@ import ClockDisplay from './components/Clock';
 import WindowResizer from './components/WindowResizer';
 import OnlineChat from './components/OnlineChat';
 import { ThemeProvider } from './context/ThemeContext';
+import { UserProvider } from './context/UserContext';
+import NavBar from './components/NavBar';
+import NavBarMUI from './components/NavBarMUI';
+import { AppRoutes } from './routes/AppRoutes';
+import NavBarBootstrap from './components/NavBarBootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App darkMode">
 
-      <ThemeProvider>
-        <Article/>
+      <ThemeProvider> {/* allow all child components to use the Theme context */}
+        <UserProvider> {/* allow all child components to use the User context */}
 
-        <Counter/>
+          
+          <NavBarBootstrap />
 
-        <Login />
+          {/* see https://blog.webdevsimplified.com/2022-07/react-router/ for more tips on routing */}
+          <AppRoutes />
 
-        <RandomQuote />
+          {/* any components listed here will show on all routes, as they don't depend on matching a specific URL in the browser */}
 
-        <Bike />
+          <Counter/>
 
-        <ClockDisplay />
+          <ClockDisplay />
 
-        <WindowResizer />
-
-        <OnlineChat />
+        </UserProvider>
       </ThemeProvider>
 
     </div>

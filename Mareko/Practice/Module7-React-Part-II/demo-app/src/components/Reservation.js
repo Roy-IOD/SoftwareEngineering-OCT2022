@@ -9,16 +9,16 @@ function Reservation(props) {
     const [eventDate, setEventDate] = useState (today.getFullYear() + '-' + today.toLocaleString("default", { month: "2-digit" }) + '-' + today.getDate()) //default to today        
   
     //generic input handler update state for the changed value
-    function handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-        console.log('setting input '+name+' value to '+value);
+    // function handleInputChange(event) {
+    //     const target = event.target;
+    //     const value = target.type === 'checkbox' ? target.checked : target.value;
+    //     const name = target.name;
+    //     console.log('setting input '+name+' value to '+value);
 
-        // this.setState({
-        //     [name]: value
-        // });
-    }
+    //     // this.setState({
+    //     //     [name]: value
+    //     // });
+    // }
 
     function handleSubmit(e) {
         e.preventDefault();
