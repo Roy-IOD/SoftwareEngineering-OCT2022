@@ -5,6 +5,8 @@ import { UserContext } from "../context/UserContext";
 
 import ClickIncrease from '../components/ClickIncrease';
 import HoverIncrease from '../components/HoverIncrease';
+import RefCounter from '../components/RefCounter';
+import Stopwatch from '../components/Stopwatch';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -20,6 +22,9 @@ function Dashboard() {
             {/* see https://blog.logrocket.com/understanding-react-higher-order-components/ */}
             <ClickIncrease fontSize={5} startAt={10} incrementBy={5}/>
             <HoverIncrease />
+
+            <RefCounter />
+            <Stopwatch />
         </div>
     )
 }

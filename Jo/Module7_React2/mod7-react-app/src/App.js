@@ -26,7 +26,7 @@ function App() {
         <UserProvider> {/* allow all child components to use the User context */}
 
           
-          <NavBarBootstrap />
+          <NavBarMUI />
 
           {/* see https://blog.webdevsimplified.com/2022-07/react-router/ for more tips on routing */}
           <AppRoutes />
