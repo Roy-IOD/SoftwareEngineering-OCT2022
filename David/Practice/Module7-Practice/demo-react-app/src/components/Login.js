@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Hello from './Hello';
+import Button from '@mui/material/Button';
 
 function Login () {
 
@@ -54,7 +55,7 @@ function Login () {
                         <input type="password" id="password" name="password" value={password} onChange={ handleInputChange } />
                     </div>
                     
-                    <button>Login</button>
+                    <Button variant="contained">Login</Button>
                 </form>
                 
             </div>

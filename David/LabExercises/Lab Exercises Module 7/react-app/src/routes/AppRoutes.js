@@ -8,8 +8,8 @@ export const AppRoutes = (props) => {
   return (
     <Routes>
       <Route path = "/" element = {<Home />} />
-      <Route path = "Dashboard" element = {<Dashboard />} />
-      <Route path = "Posts" element = {<Posts />} />
+      <Route path = "dashboard" element = {<Dashboard />} />
+      <Route path = "posts" element = {<Posts />} />
     </Routes>
   )
 }
