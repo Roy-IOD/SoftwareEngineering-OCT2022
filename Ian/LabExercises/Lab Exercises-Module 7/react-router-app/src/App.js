@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { AppRoutes } from './routes/AppRoutes';
 import NavBar from './components/NavBar';
+import PostComponent from './components/PostComponent';
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -44,6 +45,7 @@ function App() {
           <NavBar />
           <BasicTextFields />
           <BasicButtons />
+          <PostComponent />
     </div>
   );
 }
