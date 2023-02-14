@@ -8,7 +8,7 @@ function Greeting(props) {
     }
     return (
     
-    <div class = 'Button name change'>
+    <div className = 'Button name change'>
     
     <h1>Hello {name}</h1>
     <button onClick = {changeName}> Change name</button>

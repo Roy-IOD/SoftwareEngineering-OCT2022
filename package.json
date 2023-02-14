@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Roy-IOD/SoftwareEngineering-OCT2022#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.8.1"
   }
 }

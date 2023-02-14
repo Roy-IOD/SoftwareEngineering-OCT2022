@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import {EmojiContext} from '../context/EmojiContext'
 
 function Emoji(props) {
-    const [emoji, setEmoji] = useState('👽')
+    const {emoji, setEmoji} = React.useContext(EmojiContext);
+
     const changeEmoji = () => 
-    {let newEmoji = emoji  === '👽' ? '🐑' : '👽';
+    {let newEmoji = emoji  === '😀' ? '😭' : '😀';
     setEmoji(newEmoji)
     }
     return (

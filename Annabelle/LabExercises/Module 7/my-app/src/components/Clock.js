@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {EmojiContext} from '../context/EmojiContext'
 
 function Clock() {
     const [date, setDate] = useState (new Date());
@@ -7,6 +8,7 @@ function Clock() {
         setDate(new Date())
     }
 
+const {emoji} = React.useContext(EmojiContext); 
 
 useEffect(() => {
     const timerId = setInterval(newClock, 1000);
