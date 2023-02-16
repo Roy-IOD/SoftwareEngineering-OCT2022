@@ -7,9 +7,7 @@ export default class Button extends React.Component {
     }
 
 changeState = () => {
-    this.setState({
-      name: 'Annabelle',
-    });
+    this.setState({name: 'Annabelle', });
   }
 
 render() {

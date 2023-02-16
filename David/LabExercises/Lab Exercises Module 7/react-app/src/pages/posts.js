@@ -1,6 +1,6 @@
 function Posts() {
   return (
-    <div className="Posts">
+    <div className="Posts componentBox">
       <h1>Posts</h1>
     </div>
   );

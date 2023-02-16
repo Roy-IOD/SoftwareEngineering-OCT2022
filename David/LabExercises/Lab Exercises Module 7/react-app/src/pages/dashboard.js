@@ -1,6 +1,6 @@
 function Dashboard() {
   return (
-    <div className="Dashboard">
+    <div className="Dashboard componentBox">
       <h1>Dashboard</h1>
     </div>
   );
