@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 
 import StudentCard from './StudentCard';
 import { SimpleDialog } from './SimpleDialogDemo';
+import NewStudentForm from './NewStudentForm';
 
 //an array of objects (could come from an API or DB). to render each one in turn, we need to iterate over them,
 //and apply the same transformation process to each one to turn the raw data into JSX.
@@ -64,6 +65,7 @@ export const students = [
 function StudentList() {      
     const [open, setOpen] = useState(false)
     const [currentStudent, setCurrentStudent] = useState({})
+    const [studentList, setStudentList] = useState(students)
 
     const handleButton = (thisStudent) => {
         setCurrentStudent(thisStudent)
@@ -78,7 +80,7 @@ function StudentList() {
             {/* see https://mui.com/material-ui/react-grid/ */}
             <Grid container spacing={2}>
             {
-                students.map((student) => 
+                studentList.map((student) => 
                     // <StudentListItem key={student.id} student={student} roboset="set5" avatarSize="100"/>
                     <Grid item xs={6} md={3} lg={2} key={student.id} >
                         <StudentCard 
@@ -92,6 +94,8 @@ function StudentList() {
             }
             {/* </ul> */}
             </Grid>
+
+            <NewStudentForm studentList={students} updateHandler={setStudentList}/>
 
             <SimpleDialog
                 open={open}
@@ -123,7 +127,6 @@ export function StudentAvatar(props) {
         <img src={`https://robohash.org/${props.name}?size=${avatarSize}&set=${roboset}`} alt={props.name}/>
     )
 }
-
 
 
 export default StudentList;

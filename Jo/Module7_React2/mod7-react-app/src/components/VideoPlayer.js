@@ -3,11 +3,11 @@ import { useState, useRef } from 'react';
 //see https://beta.reactjs.org/learn/manipulating-the-dom-with-refs
 export default function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  let videoRef = useRef()
+  let videoRef = useRef() //the value of this ref is set on line 22 using the 'ref' attribute/prop
 
   function handleClick() {
 
-    isPlaying ? videoRef.current.pause() : videoRef.current.pause();
+    isPlaying ? videoRef.current.pause() : videoRef.current.pause(); //uses the reference to the video element to handle playing and pausing
 
     const nextIsPlaying = !isPlaying;
     setIsPlaying(nextIsPlaying);

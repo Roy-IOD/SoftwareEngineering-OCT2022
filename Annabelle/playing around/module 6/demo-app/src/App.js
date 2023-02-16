@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import MyComponent from './components/MyComponent'
@@ -7,6 +7,8 @@ import PropsDisplayer from './components/PropsDisplayer'
 import Comment from './components/Comment'
 import Emoji from './components/Emoji'
 import ExplodingBomb from './components/ExplodingBomb'
+import { AppRoutes } from './routes/AppRoutes';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
       <MyComponent/>
       <PropsDisplayer test={"hello"}/>
       <Comment author={comment.author} date={comment.date} text={comment.text}/>
+      <NavBar />
+      <AppRoutes />   
     </div>
   );
 }

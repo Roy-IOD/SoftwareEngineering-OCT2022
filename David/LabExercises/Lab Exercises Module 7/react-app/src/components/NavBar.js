@@ -5,8 +5,8 @@ function NavBar() {
         <div className="NavBar">
             <ul className="menu">
                 <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/Posts">Posts</NavLink></li>
-                <li><NavLink to="/Dashboard">Dashboard</NavLink></li>
+                <li><NavLink to="/posts">Posts</NavLink></li>
+                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
             </ul>
         </div>
     )
