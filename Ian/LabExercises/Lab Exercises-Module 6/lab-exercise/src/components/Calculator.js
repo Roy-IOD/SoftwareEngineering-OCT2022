@@ -19,11 +19,31 @@ class Calculator extends React.Component {
     }  
 
     calculate = () => {
-        let 
+        let calculation 
+        switch(this.state.operator) {
+            case '+':
+                calculation = parseInt(this.state.num1) + parseInt(this.state.num2);
+                break;
+            case '-':
+                calculation = parseInt(this.state.num1) - parseInt(this.state.num2);
+                break;
+            case '*':
+                calculation = parseInt(this.state.num1) * parseInt(this.state.num2);
+                break;
+            case '/':
+                calculation = parseInt(this.state.num1) / parseInt(this.state.num2);
+                break;
+        }
+        
+        this.setState({
+            result : calculation
+        });
+    
+        //variable where i store result of calc 
         // Needs to grab the 2 numbers from the state 
         // and grab operator from the state
-        //then some kind of testing on operator to determine which one, then do calculation
-        //once calculation done, store in state
+        // then some kind of testing on operator to determine which one, then do calculation - switch statement
+        // once calculation done, store in state
         // either bind it or turn this into an arrow function which doesn't have its own this
         // See chatGPT example for bind stuff 
     }  

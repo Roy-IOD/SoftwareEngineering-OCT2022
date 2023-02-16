@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Greeting name = {myName}/>
+      <Greeting />
       <Emoji/>
       <Calculator/>
       <header className="App-header">

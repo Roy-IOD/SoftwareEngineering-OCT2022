@@ -32,7 +32,7 @@ class Weather extends React.Component {
         //this.state.weather = 'windy' //this would change the state value as well but is doing it WRONG - always use the setState method instead.
     }
 
-    windStopsBlowing() {
+    sunShines() {
         //Always use the setState() method to change the state object, 
         //since it will ensure that the component knows it’s been updated and triggers the render() method.        
         this.setState({ weather: 'sunny' });
@@ -68,7 +68,7 @@ class Weather extends React.Component {
                 {/* <div>Weather Tomorrow: {this.state.forecast}</div> */}
                 <Forecast weather={this.state.forecast} />
                 <button onClick={() => this.windBlows()}>Wind Blows</button> {/* we can use event listeners like onClick, onSubmit, onChange but they need to be camelcased */}
-                <button onClick={() => this.windStopsBlowing()}>Wind Stops Blowing</button>
+                <button onClick={() => this.sunShines()}>Sun Shines</button>
                 <button onClick={this.changeWeather}>Change Weather</button>
             </div>
         )
