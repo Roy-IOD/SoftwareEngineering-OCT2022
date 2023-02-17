@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { Grid, useRadioGroup } from '@mui/material';
 import axios from 'axios';
 import PostCard from './PostCard';
+import PostForm from './PostForm';
 
 function SocialPost() {
 
     const [posts, setPosts] = useState([])
-    const [updated, setUpdated] = useState(false) //do I need this part?
+    // const [updated, setUpdated] = useState(false) //do I need this part?
+    const [newPost, setNewPost] = useState({title: '', body: ''});
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts/')
@@ -19,11 +21,13 @@ function SocialPost() {
         .catch(e => {
             setPosts({text: e.message, author:'Server Request Failed'})
         })
-    }, [updated])
+    }, [])
 
+        
     return (
         <div className='socialPost componentBox'>
             <h2>Display Posts from the Backend</h2>
+            <PostForm postArray={posts} postUpdater={setPosts}/>
             <Grid container spacing={2}>
                 {
                     posts.map((posts) =>

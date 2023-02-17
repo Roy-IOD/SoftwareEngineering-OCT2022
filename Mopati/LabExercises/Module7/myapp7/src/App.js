@@ -5,9 +5,11 @@ import Login from "./components/Login";
 import Hello from "./components/Greetings";
 import ClockDisplay from "./components/Clock";
 import { ThemeProvider } from "./context/ThemeContext";
-import { UserProvider } from "./context/UserProvider";
+import { UserProvider } from "./context/UserContext";
 import NavBar from "./components/NavBar";
 import { AppRoutes } from "./routes/AppRoutes";
+import MediaPostApp from "./components/MediaPost";
+import MediaPostForm from "./components/MediaPostForm";
 
 function App() {
   return (
@@ -15,9 +17,10 @@ function App() {
       <ThemeProvider>
         <UserProvider>
           <NavBar />
-          {/* <Login />
-          <Hello /> */}
+          <Login />
+          {/* <Hello /> */}
           <AppRoutes />
+          <MediaPostApp />
         </UserProvider>
       </ThemeProvider>
     </div>
