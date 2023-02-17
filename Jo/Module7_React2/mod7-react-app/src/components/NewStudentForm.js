@@ -6,11 +6,12 @@ function NewStudentForm(props) {
     const [location, setLocation] = useState('')
     const [currentJob, setCurrentJob] = useState('')
 
+    //see https://beta.reactjs.org/learn/updating-arrays-in-state#adding-to-an-array for tips on updating arrays in state
     const handleSubmit = (e) => {
         e.preventDefault();
         props.updateHandler([
-            {id: props.studentList.length, name: fullName, location: location, job: currentJob},
-            ...props.studentList
+            {id: props.studentList.length+1, name: fullName, location: location, job: currentJob}, //create a new object based on form values
+            ...props.studentList //include all the previous array items
         ])
     }
 
