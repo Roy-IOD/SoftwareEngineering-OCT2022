@@ -7,8 +7,7 @@ function AddPost(props) {
         })
       function submit(e){
             e.preventDefault();
-            props.currentPosts.push(data)
-            props.updatePosts(props.currentPosts)
+            props.updatePosts([...props.currentPosts, data])
             console.log(data)
       }
       
