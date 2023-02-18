@@ -10,8 +10,8 @@ function PostForm(props) {
 
     function submit(e){
         e.preventDefault();
-        props.currentPlayers.push(data)
-        props.updatePlayers(props.currentPlayers)
+        // props.currentPlayers.push(data)
+        props.updatePlayers([...props.currentPlayers, data])
         console.log(data)
     }
 
