@@ -11,7 +11,6 @@ function People() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch('https://swapi.dev/api/people/')
       .then(response => response.json())
       .then(data => {
         setPeople(data.results);
