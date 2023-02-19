@@ -34,7 +34,7 @@ function NavBar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' }, color: 'transparent'}}>
             {pages.map((page) => (
-              <Button key={page}  href={"/"+page} variant="contained" sx={{fontFamily: 'Fortnite', letterSpacing: '.3rem', p: 1}}>
+              <Button key={page}  href={"/"+page} variant="contained" sx={{fontFamily: 'Fortnite', letterSpacing: '.3rem', p: 1, m: 1}}>
                   {page}
               </Button>
             ))}

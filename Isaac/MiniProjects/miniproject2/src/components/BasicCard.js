@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 
 function BasicCard(props) {
       return (  
-            <Card sx={{ maxWidth: 345, margin: 2, boxShadow: 10 }} elevation={5} style={{backgroundColor: 'white'}}>
+            <Card sx={{ maxWidth: 300, height: 250, margin: 3, boxShadow: 10 }} elevation={5} style={{backgroundColor: 'white'}}>
                         <CardContent>
                               <Box component="img" src={props.image} sx={{width: '50%'}} />
 
