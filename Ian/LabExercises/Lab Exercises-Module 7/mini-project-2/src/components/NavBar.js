@@ -115,7 +115,6 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            
             STAR WARS
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

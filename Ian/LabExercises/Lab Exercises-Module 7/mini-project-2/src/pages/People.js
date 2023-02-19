@@ -6,12 +6,16 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 function People() {
   const [people, setPeople] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(null);
 
   useEffect(() => {
     fetch('https://swapi.dev/api/people/?page=1')
+    // This should fetch the current page. If left as /page then it still loads first 10 results
       .then(response => response.json())
       .then(data => {
         setPeople(data.results);
@@ -21,14 +25,26 @@ function People() {
       });
   }, []);
 
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className="People">
         <h1>People</h1>
       <p>The Star Wars characters that you know and love</p>
       <Grid container>
       {people.map((people, index) => (
-        <Grid item xs={6}>
-        <Card key={index} style={{ margin: '0.5rem' }}>
+        <Grid item xs={4}>
+        <Card key={index} style={{ margin: '1rem' }}>
             <CardContent>
                 <Typography variant="h5" component="h2">
                     {people.name}
@@ -47,6 +63,12 @@ function People() {
         </Grid>
       ))}
       </Grid>
+      <Button onClick={handlePrevPage} disabled={currentPage === 1}>
+        Previous page
+        </Button>
+      <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        Next Page
+      </Button>
     </div>
   );
 }

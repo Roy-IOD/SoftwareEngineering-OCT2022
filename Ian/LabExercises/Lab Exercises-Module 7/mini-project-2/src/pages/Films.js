@@ -28,7 +28,7 @@ function Films() {
       <Grid container>
       {films.map((film, index) => (
         <Grid item xs={6}>
-        <Card key={index} style={{ margin: '1rem' }}>
+        <Card key={index} style={{ margin: '0.5rem', backgroundColor: 'black', color: 'white', border: '1px solid yellow' }}>
           <CardContent>
             <Typography variant="h5" component="h2">
               {film.title}
