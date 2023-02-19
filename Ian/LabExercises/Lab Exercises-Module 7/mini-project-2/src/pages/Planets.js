@@ -27,8 +27,8 @@ function Planets() {
       <p>The mystical worlds of the Star Wars universe</p>
       <Grid container>
       {planet.map((planet, index) => (
-        <Grid item xs={4}>
-        <Card key={index} style={{ margin: '1rem' }}>
+        <Grid item xs={6}>
+        <Card key={index} style={{ margin: '0.5rem', backgroundColor: 'black', color: 'white', border: '1px solid yellow' }}>
             <CardContent>
                 <Typography variant="h5" component="h2">
                     {planet.name}

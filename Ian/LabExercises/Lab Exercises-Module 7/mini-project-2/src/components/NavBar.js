@@ -38,11 +38,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: 'black', color: 'yellow', height: '50%' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <img src={logo} alt="My Logo" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -51,6 +50,8 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
+              maxHeight: '10%',
+              maxWidth: 'auto',
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -58,7 +59,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            STAR WARS
+            <img src={logo} alt="Star Wars Logo" sx={{ display: { xs: 'none', md: 'flex', maxWidth: 10, maxHeight: 20 }, mr: 1, transform: 'scale(0.8)' }} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -114,6 +115,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
+            
             STAR WARS
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
