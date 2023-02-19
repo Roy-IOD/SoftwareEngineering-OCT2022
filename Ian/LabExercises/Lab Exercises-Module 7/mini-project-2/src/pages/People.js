@@ -11,7 +11,7 @@ function People() {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
-    fetch('https://swapi.dev/api/people/')
+    fetch('https://swapi.dev/api/people/?page=1')
       .then(response => response.json())
       .then(data => {
         setPeople(data.results);
@@ -27,8 +27,8 @@ function People() {
       <p>The Star Wars characters that you know and love</p>
       <Grid container>
       {people.map((people, index) => (
-        <Grid item xs={4}>
-        <Card key={index} style={{ margin: '1rem' }}>
+        <Grid item xs={6}>
+        <Card key={index} style={{ margin: '0.5rem' }}>
             <CardContent>
                 <Typography variant="h5" component="h2">
                     {people.name}
