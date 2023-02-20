@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import logo from '../img/Star_Wars_Logo.png';
+import { Link } from 'react-router-dom';
 
 
 const pages = ['People', 'Planets', 'Films'];
@@ -38,8 +39,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: 'black', color: 'yellow' }}>
-      <Container maxWidth="xl">
+    <AppBar position="static" style={{ backgroundColor: 'black', color: 'yellow', height: '25%' }}>
+      <Container maxWidth="l">
         <Toolbar disableGutters>
           
           <Typography
@@ -131,7 +132,7 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Profile Settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>

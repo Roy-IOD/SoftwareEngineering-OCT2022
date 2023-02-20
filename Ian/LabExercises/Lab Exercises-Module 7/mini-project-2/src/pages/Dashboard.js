@@ -4,7 +4,7 @@ import Background from '../img/sw_img.jpg';
 
 function Dashboard() {
     return (
-        <div>
+        <div className="dashboard-container">
         <h1>Welcome to the Cantina</h1>
         <h2>Community fan club for Star Wars fans to share, discover content and connect with other fans</h2>
         <img src={Logo} alt="Description" />

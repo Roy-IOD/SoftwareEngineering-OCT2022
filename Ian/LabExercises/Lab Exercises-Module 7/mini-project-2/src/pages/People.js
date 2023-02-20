@@ -14,16 +14,17 @@ function People() {
   const [totalPages, setTotalPages] = useState(null);
 
   useEffect(() => {
-    fetch('https://swapi.dev/api/people/?page=1')
+    fetch('https://swapi.dev/api/people/?page='+currentPage)
     // This should fetch the current page. If left as /page then it still loads first 10 results
       .then(response => response.json())
       .then(data => {
         setPeople(data.results);
+        setTotalPages(data.count / 10);
       })
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [currentPage]);
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
