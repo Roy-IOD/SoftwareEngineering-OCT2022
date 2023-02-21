@@ -13,7 +13,6 @@ Here are some questions for the students to cover during their presentations to 
 - What external tools/libraries have you used (eg. bootstrap/axios/MUI)? How? Why?
 - How might you extend the features of your application in future?
 
-
-https://jsonplaceholder.typicode.com/posts/
-
 API: https://dash.fortnite-api.com/ 
+
+FIGMA: https://www.figma.com/file/9j8JyCZA1CXZtyNarS198f/Fortnite-Hub?node-id=0%3A1&t=lQTEJbRLD5tUdpjd-1
