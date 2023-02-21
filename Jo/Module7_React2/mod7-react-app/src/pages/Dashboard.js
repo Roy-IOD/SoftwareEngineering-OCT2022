@@ -3,6 +3,11 @@ import {Outlet, useNavigate} from 'react-router-dom'
 
 import { UserContext } from "../context/UserContext";
 
+import ClickIncrease from '../components/ClickIncrease';
+import HoverIncrease from '../components/HoverIncrease';
+import RefCounter from '../components/RefCounter';
+import Stopwatch from '../components/Stopwatch';
+
 function Dashboard() {
     const navigate = useNavigate();
 
@@ -14,7 +19,12 @@ function Dashboard() {
             <button onClick={() => navigate('/tasks')}>Show Tasks</button>
             <button onClick={() => navigate('/messages')}>Show Messages</button>
 
+            {/* see https://blog.logrocket.com/understanding-react-higher-order-components/ */}
+            <ClickIncrease fontSize={5} startAt={10} incrementBy={5}/>
+            <HoverIncrease />
 
+            <RefCounter />
+            <Stopwatch />
         </div>
     )
 }

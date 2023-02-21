@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Hello from './Hello'
 import { UserContext } from '../context/UserContext';
 import { ThemeContext } from '../context/ThemeContext';
+import { Button, TextField, Box } from '@mui/material';
 
 //this is the FUNCTIONAL version of the Login component from Module 6. It uses the useState HOOK to manage state instead of the inherited setState class method.
 function Login(props) {
@@ -46,21 +47,25 @@ function Login(props) {
             {/* if we're logged in, use the Hello component to say hello */}
             <div>{loggedIn ? <Hello name={username}/> : 'Please log in'}</div>
 
-            <form onSubmit={handleLogin}>
+            {/* <form onSubmit={handleLogin}> */}
+            <Box component="form" noValidate autoComplete="off" m='auto' sx={{backgroundColor: 'rgba(255,255,255,0.3)', padding: '1em', maxWidth: 600}}>            
                 <div className="formRow">
-                    <label htmlFor="username">Username: </label>
+                    {/* <label htmlFor="username">Username: </label> */}
                     {/* every time the input changes, store the latest value into state */}
-                    <input id="username" value={localUsername} name="username" onChange={ handleInputChange }/>
+                    {/* <input id="username" value={localUsername} name="username" onChange={ handleInputChange }/> */}
+                    <TextField name="username" label="Username" value={localUsername} onChange={ handleInputChange } variant="outlined" focused />
                 </div>
 
                 <div className="formRow">
-                    <label htmlFor="password">Password: </label>
+                    {/* <label htmlFor="password">Password: </label> */}
                     {/* every time the input changes, store the latest value into state */}
-                    <input type="password" id="password" name="password" value={password} onChange={ handleInputChange } />
+                    {/* <input type="password" id="password" name="password" value={password} onChange={ handleInputChange } /> */}
+                    <TextField name="password" type="password" label="Password" value={password} onChange={ handleInputChange } variant="outlined" />
+
                 </div>
                 
-                <button>Login</button>
-            </form>
+                <Button variant="outlined" onClick={handleLogin}>Login</Button>
+            </Box>
             
         </div>
     );

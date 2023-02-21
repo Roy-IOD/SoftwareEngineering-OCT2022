@@ -12,7 +12,11 @@ import OnlineChat from './components/OnlineChat';
 import { ThemeProvider } from './context/ThemeContext';
 import { UserProvider } from './context/UserContext';
 import NavBar from './components/NavBar';
+import NavBarMUI from './components/NavBarMUI';
 import { AppRoutes } from './routes/AppRoutes';
+import NavBarBootstrap from './components/NavBarBootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -21,7 +25,8 @@ function App() {
       <ThemeProvider> {/* allow all child components to use the Theme context */}
         <UserProvider> {/* allow all child components to use the User context */}
 
-          <NavBar />
+          
+          <NavBarMUI />
 
           {/* see https://blog.webdevsimplified.com/2022-07/react-router/ for more tips on routing */}
           <AppRoutes />

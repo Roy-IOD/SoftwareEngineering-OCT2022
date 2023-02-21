@@ -6,6 +6,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { UserProvider } from "./context/UserContext";
 import NavBar from "./components/NavBar";
 import { AppRoutes } from "./routes/AppRoutes";
+import OutlinedCard from "./components/Card";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
 
           <AppRoutes />
 
-        
+        <Login />
+        <OutlinedCard />
+        <WindowResizer />
         
         </UserProvider>
       </ThemeProvider>

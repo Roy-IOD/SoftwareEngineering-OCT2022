@@ -37,6 +37,8 @@
   }
 }
 
+.formRow { margin: 1em 0; }
+
 .componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
 .NavBar { background: #0E2F38; color: #eee; }
 .NavBar ul { display: flex; list-style: none; justify-content: center; }

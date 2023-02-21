@@ -1,5 +1,7 @@
 import Article from "../components/Article"
 import RandomQuote from "../components/RandomQuote"
+import SimpleDialogDemo from "../components/SimpleDialogDemo"
+import VideoPlayer from "../components/VideoPlayer"
 
 function About() {
 
@@ -13,7 +15,11 @@ function About() {
 
             <Article/>
 
-            <RandomQuote />            
+            <RandomQuote />      
+
+            <SimpleDialogDemo />    
+
+            <VideoPlayer />  
         </div>
     )
 }
