@@ -6,7 +6,7 @@ import { Videos } from './VideoArray';
 function HomeScreen(props) {
       const [currentVideo, updateVideo] = useState(0);
       const videoHandler = () => {
-            (currentVideo < 19) ?  updateVideo(currentVideo + 1) :  updateVideo(currentVideo - 19)
+            (currentVideo < 19) ?  updateVideo(currentVideo + 1) :  updateVideo(0)
       }
       let updatedVideo = Videos[currentVideo].src
       console.log(updatedVideo)
