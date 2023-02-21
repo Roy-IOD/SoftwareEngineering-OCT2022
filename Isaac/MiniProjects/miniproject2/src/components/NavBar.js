@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import { Button } from '@mui/material';
 import "../fonts/Burbank-Big-Condensed-Black.ttf"
 
-const pages = ['Cosmetics', 'Map', 'News', 'Shop'];
+const pages = ['cosmetics', 'map', 'news', 'shop'];
 
 function NavBar() {
 
