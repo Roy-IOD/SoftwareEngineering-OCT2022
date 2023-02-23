@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import { Grid } from '@mui/material';
 
 import StudentCard from './StudentCard';
@@ -108,16 +108,16 @@ function StudentList() {
 }
 
 //have a look at https://reactjs.org/docs/lists-and-keys.html for tips
-function StudentListItem(props) {
-    const name = props.student.name; //storing in a new variable to save re-typing
+// function StudentListItem(props) {
+//     const name = props.student.name; //storing in a new variable to save re-typing
 
-    return (
-        <li> {/* don't need a key here, since it's inside the map on line 66 */}
-            <div className="avatar"><Link to={`/students/${props.student.id}`}><StudentAvatar name={name} set="set5"/></Link></div>
-            <div className="details"><strong>{name}</strong> <span className="location">based in {props.student.location}</span></div>
-        </li> 
-    )
-}
+//     return (
+//         <li> {/* don't need a key here, since it's inside the map on line 66 */}
+//             <div className="avatar"><Link to={`/students/${props.student.id}`}><StudentAvatar name={name} set="set5"/></Link></div>
+//             <div className="details"><strong>{name}</strong> <span className="location">based in {props.student.location}</span></div>
+//         </li> 
+//     )
+// }
 
 export function StudentAvatar(props) {
     const avatarSize = props.size ? props.size + 'x' + props.size : "50x50"; //sets a default value for the prop in case it's not passed in
