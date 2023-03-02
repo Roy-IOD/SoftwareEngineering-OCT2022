@@ -3,11 +3,11 @@ let router = express.Router();
 let Controllers = require("../controllers");
 
 router.get('/', (req, res) => {
-      Controllers.postController.getPosts(res);
+    Controllers.userController.getUsers(res);
 })
 
 router.post('/create', (req, res) => {
-      Controllers.postController.createPost(req.body, res)
+    Controllers.userController.createUser(req.body, res);
 })
 
 module.exports = router;
