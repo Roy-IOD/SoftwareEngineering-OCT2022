@@ -23,7 +23,7 @@ User.init({
         type: DataTypes.STRING, allowNull: false, required: true
     }}, 
     {
-        sequelize: sequelizeInstance, modelName: 'users',
+        sequelize: sequelizeInstance, modelName: 'users', //use lowercase plural format
         timestamps: true, freezeTableName: true
     }
 )
