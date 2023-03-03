@@ -44,3 +44,7 @@
 .NavBar ul li a.active { font-weight: bold; }
 
 .hideBullets { list-style: none;}
+
+
+.postModal { background: #FFF; text-align: center; }
+.modalBackground { background: #FFF; }

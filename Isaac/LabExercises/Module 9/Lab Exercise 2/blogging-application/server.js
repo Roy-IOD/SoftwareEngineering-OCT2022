@@ -10,7 +10,9 @@ app.get("/", (req, res) => {
       res.json({ message: "Welcome to my MongoDV application"})
 });
 
+let userRoutes = require('./routes/userRoutes')
 let postRoutes = require('./routes/postRoutes')
+app.use('/api/users', userRoutes)
 app.use('/api/posts', postRoutes)
 
 

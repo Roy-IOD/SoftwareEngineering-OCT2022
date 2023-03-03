@@ -1,21 +1,19 @@
 "use strict";
-let Models = require("../models"); //matches index.js
+let Models = require("../models");
 
-const getPosts = (res) => {
-    //finds all users
-    Models.Post.find({})
+const getUsers = (res) => {
+    Models.User.find({})
         .then(data => res.send({result: 200, data: data}))
         .catch(err => console.log(err.message))
 }
 
-const createPost = (data, res) => {
-    //creates a new user using JSON data POSTed in request body
+const createUser = (data, res) => {
     console.log(data)
-    new Models.Post(data).save()
+    new Models.User(data).save()
         .then(data => res.send({result: 200, data: data}))
         .catch(err => console.log(err.message))    
 }
 
 module.exports = {
-    getPosts, createPost
+    getUsers, createUser
 }
