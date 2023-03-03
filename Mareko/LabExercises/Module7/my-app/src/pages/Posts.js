@@ -1,9 +1,10 @@
-import WritePost from "../components/WritePost";
+import MediaPostApp from "../components/MediaPostApp";
+import NewPost from "../components/NewPost";
 
 function Posts() {
     return(
         <div className="componentBox">
-            <WritePost />
+            <MediaPostApp />
         </div>
     )
 
