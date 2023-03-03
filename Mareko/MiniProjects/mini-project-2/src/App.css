@@ -37,14 +37,12 @@
   }
 }
 
-.componentBox { border: 1px solid #aaa; margin: 1em; padding: 1em; text-align: center; background: #efefef; }
-.NavBar { background: #0E2F38; color: #eee; }
-.NavBar ul { display: flex; list-style: none; justify-content: center; }
-.NavBar ul li a { padding: 1em; color: #eee; text-transform: uppercase; display: inline-block; text-decoration: none; }
-.NavBar ul li a.active { font-weight: bold; }
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
 
-.hideBullets { list-style: none;}
-
-
-.postModal { background: #FFF; text-align: center; }
-.modalBackground { background: #FFF; }
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}

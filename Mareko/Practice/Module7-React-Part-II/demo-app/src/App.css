@@ -43,3 +43,13 @@
 .NavBar ul { display: flex; list-style: none; justify-content: center; }
 .NavBar ul li a { padding: 1em; color: #eee; text-transform: uppercase; display: inline-block; text-decoration: none; }
 .NavBar ul li a.active { font-weight: bold; }
+
+.center {
+  text-align: center;
+}
+
+.Badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
