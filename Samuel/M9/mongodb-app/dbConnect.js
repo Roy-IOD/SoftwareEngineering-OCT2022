@@ -1,16 +1,16 @@
-'use strict';
-const Mongoose = require('mongoose');
+"use strict";
+const Mongoose = require("mongoose");
 const uri = process.env.DB_URI || "mongodb://localhost/myFirstDatabase";
 
 const mongooseOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 };
 
 //Connect to MongoDB
 Mongoose.connect(uri, mongooseOptions)
-    .then(() => console.log('MongoDB Connected'))
-    .catch(error => console.log('MongoDB Error: '+error.message));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((error) => console.log("MongoDB Error: " + error.message));
 
 // Get the default connection
 const db = Mongoose.connection;
