@@ -17,7 +17,7 @@ let postRoutes = require('./routes/postRoutes')
 let commentRoutes = require('./routes/commentRoute')
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postRoutes)
-app.use('./api/comments', commentRoutes)
+app.use('/api/comments', commentRoutes)
 //set port, listen for requests
 const PORT = process.env.PORT || 8080; 
 app.listen(PORT, () => {

@@ -1,0 +1,1 @@
+Just a note for Lab exercise 1/4 - I have changed Comment ID to be the Post ID foreign key.
