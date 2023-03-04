@@ -10,4 +10,8 @@ router.get("/city", (req, res) => {
   Controllers.nbaController.getCity(res);
 });
 
+router.get("/randomteam", (req, res) => {
+  Controllers.nbaController.getRandomTeam(res);
+});
+
 module.exports = router;
