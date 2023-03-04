@@ -6,7 +6,7 @@ const getTeams = (res) => {
     .get("https://www.balldontlie.io/api/v1/teams")
     .then((data) => {
       console.log(data.data);
-      res.send({ result: 200, data: data.data });
+      res.send({ result: 200, data: data.data.data });
     })
     .catch((err) => {
       throw err;
@@ -17,7 +17,7 @@ const getCity = (res) => {
   axios
     .get("https://www.balldontlie.io/api/v1/teams")
     .then((data) => {
-      let apiData = data.data;
+      let apiData = data.data.data;
       console.log(apiData);
 
       //we can modify the data here to just return what we need:
@@ -34,6 +34,19 @@ const getCity = (res) => {
     });
 };
 
+const getRandomTeam = (res) => {
+  let teamId = Math.floor(Math.random() * 30);
+  axios
+    .get(`https://www.balldontlie.io/api/v1/teams/${teamId}`)
+    .then((data) => {
+      console.log(data.data);
+      res.send({ result: 200, data: data.data });
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
 module.exports = {
-  nbaController: { getTeams, getCity },
+  nbaController: { getTeams, getCity, getRandomTeam },
 };
