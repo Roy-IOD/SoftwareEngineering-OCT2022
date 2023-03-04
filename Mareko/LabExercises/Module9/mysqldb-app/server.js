@@ -1,18 +1,20 @@
 const express = require("express");
 const app = express();
-require("dotenv").config();
 
+require("dotenv").config();
+require("./dbConnect"); //example using Sequelize package
 let dbConnect = require("./dbConnect");
+dbConnect.connectMysql()
 
 // parse requests of content-type - application/json
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to my MongoDB application." });
+    res.json({ message: "Welcome to my MySQL application." });
 });
 
 let userRoutes = require('./routes/userRoutes')
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes) //sequelize
 
 let postRoutes = require('./routes/postRoutes')
 app.use('/api/posts', postRoutes)

@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const post = new Schema({
+    postID: { type: String, required: true },
+    userID: { type: String, required: true },
     title: { type: String, trim: true, required: true },
     description: { type: String, trim: true, required: true },
-    imageURL: { type: String, trim: true, required: false, unique: true },
+    imageURL: { type: String, trim: true, required: false },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 });
