@@ -1,9 +1,9 @@
 "use strict";
 let Models = require("../models"); //matches index.js
 
-const getPosts = (res) => {
-    //finds all posts
-    Models.Post.find({})
+const getComments = (res) => {
+    //finds all Comments
+    Models.Comment.find({})
         .then(data => res.send({result: 200, data: data}))
         .catch(err => { 
             console.log(err); 
@@ -11,10 +11,10 @@ const getPosts = (res) => {
         })  
 }
 
-const createPost = (data, res) => {
-    //creates a new post using JSON data POSTed in request body
+const createComment = (data, res) => {
+    //creates a new Comment using JSON data POSTed in request body
     console.log(data)
-    new Models.Post(data).save()
+    new Models.Comment(data).save()
         .then(data => res.send({result: 200, data: data}))
         .catch(err => { 
             console.log(err); 
@@ -22,10 +22,10 @@ const createPost = (data, res) => {
         })   
 }
 
-const updatePost = (req, res) => {
-    //updates the post matching the ID from the param using JSON data POSTed in request body
+const updateComment = (req, res) => {
+    //updates the Comment matching the ID from the param using JSON data POSTed in request body
     console.log(req.body)
-    Models.Post.findByIdAndUpdate(req.params.id, req.body, { useFindAndModify: false })
+    Models.Comment.findByIdAndUpdate(req.params.id, req.body, { useFindAndModify: false })
         .then(data => res.send({result: 200, data: data}))
         .catch(err => { 
             console.log(err); 
@@ -33,9 +33,9 @@ const updatePost = (req, res) => {
         })   
 }
 
-const deletePost = (req, res) => {
-    //deletes the post matching the ID from the param
-    Models.Post.findByIdAndRemove(req.params.id, req.body, { useFindAndModify: false })
+const deleteComment = (req, res) => {
+    //deletes the Comment matching the ID from the param
+    Models.Comment.findByIdAndRemove(req.params.id, req.body, { useFindAndModify: false })
         .then(data => res.send({result: 200, data: data}))
         .catch(err => { 
             console.log(err); 
@@ -44,5 +44,5 @@ const deletePost = (req, res) => {
 }
 
 module.exports = {
-    getPosts, createPost, updatePost, deletePost
+    getComments, createComment, updateComment, deleteComment
 }
