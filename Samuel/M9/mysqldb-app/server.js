@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 
 require("dotenv").config();
-require("./dbConnect"); //example using Sequelize package
-require("./dbConnect_mysql2"); //example using mysql2 package
+require("./dbConnect");
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -13,13 +12,11 @@ app.get("/", (req, res) => {
 });
 
 let userRoutes = require("./routes/userRoutes");
-app.use("/api/users", userRoutes); //sequelize
-
-let userRoutes2 = require("./routes/userRoutes_mysql2");
-app.use("/api/users2", userRoutes2); //mysql2
-
-let gotRoutes = require('./routes/gotRoutes')
-app.use('/api/got', gotRoutes) //sequelize
+let postRoutes = require("./routes/postRoutes");
+let commentRoutes = require("./routes/commentRoutes");
+app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
+app.use("/api/comments", commentRoutes);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
