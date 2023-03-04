@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Roy-IOD/SoftwareEngineering-OCT2022#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.0"
   }
 }
