@@ -10,8 +10,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to my MySQL application." });
 });
 
-let gotRoutes = require("./routes/gotRoutes");
-app.use("/api/got", gotRoutes); //sequelize
+let nbaRoutes = require("./routes/nbaRoutes");
+app.use("/api/nba", nbaRoutes); //sequelize
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
