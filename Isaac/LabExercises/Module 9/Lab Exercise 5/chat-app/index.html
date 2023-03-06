@@ -9,7 +9,6 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif;
       }
-
       #form {
         background: rgba(0, 0, 0, 0.15);
         padding: 0.25rem;
@@ -53,20 +52,37 @@
       #messages > li:nth-child(odd) {
         background: #efefef;
       }
+
+      #feedback {
+        padding: 0.2rem 1rem;
+      }
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <div id="chat-window">
+      <div>
+        <h3>Current Users:</h3>
+        <ul id="users"></ul>
+      </div>
+      <br />
+      <h3>Chat:</h3>
+      <div id="messages"></div>
+      <div id="feedback"></div>
+    </div>
     <form id="form" action="">
+      <input type="text" placeholder="Name" id="name" />
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io();
 
-      const messages = document.getElementById("messages");
-      const form = document.getElementById("form");
-      const input = document.getElementById("input");
+      let messages = document.getElementById("messages");
+      let form = document.getElementById("form");
+      let input = document.getElementById("input");
+      let name = document.getElementById("name");
+      let feedback = document.getElementById("feedback");
+      let users = document.getElementById("users");
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -76,8 +92,26 @@
         }
       });
 
+      input.addEventListener("keypress", () => {
+        socket.emit("typing", name.value);
+      });
+
       socket.on("chat message", function (msg) {
-        var item = document.createElement("li");
+        let item = document.createElement("li");
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+
+      socket.on("typing", (name) => {
+        feedback.innerHTML = `<p>${name} is typing...</p>`;
+        setTimeout(() => {
+          feedback.innerHTML = "";
+        }, 3000);
+      });
+
+      socket.on("connection message", function (msg) {
+        let item = document.createElement("li");
         item.textContent = msg;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
