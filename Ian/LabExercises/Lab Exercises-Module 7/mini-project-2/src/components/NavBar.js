@@ -60,7 +60,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            <img src={logo} alt="Star Wars Logo" sx={{ display: { xs: 'none', md: 'flex', maxWidth: 10, maxHeight: 20 }, mr: 1, transform: 'scale(0.8)' }} />
+            <img src={logo} alt="Star Wars Logo" sx={{ display: { xs: 'none', md: 'flex', maxWidth: 60, maxHeight: 40 }, mr: 1, transform: 'scale(0.8)', }} />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
