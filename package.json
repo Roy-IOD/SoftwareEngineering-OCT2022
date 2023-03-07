@@ -1,27 +1,6 @@
 {
-  "name": "softwareengineering-oct2022",
-  "version": "1.0.0",
-  "description": "Please push your weekly updates of in-class exercises to your own folder under your name. You can create seperate folder under different module if you wish to. Such as `Jo/Module-01`, `Jo/Module-10`",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Roy-IOD/SoftwareEngineering-OCT2022.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Roy-IOD/SoftwareEngineering-OCT2022/issues"
-  },
-  "homepage": "https://github.com/Roy-IOD/SoftwareEngineering-OCT2022#readme",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "^5.11.9",
     "express": "^4.18.2",
-    "mongoose": "^7.0.0",
-    "react-router-dom": "^6.8.1"
+    "socket.io": "^4.6.1"
   }
 }

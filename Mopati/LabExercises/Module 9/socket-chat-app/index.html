@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Socket Chat App</title>
+  </head>
+  <body>
+    <h2>Welcome to Socket Chat</h2>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      let socket = io();
+      socket.on("connection", (msg) => {
+        console.log(msg);
+      });
+    </script>
+  </body>
+</html>

@@ -12,7 +12,6 @@ class User {
 
     static create(newUser) {
         let mergedUser = new User(newUser)
-        console.log(mergedUser)
         return connection.promise().query("INSERT INTO users SET ?", mergedUser);
     };
 
