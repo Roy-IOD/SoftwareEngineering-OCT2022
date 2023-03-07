@@ -11,9 +11,9 @@ app.get("/", (res, req) => {
 });
 
 io.on("connection", (socket) => {
-  io.emit("connection message", "a user connected...");
+  socket.broadcast.emit("connection message", "a user connected...");
   socket.on("disconnect", () => {
-    io.emit("connection message", "user disconnected...");
+    io.emit("connection message", "a user disconnected...");
   });
   socket.on("chat message", (msg) => {
     socket.broadcast.emit("chat message", msg);
