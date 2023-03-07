@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
         console.log('user disconnected');
     });
 
-    // socket.on('message', (msg))
+    // socket.on('message', (msg)) Test
 
     socket.on('typing', (username) => {
         socket.broadcast.emit('user typing...', username)
