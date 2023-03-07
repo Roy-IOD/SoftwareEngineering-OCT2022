@@ -4,7 +4,7 @@
     <title>Socket.IO chat</title>
     <style>
       body {
-        margin: 0;
+        margin: 100;
         padding-bottom: 3rem;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Helvetica, Arial, sans-serif;
@@ -59,31 +59,70 @@
     </style>
   </head>
   <body>
-    <div id="chat-window">
+    <div id="userWindow">
+      <h3>Enter a Username:</h3>
+      <p id="userError"></p>
+      <form id="setUser">
+        <input type="text" placeholder="Name" id="userName" />
+        <input type="submit" />
+      </form>
+    </div>
+
+    <div id="chatWindow">
       <div>
         <h3>Current Users:</h3>
-        <ul id="users"></ul>
+        <div id="users"></div>
       </div>
-      <br />
+
       <h3>Chat:</h3>
       <div id="messages"></div>
       <div id="feedback"></div>
+      <form id="form" action="">
+        <input id="input" autocomplete="off" /><button>Send</button>
+      </form>
     </div>
-    <form id="form" action="">
-      <input type="text" placeholder="Name" id="name" />
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io();
-
+      //TEST BELOW
+      let $setUser = $("#setUser");
+      let $userError = $("#userError");
+      let $userName = $("#userName");
+      let $userWindow = $("#userWindow");
+      let $chatWindow = $("#chatWindow");
+      let $users = $("#users");
+      //TEST ABOVE
       let messages = document.getElementById("messages");
       let form = document.getElementById("form");
       let input = document.getElementById("input");
-      let name = document.getElementById("name");
       let feedback = document.getElementById("feedback");
       let users = document.getElementById("users");
 
+      //TEST BELOW
+      $chatWindow.hide();
+
+      $setUser.submit((e) => {
+        e.preventDefault();
+        socket.emit("new user", $userName.val(), (data) => {
+          if (data) {
+            $userWindow.hide();
+            $chatWindow.show();
+          } else {
+            $userError.html("Username Unavailable");
+          }
+        });
+      });
+
+      socket.on("usernames", (data) => {
+        let html = "";
+        for (i = 0; i < data.length; i++) {
+          html += data[i] + "<br />";
+        }
+        $users.html(html);
+      });
+
+      //TEST ABOVE
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (input.value) {
@@ -93,12 +132,12 @@
       });
 
       input.addEventListener("keypress", () => {
-        socket.emit("typing", name.value);
+        socket.emit("typing", $userName.val());
       });
 
-      socket.on("chat message", (msg) => {
+      socket.on("chat message", (data) => {
         let item = document.createElement("li");
-        item.textContent = msg;
+        item.textContent = data.user + ": " + data.msg;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
       });

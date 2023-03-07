@@ -10,17 +10,36 @@ app.get("/", (res, req) => {
   req.sendFile(__dirname + "/index.html");
 });
 
+function updateUsernames() {
+  io.emit("usernames", usernames);
+}
+
 io.on("connection", (socket) => {
   socket.broadcast.emit("connection message", "a user connected...");
   socket.on("disconnect", () => {
     io.emit("connection message", "a user disconnected...");
+    if (!socket.username) return;
+    usernames.splice(usernames.indexOf(socket.username), 1);
+    updateUsernames();
   });
-  socket.on("chat message", (msg) => {
-    socket.broadcast.emit("chat message", msg);
+  socket.on("chat message", (data) => {
+    socket.broadcast.emit("chat message", { msg: data, user: socket.username });
   });
   socket.on("typing", (username) => {
-    io.emit("typing", username);
+    socket.broadcast.emit("typing", username);
   });
+  // TEST BELOW
+  socket.on("new user", (data, callback) => {
+    if (usernames.indexOf(data) != -1) {
+      callback(false);
+    } else {
+      callback(true);
+      socket.username = data;
+      usernames.push(socket.username);
+      updateUsernames();
+    }
+  });
+  // TEST ABOVE
 });
 
 server.listen(3001, () => {
