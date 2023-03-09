@@ -1,13 +1,9 @@
 "use strict";
-const User = require("./user");
-const Comment = require("./comment");
-const Post = require("./post");
+const Game = require("./Game");
 
 async function init() {
-  await User.sync();
-  await Comment.sync();
-  await Post.sync();
+  await Game.sync();
 }
 init();
 
-module.exports = { User, Comment, Post };
+module.exports = { Game };
