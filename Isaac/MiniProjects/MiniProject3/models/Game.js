@@ -2,30 +2,26 @@ const { DataTypes, Model } = require("sequelize");
 let dbConnect = require("../dbConnect");
 const sequelizeInstance = dbConnect.Sequelize;
 
-class comment extends Model {}
+class Game extends Model {}
 
-//Sequelize will create this table if it doesnt exist on startup
-
-comment.init(
+Game.init(
   {
-    postId: {
+    gameId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      required: true,
-    },
-    content: { type: DataTypes.STRING },
+    ateam: { type: DataTypes.STRING },
+    hteam: { type: DataTypes.STRING },
+    ascore: { type: DataTypes.INTEGER },
+    hscore: { type: DataTypes.INTEGER },
   },
   {
     sequelize: sequelizeInstance,
-    modelName: "comment",
+    modelName: "games",
     timestamps: true,
     freezeTableName: true,
   }
 );
 
-module.exports = comment;
+module.exports = Game;
