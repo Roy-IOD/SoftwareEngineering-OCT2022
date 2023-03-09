@@ -37,28 +37,28 @@ let newUser = {
       }
       this._name = value;
     }
-  };
-  
-  newUser.name = "Pete";
-  console.log(newUser.name); // Pete
-  
-  newUser.name = "Jo"; // Name is too short...
+};
+
+newUser.name = "Pete";
+console.log(newUser.name); // Pete
+
+newUser.name = "Jo"; // Name is too short...
 
 
-  function UserThree(name, birthday) {
-    this.name = name;
-    this.birthday = birthday;
-  
-    // age is calculated from the current date and birthday
-    Object.defineProperty(this, "age", {
-      get() {
-        let todayYear = new Date().getFullYear();
-        return todayYear - this.birthday.getFullYear();
-      }
-    });
-  }
-  
-  let john = new UserThree("John", new Date(1992, 6, 1));
-  
-  console.log( john.birthday ); // birthday is available
-  console.log( john.age );      // ...as well as the age
+function UserThree(name, birthday) {
+  this.name = name;
+  this.birthday = birthday;
+
+  // age is calculated from the current date and birthday
+  Object.defineProperty(this, "age", {
+    get() {
+      let todayYear = new Date().getFullYear();
+      return todayYear - this.birthday.getFullYear();
+    }
+  });
+}
+
+let john = new UserThree("John", new Date(1992, 6, 1));
+
+console.log( john.birthday ); // birthday is available
+console.log( john.age );      // ...as well as the age

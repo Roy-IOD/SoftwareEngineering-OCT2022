@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Hello from './Hello';
+import LoginSuccess from './LoginSuccess';
+// import Hello from './Hello';
 
 function Login(props) {
 
@@ -25,7 +26,7 @@ function Login(props) {
         <div className="Login componentBox">
 
             {/* if we're logged in, use the Hello component to say hello */}
-            <div>{loggedIn ? <Hello name={username}/> : 'Please log in'}</div>
+            <div>{loggedIn ? <LoginSuccess name={username} /> : 'Please log in'}</div>
 
             <form onSubmit={handleLogin}>
                 <div className="formRow">

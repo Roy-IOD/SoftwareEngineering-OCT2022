@@ -1,0 +1,14 @@
+Your local soccer club is in need of a database to store and manage their teams and player registrations.
+It needs to keep track of each player’s name, age, team, parental contact and payment status so they can easily see who has paid for each season, if they’re playing in the right division for their age, check which team uniform they need, and contact parents when needed. Players may belong to multiple teams if they are ‘playing up’ an age division. Divisions are u10s, u12s, u14s, u16s, u18s and open, and are mixed genders. Teams should have around 13-20 players each, and each team has a head and assistant coach. Coaches are volunteers and rotate frequently due to changing commitments, so keeping contact details for previous coaches is handy.
+1.	What are the entities that need to be represented?
+2.	What fields/attributes need to be stored for each entity?
+3.	Resolve/normalise any duplicated information
+4.	What are the relationships between the entities?
+a.	Identify any one to one relationships and consider merging them
+b.	Identify any many to many relationships and consider splitting them
+c.	Ensure all one to many relationships use unique keys to maintain the relationship
+
+Use a diagramming tool such as https://app.diagrams.net/ to map out the logical diagram.
+
+
+(see soccerclub_db.drawio.jpg for some sample answers)

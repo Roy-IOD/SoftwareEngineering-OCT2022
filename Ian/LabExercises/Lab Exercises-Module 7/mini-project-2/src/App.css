@@ -40,9 +40,9 @@
     transform: rotate(360deg);
   }
 }
-/* 
-.dashboard-container {
+
+/* .dashboard-container {
   background-image: url("./img/sw_img.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 } */
