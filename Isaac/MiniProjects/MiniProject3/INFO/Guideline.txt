@@ -20,6 +20,11 @@ Here are some questions for the students to cover during their presentations:
 - How might using a database instead of an external API directly benefit an application?
 - How might you extend the features of your application in future?
 
-JSON APIs: https://docs.google.com/spreadsheets/d/15iDpjqyBkSse9wcN7vvQvORBvX8P_ivAjm-iKXp776Y/edit#gid=0
-
+API:
 https://api.squiggle.com.au/?q=games&year=2022
+https://api.squiggle.com.au/?q=teams
+https://api.squiggle.com.au/?q=standings;year=2022;round=final
+
+
+
+https://api.squiggle.com.au/
