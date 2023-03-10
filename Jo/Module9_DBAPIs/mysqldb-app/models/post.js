@@ -15,13 +15,13 @@ Post.init({
         type: DataTypes.STRING, allowNull: false, required: true
     },
     description: {
-        type: DataTypes.STRING, allowNull: false, required: true
+        type: DataTypes.STRING(1000), allowNull: false, required: true
     },
     imageURL: {
-        type: DataTypes.STRING, allowNull: false, required: true, unique: true
+        type: DataTypes.STRING, allowNull: false, required: true
     }, 
     userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER, allowNull: false, required: true,
     
         references: {
             model: User, //reference to another model
