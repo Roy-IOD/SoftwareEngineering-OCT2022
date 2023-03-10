@@ -12,13 +12,11 @@ comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
-      autoIncrement: true,
     },
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
-      autoIncrement: true,
     },
     content: { type: DataTypes.STRING },
   },

@@ -29,9 +29,23 @@
         border-radius: 2rem;
         margin: 0.25rem;
       }
+
+      #name {
+        border: none;
+        padding: 0 1rem;
+        flex-grow: 1;
+        border-radius: 2rem;
+        margin: 0.25rem;
+      }
+
       #input:focus {
         outline: none;
       }
+
+      #name:focus {
+        outline: none;
+      }
+
       #form > button {
         background: #333;
         border: none;
@@ -57,15 +71,18 @@
   </head>
   <body>
     <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
+    <form id="form">
+      <input type="text" placeholder="Message" id="input" />
+      <button id="send">Send</button>
     </form>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io();
 
       var messages = document.getElementById("messages");
       var form = document.getElementById("form");
+      var name = document.getElementById("name");
       var input = document.getElementById("input");
 
       form.addEventListener("submit", function (e) {
