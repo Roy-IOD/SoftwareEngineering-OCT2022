@@ -29,5 +29,5 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
   Controllers.bookController.storeBooks();
   Controllers.fantasyController.storeFantasy();
-  Controllers.authorController.storeAuthor();
+  Controllers.authorController.storeAuthors();
 });

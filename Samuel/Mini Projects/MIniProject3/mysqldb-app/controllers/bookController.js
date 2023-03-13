@@ -29,7 +29,7 @@ const storeBooks = (req, res) => {
         Models.Book.findOrCreate({
           where: { title: book.title },
           defaults: {
-            bookId: book.id,
+            id: book.id
           },
         })
           .then((created) => {

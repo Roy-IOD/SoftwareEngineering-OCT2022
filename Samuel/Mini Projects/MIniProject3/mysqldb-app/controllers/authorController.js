@@ -1,7 +1,7 @@
 const Models = require("../models");
 const axios = require("axios");
 
-const getAuthor = (res) => {
+const getAuthors = (res) => {
   Models.Author.findAll({})
     .then(function (data) {
       res.send({ result: 200, data: data });
@@ -11,33 +11,34 @@ const getAuthor = (res) => {
     });
 };
 
-const storeAuthor = (req, res) => {
+const storeAuthors = (req, res) => {
+  let authorCount = 0;
+
   axios
     .get("https://gutendex.com/books/?topic=fantasy")
     .then((data) => {
       let apiData = data.data.results;
-      let bookData = apiData.map((book) =>
-        book.authors.map((author) => {
-          return {
-            name: author.name[0],
-            birth_year: author.birth_year[0],
-          };
+      let bookData = new Map();
+      apiData.forEach((book) => //forEaches instead of maps, to build up list of all authors
+        book.authors.forEach((author) => {
+          bookData.set(author.name, author.birth_year);
         })
       );
 
-      console.log(bookData);
+      console.log(bookData); //all unique authors mapped to birth year
 
-      bookData.forEach((author) => {
+      bookData.forEach((birthDate, author) => {
+
         Models.Author.findOrCreate({
           where: {
-            name: author.name,
+            name: author,
           },
           defaults: {
-            birth_year: author.birth_year,
+            birth_year: birthDate,
           },
         })
-          .then((created) => {
-            created ? console.log("Data being added to database") : null;
+          .then(([author,created]) => {
+            created ? console.log("Author added to database") : null;
           })
           .catch((err) => {
             throw err;
@@ -46,10 +47,10 @@ const storeAuthor = (req, res) => {
     })
     .catch((err) => {
       throw err;
-    });
+    })
 };
 
 module.exports = {
-  getAuthor,
-  storeAuthor,
+  getAuthors,
+  storeAuthors,
 };
