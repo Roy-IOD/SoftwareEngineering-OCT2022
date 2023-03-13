@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      body {
+        margin: 0;
+        padding-bottom: 3rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+      #form {
+        background: rgba(0, 0, 0, 0.15);
+        padding: 0.25rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        height: 3rem;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+      }
+      #input {
+        border: none;
+        padding: 0 1rem;
+        flex-grow: 1;
+        border-radius: 2rem;
+        margin: 0.25rem;
+      }
+      #input:focus {
+        outline: none;
+      }
+      #form > button {
+        background: #333;
+        border: none;
+        padding: 0 1rem;
+        margin: 0.25rem;
+        border-radius: 3px;
+        outline: none;
+        color: #fff;
+      }
+      #messages {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      #messages > li {
+        padding: 0.5rem 1rem;
+      }
+      #messages > li:nth-child(odd) {
+        background: #EFEFEF;
+      }
+      #feedback {
+        padding: 0.2rem 1rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="chat-window">
+      <div>
+        <h3>Current Users:</h3>
+        <ul id="users"></ul>
+      </div>
+      <br />
+      <h3>Chat:</h3>
+      <ul id="messages"></ul>
+    </div>
+
+    <form id="form" action="">
+      <input type="text" placeholder="Name" id="name" />
+      <input
+        autocomplete="off"
+        id="message-input"
+        type="text"
+        placeholder="Type your message..."
+      /><button id="send-button" type="submit">Send</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+      let socket = io();
+      let messages = document.getElementById("messages");
+      let form = document.getElementById("form");
+      //let input = document.getElementById("input");
+      let name = document.getElementById("name");
+      let users = document.getElementById("users");
+      let messageInput = document.getElementById('message-input');
+      let sendButton = document.getElementById('send-button');
+      let typing = false;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("chat message", input.value);
+          input.value = "";
+        }
+      });
+
+      // start of 'user is typing', user stopped typing', as well as 'typing' and 'stopped typing
+      // listen for "user is typing" event
+      socket.on('user is typing', (username) => {
+        const typingMessage = document.createElement('p');
+        typingMessage.innerText = `${username} is typing...`;
+        messages.appendChild(typingMessage);
+     });
+
+    // Listen for "user is typing" event
+    socket.on('user stopped typing', () => {
+        const lastMessage = messages.lastChild;
+        if (lastMessage && lastMessage.innerText.endsWith('typing...')) {
+            messages.removeChild(lastMessage);
+        }
+   });
+
+   // Send "typing" event when user starts typing
+   messageInput.addEventListener('keypress', () => {
+    if (!typing) {
+        typing = true;
+        console.log(name.value + ' is typing')
+        socket.emit('typing', name.value);
+    }
+   });
+
+   // Send "stopped typing" event when user stops typing
+    //   messageInput.addEventListener('blur', () => {
+    // if (typing) {
+    //     typing = false;
+    //     socket.emit('stopped typing');
+    // }
+    // });
+// Send message when user clicks "Send" button
+     sendButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const message = messageInput.value.trim();
+    if (message) {
+        socket.emit('message', message);
+        const messageElement = document.createElement('p');
+        messageElement.innerText = message;
+        messages.appendChild(messageElement);
+        messageInput.value = '';
+    }
+   });
+// end of 'user is typing', user stopped typing', as well as 'typing' and 'stopped typing'
+      socket.on("chat message", (msg) => {
+        let item = document.createElement("li");
+        item.textContent = msg;
+        messages.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+

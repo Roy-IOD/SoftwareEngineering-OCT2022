@@ -10,6 +10,16 @@ const getHouses = (res) => {
     })
 }
 
+const searchHouses = (req, res) => {
+    axios.get('https://anapioficeandfire.com/api/houses/').then(data => {
+        console.log(data.data); 
+        let matchingHouses = data.data.filter(house => house.name.toLowerCase().indexOf(req.query.s.toLowerCase()) >= 0)
+        res.send({ result: 200, data: matchingHouses }) 
+    }).catch(err => {
+        throw err
+    })
+}
+
 const getBooks = (res) => {
     axios.get('https://anapioficeandfire.com/api/books/').then(data => {
         let apiData = data.data;
@@ -45,5 +55,5 @@ const getRandomCharacter = (res) => {
 }
 
 module.exports = {
-    getHouses, getBooks, getRandomBook, getRandomCharacter
+    getHouses, searchHouses, getBooks, getRandomBook, getRandomCharacter
 }

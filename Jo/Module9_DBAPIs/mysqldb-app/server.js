@@ -18,6 +18,9 @@ app.use("/api/users", userRoutes); //sequelize
 let userRoutes2 = require("./routes/userRoutes_mysql2");
 app.use("/api/users2", userRoutes2); //mysql2
 
+let postRoutes = require("./routes/postRoutes");
+app.use("/api/posts", postRoutes); //sequelize
+
 let gotRoutes = require('./routes/gotRoutes')
 app.use('/api/got', gotRoutes) //sequelize
 
