@@ -13,8 +13,8 @@ let gamesRoutes = require("./routes/gamesRoutes");
 let teamsRoutes = require("./routes/teamsRoutes");
 let standingsRoutes = require("./routes/standingsRoutes");
 
-app.use("/api/games", gamesRoutes);
 app.use("/api/teams", teamsRoutes);
+app.use("/api/games", gamesRoutes);
 app.use("/api/standings", standingsRoutes);
 
 // set port, listen for requests
@@ -24,7 +24,7 @@ const Controllers = require("./controllers");
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-  Controllers.gamesController.storeGames();
   Controllers.teamsController.storeTeams();
+  Controllers.gamesController.storeGames();
   Controllers.standingsController.storeStandings();
 });
