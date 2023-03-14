@@ -25,9 +25,9 @@ app.use("/api/authors", authorRoutes);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}.`);
-  Controllers.authorController.storeAuthors();
+  await Controllers.authorController.storeAuthors();
   Controllers.bookController.storeBooks();
   Controllers.fantasyController.storeFantasy();
 });
