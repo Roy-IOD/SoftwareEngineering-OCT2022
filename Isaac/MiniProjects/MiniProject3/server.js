@@ -22,9 +22,9 @@ const PORT = process.env.PORT || 8080;
 
 const Controllers = require("./controllers");
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}.`);
-  Controllers.teamsController.storeTeams();
+  await Controllers.teamsController.storeTeams();
   Controllers.gamesController.storeGames();
   Controllers.standingsController.storeStandings();
 });

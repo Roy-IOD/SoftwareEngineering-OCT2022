@@ -4,8 +4,8 @@ const Team = require("./Team");
 const Standing = require("./Standing");
 
 async function init() {
-  await Game.sync();
   await Team.sync();
+  await Game.sync();
   await Standing.sync();
 }
 init();
