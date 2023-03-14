@@ -53,8 +53,8 @@ const storeGames = (req, res) => {
       let gameData = apiData.map((game) => {
         return {
           gameId: game.id,
-          ateam: game.ateam,
-          hteam: game.hteam,
+          ateam: game.ateamid,
+          hteam: game.hteamid,
           ascore: game.ascore,
           hscore: game.hscore,
         };
