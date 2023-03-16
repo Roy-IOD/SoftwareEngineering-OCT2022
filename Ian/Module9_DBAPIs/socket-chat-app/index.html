@@ -34,19 +34,20 @@ content="IE=edge">
 
     let form = document.getElementById('form');
     let input = document.getElementById('input');
+    
     let messages = document.getElementById('messages');
     let username = document.getElementById('username-input');
 
     function setUsername() {
         const username = document.getElementById('username-input').value;
         socket.emit("set-username", username);
-    }
+    };
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         if (input.value) {
-        socket.emit('chat message', input.value);
-        input.value = '';
+            socket.emit('chat message', input.value);
+            input.value = '';
         }
     });
 
@@ -55,6 +56,13 @@ content="IE=edge">
         item.textContent = msg;
         messages.appendChild(item);
         window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    socket.on('new user', function(msg) {
+        console.log(msg);
+        let item = document.createElement('li');
+        item.textContent = msg;
+        messages.appendChild(item);
     });
 </script>
 </body>
