@@ -6,6 +6,8 @@ const { Server } = require("socket.io");
 const server = http.createServer(app);
 const io = new Server(server);
 
+const usernames = []
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
@@ -15,8 +17,8 @@ io.on('connection', (socket) => {
     console.log('a user connected')
 
     socket.on('chat message', (msg) => {
-        console.log('${username}: ' + msg);
-        io.emit('chat message', msg, {username: socket.username}); //msg msg??
+        socket.emit('chat message', {msg: msg, user: socket.username });
+        console.log(`${socket.username}: ` + msg);
     });
 
     socket.on('disconnect', () => {
@@ -26,12 +28,14 @@ io.on('connection', (socket) => {
     // socket.on('message', (msg)) Test
 
     socket.on('typing', (username) => {
-        socket.broadcast.emit('user typing...', username)
+        io.sockets.emit('user typing...', username) //why io.sockets.emit not socket.broadcast.emit ?
     })
 
-    socket.on('set username', (username) => {
-        console.log('User ${username} has entered the chat');
+    socket.on('set-username', (username) => {
         socket.username = username;
+        console.log(`User ${socket.username} has entered the chat`);
+        socket.broadcast.emit('new user', `User ${socket.username} has entered the chat`);
+        
     });
   });
 
