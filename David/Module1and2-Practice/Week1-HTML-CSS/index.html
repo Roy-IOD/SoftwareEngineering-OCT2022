@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Store Exercise</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header>
+  <h1 id="header">Header</h1>
+</header>
+<section>
+    
+<nav> <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Articles</a></li>
+    </ul>
+  </nav>
+  <article>
+<h2>Car for Sale</h2>
+<img src="https://imageio.forbes.com/specials-images/imageserve/621e5f0df049069675057f00/March-21--2010-photograph-/960x0.jpg" width = 500px>
+<p class="test1">$200,000 (cash only)</p>
+<form action="/action_page">
+    <label for="shippingAddress">Shipping Address</label><br>
+    <input type="text" id="shippingAddress" name="shippingAddress" value="Enter Shipping Address"><br>
+    <label for="firstName">First name:</label><br>
+    <input type="text" id="firstName" name="firstName" value="Joel"><br>
+    <label for="lastName">Last name:</label><br>
+    <input type="text" id="lastName" name="lastName" value="Doe"><br><br>
+    <button onclick="orderNow()">Order Now</button>
+    </form><br>
+
+  </article>
+  <aside id = "aside">
+    <h2>Related</h2>
+    <ul>
+        <li><a href="#">Article 1</a></li>
+        <li><a href="#">Article 2</a></li>
+    </ul>
+  </aside>
+</section>
+
+      <button onclick="helloWorld()">Say Hello</button><br>
+    </body>
+
+
+<script> 
+function orderNow() {
+    alert('Your order will be shipped soon!')
+}
+
+document.getElementById ('header').innerHTML = 'Reliable Cars';
+
+document.getElementById ('aside').style.backgroundColor = 'green';
+
+document.getElementById("testID").style.color = "red";
+
+function helloWorld() {
+    alert('Hello World!')
+}
+
+function changetextcolor() {
+    document.getElementById("test2").style.color = "red";
+}
+</script>
+</html>
