@@ -4,9 +4,9 @@ const Fantasy = require("./fantasy");
 const Author = require("./author");
 
 async function init() {
+  await Author.sync();
   await Book.sync();
   await Fantasy.sync();
-  await Author.sync();
 }
 
 init();
