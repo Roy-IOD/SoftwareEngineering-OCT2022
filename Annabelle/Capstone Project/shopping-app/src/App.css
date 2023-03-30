@@ -38,3 +38,5 @@
     transform: rotate(360deg);
   }
 }
+
+#navbarScrollingDropdownCart .dropdown-menu { left: -5em; }

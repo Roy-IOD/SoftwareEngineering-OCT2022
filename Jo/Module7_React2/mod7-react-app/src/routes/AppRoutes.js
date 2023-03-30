@@ -16,7 +16,7 @@ export const AppRoutes = (props) => {
         // see https://reactrouter.com/en/main/components/routes for more info
         <Routes>
             {/* nested routes can be used for URLs like /home/tasks or where the parent component needs to render the children */}
-            <Route exact path='/' element={<Dashboard {...props} />} >
+            <Route path='/' element={<Dashboard {...props} />} >
                 <Route path="messages" element={<DashboardMessages />} />
                 <Route path="tasks" element={<DashboardTasks />} />
             </Route>

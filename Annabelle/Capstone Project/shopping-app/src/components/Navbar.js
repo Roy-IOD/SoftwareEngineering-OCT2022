@@ -30,11 +30,11 @@ function NavScrollExample() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px', width:'100%'}}
+            style={{ maxHeight: '100px', width:'100%', alignItems: 'center'}}
             navbarScroll
           >
             <Nav.Link href="/Home">HOME</Nav.Link>
-            <NavDropdown title="SHOP" id="navbarScrollingDropdown">
+            <NavDropdown title="SHOP" id="navbarScrollingDropdownShop">
               <NavDropdown.Item href="/eyes"> EYES </NavDropdown.Item>
               <NavDropdown.Item href="/Skin"> SKIN </NavDropdown.Item>
               <NavDropdown.Item href="/Lips"> LIPS </NavDropdown.Item>
@@ -43,15 +43,14 @@ function NavScrollExample() {
           
             <NavDropdown
               title="ACCOUNT"
-              id="navbarScrollingDropdown"
+              id="navbarScrollingDropdownAccount"
               style={{ marginLeft: "auto" }}
             >
               <NavDropdown.Item href="/Signup"> SIGN UP </NavDropdown.Item>
               <NavDropdown.Item href="/login"> LOGIN </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown style={{ display: "flex", alignItems: "center", }}
+            <NavDropdown style={{ display: "flex", alignItems: "center"}}
               title={
-                <div style={{ display: "flex", alignItems: "center" }}>
                   <Button href="/cart">
                     <Badge bg="secondary">{cartItems.length}</Badge>
                     <i
@@ -59,9 +58,8 @@ function NavScrollExample() {
                       style={{ marginLeft: "20px" }}
                     ></i>
                   </Button>
-                </div>
               }
-              id="navbarScrollingDropdown"
+              id="navbarScrollingDropdownCart"
             >
               {cartItems.length === 0 ? (
                 <NavDropdown.Item>Cart is empty</NavDropdown.Item>
