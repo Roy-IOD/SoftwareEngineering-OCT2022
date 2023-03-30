@@ -21,10 +21,13 @@ io.on('connection', (socket) => {
     console.log('message: ' + msg);
   });
 
-  socket.on('username', (name) => {
-    socket.broadcast.emit('new user', {username: name, text: 'has connected'})
-    socket.id = name;
+  socket.on('chat message', (msg) => {
+    console.log('message: ' + msg);
   });
+
+  console.log('Connected')
+
+  io.emit('chat message', 'You are connected');
 
   socket.on('disconnect', function() {
      io.emit('chat message', 'Other user disconnected');

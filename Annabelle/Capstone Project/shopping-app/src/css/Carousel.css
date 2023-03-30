@@ -1,0 +1,30 @@
+.carousel-container {
+    max-width: 500px; /* set a maximum width for the container */
+    margin: 0 auto; /* center the container horizontally */
+    position: relative;
+  }
+  
+  .carousel-image {
+    width: 100%;
+  }
+  
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .prev-button {
+    left: 0;
+  }
+  
+  .next-button {
+    right: 0;
+  }
+  
