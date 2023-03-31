@@ -1,6 +1,6 @@
 const { DataTypes, Model } = require("sequelize");
 let dbConnect = require("../dbConnect");
-// const Author = require("./author");
+const Author = require("./author");
 
 const sequelizeInstance = dbConnect.Sequelize;
 
@@ -19,15 +19,15 @@ Book.init(
       allowNull: true,
       required: true,
     },
-    // authorId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   required: true,
-    //   references: {
-    //     model: Author,
-    //     key: "id",
-    //   },
-    // },
+    authorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      required: true,
+      references: {
+        model: Author,
+        key: "id",
+      },
+    },
   },
   {
     sequelize: sequelizeInstance,

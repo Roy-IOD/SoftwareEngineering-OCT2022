@@ -1,95 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="flexbox.css">
-    <title>This is a flexbox excersise</title>
-    <meta charset="UTF-8" />
-    <meta name="description" content="This is a flexbox excersise" />
-    <meta name="keywords" content="HTML, CSS, JavaScript" />
-    <meta name="author" content="[Your name]" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-     .container{
-    display: flex;
-    justify-content: center;
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
 }
 
-      .background-1 {
-        background: #68B0AB;
-        
-      }
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
 
-      .background-2 {
-        background: #8FC0A9;
-      }
+.menu a {
+  background-color: #e5e5e5;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+}
 
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
 
-      .background-3 {
-        background: #C8D5B9;
-      }
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
 
-
-      .background-4 {
-        background:  #FAF3DD;
-      }
-
-      .m-20 {
-        margin: 20px;
-      }
-
-      .h-80 {
-        height: 80px;
-      }
-
-      .h-400 {
-        height: 400px;
-      }
-
-      .w-80 {
-        width: 80px;
-      }
-
-      .container flex-space-between {
-    justify-content: flex-start;
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
   }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;">
 
-    </style>
-  </head>
-  <body>
-    <section>
-      <h3>Basic flexbox</h3>
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+  <h1>Hello World</h1>
+</div>
 
-      <div class="container">
-        <div class="flex-item-1 background-1 h-80"></div>
-        <div class="flex-item-2 background-2 h-80"></div>
-        <div class="flex-item-3 background-3 h-80"></div>
-        <div class="flex-item-4 background-4 h-80"></div>
-      </div>
-    </section>
+<div style="overflow:auto">
+  <div class="menu">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+  </div>
 
-    <section>
-      <h3>Centering elements</h3>
-      <div class="m-20 container flex-center h-400 background-4">
-        <div class="background-1 h-80 w-80"></div>
-      </div>
-    </section>
+  <div class="main">
+    <h2>Lorum Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>
 
-    <section>
-      <h3>Spacing elements on the opposites sites</h3>
-      <div class="container flex-space-between">
-        <div class="h-80 background-1">I'm on the left</div>
-        <div class="h-80 background-2">I'm on the right</div>
-      </div>
-    </section>
+  <div class="right">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+  </div>
+</div>
 
-    <section>
-      <h3>Wrapping items</h3>
-      <div class="container flex-wrap">
-        <div class="flex-basis-item-50 h-80 background-1"></div>
-        <div class="flex-basis-item-50 h-80 background-2"></div>
-        <div class="flex-basis-item-50 h-80 background-3"></div>
-        <div class="flex-basis-item-50 h-80 background-4"></div>
-      </div>
-    </section>
-  </body>
+<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+
+</body>
 </html>

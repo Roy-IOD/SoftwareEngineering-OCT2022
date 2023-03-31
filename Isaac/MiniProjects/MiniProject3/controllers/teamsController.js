@@ -45,42 +45,35 @@ const deleteTeams = (req, res) => {
     });
 };
 
-const storeTeams = (req, res) => {
-  axios
-    .get("https://api.squiggle.com.au/?q=teams")
-    .then((data) => {
-      let apiData = data.data.teams;
-      let teamData = apiData.map((team) => {
-        return {
-          name: team.name,
-          debut: team.debut,
-          abbrev: team.abbrev,
-          logo: team.logo,
-        };
-      });
-      console.log(teamData);
+const storeTeams = async (req, res) => {
+  let data = await axios.get("https://api.squiggle.com.au/?q=teams");
+  // .then((data) => {
+  let apiData = data.data.teams;
+  let teamData = apiData.map((team) => {
+    return {
+      id: team.id,
+      name: team.name,
+      debut: team.debut,
+      abbrev: team.abbrev,
+      logo: team.logo,
+    };
+  });
+  console.log(teamData);
 
-      teamData.forEach((team) => {
-        Models.Team.findOrCreate({
-          where: { name: team.name },
-          defaults: {
-            name: team.name,
-            debut: team.debut,
-            abbrev: team.abbrev,
-            logo: team.logo,
-          },
-        })
-          .then((created) => {
-            created ? console.log("Data being added to database...") : null;
-          })
-          .catch((err) => {
-            throw err;
-          });
-      });
-    })
-    .catch((err) => {
-      throw err;
+  teamData.forEach(async (team) => {
+    let created = await Models.Team.findOrCreate({
+      where: { name: team.name },
+      defaults: {
+        id: team.id,
+        name: team.name,
+        debut: team.debut,
+        abbrev: team.abbrev,
+        logo: team.logo,
+      },
     });
+    // .then((created) => {
+    created ? console.log("Data being added to database...") : null;
+  });
 };
 
 module.exports = {
