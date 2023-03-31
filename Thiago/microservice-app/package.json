@@ -1,21 +1,17 @@
 {
-  "name": "minipro3",
+  "name": "microservice-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "-": "^0.0.1",
     "axios": "^1.3.4",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^7.0.1",
-    "nodemon": "^2.0.21",
-    "save": "^2.9.0"
+    "express": "^4.18.2"
   }
 }
