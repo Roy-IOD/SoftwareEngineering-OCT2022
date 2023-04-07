@@ -4,7 +4,6 @@ import Opener from "../components/Opener";
 function Home() {
     return(
 <div>
-<br/>
 
 <Opener/>
 <br/>

@@ -1,10 +1,12 @@
 
 import Navbar from "../components/Navbar";
 
-function Shop() {
+import SignupForm from "../components/SignupForm";
+
+function Signup() {
     return(
 <div>
-
+<SignupForm/>
 <br/>
 </div>
 
@@ -12,4 +14,4 @@ function Shop() {
     )
 }
 
-export default Shop;
+export default Signup;

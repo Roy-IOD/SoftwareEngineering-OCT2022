@@ -1,19 +1,18 @@
-import { React, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import Navbar from './components/Navbar';
 import { AppRoutes } from './routes/AppRoutes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  return (
-<div>
-<Navbar />
-<br/>
-<AppRoutes />
-</div>
 
-)
+  return (
+    <div style={{fontFamily:'Montserrat'}}>
+      <Navbar />
+      <br/>
+
+      <AppRoutes />
+    </div>
+  );
 }
 
 export default App;

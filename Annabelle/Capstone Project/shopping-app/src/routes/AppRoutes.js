@@ -5,24 +5,23 @@ import Signup from '../pages/Signup';
 import Eyes from '../pages/Eyes';
 import Lips from '../pages/Lips';
 import Skin from '../pages/Skin';
+import Account from '../pages/Account';
 import Eyebrows from '../pages/Eyebrows';
 
-//special component containing all the possible routes for this app
-//any props passed into AppRoutes will also be passed onto child components using {...props}
 export const AppRoutes = (props) => {
 
     return (
 
-        // see https://reactrouter.com/en/main/components/routes for more info
         <Routes>
 
-            <Route path='/Home' element={<Home {...props} />} />
+            <Route path='/home' element={<Home {...props} />} />
+            <Route path='/account' element={<Account {...props} />} />
             <Route path='/login' element={<Login {...props} />} />
-            <Route path='/Signup' element={<Signup {...props} />} />
+            <Route path='/signup' element={<Signup {...props} />} />
             <Route path='/eyes' element={<Eyes {...props} />} />
-            <Route path='/Lips' element={<Lips {...props} />} />
-            <Route path='/Skin' element={<Skin {...props} />} />
-            <Route path='/Eyebrows' element={<Eyebrows {...props} />} />
+            <Route path='/lips' element={<Lips {...props} />} />
+            <Route path='/skin' element={<Skin {...props} />} />
+            <Route path='/eyebrows' element={<Eyebrows {...props} />} />
             <Route path='*' element={<Eyebrows {...props} />} />
         </Routes>
     )

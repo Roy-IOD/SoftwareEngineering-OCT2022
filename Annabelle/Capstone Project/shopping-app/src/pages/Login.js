@@ -1,10 +1,14 @@
 
-import Navbar from "../components/Navbar";
+import { UserContext } from '../context/UserContext';
+import React, { useContext } from 'react';
+import LoginForm from '../components/LoginForm';
+import UserPage from './Account';
 
-function Shop() {
-    return(
+function Login() {
+    const { user } = useContext(UserContext);
+    return(  
 <div>
-Hello world
+{user ? <UserPage /> : <LoginForm />}
 <br/>
 </div>
 
@@ -12,4 +16,4 @@ Hello world
     )
 }
 
-export default Shop;
+export default Login;

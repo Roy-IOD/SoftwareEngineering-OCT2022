@@ -12,7 +12,7 @@ const Opener = () => {
     <Grid container spacing={2} justifyContent="center">
       {images.map((image, index) => (
         <Grid item key={index} xs={4} sm={4}>
-          <img src={image} alt={`Image ${index}`} style={{ width: '100%', height: 'auto' }} />
+          <img src={image} alt={`Image ${index}`} style={{ width: '100%', height: '350px' }} />
 
 
         </Grid>
